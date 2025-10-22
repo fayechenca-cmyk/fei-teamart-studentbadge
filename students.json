@@ -28,21 +28,70 @@
     "teacher_note": "Wonderful sustainability mindset and creative risk-taking."
   },
 
-  {
-    "id": "B3LM-SEA",
-    "display_name": "Regina",
-    "achievements": [
-      { "badge_id": "little_designer", "level": "beginner", "date": "2025-10-18" }
-    ],
-    "notes": [
-      { "date": "2025-10-18", "text": "Great balance in your poster layout." }
-    ],
-    "goals": [
-      { "text": "Add 3 thumbnail variations", "due": "2025-10-28" }
-    ],
-    "critiques": [],
-    "featured_art": []
-  },
+{
+  "id": "REGINA-16",
+  "display_name": "Regina",
+  "achievements": [
+    { "badge_id": "portrait_foundation", "level": "advanced", "date": "2025-10-22" },
+    { "badge_id": "shading_mastery", "level": "intermediate", "date": "2025-09-28" }
+  ],
+  "notes": [
+    { "date": "2025-09-15", "text": "Shows consistent technical excellence and discipline across all mediums. Learns efficiently and completes work with precision." },
+    { "date": "2025-09-28", "text": "Demonstrates clear understanding of skull and facial structure. Smoothly transitioned from anatomy study to realistic portrait sketching." },
+    { "date": "2025-10-22", "text": "Now focusing on shading refinement and colored illustration. Encouraged to express emotion and creativity within her technical skills." }
+  ],
+  "goals": [
+    { "text": "Complete 3 shaded portrait sketches emphasizing soft gradation and facial light structure.", "due": "2025-11-10" },
+    { "text": "Create 1 colored portrait illustration integrating personal style and mood.", "due": "2025-11-24" },
+    { "text": "Prepare 1 process sheet comparing realistic and expressive portrait techniques.", "due": "2025-12-05" }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-10",
+      "strength": "Excellent proportion control, precise value transition, and well-balanced compositions.",
+      "next": "Encourage more spontaneous mark-making and emotional depth in portrait rendering."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "Light and Shadow Portrait Study",
+      "thumb": "artworks/regina_portrait_study.jpg",
+      "caption": "Graphite and marker blend exploring facial structure and value.",
+      "pdf": "pdfs/regina_portrait_study_process.pdf"
+    }
+  ],
+  "teacher_note": "Regina demonstrates maturity and precision in her work. Her next artistic milestone is blending her strong technique with expressive creativity to develop a distinctive personal style.",
+  "current_phase": "Transitioning from technical mastery to expressive illustration.",
+  "strengths": [
+    "Excellent technical foundation and proportion accuracy",
+    "Strong visual observation and analytical thinking",
+    "Calm, disciplined, and efficient working process",
+    "Deep understanding of anatomy, light, and structure",
+    "Clear design logic and refined sense of aesthetics"
+  ],
+  "challenges": [
+    "Needs to explore emotional expression and creative risk-taking",
+    "Tends to prioritize accuracy over imagination",
+    "Should loosen control to discover her personal voice"
+  ],
+  "strategy": [
+    "Alternate between realistic and expressive portrait sessions.",
+    "Introduce soft color and mood variations in shading exercises.",
+    "Include creative prompts focusing on narrative and feeling.",
+    "Encourage personal reflection in sketchbook notes to deepen expression."
+  ],
+  "tags": [
+    "mature",
+    "thoughtful",
+    "efficient",
+    "precise",
+    "calm",
+    "fast-learner",
+    "technically-skilled",
+    "still-water-runs-deep"
+  ]
+},
+
   {
   "id": "WALLACE-12",
   "display_name": "Wallace",
