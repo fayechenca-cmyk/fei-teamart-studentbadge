@@ -1,26 +1,31 @@
 [
   {
-    "id": "regina",
-    "name": "Regina",
+    "id": "amy",
+    "name": "Amy",
     "achievements": [
       {
-        "badge_id": "line_control",
+        "badge_id": "sustainable_creation",
+        "level": "gold",
+        "date": "2025-10-20"
+      },
+      {
+        "badge_id": "creative_thinker",
         "level": "silver",
         "date": "2025-10-15"
       }
     ],
-    "teacher_note": "Great improvement in line control and shading."
+    "teacher_note": "Amy reused old materials to make a creative sculpture — a wonderful example of sustainability and imagination!"
   },
   {
-    "id": "temp",
-    "name": "Temp",
+    "id": "regina",
+    "name": "Regina",
     "achievements": [
       {
-        "badge_id": "limited_palette",
-        "level": "gold",
-        "date": "2025-10-10"
+        "badge_id": "little_designer",
+        "level": "silver",
+        "date": "2025-10-18"
       }
     ],
-    "teacher_note": "Creative color choices and composition."
+    "teacher_note": "Excellent sense of design balance and storytelling through fashion concepts."
   }
 ]
