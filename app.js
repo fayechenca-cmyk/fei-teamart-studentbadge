@@ -22,8 +22,7 @@ const BADGE_TITLES = {
 
 // ---------- data helpers ----------
 async function fetchStudents() {
-  // If your JSON is at repo root, change to 'students.json'
-  const res = await fetch('data/students.json');
+  const res = await fetch('students.json');
   return await res.json();
 }
 const fmt = (s) => (s || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
