@@ -47,7 +47,7 @@
   {
   "id": "WALLACE-12",
   "display_name": "Wallace",
-  "code": "WAL-49X8",              // private access code students type in
+  "code": "WAL-49X8",   
   "achievements": [
     { "badge_id": "focus_sprint_20min", "level": "beginner", "date": "2025-10-08", "part": "Foundations · Studio Habits" },
     { "badge_id": "creative_resilience", "level": "sparker", "date": "2025-10-22", "part": "Mindset · Motivation" }
