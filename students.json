@@ -1,17 +1,46 @@
 [
   {
-    "id": "A7Q9-FOX",
+    "id": "A7Q9-FOX",                       // PRIVATE code they type
     "display_name": "Amy",
     "achievements": [
-      { "badge_id": "sustainable_creation", "level": "explorer", "date": "2025-10-20" }
+      { "badge_id": "sustainable_creation", "level": "explorer", "date": "2025-10-20" },
+      { "badge_id": "creative_thinker",     "level": "beginner", "date": "2025-10-15" }
     ],
-    "teacher_note": "Wonderful sustainable sculpture."
+    "notes": [
+      { "date": "2025-10-20", "text": "You reused cardboard so thoughtfully — proud of your persistence." },
+      { "date": "2025-10-27", "text": "Your dream: illustrate a mini animal book. Let’s plan 6 pages!" }
+    ],
+    "goals": [
+      { "text": "Finish Basic Shapes study", "due": "2025-11-02" },
+      { "text": "Try a recycled-sculpture mockup", "due": "2025-11-09" }
+    ],
+    "critiques": [
+      { "date": "2025-10-15", "strength": "Strong silhouettes and color choices.", "next": "Slow down at line starts; add cast shadows." }
+    ],
+    "featured_art": [
+      {
+        "title": "Recycled Bird",
+        "thumb": "artworks/amy_bird.jpg",   // or full https URL
+        "caption": "Cardboard + thread",
+        "pdf": "pdfs/amy_bird_process.pdf" // optional
+      }
+    ],
+    "teacher_note": "Wonderful sustainability mindset and creative risk-taking."
   },
+
   {
     "id": "B3LM-SEA",
     "display_name": "Regina",
     "achievements": [
       { "badge_id": "little_designer", "level": "beginner", "date": "2025-10-18" }
-    ]
+    ],
+    "notes": [
+      { "date": "2025-10-18", "text": "Great balance in your poster layout." }
+    ],
+    "goals": [
+      { "text": "Add 3 thumbnail variations", "due": "2025-10-28" }
+    ],
+    "critiques": [],
+    "featured_art": []
   }
 ]
