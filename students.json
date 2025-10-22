@@ -1,0 +1,26 @@
+[
+  {
+    "id": "regina",
+    "name": "Regina",
+    "achievements": [
+      {
+        "badge_id": "line_control",
+        "level": "silver",
+        "date": "2025-10-15"
+      }
+    ],
+    "teacher_note": "Great improvement in line control and shading."
+  },
+  {
+    "id": "temp",
+    "name": "Temp",
+    "achievements": [
+      {
+        "badge_id": "limited_palette",
+        "level": "gold",
+        "date": "2025-10-10"
+      }
+    ],
+    "teacher_note": "Creative color choices and composition."
+  }
+]

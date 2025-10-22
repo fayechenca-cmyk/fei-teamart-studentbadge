@@ -1,0 +1,14 @@
+[
+  {
+    "category": "foundation",
+    "student": "Regina",
+    "title": "Basic Shapes Still Life",
+    "image": "artworks/sample1.jpg"
+  },
+  {
+    "category": "designer",
+    "student": "Temp",
+    "title": "Color Harmony Poster",
+    "image": "artworks/sample2.jpg"
+  }
+]
