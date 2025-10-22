@@ -1,6 +1,6 @@
 [
   {
-    "id": "A7Q9-FOX",                       // PRIVATE code they type
+    "id": "A7Q9-FOX",               
     "display_name": "Amy",
     "achievements": [
       { "badge_id": "sustainable_creation", "level": "explorer", "date": "2025-10-20" },
@@ -20,9 +20,9 @@
     "featured_art": [
       {
         "title": "Recycled Bird",
-        "thumb": "artworks/amy_bird.jpg",   // or full https URL
+        "thumb": "artworks/amy_bird.jpg", 
         "caption": "Cardboard + thread",
-        "pdf": "pdfs/amy_bird_process.pdf" // optional
+        "pdf": "pdfs/amy_bird_process.pdf" 
       }
     ],
     "teacher_note": "Wonderful sustainability mindset and creative risk-taking."
