@@ -5,6 +5,7 @@ async function loadData(){
   try{
     const res=await fetch('data/students.json');
     const students=await res.json();
+    renderRecent(students);
     mount.innerHTML='';
     students.forEach(s=>{
       const div=document.createElement('div');
@@ -19,6 +20,17 @@ async function loadData(){
       mount.appendChild(div);
     });
   }catch(e){mount.innerHTML='<div class="empty">Could not load data.</div>';}
+}
+function renderRecent(students){
+  let newest = null, who = null;
+  students.forEach(s=>{
+    (s.achievements||[]).forEach(a=>{
+      if(!newest || (a.date||'') > (newest.date||'')){ newest = a; who = s; }
+    });
+  });
+  const box = document.getElementById('recentBody');
+  if(!newest || !box){ return; }
+  box.innerHTML = `${who.name} earned <b>${newest.badge_id.replace(/_/g,' ')}</b> (${newest.level.toUpperCase()}) on ${newest.date}. Great job!`;
 }
 loadData();
 
