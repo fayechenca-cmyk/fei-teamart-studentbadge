@@ -42,5 +42,92 @@
     ],
     "critiques": [],
     "featured_art": []
-  }
+  },
+
+  {
+  "id": "WALLACE-12",
+  "display_name": "Wallace",
+  "code": "WAL-49X8",              // private access code students type in
+  "achievements": [
+    { "badge_id": "focus_sprint_20min", "level": "beginner", "date": "2025-10-08", "part": "Foundations · Studio Habits" },
+    { "badge_id": "creative_resilience", "level": "sparker", "date": "2025-10-22", "part": "Mindset · Motivation" }
+  ],
+  "badges": {
+    "earned": [
+      { "id": "focus_sprint_20min", "part": "Foundations · Studio Habits", "criteria": "Complete two 10–15 min focused drawing sprints with timer." },
+      { "id": "creative_resilience", "part": "Mindset · Motivation", "criteria": "Return to a task after initial resistance and finish a mini outcome." }
+    ],
+    "available_next": [
+      { "id": "line_control_lvl1", "part": "Foundations · Line Control", "criteria": "Pressure ladder + 10 straight/arc lines (ghost-then-commit)." },
+      { "id": "forms_basic_lvl1", "part": "Foundations · Light & Form", "criteria": "Build a box + cylinder from big shapes; add single light cast shadow." },
+      { "id": "choice_project_sheet", "part": "Projects · Character Sheet", "criteria": "Front/side + 1 pose with light notes and 3 shape callouts." }
+    ],
+    "should_target": [
+      { "id": "line_control_lvl1", "reason": "Low-friction win to rebuild confidence; supports all later sketches." },
+      { "id": "forms_basic_lvl1", "reason": "Bridges his ‘game/robot’ choices to foundation structure." },
+      { "id": "choice_project_sheet", "reason": "Gives autonomy while requiring foundation skills in context." }
+    ]
+  },
+  "notes": [
+    { "date": "2025-10-01", "text": "Raised mainly by grandpa; full schedule (swim/taekwondo/music/math). Says he only likes games." },
+    { "date": "2025-10-15", "text": "Resistance to sketch foundation; prefers crafts/short video tasks; dislikes tight constraints." },
+    { "date": "2025-10-22", "text": "When engaged, performs very well—smart and quick. Focus fluctuates; avoid pushing when motivation is low." }
+  ],
+  "goals": [
+    { "text": "Rebuild engagement: 3 choice-based sessions (game-character/robot/creature) using simple forms.", "due": "2025-11-05" },
+    { "text": "Foundation bridge: 2 mini-lessons on volume (box → cylinder → cast shadow) inside his chosen subject.", "due": "2025-11-12" },
+    { "text": "Project: 1 character sheet (front/side + pose) with light & shadow callouts.", "due": "2025-11-26" }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-18",
+      "strength": "Strong ideas when choice is given; confident lines in short sprints.",
+      "next": "Chunk tasks to 10–15 min; big shapes → planes → shadow; attach one tiny skill target per session."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "Mech-Runner (choice sketch)",
+      "thumb": "artworks/wallace_mech_runner.jpg",
+      "caption": "Box + cylinder build-up, single light source.",
+      "pdf": "pdfs/wallace_mech_runner_process.pdf"
+    }
+  ],
+  "teacher_note": "Blend freedom with skill. Use his game interests to ‘smuggle in’ structure (forms, light, cast shadow). Offer choices; avoid over-constraint.",
+  "background": "Parents divorced; grandpa is primary caregiver. Motivation depends on autonomy.",
+  "current_phase": "Resistance to tightly structured foundation; higher interest in choice-based tasks.",
+  "ocean": {
+    "openness": "low–moderate",
+    "conscientiousness": "low–moderate",
+    "extraversion": "low",
+    "agreeableness": "moderate",
+    "neuroticism": "moderate"
+  },
+  "strengths": [
+    "Smart; quick learner when engaged",
+    "Improving foundation basics",
+    "Cooperative in low-pressure setups",
+    "Good spatial intuition"
+  ],
+  "challenges": [
+    "Fluctuating focus on structured tasks",
+    "Low intrinsic motivation for rigid drills",
+    "Resists when pushed; needs autonomy"
+  ],
+  "strategy": [
+    "Start with his choices (game/robot/creature) and attach one small skill target.",
+    "Use 10–15 min focus sprints with visible checkpoints.",
+    "Use a project arc (character sheet) to connect skills to outcome."
+  ],
+  "tags": [
+    "grandpa-raised",
+    "gamer",
+    "resists-structure",
+    "prefers-freedom",
+    "foundation-bridge",
+    "smart-when-engaged",
+    "fluctuating-focus"
+  ]
+}
 ]
+
