@@ -41,10 +41,22 @@ h1{margin:0 0 6px}
   color:#fff;
   font-weight:700;
 }
-
 .badge .name {
   font-size:13px;
   font-weight:600;
   color:#1a1d2b;
+}
+/* Vivid background */
+body {
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(255, 214, 165, 0.45), transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, rgba(166, 231, 216, 0.45), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(197, 191, 255, 0.45), transparent 60%),
+    #fffdf8; /* fallback */
+}
+
+/* Keep main cards readable on vivid bg */
+.header, .card, .page, .badge {
+  backdrop-filter: saturate(110%) blur(0.5px);
 }
 
