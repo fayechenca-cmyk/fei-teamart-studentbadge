@@ -1,31 +1,17 @@
 [
   {
-    "id": "amy",
-    "name": "Amy",
+    "id": "A7Q9-FOX",
+    "display_name": "Amy",
     "achievements": [
-      {
-        "badge_id": "sustainable_creation",
-        "level": "gold",
-        "date": "2025-10-20"
-      },
-      {
-        "badge_id": "creative_thinker",
-        "level": "silver",
-        "date": "2025-10-15"
-      }
+      { "badge_id": "sustainable_creation", "level": "explorer", "date": "2025-10-20" }
     ],
-    "teacher_note": "Amy reused old materials to make a creative sculpture — a wonderful example of sustainability and imagination!"
+    "teacher_note": "Wonderful sustainable sculpture."
   },
   {
-    "id": "regina",
-    "name": "Regina",
+    "id": "B3LM-SEA",
+    "display_name": "Regina",
     "achievements": [
-      {
-        "badge_id": "little_designer",
-        "level": "silver",
-        "date": "2025-10-18"
-      }
-    ],
-    "teacher_note": "Excellent sense of design balance and storytelling through fashion concepts."
+      { "badge_id": "little_designer", "level": "beginner", "date": "2025-10-18" }
+    ]
   }
 ]
