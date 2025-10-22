@@ -35,6 +35,37 @@ function section(title, inner) {
       ${inner}
     </section>`;
 }
+
+
+// 🎖️ Render milestone badges
+function loadBadges(){
+  const badges = [
+    {title:'Sustainable Creation', emoji:'🌿', color:'#10b981'},
+    {title:'Recycled Art Pioneer', emoji:'♻️', color:'#22c55e'},
+    {title:'Creative Thinker', emoji:'💡', color:'#f59e0b'},
+    {title:'Little Designer', emoji:'🎨', color:'#a78bfa'},
+    {title:'Mindful Illustrator', emoji:'🖋️', color:'#06b6d4'},
+    {title:'Art Explorer', emoji:'🌈', color:'#ec4899'},
+    {title:'Observation Sketcher', emoji:'👀', color:'#14b8a6'},
+    {title:'Architecture & Space', emoji:'🏙️', color:'#0ea5e9'},
+    {title:'Visual Storyteller', emoji:'📖', color:'#f97316'},
+    {title:'Craft Maker', emoji:'🧵', color:'#ef4444'},
+    {title:'Innovation Explorer', emoji:'🚀', color:'#f43f5e'},
+    {title:'Community & Habits', emoji:'💞', color:'#84cc16'}
+  ];
+  const grid = document.getElementById('badgeGrid');
+  grid.innerHTML = '';
+  badges.forEach(b=>{
+    const el = document.createElement('div');
+    el.className = 'badge';
+    el.innerHTML = `
+      <div class="icon" style="background:${b.color}">${b.emoji}</div>
+      <div class="name">${b.title}</div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
 function list(items) {
   return `<ul style="list-style:none;margin:0;padding:0">
     ${items.map(li => `<li style="padding:8px 0;border-bottom:1px dashed #eee">${li}</li>`).join('')}
@@ -140,5 +171,9 @@ if (form) {
     if (mount) mount.innerHTML = '<div class="empty">Enter your code to view your record.</div>';
   }
 })();
+
+// 🏅 Initialize badge display
+loadBadges();
+
 
 
