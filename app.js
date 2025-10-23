@@ -35,32 +35,58 @@ function section(title, inner) {
       ${inner}
     </section>`;
 }
+// ---------- FEI TeamArt milestone setup ----------
 
+// 15 milestone "pages" visible to everyone
+const PAGES = [
+  { id:'portrait_foundation',     title:'Portrait Foundation',     emoji:'🎨', color:'#b86c94' },
+  { id:'shading_mastery',         title:'Shading Mastery',         emoji:'🩶', color:'#525252' },
+  { id:'sustainable_creation',    title:'Sustainable Creation',    emoji:'🌿', color:'#10b981' },
+  { id:'recycled_art_pioneer',    title:'Recycled Art Pioneer',    emoji:'♻️', color:'#22c55e' },
+  { id:'creative_thinker',        title:'Creative Thinker',        emoji:'💡', color:'#f59e0b' },
+  { id:'little_designer',         title:'Little Designer',         emoji:'🎨', color:'#a78bfa' },
+  { id:'mindful_illustrator',     title:'Mindful Illustrator',     emoji:'🖋️', color:'#06b6d4' },
+  { id:'art_explorer',            title:'Art Explorer',            emoji:'🌈', color:'#ec4899' },
+  { id:'observation_sketcher',    title:'Observation Sketcher',    emoji:'👀', color:'#14b8a6' },
+  { id:'architecture_space',      title:'Architecture & Space',    emoji:'🏙️', color:'#0ea5e9' },
+  { id:'visual_storyteller',      title:'Visual Storyteller',      emoji:'📖', color:'#f97316' },
+  { id:'craft_maker',             title:'Craft Maker',             emoji:'🧵', color:'#ef4444' },
+  { id:'innovation_explorer',     title:'Innovation Explorer',     emoji:'🚀', color:'#f43f5e' },
+  { id:'color_light',             title:'Color & Light',           emoji:'🌈', color:'#eab308' },
+  { id:'focus_sprint_20min',      title:'Focus Sprint — 20 min',   emoji:'⏱️', color:'#4f46e5' }
+];
 
-// 🎖️ Render milestone badges
+const PAGE_RULES = {
+  portrait_foundation:    ['portrait_foundation'],
+  shading_mastery:        ['shading_mastery'],
+  sustainable_creation:   ['sustainable_creation'],
+  recycled_art_pioneer:   ['recycled_art_pioneer'],
+  creative_thinker:       ['creative_thinker', 'creative_resilience'],
+  little_designer:        ['little_designer'],
+  mindful_illustrator:    ['mindful_illustrator'],
+  art_explorer:           ['art_explorer', 'art_history_explorer'],
+  observation_sketcher:   ['observation_sketcher', 'line_control', 'basic_shapes'],
+  architecture_space:     ['architecture_space', 'two_point_street'],
+  visual_storyteller:     ['visual_storyteller', 'character_world'],
+  craft_maker:            ['craft_maker', 'hand_crafter'],
+  innovation_explorer:    ['innovation_explorer', 'creative_pioneer'],
+  color_light:            ['color_light', 'limited_palette'],
+  focus_sprint_20min:     ['focus_sprint_20min']
+};
+
+// 🏅 Render milestone badges (interactive)
 function loadBadges(){
-  const badges = [
-    {title:'Sustainable Creation', emoji:'🌿', color:'#10b981'},
-    {title:'Recycled Art Pioneer', emoji:'♻️', color:'#22c55e'},
-    {title:'Creative Thinker', emoji:'💡', color:'#f59e0b'},
-    {title:'Little Designer', emoji:'🎨', color:'#a78bfa'},
-    {title:'Mindful Illustrator', emoji:'🖋️', color:'#06b6d4'},
-    {title:'Art Explorer', emoji:'🌈', color:'#ec4899'},
-    {title:'Observation Sketcher', emoji:'👀', color:'#14b8a6'},
-    {title:'Architecture & Space', emoji:'🏙️', color:'#0ea5e9'},
-    {title:'Visual Storyteller', emoji:'📖', color:'#f97316'},
-    {title:'Craft Maker', emoji:'🧵', color:'#ef4444'},
-    {title:'Innovation Explorer', emoji:'🚀', color:'#f43f5e'},
-    {title:'Community & Habits', emoji:'💞', color:'#84cc16'}
-  ];
   const grid = document.getElementById('badgeGrid');
+  if(!grid) return;
   grid.innerHTML = '';
-  badges.forEach(b=>{
+
+  PAGES.forEach(p=>{
     const el = document.createElement('div');
-    el.className = 'badge';
+    el.className = 'badge locked';
+    el.dataset.pageId = p.id;
     el.innerHTML = `
-      <div class="icon" style="background:${b.color}">${b.emoji}</div>
-      <div class="name">${b.title}</div>
+      <div class="icon" style="background:${p.color};opacity:0.4">${p.emoji}</div>
+      <div class="name" style="color:#999">${p.title}</div>
     `;
     grid.appendChild(el);
   });
