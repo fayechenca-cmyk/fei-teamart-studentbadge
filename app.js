@@ -169,6 +169,37 @@ async function loadStudentByCode(code) {
   } catch (e) {
     mount.innerHTML = '<div class="empty">Could not load data.</div>';
   }
+  // --- Update progress & badges after code entered ---
+function applyProgressFor(student) {
+  const unlocked = (student.achievements || []).map(a => a.badge_id);
+  const grid = document.getElementById('badgeGrid');
+  if(!grid) return;
+
+  let achieved = 0;
+  const total = PAGES.length;
+
+  grid.querySelectorAll('.badge').forEach(b=>{
+    const id = b.dataset.pageId;
+    const unlockedHere = PAGE_RULES[id]?.some(r => unlocked.includes(r));
+    const icon = b.querySelector('.icon');
+    const name = b.querySelector('.name');
+
+    if(unlockedHere){
+      achieved++;
+      icon.style.opacity = '1';
+      name.style.color = '#333';
+      b.classList.add('unlocked');
+    } else {
+      icon.style.opacity = '0.4';
+      name.style.color = '#aaa';
+      b.classList.remove('unlocked');
+    }
+  });
+
+  const percent = Math.round((achieved / total) * 100);
+  const progressBar = document.getElementById('progressBar');
+  if(progressBar) progressBar.style.width = percent + '%';
+}
 }
 
 // Hook up the form
