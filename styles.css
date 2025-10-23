@@ -83,13 +83,23 @@ body {
 }
 .badge .name { font-size:13px;font-weight:600;color:var(--ink, #172033); }
 
-/* locked vs completed */
-.badge.locked { filter: grayscale(1) saturate(0.5); opacity: .65; }
-.badge.completed::after{
+/* Locked vs unlocked visual states */
+.badge.locked {
+  filter: grayscale(1) saturate(.5);
+  opacity: .65;
+}
+.badge.unlocked {
+  filter: none;
+  opacity: 1;
+}
+.badge.unlocked .icon { opacity: 1; }
+.badge.unlocked .name { color: #1a1d2b; font-weight: 700; }
+.badge.unlocked::after{
   content:"✓";
   position:absolute; top:6px; right:8px;
   background:#22c55e; color:#fff; font-size:12px; font-weight:700;
-  width:18px; height:18px; border-radius:50%; display:grid; place-items:center;
+  width:18px; height:18px; border-radius:50%;
+  display:grid; place-items:center;
 }
 
 /* progress bar */
