@@ -32,63 +32,58 @@
   "id": "REGINA-16",
   "display_name": "Regina",
   "achievements": [
-    { "badge_id": "portrait_foundation", "level": "advanced", "date": "2025-10-22" },
-    { "badge_id": "shading_mastery", "level": "intermediate", "date": "2025-09-28" }
+    { "badge_id": "portrait_foundation",   "level": "advanced",     "date": "2025-10-22" },
+    { "badge_id": "shading_mastery",       "level": "advanced",     "date": "2025-10-22" },
+    { "badge_id": "little_designer",       "level": "intermediate", "date": "2025-09-30" },
+    { "badge_id": "mindful_illustrator",   "level": "intermediate", "date": "2025-09-25" },
+    { "badge_id": "art_explorer",          "level": "intermediate", "date": "2025-09-18" },
+    { "badge_id": "observation_sketcher",  "level": "advanced",     "date": "2025-08-28" },
+    { "badge_id": "color_light",           "level": "intermediate", "date": "2025-10-05" }
   ],
   "notes": [
-    { "date": "2025-09-15", "text": "Shows consistent technical excellence and discipline across all mediums. Learns efficiently and completes work with precision." },
-    { "date": "2025-09-28", "text": "Demonstrates clear understanding of skull and facial structure. Smoothly transitioned from anatomy study to realistic portrait sketching." },
-    { "date": "2025-10-22", "text": "Now focusing on shading refinement and colored illustration. Encouraged to express emotion and creativity within her technical skills." }
+    { "date": "2025-09-15", "text": "Consistent technical excellence and discipline across mediums." },
+    { "date": "2025-09-28", "text": "Strong skull/facial structure study; smooth transition to portrait sketching." },
+    { "date": "2025-10-22", "text": "Refining shading and exploring color to add expression to technical skill." }
   ],
   "goals": [
-    { "text": "Complete 3 shaded portrait sketches emphasizing soft gradation and facial light structure.", "due": "2025-11-10" },
-    { "text": "Create 1 colored portrait illustration integrating personal style and mood.", "due": "2025-11-24" },
-    { "text": "Prepare 1 process sheet comparing realistic and expressive portrait techniques.", "due": "2025-12-05" }
+    { "text": "3 shaded portrait studies emphasizing light structure and soft gradation.", "due": "2025-11-10" },
+    { "text": "1 colored portrait illustration integrating mood and personal style.", "due": "2025-11-24" },
+    { "text": "1 process sheet comparing realistic vs. expressive portrait techniques.", "due": "2025-12-05" }
   ],
   "critiques": [
     {
       "date": "2025-10-10",
-      "strength": "Excellent proportion control, precise value transition, and well-balanced compositions.",
-      "next": "Encourage more spontaneous mark-making and emotional depth in portrait rendering."
+      "strength": "Excellent proportion control and value transitions; balanced compositions.",
+      "next": "Invite more spontaneity and emotional depth in portrait rendering."
     }
   ],
   "featured_art": [
     {
-      "title": "Light and Shadow Portrait Study",
+      "title": "Light & Shadow Portrait Study",
       "thumb": "artworks/regina_portrait_study.jpg",
-      "caption": "Graphite and marker blend exploring facial structure and value.",
+      "caption": "Graphite + marker exploring facial structure and value.",
       "pdf": "pdfs/regina_portrait_study_process.pdf"
     }
   ],
-  "teacher_note": "Regina demonstrates maturity and precision in her work. Her next artistic milestone is blending her strong technique with expressive creativity to develop a distinctive personal style.",
-  "current_phase": "Transitioning from technical mastery to expressive illustration.",
+  "teacher_note": "Regina’s next milestone is blending her precise technique with expressive choices to develop a personal voice.",
+  "current_phase": "From technical mastery toward expressive illustration.",
   "strengths": [
-    "Excellent technical foundation and proportion accuracy",
-    "Strong visual observation and analytical thinking",
-    "Calm, disciplined, and efficient working process",
-    "Deep understanding of anatomy, light, and structure",
-    "Clear design logic and refined sense of aesthetics"
+    "Proportion accuracy",
+    "Analytical observation",
+    "Disciplined workflow",
+    "Anatomy and structure"
   ],
   "challenges": [
-    "Needs to explore emotional expression and creative risk-taking",
-    "Tends to prioritize accuracy over imagination",
-    "Should loosen control to discover her personal voice"
+    "Take creative risks more often",
+    "Balance accuracy with imagination"
   ],
   "strategy": [
-    "Alternate between realistic and expressive portrait sessions.",
-    "Introduce soft color and mood variations in shading exercises.",
-    "Include creative prompts focusing on narrative and feeling.",
-    "Encourage personal reflection in sketchbook notes to deepen expression."
+    "Alternate realistic and expressive portrait sessions.",
+    "Introduce soft color/mood variations in shading practice.",
+    "Use prompts focusing on narrative/feeling."
   ],
   "tags": [
-    "mature",
-    "thoughtful",
-    "efficient",
-    "precise",
-    "calm",
-    "fast-learner",
-    "technically-skilled",
-    "still-water-runs-deep"
+    "mature","thoughtful","efficient","precise","fast-learner","technically-skilled"
   ]
 },
 
