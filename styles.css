@@ -95,3 +95,37 @@ body {
 /* progress bar */
 .progress-rail{height:10px;background:#f1efe9;border-radius:999px;overflow:hidden}
 .progress-bar{height:100%;background:#45c7b0;width:0;transition:width .4s ease}
+
+/* --- How it works card --- */
+.how-card { padding-top: 14px; }
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.step { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: start; }
+.step .icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; background: #fff3da; font-size: 18px;
+  border: 1px solid var(--border, #ece7de);
+}
+.step-title { font-weight: 700; }
+.step-text { color: var(--muted, #6b7280); font-size: 14px; }
+
+/* legend for badge states */
+.legend {
+  display: flex; align-items: center; gap: 14px;
+  padding: 8px 10px; border: 1px dashed var(--border, #ece7de);
+  border-radius: 10px; background:#fff;
+  font-size: 14px; color: var(--muted, #6b7280);
+}
+.legend .dot {
+  width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items:center;
+  border: 1px solid var(--border, #ece7de); font-weight:700; font-size: 12px;
+}
+.legend .dot.locked { background:#eaeaea; color:#888; }
+.legend .dot.done { background:#45c7b0; color:#fff; }
+.legend .dot.check { width: 22px; height: 22px; }
+
