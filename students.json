@@ -151,6 +151,238 @@
     "focus-fluctuation",
     "skill-bridge"
   ]
+},
+
+  {
+  "id": "CAMERON-11",
+  "display_name": "Cameron",
+  "code": "CAM-27R5",
+  "achievements": [
+    {
+      "badge_id": "focus_sprint_20min",
+      "level": "beginner",
+      "date": "2025-10-12",
+      "part": "Foundations · Studio Habits"
+    }
+  ],
+  "badges": {
+    "earned": [
+      {
+        "id": "focus_sprint_20min",
+        "part": "Foundations · Studio Habits",
+        "criteria": "Complete two 10–15 min focused drawing sprints with timer."
+      }
+    ],
+    "available_next": [
+      {
+        "id": "line_control_lvl1",
+        "part": "Foundations · Line Control",
+        "criteria": "Pressure ladder + 10 straight/arc lines (ghost-then-commit)."
+      },
+      {
+        "id": "layout_readability_lvl1",
+        "part": "Design · Communication",
+        "criteria": "Create a poster with bold title, visible quote, minimal white space."
+      }
+    ],
+    "should_target": [
+      {
+        "id": "line_control_lvl1",
+        "reason": "Matches his steady hand and patience; supports clean presentation."
+      },
+      {
+        "id": "layout_readability_lvl1",
+        "reason": "Builds on his interest in making work look polished and clear."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "date": "2025-10-23",
+      "text": "Very patient, calm, and reliable student. Follows instructions consistently. Rarely shows strong excitement or resistance. Willing to do anything assigned."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Cares about making things clean and accurate. Not perfectionist but prefers high-quality work. Excellent focus and concentration."
+    }
+  ],
+  "goals": [
+    {
+      "text": "Strengthen line control through calm repetition exercises (ghost-then-commit lines).",
+      "due": "2025-11-10"
+    },
+    {
+      "text": "Design and complete a high-clarity poster (block text + full color background).",
+      "due": "2025-11-17"
+    }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Follows direction carefully; patient with process.",
+      "next": "Encourage small personal design decisions to build creative voice. Offer choice of theme when possible."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "Book Talk Poster: *The Dark Prophecy*",
+      "thumb": "artworks/cameron_dark_prophecy.jpg",
+      "caption": "Block-letter poster with watercolor background; quote-centered composition.",
+      "pdf": "pdfs/cameron_dark_prophecy_process.pdf"
+    }
+  ],
+  "teacher_note": "Cameron thrives in calm, structured environments. While he doesn’t express overt excitement, he deeply respects the process. Offer gently scaffolded challenges with optional creative input.",
+  "background": "No noted family constraints. Consistent student with strong self-regulation and quiet discipline.",
+  "current_phase": "Stable participation with emerging interest in quality design and composition.",
+  "ocean": {
+    "openness": "moderate",
+    "conscientiousness": "high",
+    "extraversion": "low",
+    "agreeableness": "high",
+    "neuroticism": "low"
+  },
+  "strengths": [
+    "Patient and focused",
+    "Follows directions well",
+    "Consistent effort across tasks",
+    "Cares about visual clarity and neatness"
+  ],
+  "challenges": [
+    "Lacks strong personal drive in art",
+    "Rarely expresses personal opinion or excitement",
+    "Needs encouragement to make independent creative decisions"
+  ],
+  "strategy": [
+    "Offer structured tasks with room for light personalization.",
+    "Focus on design clarity, clean layout, and precision.",
+    "Invite soft decision-making (e.g., pick a quote, pick a color scheme) to build ownership."
+  ],
+  "tags": [
+    "follows-instruction",
+    "patient",
+    "clean-style",
+    "low-expressiveness",
+    "stable-focus",
+    "quality-over-speed"
+  ]
+},
+
+{
+  "id": "JUDY-07",
+  "display_name": "Judy",
+  "code": "JUD-58L2",
+  "achievements": [
+    {
+      "badge_id": "creative_attempt_lvl1",
+      "level": "beginner",
+      "date": "2025-10-23",
+      "part": "Foundations · Creativity"
+    }
+  ],
+  "badges": {
+    "earned": [
+      {
+        "id": "creative_attempt_lvl1",
+        "part": "Foundations · Creativity",
+        "criteria": "Show originality or a personal twist in at least one assigned drawing."
+      }
+    ],
+    "available_next": [
+      {
+        "id": "character_expression_lvl1",
+        "part": "Illustration · Character Design",
+        "criteria": "Draw a character showing emotion through pose or facial expression."
+      },
+      {
+        "id": "composition_balance_lvl1",
+        "part": "Foundations · Composition",
+        "criteria": "Create a balanced layout with clear focal point and supporting shapes."
+      }
+    ],
+    "should_target": [
+      {
+        "id": "character_expression_lvl1",
+        "reason": "Encourages emotional awareness and connection to audience."
+      },
+      {
+        "id": "composition_balance_lvl1",
+        "reason": "Supports her analytical side and builds design awareness."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "date": "2025-10-23",
+      "text": "Judy joined class two months ago. She is creative and capable, showing a good balance between imagination and basic drawing skill."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Her personality is strong-minded and independent. Not overly friendly, but confident in her own ideas. Sometimes prefers to work alone."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Shows potential for deeper creative exploration once she feels more comfortable in the studio setting."
+    }
+  ],
+  "goals": [
+    {
+      "text": "Encourage openness in sharing her thoughts and ideas during class discussions.",
+      "due": "2025-11-20"
+    },
+    {
+      "text": "Develop stronger character design by exploring emotional expression and narrative detail.",
+      "due": "2025-12-05"
+    }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Independent and strong-willed; confident in her ideas.",
+      "next": "Encourage more openness toward feedback and collaboration. Provide creative prompts that connect to her own interests."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "Creative Creature Illustration",
+      "thumb": "artworks/judy_creature.jpg",
+      "caption": "Fantasy-themed drawing showing early creativity and confidence in design.",
+      "pdf": "pdfs/judy_creature_process.pdf"
+    }
+  ],
+  "teacher_note": "Judy has a clear sense of self and doesn’t easily conform to others’ opinions. Her strength lies in her independence and creative instinct. With continued guidance, she will learn to balance her strong individuality with openness to new perspectives.",
+  "background": "Rebecca’s younger sister. Recently joined the studio. No major external constraints noted.",
+  "current_phase": "Early adaptation phase — creative curiosity with developing social connection and technique.",
+  "ocean": {
+    "openness": "high",
+    "conscientiousness": "moderate",
+    "extraversion": "low",
+    "agreeableness": "low",
+    "neuroticism": "moderate"
+  },
+  "strengths": [
+    "Creative and independent thinker",
+    "Strong-minded and confident",
+    "Shows originality in approach",
+    "Learns new ideas quickly once engaged"
+  ],
+  "challenges": [
+    "Not very friendly or collaborative yet",
+    "Can be resistant to feedback",
+    "Needs motivation to refine technical skill through repetition"
+  ],
+  "strategy": [
+    "Provide choice-driven projects to foster ownership.",
+    "Balance independent tasks with small collaborative exercises.",
+    "Use gentle positive reinforcement instead of correction-heavy feedback."
+  ],
+  "tags": [
+    "creative",
+    "strong-minded",
+    "independent",
+    "introverted",
+    "new-student",
+    "developing-social-skill"
+  ]
 }
 ]
 
