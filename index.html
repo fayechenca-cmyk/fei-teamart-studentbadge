@@ -12,6 +12,20 @@
       <h1>FEI TeamArt Milestone Community</h1>
       <p>Celebrate every step of your creative growth. View your badges, achievements, and student artworks below.</p>
     </header>
+    
+    <!-- 🔵 Student Progress (shown after code) -->
+<section id="progressCard" class="card" style="display:none">
+  <div class="section-title">My Progress</div>
+  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+    <div id="progressCount" style="font-weight:700">0 / 15 pages</div>
+    <div class="progress-rail" style="flex:1;min-width:220px">
+      <div id="progressBar" class="progress-bar" style="width:0%"></div>
+    </div>
+    <div id="progressPct" class="note" style="min-width:50px;text-align:right">0%</div>
+  </div>
+</section>
+
+<!-- 🎖️ BADGE DISPLAY (public; turns colorful after code) -->
 <section id="badges">
   <h2 class="section-title">Milestone Badges</h2>
   <div id="badgeGrid" class="badge-grid"></div>
