@@ -74,7 +74,7 @@ const PAGE_RULES = {
   focus_sprint_20min:     ['focus_sprint_20min']
 };
 
-// 🏅 Render milestone badges (interactive)
+// 🏅 Render milestone badges (no inline gray styles)
 function loadBadges(){
   const grid = document.getElementById('badgeGrid');
   if(!grid) return;
@@ -85,8 +85,8 @@ function loadBadges(){
     el.className = 'badge locked';
     el.dataset.pageId = p.id;
     el.innerHTML = `
-      <div class="icon" style="background:${p.color};opacity:0.4">${p.emoji}</div>
-      <div class="name" style="color:#999">${p.title}</div>
+      <div class="icon" style="background:${p.color}">${p.emoji}</div>
+      <div class="name">${p.title}</div>
     `;
     grid.appendChild(el);
   });
