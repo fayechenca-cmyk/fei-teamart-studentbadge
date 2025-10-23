@@ -60,3 +60,38 @@ body {
   backdrop-filter: saturate(110%) blur(0.5px);
 }
 
+/* badge grid */
+.badge-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:12px;
+  margin-bottom:18px;
+}
+.badge {
+  background:#fff;
+  border:1px solid var(--border, #ece7de);
+  border-radius:12px;
+  text-align:center;
+  padding:10px;
+  position:relative;
+  transition:transform .2s ease, filter .2s ease, opacity .2s ease;
+}
+.badge:hover { transform:translateY(-3px); }
+.badge .icon {
+  width:60px;height:60px;margin:0 auto 8px;border-radius:50%;
+  display:grid;place-items:center;font-size:28px;color:#fff;font-weight:700;
+}
+.badge .name { font-size:13px;font-weight:600;color:var(--ink, #172033); }
+
+/* locked vs completed */
+.badge.locked { filter: grayscale(1) saturate(0.5); opacity: .65; }
+.badge.completed::after{
+  content:"✓";
+  position:absolute; top:6px; right:8px;
+  background:#22c55e; color:#fff; font-size:12px; font-weight:700;
+  width:18px; height:18px; border-radius:50%; display:grid; place-items:center;
+}
+
+/* progress bar */
+.progress-rail{height:10px;background:#f1efe9;border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;background:#45c7b0;width:0;transition:width .4s ease}
