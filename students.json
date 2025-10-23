@@ -383,6 +383,370 @@
     "new-student",
     "developing-social-skill"
   ]
+},
+
+ {
+  "id": "XINYUE-12",
+  "display_name": "Xinyue",
+  "code": "XIN-83T7",
+  "achievements": [
+    {
+      "badge_id": "creative_idea_lvl1",
+      "level": "beginner",
+      "date": "2025-10-23",
+      "part": "Foundations · Creativity"
+    }
+  ],
+  "badges": {
+    "earned": [
+      {
+        "id": "creative_idea_lvl1",
+        "part": "Foundations · Creativity",
+        "criteria": "Share a personal or imaginative idea and turn it into a visual project."
+      }
+    ],
+    "available_next": [
+      {
+        "id": "composition_balance_lvl1",
+        "part": "Foundations · Composition",
+        "criteria": "Arrange her own illustration motifs into a clear, balanced layout."
+      },
+      {
+        "id": "pattern_design_lvl1",
+        "part": "Design · Surface Pattern",
+        "criteria": "Create a two-way or four-way repeat pattern based on her illustrations."
+      }
+    ],
+    "should_target": [
+      {
+        "id": "composition_balance_lvl1",
+        "reason": "Helps her strengthen visual organization while keeping creative freedom."
+      },
+      {
+        "id": "pattern_design_lvl1",
+        "reason": "Connects her cute, K-pop-inspired style with practical design applications."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "date": "2025-10-23",
+      "text": "Xinyue has studied art for nearly four years. She is imaginative and free-spirited, with no external pressure from parents or other classes."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "She enjoys K-pop culture and often draws idols, posters, and cute creative ideas from her own inspirations."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "She used to send many creative ideas and requests but has recently felt less energetic, possibly from routine learning. She still enjoys art but prefers fun and free projects over technical drills."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Recently, she has started to accept practicing foundational and 'boring' processes that improve her drawing skill. Her focus level is around 80%, but she maintains solid performance."
+    }
+  ],
+  "goals": [
+    {
+      "text": "Strengthen her understanding of composition and layout through personalized projects.",
+      "due": "2025-11-25"
+    },
+    {
+      "text": "Build confidence in structured skill practice while keeping creativity alive.",
+      "due": "2025-12-15"
+    }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Highly imaginative, self-directed, and authentic in her interests.",
+      "next": "Encourage her to connect her creativity with stronger technical foundations through fun, design-based projects."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "K-pop Inspired Illustration",
+      "thumb": "artworks/xinyue_kpop_illustration.jpg",
+      "caption": "A lively illustration inspired by her favorite idol group, showing personal taste and creative intuition.",
+      "pdf": "pdfs/xinyue_kpop_process.pdf"
+    }
+  ],
+  "teacher_note": "Xinyue learns best in a relaxed and encouraging environment. She is creative, imaginative, and enjoys freedom in her projects. The goal is to protect her imagination while gradually building focus and composition awareness through projects she personally connects with.",
+  "background": "12-year-old student with four years of art experience. No external academic pressure; art is her main learning interest.",
+  "current_phase": "Creative exploration phase — rediscovering motivation through design-based projects and personal interest topics.",
+  "ocean": {
+    "openness": "high",
+    "conscientiousness": "low",
+    "extraversion": "moderate",
+    "agreeableness": "high",
+    "neuroticism": "low"
+  },
+  "strengths": [
+    "Imaginative and visually creative",
+    "Authentic in her interests",
+    "Enjoys self-directed ideas and freedom",
+    "Adapts gradually to structured learning"
+  ],
+  "challenges": [
+    "Avoids advanced or technical practice",
+    "Can lose focus over time",
+    "Needs engaging, personalized themes to stay motivated"
+  ],
+  "strategy": [
+    "Use design-based projects (like product or pattern design) to connect creativity with skill-building.",
+    "Keep lessons light and exploratory, mixing fun ideas with structure.",
+    "Encourage small technical goals hidden inside creative projects (e.g., learning composition while designing a candy box)."
+  ],
+  "tags": [
+    "creative",
+    "free-spirited",
+    "kpop-inspired",
+    "imaginative",
+    "low-pressure",
+    "developing-focus",
+    "pattern-design"
+  ]
+},
+
+  {
+  "id": "ADRIAN-14",
+  "display_name": "Adrian",
+  "code": "ADR-94M6",
+  "achievements": [
+    {
+      "badge_id": "storyboarding_lvl1",
+      "level": "beginner",
+      "date": "2025-10-23",
+      "part": "Narrative · Storyboard"
+    }
+  ],
+  "badges": {
+    "earned": [
+      {
+        "id": "storyboarding_lvl1",
+        "part": "Narrative · Storyboard",
+        "criteria": "Complete a short storyboard sequence with visual clarity and emotional rhythm."
+      }
+    ],
+    "available_next": [
+      {
+        "id": "horror_design_lvl1",
+        "part": "Illustration · Genre",
+        "criteria": "Design a creature or scene with clear tension, mood, and horror elements."
+      },
+      {
+        "id": "visual_storytelling_lvl1",
+        "part": "Narrative · Sequential Art",
+        "criteria": "Create a 2–3 panel visual story with consistent atmosphere and implied motion."
+      }
+    ],
+    "should_target": [
+      {
+        "id": "horror_design_lvl1",
+        "reason": "Connects with his strong interest in dark themes and refined visual taste."
+      },
+      {
+        "id": "visual_storytelling_lvl1",
+        "reason": "Builds on his natural skill in storyboarding and expands his ability to pace emotion visually."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "date": "2025-10-23",
+      "text": "Adrian has been learning art since he was 10. He is currently 14 and attends class once a week."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "He is warm, welcoming, and deeply thoughtful with highly refined personal taste. His artistic preferences include jazz album art, contemporary design, and dark aesthetic styles."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "He was previously interested in becoming an animator, but recently shifted paths. He’s now less vocal about his earlier inspirations like anime or animation."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "His technical drawing skills are developing, but his true strength lies in storytelling, concept direction, and visual ideas. His storyboards are detailed and well-structured, with emotional depth."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Currently working on digital art and experimental horror illustration. He sometimes loses momentum or interest midway through projects, especially if they become repetitive or over-controlled."
+    }
+  ],
+  "goals": [
+    {
+      "text": "Support Adrian in finding renewed excitement in his art through short-format or mood-based creative tasks.",
+      "due": "2025-11-15"
+    },
+    {
+      "text": "Channel his deep aesthetic taste into visual storytelling projects with emotional pacing and personal meaning.",
+      "due": "2025-12-10"
+    }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Highly reflective and sensitive to narrative tone and aesthetics; creates thoughtful, layered ideas.",
+      "next": "Give Adrian freedom in form and length—let him explore shorter, fragmented, or atmosphere-based scenes without needing to 'finish' traditional pieces."
+    }
+  ],
+  "featured_art": [
+    {
+      "title": "Forest Chase Horror Scene",
+      "thumb": "artworks/adrian_forest_monster.jpg",
+      "caption": "An unfinished but evocative horror chase scene, rich with layered tone, glowing foliage, and a compelling monster design.",
+      "pdf": "pdfs/adrian_forest_storyboard.pdf"
+    }
+  ],
+  "teacher_note": "Adrian responds best to open-ended prompts, emotionally intelligent feedback, and non-linear storytelling structures. He thrives when allowed to explore his taste and is most expressive through indirect symbolism and atmosphere. Avoid rigid assignments; lean into exploratory, emotionally driven visual prompts.",
+  "background": "14-year-old student with 4 years of art study. Naturally reflective and sensitive. His strength lies in narrative, aesthetic sense, and mood creation, not technical detail.",
+  "current_phase": "Transitional — seeking new inspiration and identity after stepping back from earlier creative influences.",
+  "ocean": {
+    "openness": "very high",
+    "conscientiousness": "low",
+    "extraversion": "low",
+    "agreeableness": "high",
+    "neuroticism": "moderate"
+  },
+  "strengths": [
+    "Strong narrative thinking and pacing",
+    "Mature aesthetic sensitivity",
+    "Creates emotionally layered stories",
+    "Reflective and observant"
+  ],
+  "challenges": [
+    "Finishes fewer pieces",
+    "Can lose motivation mid-project",
+    "Less expressive about passion or inspiration lately"
+  ],
+  "strategy": [
+    "Let him work on fragment-based or mood-based pieces rather than polished illustrations.",
+    "Use music, photography, or design references (e.g. jazz covers, dark graphic novels) to trigger emotion and imagination.",
+    "Build small exercises around narrative tone, lighting, and implied motion rather than full drawing tasks."
+  ],
+  "tags": [
+    "narrative-driven",
+    "visually-sensitive",
+    "exploratory",
+    "storyboard-focused",
+    "dark-aesthetic",
+    "non-linear",
+    "seeking-reignition"
+  ]
+},
+
+  {
+  "id": "SERENA-13",
+  "display_name": "Serena",
+  "code": "SER-41K3",
+  "achievements": [
+    {
+      "badge_id": "anime_expression_lvl1",
+      "level": "beginner",
+      "date": "2025-10-23",
+      "part": "Illustration · Character"
+    }
+  ],
+  "badges": {
+    "earned": [
+      {
+        "id": "anime_expression_lvl1",
+        "part": "Illustration · Character",
+        "criteria": "Draw 4 or more expressive anime faces showing a clear mood using facial structure and exaggeration."
+      }
+    ],
+    "available_next": [
+      {
+        "id": "face_rotation_lvl1",
+        "part": "Foundations · Head Drawing",
+        "criteria": "Draw one consistent character’s face in 3 different angles (front, ¾, profile)."
+      },
+      {
+        "id": "gesture_pose_lvl1",
+        "part": "Foundations · Figure Drawing",
+        "criteria": "Sketch 3 full-body poses using gesture-based movement and simple structure."
+      }
+    ],
+    "should_target": [
+      {
+        "id": "face_rotation_lvl1",
+        "reason": "Builds on her facial expression skills while improving perspective awareness."
+      },
+      {
+        "id": "gesture_pose_lvl1",
+        "reason": "Introduces full-body sketching in a loose, non-pressured way that matches her learning style."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "date": "2025-10-23",
+      "text": "Serena is the sister of Regina and Temp. She is a cool, self-aware student who knows what she wants and doesn’t force herself to do things she's not interested in."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "She treats art as an extracurricular activity and participates with low pressure. She does not show strong creative drive but is fully capable of following instruction when interested."
+    },
+    {
+      "date": "2025-10-23",
+      "text": "Recently initiated interest in learning animation, but paused after one project due to a lack of sketching confidence. She’s more likely to re-engage when she feels in control and less judged on drawing skill."
+    }
+  ],
+  "goals": [
+    {
+      "text": "Support Serena’s sketch confidence by offering expressive, low-pressure activities she can complete successfully and enjoy.",
+      "due": "2025-11-30"
+    },
+    {
+      "text": "Slowly introduce character and angle drawing to help her feel more confident in structure without overwhelming her.",
+      "due": "2025-12-15"
+    }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Clear communicator with emotional boundaries. Willing to engage if the project aligns with her preferences.",
+      "next": "Avoid pressuring her into projects. Offer 1–2 class options and let her choose. Prioritize expressive drawing over technical polishing."
+    }
+  ],
+  "featured_art": [],
+  "teacher_note": "Serena thrives in structured but low-stakes environments. She’s more likely to grow if allowed to self-select projects. Avoid heavy critique or rigid assignments. Prioritize expression, light sketch structure, and emotional engagement in short formats.",
+  "background": "14-year-old student taking art as an extracurricular. Shows basic skill, follows instructions, and communicates limits clearly. Learning style is self-regulated and interest-driven.",
+  "current_phase": "Confidence building — returning to sketch comfort before re-entering animation or character design.",
+  "ocean": {
+    "openness": "moderate",
+    "conscientiousness": "moderate",
+    "extraversion": "low",
+    "agreeableness": "high",
+    "neuroticism": "moderate"
+  },
+  "strengths": [
+    "Self-aware and emotionally grounded",
+    "Follows instructions when interested",
+    "Good sense of boundaries",
+    "Engages with topics that feel personally relevant"
+  ],
+  "challenges": [
+    "Low confidence in sketching",
+    "Not self-driven to improve art independently",
+    "May disengage if pressured or over-structured"
+  ],
+  "strategy": [
+    "Focus on expressive sketch-based activities (faces, short comics, reactions)",
+    "Offer choice-based lessons: let her pick between 2 themed prompts",
+    "Keep outcomes short and visually rewarding (e.g., before/after sketch comparison)",
+    "Allow class breaks from animation—return when interest rekindles"
+  ],
+  "tags": [
+    "expression-focused",
+    "low-pressure",
+    "face-first",
+    "confidence-building",
+    "casual learner",
+    "independent",
+    "balance-driven"
+  ]
 }
+
 ]
 
