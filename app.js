@@ -166,6 +166,7 @@ async function loadStudentByCode(code) {
       return;
     }
     renderStudent(s);
+    applyProgressFor(s);
   } catch (e) {
     mount.innerHTML = '<div class="empty">Could not load data.</div>';
   }
