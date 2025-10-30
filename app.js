@@ -39,40 +39,51 @@ function section(title, inner) {
 
 // 15 milestone "pages" visible to everyone
 const PAGES = [
-  { id:'portrait_foundation',     title:'Portrait Foundation',     emoji:'🎨', color:'#b86c94' },
-  { id:'shading_mastery',         title:'Shading Mastery',         emoji:'🩶', color:'#525252' },
-  { id:'sustainable_creation',    title:'Sustainable Creation',    emoji:'🌿', color:'#10b981' },
-  { id:'recycled_art_pioneer',    title:'Recycled Art Pioneer',    emoji:'♻️', color:'#22c55e' },
-  { id:'creative_thinker',        title:'Creative Thinker',        emoji:'💡', color:'#f59e0b' },
-  { id:'little_designer',         title:'Little Designer',         emoji:'🎨', color:'#a78bfa' },
-  { id:'mindful_illustrator',     title:'Mindful Illustrator',     emoji:'🖋️', color:'#06b6d4' },
-  { id:'art_explorer',            title:'Art Explorer',            emoji:'🌈', color:'#ec4899' },
-  { id:'observation_sketcher',    title:'Observation Sketcher',    emoji:'👀', color:'#14b8a6' },
-  { id:'architecture_space',      title:'Architecture & Space',    emoji:'🏙️', color:'#0ea5e9' },
-  { id:'visual_storyteller',      title:'Visual Storyteller',      emoji:'📖', color:'#f97316' },
-  { id:'craft_maker',             title:'Craft Maker',             emoji:'🧵', color:'#ef4444' },
-  { id:'innovation_explorer',     title:'Innovation Explorer',     emoji:'🚀', color:'#f43f5e' },
-  { id:'color_light',             title:'Color & Light',           emoji:'🌈', color:'#eab308' },
-  { id:'focus_sprint_20min',      title:'Focus Sprint — 20 min',   emoji:'⏱️', color:'#4f46e5' }
+  { id:'portrait_foundation',  title:'Sketch Explorer (Foundation)', emoji:'✏️', color:'#f59e0b' },
+  { id:'shading_mastery',      title:'Shading Adventurer', emoji:'🌙', color:'#7c3aed' },
+  { id:'creative_thinker',     title:'Idea Inventor', emoji:'💡', color:'#f97316' },
+  { id:'little_designer',      title:'Mini Designer', emoji:'🎨', color:'#a78bfa' },
+  { id:'mindful_illustrator',  title:'Calm Illustrator', emoji:'🖋️', color:'#06b6d4' },
+  { id:'art_explorer',         title:'Art Explorer', emoji:'🌈', color:'#ec4899' },
+  { id:'observation_sketcher', title:'Observation Detective', emoji:'👀', color:'#14b8a6' },
+  { id:'architecture_space',   title:'Little Architect', emoji:'🏛️', color:'#0ea5e9' },
+  { id:'visual_storyteller',   title:'Storyteller', emoji:'📖', color:'#f97316' },
+  { id:'craft_maker',          title:'Hand Crafter', emoji:'🧵', color:'#ef4444' },
+  { id:'innovation_explorer',  title:'Digital Creator', emoji:'💻', color:'#3b82f6' },
+  { id:'color_light',          title:'Color Explorer', emoji:'🎨', color:'#eab308' },
+  { id:'sustainable_creation', title:'Sustainable Creator', emoji:'🌿', color:'#10b981' },
+  { id:'recycled_art_pioneer', title:'Material Explorer', emoji:'♻️', color:'#22c55e' },
+  { id:'focus_sprint_20min',   title:'Focus Sprinter', emoji:'⏱️', color:'#84cc16' },
+  { id:'community_habits',     title:'Community Builder', emoji:'🤝', color:'#f97316' },
+  { id:'fei_volunteer',        title:'F.E.I. Volunteer Practitioner', emoji:'💫', color:'#84cc16' },
+  { id:'animation_explorer',   title:'Animator Beginner', emoji:'🎞️', color:'#6366f1' },
+  { id:'art_history_explorer', title:'Art History Explorer', emoji:'🏺', color:'#facc15' },
+  { id:'critical_thinker',     title:'Critical Thinker', emoji:'🧠', color:'#ef4444' }
 ];
 
+
 const PAGE_RULES = {
-  portrait_foundation:    ['portrait_foundation'],
-  shading_mastery:        ['shading_mastery'],
-  sustainable_creation:   ['sustainable_creation'],
-  recycled_art_pioneer:   ['recycled_art_pioneer'],
-  creative_thinker:       ['creative_thinker', 'creative_resilience'],
-  little_designer:        ['little_designer'],
-  mindful_illustrator:    ['mindful_illustrator'],
-  art_explorer:           ['art_explorer', 'art_history_explorer'],
-  observation_sketcher:   ['observation_sketcher', 'line_control', 'basic_shapes'],
-  architecture_space:     ['architecture_space', 'two_point_street'],
-  visual_storyteller:     ['visual_storyteller', 'character_world'],
-  craft_maker:            ['craft_maker', 'hand_crafter'],
-  innovation_explorer:    ['innovation_explorer', 'creative_pioneer'],
-  color_light:            ['color_light', 'limited_palette'],
-  focus_sprint_20min:     ['focus_sprint_20min']
+  portrait_foundation: ['portrait_foundation'],
+  shading_mastery: ['shading_mastery'],
+  sustainable_creation: ['sustainable_creation'],
+  recycled_art_pioneer: ['recycled_art_pioneer'],
+  creative_thinker: ['creative_thinker', 'creative_resilience'],
+  little_designer: ['little_designer'],
+  mindful_illustrator: ['mindful_illustrator'],
+  art_explorer: ['art_explorer', 'art_history_explorer'],
+  observation_sketcher: ['observation_sketcher', 'line_control', 'basic_shapes'],
+  architecture_space: ['architecture_space', 'two_point_street'],
+  visual_storyteller: ['visual_storyteller', 'character_world'],
+  craft_maker: ['craft_maker', 'hand_crafter'],
+  innovation_explorer: ['innovation_explorer', 'creative_pioneer'],
+  color_light: ['color_light', 'limited_palette'],
+  focus_sprint_20min: ['focus_sprint_20min'],
+  fei_volunteer: ['fei_volunteer'],
+  animation_explorer: ['animation_explorer'],
+  art_history_explorer: ['art_history_explorer'],
+  critical_thinker: ['critical_thinker']
 };
+
 
 // 🏅 Render milestone badges (no inline gray styles)
 function loadBadges(){
