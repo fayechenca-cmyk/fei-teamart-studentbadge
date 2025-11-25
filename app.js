@@ -1,248 +1,152 @@
-// ---------------------------
-// FEI TeamArt — Code-gated Student Record
-// ---------------------------
+// ==========================================
+// FEI TEAMART - ADVENTURE MAP LOGIC
+// ==========================================
 
-// Your custom level vocabulary
-const LEVEL_LABELS = {
-  beginner: "Beginner",
-  explorer: "Explorer",
-  creator: "Creator",
-  mentor: "Mentor"
-};
-
-// Friendly badge titles
-const BADGE_TITLES = {
-  sustainable_creation: "🌿 Sustainable Creation",
-  recycled_art_pioneer: "♻️ Recycled Art Pioneer",
-  creative_thinker: "💡 Creative Thinker",
-  little_designer: "🎨 Little Designer",
-  mindful_illustrator: "🖋️ Mindful Illustrator",
-  art_explorer: "🌈 Art Explorer"
-};
-
-// ---------- data helpers ----------
-async function fetchStudents() {
-  const res = await fetch('students.json');
-  return await res.json();
-}
-const fmt = (s) => (s || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-
-// ---------- UI helpers ----------
-function section(title, inner) {
-  return `
-    <section style="margin:16px 0;padding:14px;border:1px solid #ece7de;border-radius:12px;background:#fff">
-      <div style="font-weight:700;margin-bottom:8px">${title}</div>
-      ${inner}
-    </section>`;
-}
-// ---------- FEI TeamArt milestone setup ----------
-
-// 15 milestone "pages" visible to everyone
+// 1. THE MAP CONFIGURATION (ISLANDS)
+// I have inserted your 2 image links below in 'imgUrl'.
 const PAGES = [
-  { id:'portrait_foundation',  title:'Sketch Explorer (Foundation)', emoji:'✏️', color:'#f59e0b' },
-  { id:'shading_mastery',      title:'Shading Adventurer', emoji:'🌙', color:'#7c3aed' },
-  { id:'creative_thinker',     title:'Idea Inventor', emoji:'💡', color:'#f97316' },
-  { id:'little_designer',      title:'Mini Designer', emoji:'🎨', color:'#a78bfa' },
-  { id:'mindful_illustrator',  title:'Calm Illustrator', emoji:'🖋️', color:'#06b6d4' },
-  { id:'art_explorer',         title:'Art Explorer', emoji:'🌈', color:'#ec4899' },
-  { id:'observation_sketcher', title:'Observation Detective', emoji:'👀', color:'#14b8a6' },
-  { id:'architecture_space',   title:'Little Architect', emoji:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', color:'#0ea5e9' },
-  { id:'visual_storyteller',   title:'Storyteller', emoji:'📖', color:'#f97316' },
-  { id:'craft_maker',          title:'Hand Crafter', emoji:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da2dc31c5379bbe21a_feiteamart%20handcrafter.PNG', color:'#ef4444' },
-  { id:'innovation_explorer',  title:'Digital Creator', emoji:'💻', color:'#3b82f6' },
-  { id:'color_light',          title:'Color Explorer', emoji:'🎨', color:'#eab308' },
-  { id:'sustainable_creation', title:'Sustainable Creator', emoji:'🌿', color:'#10b981' },
-  { id:'recycled_art_pioneer', title:'Material Explorer', emoji:'♻️', color:'#22c55e' },
-  { id:'focus_sprint_20min',   title:'Focus Sprinter', emoji:'⏱️', color:'#84cc16' },
-  { id:'community_habits',     title:'Community Builder', emoji:'🤝', color:'#f97316' },
-  { id:'fei_volunteer',        title:'F.E.I. Volunteer Practitioner', emoji:'💫', color:'#84cc16' },
-  { id:'animation_explorer',   title:'Animator Beginner', emoji:'🎞️', color:'#6366f1' },
-  { id:'art_history_explorer', title:'Art History Explorer', emoji:'🏺', color:'#facc15' },
-  { id:'critical_thinker',     title:'Critical Thinker', emoji:'🧠', color:'#ef4444' }
+  { id:'portrait_foundation',   title:'Sketch Fortress',     imgUrl:'', emoji:'✏️', color:'#f59e0b' },
+  { id:'shading_mastery',       title:'Shadow Valley',       imgUrl:'', emoji:'🌙', color:'#7c3aed' },
+  { id:'sustainable_creation',  title:'Eco Forest',          imgUrl:'', emoji:'🌿', color:'#10b981' },
+  { id:'recycled_art_pioneer',  title:'Scrap Canyon',        imgUrl:'', emoji:'♻️', color:'#22c55e' },
+  { id:'creative_thinker',      title:'Idea Lighthouse',     imgUrl:'', emoji:'💡', color:'#f97316' },
+  { id:'little_designer',       title:'Design District',     imgUrl:'', emoji:'🎨', color:'#a78bfa' },
+  { id:'mindful_illustrator',   title:'Zen Garden',          imgUrl:'', emoji:'🖋️', color:'#06b6d4' },
+  { id:'art_explorer',          title:'Rainbow Bridge',      imgUrl:'', emoji:'🌈', color:'#ec4899' },
+  { id:'observation_sketcher',  title:'Detective Study',     imgUrl:'', emoji:'👀', color:'#14b8a6' },
+  
+  // ▼ YOUR UPDATED BADGE HERE ▼
+  { 
+    id:'architecture_space',    
+    title:'Little Architect',    
+    imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', 
+    emoji:'🏛️', 
+    color:'#0ea5e9' 
+  },
+
+  { id:'visual_storyteller',    title:'Storybook Village',   imgUrl:'', emoji:'📖', color:'#f97316' },
+
+  // ▼ YOUR UPDATED BADGE HERE ▼
+  { 
+    id:'craft_maker',           
+    title:'The Workshop',        
+    imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da2dc31c5379bbe21a_feiteamart%20handcrafter.PNG', 
+    emoji:'🧵', 
+    color:'#ef4444' 
+  },
+
+  { id:'innovation_explorer',   title:'Future Lab',          imgUrl:'', emoji:'🚀', color:'#f43f5e' },
+  { id:'color_light',           title:'Prism Palace',        imgUrl:'', emoji:'🎨', color:'#eab308' },
+  { id:'focus_sprint_20min',    title:'Focus Temple',        imgUrl:'', emoji:'⏱️', color:'#4f46e5' }
 ];
 
+let allStudents = [];
 
-const PAGE_RULES = {
-  portrait_foundation: ['portrait_foundation'],
-  shading_mastery: ['shading_mastery'],
-  sustainable_creation: ['sustainable_creation'],
-  recycled_art_pioneer: ['recycled_art_pioneer'],
-  creative_thinker: ['creative_thinker', 'creative_resilience'],
-  little_designer: ['little_designer'],
-  mindful_illustrator: ['mindful_illustrator'],
-  art_explorer: ['art_explorer', 'art_history_explorer'],
-  observation_sketcher: ['observation_sketcher', 'line_control', 'basic_shapes'],
-  architecture_space: ['architecture_space', 'two_point_street'],
-  visual_storyteller: ['visual_storyteller', 'character_world'],
-  craft_maker: ['craft_maker', 'hand_crafter'],
-  innovation_explorer: ['innovation_explorer', 'creative_pioneer'],
-  color_light: ['color_light', 'limited_palette'],
-  focus_sprint_20min: ['focus_sprint_20min'],
-  fei_volunteer: ['fei_volunteer'],
-  animation_explorer: ['animation_explorer'],
-  art_history_explorer: ['art_history_explorer'],
-  critical_thinker: ['critical_thinker']
-};
+// 2. FETCH DATA & HANDLE LOGIN
+document.addEventListener("DOMContentLoaded", () => {
+  // Load the database
+  fetch('students.json')
+    .then(response => response.json())
+    .then(data => {
+      allStudents = data;
+      const loader = document.querySelector('.empty');
+      if(loader) loader.style.display = 'none';
+    })
+    .catch(error => {
+      console.error('Error loading student data:', error);
+    });
 
+  // Handle the Login Gate
+  const form = document.getElementById('codeForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const codeInput = document.getElementById('codeInput');
+      const code = codeInput.value.trim();
+      
+      if (!code) return;
 
-// 🏅 Render milestone badges (no inline gray styles)
-function loadBadges(){
-  const grid = document.getElementById('badgeGrid');
-  if(!grid) return;
-  grid.innerHTML = '';
+      // Find student (checks both 'id' and 'code' fields)
+      const student = allStudents.find(s => 
+        (s.id && s.id.toUpperCase() === code.toUpperCase()) || 
+        (s.code && s.code.toUpperCase() === code.toUpperCase())
+      );
 
-  PAGES.forEach(p=>{
-    const el = document.createElement('div');
-    el.className = 'badge locked';
-    el.dataset.pageId = p.id;
-    el.innerHTML = `
-      <div class="icon" style="background:${p.color}">${p.emoji}</div>
-      <div class="name">${p.title}</div>
-    `;
-    grid.appendChild(el);
-  });
-}
-
-function list(items) {
-  return `<ul style="list-style:none;margin:0;padding:0">
-    ${items.map(li => `<li style="padding:8px 0;border-bottom:1px dashed #eee">${li}</li>`).join('')}
-  </ul>`;
-}
-
-// ---------- render student ----------
-function renderStudent(s) {
-  const mount = document.getElementById('mount');
-  const name = s.display_name || 'Student';
-
-  // Achievements pretty
-  const achLis = (s.achievements || []).map(a => {
-    const badgeName = BADGE_TITLES[a.badge_id] || fmt(a.badge_id);
-    const levelName = LEVEL_LABELS[a.level] || fmt(a.level);
-    return `<b>${badgeName}</b> — ${levelName} <span style="color:#5c6370">(${a.date || ''})</span>`;
-  });
-  const achSec = section('Achievements', achLis.length ? list(achLis) : `<div class="empty">No achievements yet.</div>`);
-
-  // Featured art cards
-  const artCards = (s.featured_art || []).map(a => `
-    <div style="border:1px solid #eee;border-radius:12px;padding:10px;display:grid;gap:8px">
-      ${a.thumb ? `<img src="${a.thumb}" alt="${a.title||''}" style="width:100%;border-radius:10px;border:1px solid #eee">` : ''}
-      <div style="font-weight:600">${a.title || ''}</div>
-      <div style="color:#5c6370">${a.caption || ''}</div>
-      ${a.pdf ? `<a href="${a.pdf}" target="_blank" style="text-decoration:underline;font-size:14px">View Process / PDF</a>` : ''}
-    </div>
-  `).join('');
-  const artGrid = artCards
-    ? `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">${artCards}</div>`
-    : `<div class="empty">Add your first artwork when ready.</div>`;
-  const artSec = section('Featured Artwork', artGrid);
-
-  // Notes & dreams (your warm words)
-  const notesLis = (s.notes || []).map(n => `<b>${n.date || ''}</b> — ${n.text || ''}`);
-  const notesSec = section('Notes & Dreams', notesLis.length ? list(notesLis) : `<div class="empty">No notes yet.</div>`);
-
-  // Critique & next steps
-  const critLis = (s.critiques || []).map(c =>
-    `<b>${c.date || ''}</b><div style="color:#2b6b3f">Strength:</div>${c.strength || ''}<div style="color:#8a5b00;margin-top:4px">Next:</div>${c.next || ''}`
-  );
-  const critSec = section('Critique & Next Steps', critLis.length ? list(critLis) : `<div class="empty">No critique yet.</div>`);
-
-  // Goals checklist
-  const goalLis = (s.goals || []).map(g =>
-    `<label style="display:flex;align-items:center;gap:8px">
-       <input type="checkbox" disabled>
-       <span>${g.text}</span>
-       ${g.due ? `<span style="margin-left:auto;color:#5c6370;font-size:13px">Due ${g.due}</span>` : ''}
-     </label>`
-  );
-  const goalsSec = section('Goals', goalLis.length ? list(goalLis) : `<div class="empty">No goals yet.</div>`);
-
-  // Header
-  const header = section(
-    `Hello, ${name}!`,
-    `${s.teacher_note ? `<div style="color:#5c6370">${s.teacher_note}</div>` : ''}`
-  );
-
-  mount.innerHTML = header + artSec + notesSec + critSec + goalsSec + achSec;
-}
-
-// ---------- code gate ----------
-async function loadStudentByCode(code) {
-  const mount = document.getElementById('mount');
-  mount.innerHTML = '<div class="empty">Loading…</div>';
-  try {
-    const students = await fetchStudents();
-    const s = students.find(x => (x.id || '').toLowerCase() === code.toLowerCase());
-    if (!s) {
-      mount.innerHTML = '<div class="empty">Code not found. Please check and try again.</div>';
-      return;
-    }
-    renderStudent(s);
-    applyProgressFor(s);
-  } catch (e) {
-    mount.innerHTML = '<div class="empty">Could not load data.</div>';
+      if (student) {
+        // Success: Unlock the Gate
+        document.getElementById('gate').style.display = 'none';
+        renderBadges(student);
+      } else {
+        alert("Code not found! Please check your sticker.");
+      }
+    });
   }
-  // --- Update progress & badges after code entered ---
-function applyProgressFor(student) {
-  const unlocked = (student.achievements || []).map(a => a.badge_id);
-  const grid = document.getElementById('badgeGrid');
-  if(!grid) return;
+});
 
-  let achieved = 0;
-  const total = PAGES.length;
+// 3. RENDER THE GAME MAP
+function renderBadges(student) {
+    const badgeContainer = document.getElementById('badgeGrid');
+    if (!badgeContainer) return;
+    badgeContainer.innerHTML = ''; 
 
-  grid.querySelectorAll('.badge').forEach(b=>{
-    const id = b.dataset.pageId;
-    const unlockedHere = PAGE_RULES[id]?.some(r => unlocked.includes(r));
-    const icon = b.querySelector('.icon');
-    const name = b.querySelector('.name');
+    // Show Progress Bar Area
+    const progressSection = document.getElementById('progressCard');
+    if(progressSection) progressSection.style.display = 'block';
+    
+    // Get Earned & Recommended IDs
+    const earnedIds = student.achievements ? student.achievements.map(a => a.badge_id) : [];
+    
+    const recommendedIds = (student.badges && student.badges.should_target) 
+        ? student.badges.should_target.map(t => t.id) 
+        : [];
 
-    if(unlockedHere){
-      achieved++;
-      icon.style.opacity = '1';
-      name.style.color = '#333';
-      b.classList.add('unlocked');
-    } else {
-      icon.style.opacity = '0.4';
-      name.style.color = '#aaa';
-      b.classList.remove('unlocked');
-    }
-  });
+    // Update Stats (Math)
+    const total = PAGES.length;
+    const count = earnedIds.length;
+    const pct = Math.round((count / total) * 100);
 
-  const percent = Math.round((achieved / total) * 100);
-  const progressBar = document.getElementById('progressBar');
-  if(progressBar) progressBar.style.width = percent + '%';
+    const countEl = document.getElementById('progressCount');
+    const barEl = document.getElementById('progressBar');
+    const pctEl = document.getElementById('progressPct');
+
+    if(countEl) countEl.textContent = `${count} / ${total} Artifacts Found`;
+    if(barEl) barEl.style.width = `${pct}%`;
+    if(pctEl) pctEl.textContent = `${pct}%`;
+
+    // Draw the Islands
+    PAGES.forEach((page, index) => {
+        const isUnlocked = earnedIds.includes(page.id);
+        const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
+        
+        const node = document.createElement('div');
+        
+        // Set Class: Locked, Unlocked, or Recommended
+        let statusClass = 'locked';
+        if (isUnlocked) statusClass = 'unlocked';
+        else if (isRecommended) statusClass = 'recommended';
+
+        node.className = `map-node ${statusClass}`;
+        node.style.animationDelay = `${index * 0.05}s`;
+
+        // LOGIC: Use Image if it exists, otherwise use Emoji
+        const hasImage = page.imgUrl && page.imgUrl.length > 5; // Simple check if URL exists
+        
+        const imageHTML = hasImage 
+            ? `<img src="${page.imgUrl}" alt="${page.title}" class="node-img">` 
+            : `<div class="node-icon-fallback">${page.emoji}</div>`;
+        
+        // Build the HTML
+        node.innerHTML = `
+            <div class="node-visual" style="border-color:${page.color}">
+                ${imageHTML}
+                ${isUnlocked ? '<div class="check-mark">⭐</div>' : ''}
+                ${isRecommended ? '<div class="quest-mark">❗️</div>' : ''} 
+                ${!isUnlocked && !isRecommended ? '<div class="lock-icon">🔒</div>' : ''}
+            </div>
+            <div class="node-label">${page.title}</div>
+            ${isRecommended ? '<div style="font-size:10px;color:#f59e0b;font-weight:700">QUEST!</div>' : ''}
+        `;
+
+        badgeContainer.appendChild(node);
+    });
 }
-}
-
-// Hook up the form
-const form = document.getElementById('codeForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const code = document.getElementById('codeInput').value.trim();
-    if (!code) return;
-    const url = new URL(location.href);
-    url.searchParams.set('code', code);
-    history.replaceState({}, '', url);
-    loadStudentByCode(code);
-  });
-}
-
-// Auto-open if ?code= is in URL
-(function () {
-  const code = new URLSearchParams(location.search).get('code');
-  const mount = document.getElementById('mount');
-  if (code) {
-    const input = document.getElementById('codeInput');
-    if (input) input.value = code;
-    loadStudentByCode(code);
-  } else {
-    if (mount) mount.innerHTML = '<div class="empty">Enter your code to view your record.</div>';
-  }
-})();
-
-// 🏅 Initialize badge display
-loadBadges();
-
-
-
