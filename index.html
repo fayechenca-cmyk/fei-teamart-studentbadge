@@ -1,82 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FEI TeamArt Adventure Map</title>
+  <title>FEI TeamArt Adventure</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
   <div class="wrapper">
-    <header class="header">
-      <h1>FEI TeamArt Adventure</h1>
-      <p>Enter your explorer code to reveal your personal art map.</p>
-    </header>
-
-    <section id="how" class="card how-card">
-      <h2 class="section-title">How Your Map Works</h2>
-      <ol class="steps">
-        <li class="step">
-          <div class="icon">🔒</div>
-          <div>
-            <div class="step-title">Enter Your Code</div>
-            <div class="step-text">Unlock your personal world.</div>
-          </div>
-        </li>
-        <li class="step">
-          <div class="icon">🗺️</div>
-          <div>
-            <div class="step-title">Explore Islands</div>
-            <div class="step-text">
-              <strong>Gray Islands:</strong> Areas to explore next.<br>
-              <strong>Colorful Islands:</strong> Skills you have mastered!
-            </div>
-          </div>
-        </li>
-        <li class="step">
-          <div class="icon">❗️</div>
-          <div>
-            <div class="step-title">Quest Alerts</div>
-            <div class="step-text">Pulsing islands are recommended by your teacher.</div>
-          </div>
-        </li>
-      </ol>
-    </section>
-    
-    <section id="progressCard" class="card" style="display:none">
-      <div class="section-title">My Journey</div>
-      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-        <div id="progressCount" style="font-weight:700">0 / 15 Islands Discovered</div>
-        <div class="progress-rail" style="flex:1;min-width:220px">
-          <div id="progressBar" class="progress-bar" style="width:0%"></div>
-        </div>
-        <div id="progressPct" class="note" style="min-width:50px;text-align:right">0%</div>
-      </div>
-    </section>
-
-    <section id="badges">
-      <div id="badgeGrid" class="badge-grid"></div>
-    </section>
-
     <section id="gate">
-      <div style="font-weight:700;margin-bottom:8px">🔒 Access Your Map</div>
-      <form id="codeForm" style="display:flex;gap:8px;flex-wrap:wrap">
-        <input id="codeInput" class="input" placeholder="Enter Code (e.g., A7Q9)" required />
-        <button class="btn" type="submit">Open Map</button>
+      <div class="gate-title">🔒 Enter Explorer Code</div>
+      <form id="codeForm">
+        <input id="codeInput" class="input" placeholder="e.g. REGINA-16" required />
+        <button class="btn" type="submit">Unlock Map</button>
       </form>
-      <p class="note" style="margin-top:8px">Your code is on your sticker or message.</p>
+      <p class="gate-note">Check your student sticker for your code.</p>
     </section>
 
-    <main id="mount">
-      <div class="empty">Loading student database...</div>
-    </main>
+    <div id="gameUI" style="display:none;">
+      
+      <header class="header">
+        <h1 id="welcomeText">Welcome, Explorer!</h1>
+        <p>This is your personal creative map. Uncover islands as you learn!</p>
+      </header>
 
-    <section style="margin-top:40px;text-align:center">
-      <a href="https://www.feiteamart.com/student-showcase" target="_blank" class="gallery-link">
-        View Full Student Art Gallery →
-      </a>
-    </section>
+      <section id="progressCard" class="card">
+        <div class="section-title">My Journey</div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
+          <div id="progressCount" style="font-weight:700">0 / 23 Artifacts Found</div>
+          <div class="progress-rail" style="flex:1; min-width:200px">
+            <div id="progressBar" class="progress-bar" style="width:0%"></div>
+          </div>
+          <div id="progressPct" class="note" style="min-width:40px; text-align:right">0%</div>
+        </div>
+      </section>
+
+      <section id="badges">
+        <div id="badgeGrid" class="badge-grid"></div>
+      </section>
+
+      <section class="card how-card">
+        <h2 class="section-title">Map Legend</h2>
+        <div class="legend-row">
+          <div class="legend-item"><span class="dot done">⭐</span> Mastered</div>
+          <div class="legend-item"><span class="dot quest">❗️</span> Recommended Quest</div>
+          <div class="legend-item"><span class="dot locked">🔒</span> Unexplored</div>
+        </div>
+      </section>
+
+      <section style="margin-top:40px; text-align:center">
+        <a href="https://www.feiteamart.com/student-showcase" target="_blank" class="gallery-link">
+          View Full Student Art Gallery →
+        </a>
+      </section>
+      
+    </div>
 
     <footer class="footer">
       <p>© FEI TeamArt — Designed for creative explorers.</p>
