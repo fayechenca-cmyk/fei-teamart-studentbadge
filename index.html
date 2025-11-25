@@ -3,51 +3,75 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FEI TeamArt Adventure</title>
+  <title>FEI TeamArt Adventure Map</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
   <div class="wrapper">
+    
+    <header class="header main-header">
+      <h1>FEI TeamArt Explorer Map</h1>
+      <p>Your personal creative journey, visualized.</p>
+    </header>
+
+    <section class="card how-card">
+      <h2 class="section-title" style="text-align:center; margin-bottom:20px;">How to Play</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-icon locked">🔒</div>
+          <div class="how-text">
+            <strong>1. Enter Code</strong><br>
+            Use your private student code to unlock your map.
+          </div>
+        </div>
+        <div class="how-step">
+           <div class="how-icon unlocked">⭐</div>
+           <div class="how-text">
+             <strong>2. Discover Islands</strong><br>
+             Colorful islands are skills you have mastered!
+           </div>
+         </div>
+         <div class="how-step">
+           <div class="how-icon quest">❗️</div>
+           <div class="how-text">
+             <strong>3. Find Quests</strong><br>
+             Pulsing islands are recommended next steps.
+           </div>
+         </div>
+      </div>
+    </section>
+
     <section id="gate">
-      <div class="gate-title">🔒 Enter Explorer Code</div>
+      <div class="gate-title">ENTER EXPLORER CODE</div>
       <form id="codeForm">
         <input id="codeInput" class="input" placeholder="e.g. REGINA-16" required />
-        <button class="btn" type="submit">Unlock Map</button>
+        <button class="btn game-btn" type="submit">UNLOCK MAP</button>
       </form>
       <p class="gate-note">Check your student sticker for your code.</p>
     </section>
 
     <div id="gameUI" style="display:none;">
       
-      <header class="header">
-        <h1 id="welcomeText">Welcome, Explorer!</h1>
-        <p>This is your personal creative map. Uncover islands as you learn!</p>
-      </header>
+      <div style="text-align:center; margin-bottom: 30px;">
+          <h2 id="welcomeText" style="font-family:'Montserrat'; font-size:28px; margin-bottom:5px;">Welcome back!</h2>
+          <p>Look how far you've come.</p>
+      </div>
 
       <section id="progressCard" class="card">
-        <div class="section-title">My Journey</div>
+        <div class="section-title">My Journey Status</div>
         <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-          <div id="progressCount" style="font-weight:700">0 / 23 Artifacts Found</div>
+          <div id="progressCount" style="font-weight:700; font-family:'Montserrat'">0 / 23 Artifacts Found</div>
           <div class="progress-rail" style="flex:1; min-width:200px">
             <div id="progressBar" class="progress-bar" style="width:0%"></div>
           </div>
-          <div id="progressPct" class="note" style="min-width:40px; text-align:right">0%</div>
+          <div id="progressPct" class="note" style="min-width:40px; text-align:right; font-weight:700">0%</div>
         </div>
       </section>
 
       <section id="badges">
         <div id="badgeGrid" class="badge-grid"></div>
-      </section>
-
-      <section class="card how-card">
-        <h2 class="section-title">Map Legend</h2>
-        <div class="legend-row">
-          <div class="legend-item"><span class="dot done">⭐</span> Mastered</div>
-          <div class="legend-item"><span class="dot quest">❗️</span> Recommended Quest</div>
-          <div class="legend-item"><span class="dot locked">🔒</span> Unexplored</div>
-        </div>
       </section>
 
       <section style="margin-top:40px; text-align:center">
@@ -57,7 +81,6 @@
       </section>
       
     </div>
-
     <footer class="footer">
       <p>© FEI TeamArt — Designed for creative explorers.</p>
     </footer>
