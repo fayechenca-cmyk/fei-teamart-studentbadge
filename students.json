@@ -1,10 +1,10 @@
 [
   {
-    "id": "A7Q9-FOX",               
+    "id": "A7Q9-FOX",
     "display_name": "Amy",
     "achievements": [
-      { "badge_id": "sustainable_creation", "level": "explorer", "date": "2025-10-20" },
-      { "badge_id": "creative_thinker",     "level": "beginner", "date": "2025-10-15" }
+      { "badge_id": "sustainable_creator", "level": "explorer", "date": "2025-10-20" },
+      { "badge_id": "student_led",         "level": "beginner", "date": "2025-10-15" }
     ],
     "notes": [
       { "date": "2025-10-20", "text": "You reused cardboard so thoughtfully — proud of your persistence." },
@@ -20,728 +20,214 @@
     "featured_art": [
       {
         "title": "Recycled Bird",
-        "thumb": "artworks/amy_bird.jpg", 
+        "thumb": "artworks/amy_bird.jpg",
         "caption": "Cardboard + thread",
-        "pdf": "pdfs/amy_bird_process.pdf" 
+        "pdf": "pdfs/amy_bird_process.pdf"
       }
     ],
     "teacher_note": "Wonderful sustainability mindset and creative risk-taking."
   },
 
-{
-  "id": "REGINA-16",
-  "display_name": "Regina",
-  "achievements": [
-    { "badge_id": "portrait_foundation",   "level": "advanced",     "date": "2025-10-22" },
-    { "badge_id": "shading_mastery",       "level": "advanced",     "date": "2025-10-22" },
-    { "badge_id": "little_designer",       "level": "intermediate", "date": "2025-09-30" },
-    { "badge_id": "mindful_illustrator",   "level": "intermediate", "date": "2025-09-25" },
-    { "badge_id": "art_explorer",          "level": "intermediate", "date": "2025-09-18" },
-    { "badge_id": "observation_sketcher",  "level": "advanced",     "date": "2025-08-28" },
-    { "badge_id": "color_light",           "level": "intermediate", "date": "2025-10-05" }
-  ],
-  "notes": [
-    { "date": "2025-09-15", "text": "Consistent technical excellence and discipline across mediums." },
-    { "date": "2025-09-28", "text": "Strong skull/facial structure study; smooth transition to portrait sketching." },
-    { "date": "2025-10-22", "text": "Refining shading and exploring color to add expression to technical skill." }
-  ],
-  "goals": [
-    { "text": "3 shaded portrait studies emphasizing light structure and soft gradation.", "due": "2025-11-10" },
-    { "text": "1 colored portrait illustration integrating mood and personal style.", "due": "2025-11-24" },
-    { "text": "1 process sheet comparing realistic vs. expressive portrait techniques.", "due": "2025-12-05" }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-10",
-      "strength": "Excellent proportion control and value transitions; balanced compositions.",
-      "next": "Invite more spontaneity and emotional depth in portrait rendering."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "Light & Shadow Portrait Study",
-      "thumb": "artworks/regina_portrait_study.jpg",
-      "caption": "Graphite + marker exploring facial structure and value.",
-      "pdf": "pdfs/regina_portrait_study_process.pdf"
-    }
-  ],
-  "teacher_note": "Regina’s next milestone is blending her precise technique with expressive choices to develop a personal voice.",
-  "current_phase": "From technical mastery toward expressive illustration.",
-  "strengths": [
-    "Proportion accuracy",
-    "Analytical observation",
-    "Disciplined workflow",
-    "Anatomy and structure"
-  ],
-  "challenges": [
-    "Take creative risks more often",
-    "Balance accuracy with imagination"
-  ],
-  "strategy": [
-    "Alternate realistic and expressive portrait sessions.",
-    "Introduce soft color/mood variations in shading practice.",
-    "Use prompts focusing on narrative/feeling."
-  ],
-  "tags": [
-    "mature","thoughtful","efficient","precise","fast-learner","technically-skilled"
-  ]
-},
+  {
+    "id": "REGINA-16",
+    "display_name": "Regina",
+    "achievements": [
+      { "badge_id": "figure_sketch",         "level": "advanced",     "date": "2025-10-22" },
+      { "badge_id": "still_life",            "level": "advanced",     "date": "2025-10-22" },
+      { "badge_id": "interior_design",       "level": "intermediate", "date": "2025-09-30" },
+      { "badge_id": "art_painting",          "level": "intermediate", "date": "2025-09-25" },
+      { "badge_id": "material_explore",      "level": "intermediate", "date": "2025-09-18" },
+      { "badge_id": "observation_detective", "level": "advanced",     "date": "2025-08-28" },
+      { "badge_id": "art_painting",          "level": "intermediate", "date": "2025-10-05" }
+    ],
+    "notes": [
+      { "date": "2025-09-15", "text": "Consistent technical excellence and discipline across mediums." },
+      { "date": "2025-09-28", "text": "Strong skull/facial structure study; smooth transition to portrait sketching." },
+      { "date": "2025-10-22", "text": "Refining shading and exploring color to add expression to technical skill." }
+    ],
+    "goals": [
+      { "text": "3 shaded portrait studies emphasizing light structure and soft gradation.", "due": "2025-11-10" },
+      { "text": "1 colored portrait illustration integrating mood and personal style.", "due": "2025-11-24" },
+      { "text": "1 process sheet comparing realistic vs. expressive portrait techniques.", "due": "2025-12-05" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-10-10",
+        "strength": "Excellent proportion control and value transitions; balanced compositions.",
+        "next": "Invite more spontaneity and emotional depth in portrait rendering."
+      }
+    ],
+    "featured_art": [
+      {
+        "title": "Light & Shadow Portrait Study",
+        "thumb": "artworks/regina_portrait_study.jpg",
+        "caption": "Graphite + marker exploring facial structure and value.",
+        "pdf": "pdfs/regina_portrait_study_process.pdf"
+      }
+    ],
+    "teacher_note": "Regina’s next milestone is blending her precise technique with expressive choices to develop a personal voice.",
+    "current_phase": "From technical mastery toward expressive illustration.",
+    "tags": ["mature","thoughtful","efficient","precise","fast-learner","technically-skilled"]
+  },
 
   {
-  "id": "WALLACE-12",
-  "display_name": "Wallace",
-  "achievements": [
-    { "badge_id": "creative_resilience", "level": "sparker", "date": "2025-10-22" },
-    { "badge_id": "focus_sprint_20min", "level": "beginner", "date": "2025-10-08" }
-  ],
-  "notes": [
-    { "date": "2025-10-01", "text": "Shows interest in creative and interactive tasks like games and short videos. Responds better when learning feels fun and flexible." },
-    { "date": "2025-10-15", "text": "Resists structured sketch foundation lessons. Enjoys freedom-based projects such as crafts or choice-driven design." },
-    { "date": "2025-10-22", "text": "When engaged, works efficiently and demonstrates quick understanding. Focus improves with autonomy and clear goals." }
-  ],
-  "goals": [
-    { "text": "Rebuild engagement: 3 choice-based sessions (game-character, robot, or creature) using simple forms.", "due": "2025-11-05" },
-    { "text": "Foundation bridge: 2 mini-lessons on volume (box → cylinder → add cast shadow) inside his chosen subject.", "due": "2025-11-12" },
-    { "text": "Project: 1 character sheet (front/side + pose) with light & shadow callouts.", "due": "2025-11-26" }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-18",
-      "strength": "Strong ideas when choice is given; confident lines during short sprints.",
-      "next": "Chunk tasks into 10–15 minute sessions; add simple structure using large shapes before detail."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "Mech-Runner (choice sketch)",
-      "thumb": "artworks/wallace_mech_runner.jpg",
-      "caption": "Box + cylinder build-up, single light source.",
-      "pdf": "pdfs/wallace_mech_runner_process.pdf"
-    }
-  ],
-  "teacher_note": "Blend freedom with skill. Link his interests in design and games with structured drawing targets such as forms, light, and cast shadow. Offer creative choices to maintain motivation.",
-  "current_phase": "Transitioning from resistance to re-engagement through flexible and project-based learning.",
-  "strengths": [
-    "Quick learner when engaged",
-    "Good spatial and structural understanding",
-    "Enjoys challenge when given creative control",
-    "Improving confidence in line control"
-  ],
-  "challenges": [
-    "Focus fluctuates on structured tasks",
-    "Low interest in repetitive drills",
-    "Needs autonomy and short-term goals to stay motivated"
-  ],
-  "strategy": [
-    "Start sessions with his own creative choices (e.g., game or robot theme).",
-    "Attach a single technical goal to each session (light, volume, proportion).",
-    "Use short 10–15 minute sprints with visual checkpoints.",
-    "Guide him toward project-based outcomes like a character sheet."
-  ],
-  "tags": [
-    "creative-thinker",
-    "prefers-freedom",
-    "project-based",
-    "quick-learner",
-    "focus-fluctuation",
-    "skill-bridge"
-  ]
-},
+    "id": "WALLACE-12",
+    "display_name": "Wallace",
+    "achievements": [
+      { "badge_id": "student_led",     "level": "sparker",  "date": "2025-10-22" },
+      { "badge_id": "focus_sprinter",  "level": "beginner", "date": "2025-10-08" }
+    ],
+    "notes": [
+      { "date": "2025-10-01", "text": "Shows interest in creative and interactive tasks. Responds better when learning feels fun." },
+      { "date": "2025-10-15", "text": "Enjoys freedom-based projects such as crafts or choice-driven design." },
+      { "date": "2025-10-22", "text": "Focus improves with autonomy and clear goals." }
+    ],
+    "goals": [
+      { "text": "Rebuild engagement: 3 choice-based sessions (game-character, robot, or creature).", "due": "2025-11-05" },
+      { "text": "Foundation bridge: 2 mini-lessons on volume inside his chosen subject.", "due": "2025-11-12" }
+    ],
+    "featured_art": [
+      {
+        "title": "Mech-Runner (choice sketch)",
+        "thumb": "artworks/wallace_mech_runner.jpg",
+        "caption": "Box + cylinder build-up, single light source.",
+        "pdf": "pdfs/wallace_mech_runner_process.pdf"
+      }
+    ],
+    "teacher_note": "Blend freedom with skill. Link his interests in design and games with structured drawing targets.",
+    "tags": ["creative-thinker", "prefers-freedom", "project-based", "quick-learner"]
+  },
 
   {
-  "id": "CAMERON-11",
-  "display_name": "Cameron",
-  "code": "CAM-27R5",
-  "achievements": [
-    {
-      "badge_id": "focus_sprint_20min",
-      "level": "beginner",
-      "date": "2025-10-12",
-      "part": "Foundations · Studio Habits"
-    }
-  ],
-  "badges": {
-    "earned": [
-      {
-        "id": "focus_sprint_20min",
-        "part": "Foundations · Studio Habits",
-        "criteria": "Complete two 10–15 min focused drawing sprints with timer."
-      }
+    "id": "CAMERON-11",
+    "display_name": "Cameron",
+    "achievements": [
+      { "badge_id": "focus_sprinter", "level": "beginner", "date": "2025-10-12" }
     ],
-    "available_next": [
-      {
-        "id": "line_control_lvl1",
-        "part": "Foundations · Line Control",
-        "criteria": "Pressure ladder + 10 straight/arc lines (ghost-then-commit)."
-      },
-      {
-        "id": "layout_readability_lvl1",
-        "part": "Design · Communication",
-        "criteria": "Create a poster with bold title, visible quote, minimal white space."
-      }
+    "badges": {
+      "should_target": [
+        { "id": "basic_sketch", "reason": "Matches his steady hand and patience." },
+        { "id": "digital_creator", "reason": "Builds on his interest in making work look polished." }
+      ]
+    },
+    "notes": [
+      { "date": "2025-10-23", "text": "Very patient, calm, and reliable student. Excellent focus and concentration." }
     ],
-    "should_target": [
-      {
-        "id": "line_control_lvl1",
-        "reason": "Matches his steady hand and patience; supports clean presentation."
-      },
-      {
-        "id": "layout_readability_lvl1",
-        "reason": "Builds on his interest in making work look polished and clear."
-      }
-    ]
-  },
-  "notes": [
-    {
-      "date": "2025-10-23",
-      "text": "Very patient, calm, and reliable student. Follows instructions consistently. Rarely shows strong excitement or resistance. Willing to do anything assigned."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Cares about making things clean and accurate. Not perfectionist but prefers high-quality work. Excellent focus and concentration."
-    }
-  ],
-  "goals": [
-    {
-      "text": "Strengthen line control through calm repetition exercises (ghost-then-commit lines).",
-      "due": "2025-11-10"
-    },
-    {
-      "text": "Design and complete a high-clarity poster (block text + full color background).",
-      "due": "2025-11-17"
-    }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Follows direction carefully; patient with process.",
-      "next": "Encourage small personal design decisions to build creative voice. Offer choice of theme when possible."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "Book Talk Poster: *The Dark Prophecy*",
-      "thumb": "artworks/cameron_dark_prophecy.jpg",
-      "caption": "Block-letter poster with watercolor background; quote-centered composition.",
-      "pdf": "pdfs/cameron_dark_prophecy_process.pdf"
-    }
-  ],
-  "teacher_note": "Cameron thrives in calm, structured environments. While he doesn’t express overt excitement, he deeply respects the process. Offer gently scaffolded challenges with optional creative input.",
-  "background": "No noted family constraints. Consistent student with strong self-regulation and quiet discipline.",
-  "current_phase": "Stable participation with emerging interest in quality design and composition.",
-  "ocean": {
-    "openness": "moderate",
-    "conscientiousness": "high",
-    "extraversion": "low",
-    "agreeableness": "high",
-    "neuroticism": "low"
-  },
-  "strengths": [
-    "Patient and focused",
-    "Follows directions well",
-    "Consistent effort across tasks",
-    "Cares about visual clarity and neatness"
-  ],
-  "challenges": [
-    "Lacks strong personal drive in art",
-    "Rarely expresses personal opinion or excitement",
-    "Needs encouragement to make independent creative decisions"
-  ],
-  "strategy": [
-    "Offer structured tasks with room for light personalization.",
-    "Focus on design clarity, clean layout, and precision.",
-    "Invite soft decision-making (e.g., pick a quote, pick a color scheme) to build ownership."
-  ],
-  "tags": [
-    "follows-instruction",
-    "patient",
-    "clean-style",
-    "low-expressiveness",
-    "stable-focus",
-    "quality-over-speed"
-  ]
-},
-
-{
-  "id": "JUDY-07",
-  "display_name": "Judy",
-  "code": "JUD-58L2",
-  "achievements": [
-    {
-      "badge_id": "creative_attempt_lvl1",
-      "level": "beginner",
-      "date": "2025-10-23",
-      "part": "Foundations · Creativity"
-    }
-  ],
-  "badges": {
-    "earned": [
-      {
-        "id": "creative_attempt_lvl1",
-        "part": "Foundations · Creativity",
-        "criteria": "Show originality or a personal twist in at least one assigned drawing."
-      }
+    "goals": [
+      { "text": "Strengthen line control through calm repetition exercises.", "due": "2025-11-10" },
+      { "text": "Design and complete a high-clarity poster.", "due": "2025-11-17" }
     ],
-    "available_next": [
-      {
-        "id": "character_expression_lvl1",
-        "part": "Illustration · Character Design",
-        "criteria": "Draw a character showing emotion through pose or facial expression."
-      },
-      {
-        "id": "composition_balance_lvl1",
-        "part": "Foundations · Composition",
-        "criteria": "Create a balanced layout with clear focal point and supporting shapes."
-      }
-    ],
-    "should_target": [
-      {
-        "id": "character_expression_lvl1",
-        "reason": "Encourages emotional awareness and connection to audience."
-      },
-      {
-        "id": "composition_balance_lvl1",
-        "reason": "Supports her analytical side and builds design awareness."
-      }
-    ]
+    "teacher_note": "Cameron thrives in calm, structured environments.",
+    "tags": ["follows-instruction", "patient", "clean-style", "stable-focus"]
   },
-  "notes": [
-    {
-      "date": "2025-10-23",
-      "text": "Judy joined class two months ago. She is creative and capable, showing a good balance between imagination and basic drawing skill."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Her personality is strong-minded and independent. Not overly friendly, but confident in her own ideas. Sometimes prefers to work alone."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Shows potential for deeper creative exploration once she feels more comfortable in the studio setting."
-    }
-  ],
-  "goals": [
-    {
-      "text": "Encourage openness in sharing her thoughts and ideas during class discussions.",
-      "due": "2025-11-20"
-    },
-    {
-      "text": "Develop stronger character design by exploring emotional expression and narrative detail.",
-      "due": "2025-12-05"
-    }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Independent and strong-willed; confident in her ideas.",
-      "next": "Encourage more openness toward feedback and collaboration. Provide creative prompts that connect to her own interests."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "Creative Creature Illustration",
-      "thumb": "artworks/judy_creature.jpg",
-      "caption": "Fantasy-themed drawing showing early creativity and confidence in design.",
-      "pdf": "pdfs/judy_creature_process.pdf"
-    }
-  ],
-  "teacher_note": "Judy has a clear sense of self and doesn’t easily conform to others’ opinions. Her strength lies in her independence and creative instinct. With continued guidance, she will learn to balance her strong individuality with openness to new perspectives.",
-  "background": "Rebecca’s younger sister. Recently joined the studio. No major external constraints noted.",
-  "current_phase": "Early adaptation phase — creative curiosity with developing social connection and technique.",
-  "ocean": {
-    "openness": "high",
-    "conscientiousness": "moderate",
-    "extraversion": "low",
-    "agreeableness": "low",
-    "neuroticism": "moderate"
-  },
-  "strengths": [
-    "Creative and independent thinker",
-    "Strong-minded and confident",
-    "Shows originality in approach",
-    "Learns new ideas quickly once engaged"
-  ],
-  "challenges": [
-    "Not very friendly or collaborative yet",
-    "Can be resistant to feedback",
-    "Needs motivation to refine technical skill through repetition"
-  ],
-  "strategy": [
-    "Provide choice-driven projects to foster ownership.",
-    "Balance independent tasks with small collaborative exercises.",
-    "Use gentle positive reinforcement instead of correction-heavy feedback."
-  ],
-  "tags": [
-    "creative",
-    "strong-minded",
-    "independent",
-    "introverted",
-    "new-student",
-    "developing-social-skill"
-  ]
-},
-
- {
-  "id": "XINYUE-12",
-  "display_name": "Xinyue",
-  "code": "XIN-83T7",
-  "achievements": [
-    {
-      "badge_id": "creative_idea_lvl1",
-      "level": "beginner",
-      "date": "2025-10-23",
-      "part": "Foundations · Creativity"
-    }
-  ],
-  "badges": {
-    "earned": [
-      {
-        "id": "creative_idea_lvl1",
-        "part": "Foundations · Creativity",
-        "criteria": "Share a personal or imaginative idea and turn it into a visual project."
-      }
-    ],
-    "available_next": [
-      {
-        "id": "composition_balance_lvl1",
-        "part": "Foundations · Composition",
-        "criteria": "Arrange her own illustration motifs into a clear, balanced layout."
-      },
-      {
-        "id": "pattern_design_lvl1",
-        "part": "Design · Surface Pattern",
-        "criteria": "Create a two-way or four-way repeat pattern based on her illustrations."
-      }
-    ],
-    "should_target": [
-      {
-        "id": "composition_balance_lvl1",
-        "reason": "Helps her strengthen visual organization while keeping creative freedom."
-      },
-      {
-        "id": "pattern_design_lvl1",
-        "reason": "Connects her cute, K-pop-inspired style with practical design applications."
-      }
-    ]
-  },
-  "notes": [
-    {
-      "date": "2025-10-23",
-      "text": "Xinyue has studied art for nearly four years. She is imaginative and free-spirited, with no external pressure from parents or other classes."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "She enjoys K-pop culture and often draws idols, posters, and cute creative ideas from her own inspirations."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "She used to send many creative ideas and requests but has recently felt less energetic, possibly from routine learning. She still enjoys art but prefers fun and free projects over technical drills."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Recently, she has started to accept practicing foundational and 'boring' processes that improve her drawing skill. Her focus level is around 80%, but she maintains solid performance."
-    }
-  ],
-  "goals": [
-    {
-      "text": "Strengthen her understanding of composition and layout through personalized projects.",
-      "due": "2025-11-25"
-    },
-    {
-      "text": "Build confidence in structured skill practice while keeping creativity alive.",
-      "due": "2025-12-15"
-    }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Highly imaginative, self-directed, and authentic in her interests.",
-      "next": "Encourage her to connect her creativity with stronger technical foundations through fun, design-based projects."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "K-pop Inspired Illustration",
-      "thumb": "artworks/xinyue_kpop_illustration.jpg",
-      "caption": "A lively illustration inspired by her favorite idol group, showing personal taste and creative intuition.",
-      "pdf": "pdfs/xinyue_kpop_process.pdf"
-    }
-  ],
-  "teacher_note": "Xinyue learns best in a relaxed and encouraging environment. She is creative, imaginative, and enjoys freedom in her projects. The goal is to protect her imagination while gradually building focus and composition awareness through projects she personally connects with.",
-  "background": "12-year-old student with four years of art experience. No external academic pressure; art is her main learning interest.",
-  "current_phase": "Creative exploration phase — rediscovering motivation through design-based projects and personal interest topics.",
-  "ocean": {
-    "openness": "high",
-    "conscientiousness": "low",
-    "extraversion": "moderate",
-    "agreeableness": "high",
-    "neuroticism": "low"
-  },
-  "strengths": [
-    "Imaginative and visually creative",
-    "Authentic in her interests",
-    "Enjoys self-directed ideas and freedom",
-    "Adapts gradually to structured learning"
-  ],
-  "challenges": [
-    "Avoids advanced or technical practice",
-    "Can lose focus over time",
-    "Needs engaging, personalized themes to stay motivated"
-  ],
-  "strategy": [
-    "Use design-based projects (like product or pattern design) to connect creativity with skill-building.",
-    "Keep lessons light and exploratory, mixing fun ideas with structure.",
-    "Encourage small technical goals hidden inside creative projects (e.g., learning composition while designing a candy box)."
-  ],
-  "tags": [
-    "creative",
-    "free-spirited",
-    "kpop-inspired",
-    "imaginative",
-    "low-pressure",
-    "developing-focus",
-    "pattern-design"
-  ]
-},
 
   {
-  "id": "ADRIAN-14",
-  "display_name": "Adrian",
-  "code": "ADR-94M6",
-  "achievements": [
-    {
-      "badge_id": "storyboarding_lvl1",
-      "level": "beginner",
-      "date": "2025-10-23",
-      "part": "Narrative · Storyboard"
-    }
-  ],
-  "badges": {
-    "earned": [
+    "id": "JUDY-07",
+    "display_name": "Judy",
+    "achievements": [
+      { "badge_id": "student_led", "level": "beginner", "date": "2025-10-23" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "figure_sketch", "reason": "Encourages emotional awareness." },
+        { "id": "basic_sketch", "reason": "Supports her analytical side." }
+      ]
+    },
+    "notes": [
+      { "date": "2025-10-23", "text": "Judy is creative and capable. Her personality is strong-minded and independent." }
+    ],
+    "goals": [
+      { "text": "Encourage openness in sharing her thoughts.", "due": "2025-11-20" },
+      { "text": "Develop stronger character design.", "due": "2025-12-05" }
+    ],
+    "featured_art": [
       {
-        "id": "storyboarding_lvl1",
-        "part": "Narrative · Storyboard",
-        "criteria": "Complete a short storyboard sequence with visual clarity and emotional rhythm."
+        "title": "Creative Creature Illustration",
+        "thumb": "artworks/judy_creature.jpg",
+        "caption": "Fantasy-themed drawing showing early creativity."
       }
     ],
-    "available_next": [
-      {
-        "id": "horror_design_lvl1",
-        "part": "Illustration · Genre",
-        "criteria": "Design a creature or scene with clear tension, mood, and horror elements."
-      },
-      {
-        "id": "visual_storytelling_lvl1",
-        "part": "Narrative · Sequential Art",
-        "criteria": "Create a 2–3 panel visual story with consistent atmosphere and implied motion."
-      }
-    ],
-    "should_target": [
-      {
-        "id": "horror_design_lvl1",
-        "reason": "Connects with his strong interest in dark themes and refined visual taste."
-      },
-      {
-        "id": "visual_storytelling_lvl1",
-        "reason": "Builds on his natural skill in storyboarding and expands his ability to pace emotion visually."
-      }
-    ]
+    "teacher_note": "Judy has a clear sense of self. Her strength lies in her independence and creative instinct.",
+    "tags": ["creative", "strong-minded", "independent"]
   },
-  "notes": [
-    {
-      "date": "2025-10-23",
-      "text": "Adrian has been learning art since he was 10. He is currently 14 and attends class once a week."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "He is warm, welcoming, and deeply thoughtful with highly refined personal taste. His artistic preferences include jazz album art, contemporary design, and dark aesthetic styles."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "He was previously interested in becoming an animator, but recently shifted paths. He’s now less vocal about his earlier inspirations like anime or animation."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "His technical drawing skills are developing, but his true strength lies in storytelling, concept direction, and visual ideas. His storyboards are detailed and well-structured, with emotional depth."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Currently working on digital art and experimental horror illustration. He sometimes loses momentum or interest midway through projects, especially if they become repetitive or over-controlled."
-    }
-  ],
-  "goals": [
-    {
-      "text": "Support Adrian in finding renewed excitement in his art through short-format or mood-based creative tasks.",
-      "due": "2025-11-15"
-    },
-    {
-      "text": "Channel his deep aesthetic taste into visual storytelling projects with emotional pacing and personal meaning.",
-      "due": "2025-12-10"
-    }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Highly reflective and sensitive to narrative tone and aesthetics; creates thoughtful, layered ideas.",
-      "next": "Give Adrian freedom in form and length—let him explore shorter, fragmented, or atmosphere-based scenes without needing to 'finish' traditional pieces."
-    }
-  ],
-  "featured_art": [
-    {
-      "title": "Forest Chase Horror Scene",
-      "thumb": "artworks/adrian_forest_monster.jpg",
-      "caption": "An unfinished but evocative horror chase scene, rich with layered tone, glowing foliage, and a compelling monster design.",
-      "pdf": "pdfs/adrian_forest_storyboard.pdf"
-    }
-  ],
-  "teacher_note": "Adrian responds best to open-ended prompts, emotionally intelligent feedback, and non-linear storytelling structures. He thrives when allowed to explore his taste and is most expressive through indirect symbolism and atmosphere. Avoid rigid assignments; lean into exploratory, emotionally driven visual prompts.",
-  "background": "14-year-old student with 4 years of art study. Naturally reflective and sensitive. His strength lies in narrative, aesthetic sense, and mood creation, not technical detail.",
-  "current_phase": "Transitional — seeking new inspiration and identity after stepping back from earlier creative influences.",
-  "ocean": {
-    "openness": "very high",
-    "conscientiousness": "low",
-    "extraversion": "low",
-    "agreeableness": "high",
-    "neuroticism": "moderate"
-  },
-  "strengths": [
-    "Strong narrative thinking and pacing",
-    "Mature aesthetic sensitivity",
-    "Creates emotionally layered stories",
-    "Reflective and observant"
-  ],
-  "challenges": [
-    "Finishes fewer pieces",
-    "Can lose motivation mid-project",
-    "Less expressive about passion or inspiration lately"
-  ],
-  "strategy": [
-    "Let him work on fragment-based or mood-based pieces rather than polished illustrations.",
-    "Use music, photography, or design references (e.g. jazz covers, dark graphic novels) to trigger emotion and imagination.",
-    "Build small exercises around narrative tone, lighting, and implied motion rather than full drawing tasks."
-  ],
-  "tags": [
-    "narrative-driven",
-    "visually-sensitive",
-    "exploratory",
-    "storyboard-focused",
-    "dark-aesthetic",
-    "non-linear",
-    "seeking-reignition"
-  ]
-},
 
   {
-  "id": "SERENA-13",
-  "display_name": "Serena",
-  "code": "SER-41K3",
-  "achievements": [
-    {
-      "badge_id": "anime_expression_lvl1",
-      "level": "beginner",
-      "date": "2025-10-23",
-      "part": "Illustration · Character"
-    }
-  ],
-  "badges": {
-    "earned": [
+    "id": "XINYUE-12",
+    "display_name": "Xinyue",
+    "achievements": [
+      { "badge_id": "student_led", "level": "beginner", "date": "2025-10-23" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "costume_design", "reason": "Connects her cute, K-pop-inspired style with design." },
+        { "id": "basic_sketch", "reason": "Strengthen visual organization." }
+      ]
+    },
+    "notes": [
+      { "date": "2025-10-23", "text": "Xinyue is imaginative and free-spirited. She enjoys K-pop culture." }
+    ],
+    "goals": [
+      { "text": "Strengthen her understanding of composition.", "due": "2025-11-25" }
+    ],
+    "featured_art": [
       {
-        "id": "anime_expression_lvl1",
-        "part": "Illustration · Character",
-        "criteria": "Draw 4 or more expressive anime faces showing a clear mood using facial structure and exaggeration."
+        "title": "K-pop Inspired Illustration",
+        "thumb": "artworks/xinyue_kpop_illustration.jpg",
+        "caption": "A lively illustration inspired by her favorite idol group."
       }
     ],
-    "available_next": [
-      {
-        "id": "face_rotation_lvl1",
-        "part": "Foundations · Head Drawing",
-        "criteria": "Draw one consistent character’s face in 3 different angles (front, ¾, profile)."
-      },
-      {
-        "id": "gesture_pose_lvl1",
-        "part": "Foundations · Figure Drawing",
-        "criteria": "Sketch 3 full-body poses using gesture-based movement and simple structure."
-      }
-    ],
-    "should_target": [
-      {
-        "id": "face_rotation_lvl1",
-        "reason": "Builds on her facial expression skills while improving perspective awareness."
-      },
-      {
-        "id": "gesture_pose_lvl1",
-        "reason": "Introduces full-body sketching in a loose, non-pressured way that matches her learning style."
-      }
-    ]
+    "teacher_note": "The goal is to protect her imagination while gradually building focus.",
+    "tags": ["creative", "free-spirited", "kpop-inspired", "pattern-design"]
   },
-  "notes": [
-    {
-      "date": "2025-10-23",
-      "text": "Serena is the sister of Regina and Temp. She is a cool, self-aware student who knows what she wants and doesn’t force herself to do things she's not interested in."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "She treats art as an extracurricular activity and participates with low pressure. She does not show strong creative drive but is fully capable of following instruction when interested."
-    },
-    {
-      "date": "2025-10-23",
-      "text": "Recently initiated interest in learning animation, but paused after one project due to a lack of sketching confidence. She’s more likely to re-engage when she feels in control and less judged on drawing skill."
-    }
-  ],
-  "goals": [
-    {
-      "text": "Support Serena’s sketch confidence by offering expressive, low-pressure activities she can complete successfully and enjoy.",
-      "due": "2025-11-30"
-    },
-    {
-      "text": "Slowly introduce character and angle drawing to help her feel more confident in structure without overwhelming her.",
-      "due": "2025-12-15"
-    }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Clear communicator with emotional boundaries. Willing to engage if the project aligns with her preferences.",
-      "next": "Avoid pressuring her into projects. Offer 1–2 class options and let her choose. Prioritize expressive drawing over technical polishing."
-    }
-  ],
-  "featured_art": [],
-  "teacher_note": "Serena thrives in structured but low-stakes environments. She’s more likely to grow if allowed to self-select projects. Avoid heavy critique or rigid assignments. Prioritize expression, light sketch structure, and emotional engagement in short formats.",
-  "background": "14-year-old student taking art as an extracurricular. Shows basic skill, follows instructions, and communicates limits clearly. Learning style is self-regulated and interest-driven.",
-  "current_phase": "Confidence building — returning to sketch comfort before re-entering animation or character design.",
-  "ocean": {
-    "openness": "moderate",
-    "conscientiousness": "moderate",
-    "extraversion": "low",
-    "agreeableness": "high",
-    "neuroticism": "moderate"
-  },
-  "strengths": [
-    "Self-aware and emotionally grounded",
-    "Follows instructions when interested",
-    "Good sense of boundaries",
-    "Engages with topics that feel personally relevant"
-  ],
-  "challenges": [
-    "Low confidence in sketching",
-    "Not self-driven to improve art independently",
-    "May disengage if pressured or over-structured"
-  ],
-  "strategy": [
-    "Focus on expressive sketch-based activities (faces, short comics, reactions)",
-    "Offer choice-based lessons: let her pick between 2 themed prompts",
-    "Keep outcomes short and visually rewarding (e.g., before/after sketch comparison)",
-    "Allow class breaks from animation—return when interest rekindles"
-  ],
-  "tags": [
-    "expression-focused",
-    "low-pressure",
-    "face-first",
-    "confidence-building",
-    "casual learner",
-    "independent",
-    "balance-driven"
-  ]
-}
 
+  {
+    "id": "ADRIAN-14",
+    "display_name": "Adrian",
+    "achievements": [
+      { "badge_id": "storyteller", "level": "beginner", "date": "2025-10-23" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "scene_designer", "reason": "Connects with his strong interest in dark themes." },
+        { "id": "storyteller", "reason": "Builds on his natural skill in storyboarding." }
+      ]
+    },
+    "notes": [
+      { "date": "2025-10-23", "text": "Adrian is deeply thoughtful with highly refined personal taste." }
+    ],
+    "goals": [
+      { "text": "Channel his deep aesthetic taste into visual storytelling projects.", "due": "2025-12-10" }
+    ],
+    "featured_art": [
+      {
+        "title": "Forest Chase Horror Scene",
+        "thumb": "artworks/adrian_forest_monster.jpg",
+        "caption": "An evocative horror chase scene, rich with layered tone."
+      }
+    ],
+    "teacher_note": "Adrian responds best to open-ended prompts and emotionally intelligent feedback.",
+    "tags": ["narrative-driven", "visually-sensitive", "dark-aesthetic"]
+  },
+
+  {
+    "id": "SERENA-13",
+    "display_name": "Serena",
+    "achievements": [
+      { "badge_id": "animation_beginner", "level": "beginner", "date": "2025-10-23" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "figure_sketch", "reason": "Builds facial expression skills." },
+        { "id": "storyteller", "reason": "Introduces sketching in a loose, non-pressured way." }
+      ]
+    },
+    "notes": [
+      { "date": "2025-10-23", "text": "Serena is a cool, self-aware student who knows what she wants." }
+    ],
+    "goals": [
+      { "text": "Support Serena’s sketch confidence by offering expressive, low-pressure activities.", "due": "2025-11-30" }
+    ],
+    "teacher_note": "Serena thrives in structured but low-stakes environments. Avoid heavy critique.",
+    "tags": ["expression-focused", "low-pressure", "independent"]
+  }
 ]
-
