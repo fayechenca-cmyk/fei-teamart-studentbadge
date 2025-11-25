@@ -1,141 +1,166 @@
-
-body{font-family: 'Open Sans', Arial, sans-serif;background:#fffdf8;color:#1a1d2b;margin:0}
-.wrapper{max-width:1000px;margin:auto;padding:20px}
-.header{background:#fff3da;border:1px solid #eee;border-radius:14px;padding:20px;margin-bottom:20px}
-h1{margin:0 0 6px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.gallery .art{border:1px solid #eee;border-radius:10px;padding:10px;background:#fff}
-.gallery img{width:100%;border-radius:8px}
-.footer{margin-top:40px;font-size:14px;color:#555;text-align:center}
-.empty{padding:20px;border:1px dashed #ccc;border-radius:10px;text-align:center;color:#888}
-
-/* --- Milestone badge display --- */
-.badge-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-  gap:12px;
-  margin-top:20px;
-  margin-bottom:18px;
-}
-
-.badge {
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  text-align:center;
-  padding:10px;
-  box-shadow:0 2px 4px rgba(0,0,0,0.04);
-  transition:transform 0.2s ease;
-}
-
-.badge:hover { transform:translateY(-3px); }
-
-.badge .icon {
-  width:60px;
-  height:60px;
-  margin:0 auto 8px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:28px;
-  color:#fff;
-  font-weight:700;
-}
-.badge .name {
-  font-size:13px;
-  font-weight:600;
-  color:#1a1d2b;
-}
-/* Vivid background */
+/* GLOBAL SETTINGS */
 body {
-  background:
-    radial-gradient(1200px 600px at -10% -10%, rgba(255, 214, 165, 0.45), transparent 60%),
-    radial-gradient(900px 500px at 110% 0%, rgba(166, 231, 216, 0.45), transparent 60%),
-    radial-gradient(900px 600px at 50% 110%, rgba(197, 191, 255, 0.45), transparent 60%),
-    #fffdf8; /* fallback */
-}
-
-/* Keep main cards readable on vivid bg */
-.header, .card, .page, .badge {
-  backdrop-filter: saturate(110%) blur(0.5px);
-}
-
-/* badge grid */
-.badge-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-  gap:12px;
-  margin-bottom:18px;
-}
-.badge {
-  background:#fff;
-  border:1px solid var(--border, #ece7de);
-  border-radius:12px;
-  text-align:center;
-  padding:10px;
-  position:relative;
-  transition:transform .2s ease, filter .2s ease, opacity .2s ease;
-}
-.badge:hover { transform:translateY(-3px); }
-.badge .icon {
-  width:60px;height:60px;margin:0 auto 8px;border-radius:50%;
-  display:grid;place-items:center;font-size:28px;color:#fff;font-weight:700;
-}
-.badge .name { font-size:13px;font-weight:600;color:var(--ink, #172033); }
-
-/* Locked vs unlocked visual states */
-.badge.locked {
-  filter: grayscale(1) saturate(.5);
-  opacity: .65;
-}
-.badge.unlocked {
-  filter: none;
-  opacity: 1;
-}
-.badge.unlocked .icon { opacity: 1; }
-.badge.unlocked .name { color: #1a1d2b; font-weight: 700; }
-.badge.unlocked::after{
-  content:"✓";
-  position:absolute; top:6px; right:8px;
-  background:#22c55e; color:#fff; font-size:12px; font-weight:700;
-  width:18px; height:18px; border-radius:50%;
-  display:grid; place-items:center;
-}
-
-/* progress bar */
-.progress-rail{height:10px;background:#f1efe9;border-radius:999px;overflow:hidden}
-.progress-bar{height:100%;background:#45c7b0;width:0;transition:width .4s ease}
-
-/* --- How it works card --- */
-.how-card { padding-top: 14px; }
-.steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin: 0 0 8px 0;
+  font-family: 'Open Sans', sans-serif;
+  /* Fun artistic background */
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(255, 214, 165, 0.4), transparent 50%),
+    radial-gradient(circle at 90% 90%, rgba(166, 231, 216, 0.4), transparent 50%),
+    #fffdf8; 
+  color: #1a1d2b;
+  margin: 0;
   padding: 0;
 }
-.step { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: start; }
-.step .icon {
-  width: 40px; height: 40px; border-radius: 50%;
-  display: grid; place-items: center; background: #fff3da; font-size: 18px;
-  border: 1px solid var(--border, #ece7de);
-}
-.step-title { font-weight: 700; }
-.step-text { color: var(--muted, #6b7280); font-size: 14px; }
 
-/* legend for badge states */
-.legend {
-  display: flex; align-items: center; gap: 14px;
-  padding: 8px 10px; border: 1px dashed var(--border, #ece7de);
-  border-radius: 10px; background:#fff;
-  font-size: 14px; color: var(--muted, #6b7280);
-}
-.legend .dot {
-  width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items:center;
-  border: 1px solid var(--border, #ece7de); font-weight:700; font-size: 12px;
-}
-.legend .dot.locked { background:#eaeaea; color:#888; }
-.legend .dot.done { background:#45c7b0; color:#fff; }
-.legend .dot.check { width: 22px; height: 22px; }
+.wrapper { max-width: 1000px; margin: auto; padding: 20px; }
 
+/* HEADER & CARDS */
+.header, .card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; color: #1a1d2b; }
+.section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 12px; }
+
+/* --- THE ISLAND MAP (ARCHIPELAGO) --- */
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the islands */
+  gap: 25px; /* Space between islands */
+  margin: 30px 0;
+  padding: 10px;
+}
+
+.map-node {
+  width: 130px;
+  text-align: center;
+  position: relative;
+  /* Animation to make them pop in */
+  opacity: 0; 
+  animation: popIn 0.5s forwards ease-out;
+  transition: transform 0.2s ease;
+}
+
+.map-node:hover { transform: translateY(-5px); }
+
+/* The Circle Visual */
+.node-visual {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #ece7de; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.node-img { width: 100%; height: 100%; object-fit: cover; }
+.node-icon-fallback { font-size: 36px; }
+
+.node-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #555;
+}
+
+/* --- STATES: LOCKED vs UNLOCKED vs RECOMMENDED --- */
+
+/* 1. LOCKED (Gray Stone) */
+.map-node.locked .node-visual {
+  background: #e5e7eb;
+  border-color: #d1d5db !important;
+  filter: grayscale(100%);
+}
+.map-node.locked .node-img { opacity: 0.4; }
+.map-node.locked .node-label { color: #9ca3af; }
+.lock-icon { position: absolute; font-size: 20px; opacity: 0.5; color: #333; }
+
+/* 2. UNLOCKED (Vibrant) */
+.map-node.unlocked .node-visual {
+  border-width: 5px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); /* Golden glow */
+}
+.map-node.unlocked .node-label { color: #000; font-weight: 800; }
+.check-mark {
+  position: absolute; top: 0; right: 0;
+  background: #fff; border-radius: 50%;
+  width: 24px; height: 24px;
+  display: grid; place-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+/* 3. RECOMMENDED (Pulse) */
+.map-node.recommended .node-visual {
+  border-color: #f59e0b !important; /* Orange border */
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+  animation: pulseBorder 2s infinite;
+}
+.quest-mark {
+  position: absolute; top: -5px; right: -5px;
+  background: #f59e0b; color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-weight: 800;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+/* INPUT FORM */
+#gate {
+  background: #fff;
+  border: 1px solid #45c7b0;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+.btn {
+  padding: 10px 20px; background: #45c7b0; color: #fff;
+  border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
+}
+.btn:hover { background: #3bb29c; }
+
+/* PROGRESS BAR */
+.progress-rail { height: 10px; background: #eee; border-radius: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: #45c7b0; transition: width 0.5s ease; }
+.gallery-link {
+  display: inline-block; padding: 12px 20px;
+  background: #fff; border: 1px solid #ddd; border-radius: 10px;
+  text-decoration: none; color: #333; font-weight: 600;
+  transition: all 0.2s;
+}
+.gallery-link:hover { background: #f9f9f9; transform: translateY(-2px); }
+.empty { display: none; }
+.steps { list-style: none; padding: 0; display: grid; gap: 15px; }
+.step { display: flex; gap: 12px; align-items: start; }
+.step .icon { background: #fff3da; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; }
+
+/* ANIMATIONS */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes pulseBorder {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
