@@ -48,7 +48,7 @@ const PAGES = [
   { id:'observation_sketcher', title:'Observation Detective', emoji:'👀', color:'#14b8a6' },
   { id:'architecture_space',   title:'Little Architect', emoji:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', color:'#0ea5e9' },
   { id:'visual_storyteller',   title:'Storyteller', emoji:'📖', color:'#f97316' },
-  { id:'craft_maker',          title:'Hand Crafter', emoji:'🧵', color:'#ef4444' },
+  { id:'craft_maker',          title:'Hand Crafter', emoji:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da2dc31c5379bbe21a_feiteamart%20handcrafter.PNG', color:'#ef4444' },
   { id:'innovation_explorer',  title:'Digital Creator', emoji:'💻', color:'#3b82f6' },
   { id:'color_light',          title:'Color Explorer', emoji:'🎨', color:'#eab308' },
   { id:'sustainable_creation', title:'Sustainable Creator', emoji:'🌿', color:'#10b981' },
