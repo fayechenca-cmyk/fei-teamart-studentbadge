@@ -3,95 +3,83 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FEI TeamArt Student Badge</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <title>FEI TeamArt Adventure Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <div class="wrapper">
     <header class="header">
-      <h1>FEI TeamArt Milestone Community</h1>
-      <p>Celebrate every step of your creative growth. View your badges, achievements, and student artworks below.</p>
+      <h1>FEI TeamArt Adventure</h1>
+      <p>Enter your explorer code to reveal your personal art map.</p>
     </header>
-    <!-- 👋 How this page works -->
-<section id="how" class="card how-card" aria-labelledby="how-title">
-  <h2 id="how-title" class="section-title">How This Page Works</h2>
 
-  <ol class="steps" role="list">
-    <li class="step">
-      <div class="icon">🗺️</div>
-      <div>
-        <div class="step-title">Explore Milestones</div>
-        <div class="step-text">The colorful circles are our learning pages (15 total).</div>
-      </div>
-    </li>
-
-    <li class="step">
-      <div class="icon">🔒</div>
-      <div>
-        <div class="step-title">Enter Your Code</div>
-        <div class="step-text">Type your private student code to open your personal record.</div>
-      </div>
-    </li>
-
-    <li class="step">
-      <div class="icon">✅</div>
-      <div>
-        <div class="step-title">See Your Progress</div>
-        <div class="step-text">Unlocked pages turn colorful with a ✓ and update your progress bar.</div>
-      </div>
-    </li>
-  </ol>
-
-  <div class="legend">
-    <span class="dot locked"></span> Locked
-    <span class="dot done"></span> Unlocked
-    <span class="dot done check">✓</span> Completed
-  </div>
-
-  <p class="note" style="margin-top:6px">
-    Privacy: Only people with the code can see a student’s record. Keep your code private.
-  </p>
-</section>
+    <section id="how" class="card how-card">
+      <h2 class="section-title">How Your Map Works</h2>
+      <ol class="steps">
+        <li class="step">
+          <div class="icon">🔒</div>
+          <div>
+            <div class="step-title">Enter Your Code</div>
+            <div class="step-text">Unlock your personal world.</div>
+          </div>
+        </li>
+        <li class="step">
+          <div class="icon">🗺️</div>
+          <div>
+            <div class="step-title">Explore Islands</div>
+            <div class="step-text">
+              <strong>Gray Islands:</strong> Areas to explore next.<br>
+              <strong>Colorful Islands:</strong> Skills you have mastered!
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <div class="icon">❗️</div>
+          <div>
+            <div class="step-title">Quest Alerts</div>
+            <div class="step-text">Pulsing islands are recommended by your teacher.</div>
+          </div>
+        </li>
+      </ol>
+    </section>
     
-    <!-- 🔵 Student Progress (shown after code) -->
-<section id="progressCard" class="card" style="display:none">
-  <div class="section-title">My Progress</div>
-  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-    <div id="progressCount" style="font-weight:700">0 / 15 pages</div>
-    <div class="progress-rail" style="flex:1;min-width:220px">
-      <div id="progressBar" class="progress-bar" style="width:0%"></div>
-    </div>
-    <div id="progressPct" class="note" style="min-width:50px;text-align:right">0%</div>
-  </div>
-</section>
+    <section id="progressCard" class="card" style="display:none">
+      <div class="section-title">My Journey</div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div id="progressCount" style="font-weight:700">0 / 15 Islands Discovered</div>
+        <div class="progress-rail" style="flex:1;min-width:220px">
+          <div id="progressBar" class="progress-bar" style="width:0%"></div>
+        </div>
+        <div id="progressPct" class="note" style="min-width:50px;text-align:right">0%</div>
+      </div>
+    </section>
 
-<!-- 🎖️ BADGE DISPLAY (public; turns colorful after code) -->
-<section id="badges">
-  <h2 class="section-title">Milestone Badges</h2>
-  <div id="badgeGrid" class="badge-grid"></div>
-</section>
-<section id="gate" style="margin:16px 0;padding:14px;border:1px solid #ece7de;border-radius:12px;background:#ffffff">
-  <div style="font-weight:700;margin-bottom:8px">🔒 Enter Student Code</div>
-  <form id="codeForm" style="display:flex;gap:8px;flex-wrap:wrap">
-    <input id="codeInput" class="input" placeholder="e.g., A7Q9-FOX" style="height:38px;padding:0 12px;border:1px solid #e5e5e5;border-radius:10px"/>
-    <button class="btn" type="submit" style="height:38px;padding:0 14px;border-radius:10px;background:#45c7b0;color:#fff;border:none;font-weight:600">Open My Record</button>
-  </form>
-  <p class="note" style="color:#5c6370;margin-top:6px">Tip: We sent your code on your sticker/message. Keep it private.</p>
-</section>
+    <section id="badges">
+      <div id="badgeGrid" class="badge-grid"></div>
+    </section>
+
+    <section id="gate">
+      <div style="font-weight:700;margin-bottom:8px">🔒 Access Your Map</div>
+      <form id="codeForm" style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="codeInput" class="input" placeholder="Enter Code (e.g., A7Q9)" required />
+        <button class="btn" type="submit">Open Map</button>
+      </form>
+      <p class="note" style="margin-top:8px">Your code is on your sticker or message.</p>
+    </section>
+
     <main id="mount">
-      <div class="empty">Loading student milestones...</div>
+      <div class="empty">Loading student database...</div>
     </main>
 
- <section style="margin-top:20px;text-align:center">
-  <a href="https://www.feiteamart.com/student-showcase" target="_blank"
-     style="display:inline-block;padding:10px 14px;border:1px solid #e5e5e5;border-radius:10px;background:#fff">
-     View Full Student Artwork Gallery →
-  </a>
-</section>
+    <section style="margin-top:40px;text-align:center">
+      <a href="https://www.feiteamart.com/student-showcase" target="_blank" class="gallery-link">
+        View Full Student Art Gallery →
+      </a>
+    </section>
 
     <footer class="footer">
-      <p>© FEI TeamArt — Designed for creative learning and artistic growth.</p>
+      <p>© FEI TeamArt — Designed for creative explorers.</p>
     </footer>
   </div>
 
