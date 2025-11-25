@@ -46,7 +46,7 @@ const PAGES = [
   { id:'mindful_illustrator',  title:'Calm Illustrator', emoji:'🖋️', color:'#06b6d4' },
   { id:'art_explorer',         title:'Art Explorer', emoji:'🌈', color:'#ec4899' },
   { id:'observation_sketcher', title:'Observation Detective', emoji:'👀', color:'#14b8a6' },
-  { id:'architecture_space',   title:'Little Architect', emoji:'🏛️', color:'#0ea5e9' },
+  { id:'architecture_space',   title:'Little Architect', emoji:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', color:'#0ea5e9' },
   { id:'visual_storyteller',   title:'Storyteller', emoji:'📖', color:'#f97316' },
   { id:'craft_maker',          title:'Hand Crafter', emoji:'🧵', color:'#ef4444' },
   { id:'innovation_explorer',  title:'Digital Creator', emoji:'💻', color:'#3b82f6' },
