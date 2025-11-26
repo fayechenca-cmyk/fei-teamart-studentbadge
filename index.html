@@ -1,91 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FEI TeamArt Adventure Map</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Adventure Map</title>
+<style>
+    /* --- GENERAL PAGE STYLES --- */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #2c3e50; /* Dark background to make map pop */
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        color: #ffd700; /* Gold Title */
+    }
+
+    .subtitle {
+        margin-bottom: 30px;
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    /* --- INPUT SECTION (The Key) --- */
+    .input-section {
+        margin-bottom: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        display: inline-block;
+        border-radius: 10px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 200px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffd700;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background-color: #ffcc00;
+    }
+
+    /* --- THE MAP WORLD (The Container) --- */
+    .map-container {
+        position: relative; /* Defines the boundaries */
+        width: 100%; 
+        max-width: 1000px;
+        aspect-ratio: 16 / 9; /* Keeps 16:9 shape */
+        margin: 0 auto;
+        
+        /* !!! PASTE YOUR VIVID MAP IMAGE LINK BELOW !!! */
+        background-image: url('https://placehold.co/1000x562/4a3b2a/ffffff?text=Replace+This+With+Your+Map+Image'); 
+        
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        border: 5px solid #4a3b2a; /* Wood frame look */
+        overflow: hidden; 
+        
+        /* Initially hidden until code is entered - Optional, but keeping it visible looks better */
+        opacity: 0.5; 
+        transition: opacity 1s;
+    }
+
+    .map-container.active {
+        opacity: 1; /* Lights up when code is correct */
+    }
+
+    /* --- BADGE SPOTS (The Stickers) --- */
+    .badge-spot {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        cursor: pointer;
+        
+        /* Hidden by default */
+        display: none; 
+        
+        /* Animation when appearing */
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes popIn {
+        0% { transform: translate(-50%, -50%) scale(0); }
+        100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* --- FLIP CARD DESIGN --- */
+    .badge-card {
+        width: 100%;
+        height: 100%;
+        perspective: 1000px;
+    }
+
+    .badge-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .badge-spot:hover .badge-inner {
+        transform: rotateY(180deg);
+    }
+
+    .badge-front, .badge-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 50%;
+        border: 3px solid #ffd700;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #fff;
+        padding: 2px;
+        box-sizing: border-box;
+    }
+
+    .badge-front {
+        background: radial-gradient(circle, #fff 40%, #eee 100%);
+    }
+
+    .badge-front h3 {
+        font-size: 10px;
+        margin: 0;
+        color: #333;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+    
+    .badge-front small {
+        font-size: 8px;
+        color: #666;
+    }
+
+    .badge-back {
+        background-color: #222;
+        color: white;
+        transform: rotateY(180deg);
+        overflow: hidden;
+    }
+
+    .badge-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* --- MAP COORDINATES (Manual Placement) --- */
+    /* Adjust these % numbers to match your drawing */
+    
+    .pos-1 { top: 80%; left: 10%; } /* Start */
+    .pos-2 { top: 65%; left: 25%; }
+    .pos-3 { top: 50%; left: 40%; }
+    .pos-4 { top: 40%; left: 60%; } /* Portrait Master */
+    .pos-5 { top: 20%; left: 80%; } /* Portfolio Maker (Goal) */
+
+    /* Error Message */
+    #error-msg {
+        color: #ff6b6b;
+        margin-top: 10px;
+        display: none;
+    }
+
+</style>
 </head>
 <body>
 
-  <div class="wrapper">
-    
-    <header class="header main-header">
-      <h1>FEI TeamArt Explorer Map</h1>
-      <p>Your personal creative journey, visualized.</p>
-    </header>
+    <h1>Art Adventure Map</h1>
+    <p class="subtitle">Enter your explorer code to reveal your progress.</p>
 
-    <section class="card how-card">
-      <h2 class="section-title" style="text-align:center; margin-bottom:20px;">How to Play</h2>
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-icon locked">🔒</div>
-          <div class="how-text">
-            <strong>1. Enter Code</strong><br>
-            Use your private student code to unlock your map.
-          </div>
-        </div>
-        <div class="how-step">
-           <div class="how-icon unlocked">⭐</div>
-           <div class="how-text">
-             <strong>2. Discover Islands</strong><br>
-             Colorful islands are skills you have mastered!
-           </div>
-         </div>
-         <div class="how-step">
-           <div class="how-icon quest">❗️</div>
-           <div class="how-text">
-             <strong>3. Find Quests</strong><br>
-             Pulsing islands are recommended next steps.
-           </div>
-         </div>
-      </div>
-    </section>
-
-    <section id="gate">
-      <div class="gate-title">ENTER EXPLORER CODE</div>
-      <form id="codeForm">
-        <input id="codeInput" class="input" placeholder="e.g. LILY-Ax08" required />
-        <button class="btn game-btn" type="submit">UNLOCK MAP</button>
-      </form>
-      <p class="gate-note">Check your student sticker for your code.</p>
-    </section>
-
-    <div id="gameUI" style="display:none;">
-      
-      <div style="text-align:center; margin-bottom: 30px;">
-          <h2 id="welcomeText" style="font-family:'Montserrat'; font-size:28px; margin-bottom:5px;">Welcome back!</h2>
-          <p>Look how far you've come.</p>
-      </div>
-
-      <section id="progressCard" class="card">
-        <div class="section-title">My Journey Status</div>
-        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-          <div id="progressCount" style="font-weight:700; font-family:'Montserrat'">0 / 23 Artifacts Found</div>
-          <div class="progress-rail" style="flex:1; min-width:200px">
-            <div id="progressBar" class="progress-bar" style="width:0%"></div>
-          </div>
-          <div id="progressPct" class="note" style="min-width:40px; text-align:right; font-weight:700">0%</div>
-        </div>
-      </section>
-
-      <section id="badges">
-        <div id="badgeGrid" class="badge-grid"></div>
-      </section>
-
-      <section style="margin-top:40px; text-align:center">
-        <a href="https://www.feiteamart.com/student-showcase" target="_blank" class="gallery-link">
-          View Full Student Art Gallery →
-        </a>
-      </section>
-      
+    <div class="input-section">
+        <input type="text" id="student-code" placeholder="Enter Code (e.g. 123)">
+        <button onclick="checkProgress()">Reveal Map</button>
+        <p id="error-msg">Code not found! Try again.</p>
     </div>
-    <footer class="footer">
-      <p>© FEI TeamArt — Designed for creative explorers.</p>
-    </footer>
-  </div>
 
-  <script src="app.js"></script>
+    <div class="map-container" id="game-map">
+
+        <div class="badge-spot pos-1" id="badge-1">
+            <div class="badge-card">
+                <div class="badge-inner">
+                    <div class="badge-front">
+                        <h3>Sketching</h3>
+                        <small>Level 1</small>
+                    </div>
+                    <div class="badge-back">
+                        <img src="https://via.placeholder.com/100/FF0000/FFFFFF?text=Art+1" alt="Art">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="badge-spot pos-2" id="badge-2">
+            <div class="badge-card">
+                <div class="badge-inner">
+                    <div class="badge-front">
+                        <h3>Color</h3>
+                        <small>Level 2</small>
+                    </div>
+                    <div class="badge-back">
+                        <img src="https://via.placeholder.com/100/00FF00/FFFFFF?text=Art+2" alt="Art">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="badge-spot pos-3" id="badge-3">
+            <div class="badge-card">
+                <div class="badge-inner">
+                    <div class="badge-front">
+                        <h3>Shapes</h3>
+                        <small>Level 3</small>
+                    </div>
+                    <div class="badge-back">
+                        <img src="https://via.placeholder.com/100/0000FF/FFFFFF?text=Art+3" alt="Art">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="badge-spot pos-4" id="badge-4">
+            <div class="badge-card">
+                <div class="badge-inner">
+                    <div class="badge-front">
+                        <h3>Portrait<br>Master</h3>
+                    </div>
+                    <div class="badge-back">
+                        <img src="https://via.placeholder.com/100/FFFF00/000000?text=Face" alt="Portrait">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="badge-spot pos-5" id="badge-5">
+            <div class="badge-card">
+                <div class="badge-inner">
+                    <div class="badge-front">
+                        <h3>Portfolio<br>Maker</h3>
+                    </div>
+                    <div class="badge-back">
+                        <img src="https://via.placeholder.com/100/purple/FFFFFF?text=Book" alt="Portfolio">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkProgress() {
+            var code = document.getElementById('student-code').value.toLowerCase();
+            var map = document.getElementById('game-map');
+            var error = document.getElementById('error-msg');
+
+            // Reset
+            error.style.display = 'none';
+            // Hide all badges first
+            var allBadges = document.querySelectorAll('.badge-spot');
+            allBadges.forEach(b => b.style.display = 'none');
+            map.classList.remove('active');
+
+            // --- LOGIC: DEFINE STUDENT PROGRESS HERE ---
+            
+            if (code === '123') { // Example Student 1
+                map.classList.add('active'); // Light up map
+                document.getElementById('badge-1').style.display = 'block'; // Show Badge 1
+                document.getElementById('badge-2').style.display = 'block'; // Show Badge 2
+            } 
+            else if (code === '456') { // Example Student 2 (Advanced)
+                map.classList.add('active');
+                document.getElementById('badge-1').style.display = 'block';
+                document.getElementById('badge-2').style.display = 'block';
+                document.getElementById('badge-3').style.display = 'block';
+                document.getElementById('badge-4').style.display = 'block'; // Portrait Master
+            }
+            else if (code === 'master') { // Show ALL (For you to test)
+                map.classList.add('active');
+                allBadges.forEach(b => b.style.display = 'block');
+            }
+            else {
+                error.style.display = 'block';
+            }
+        }
+    </script>
+
 </body>
 </html>
