@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEI TeamArt Badge Milestone Map</title>
+    <title>FEI TeamArt Badge Map</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,22 +16,41 @@
 <div class="wrapper">
 
     <div id="gate">
-        <div class="gate-title">FEI TeamArt Portal</div>
-        <p style="margin-bottom:20px; color:#666;">Enter your Name to view your report:</p>
-        
-        <form id="codeForm">
-            <input type="text" id="codeInput" class="input" placeholder="e.g. Regina">
-            <br>
-            <button type="submit" class="game-btn">Open My Map</button>
-        </form>
-        
-        <div class="gate-note">Try typing: Regina</div>
+        <div class="gate-banner">
+            <div class="banner-overlay"></div>
+        </div>
+
+        <div class="gate-content">
+            <div class="gate-title">FEI TeamArt Portal</div>
+            
+            <p style="margin-bottom:15px; color:#555; font-weight:600;">Enter your Student ID to unlock your map:</p>
+            <form id="codeForm">
+                <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
+                <br>
+                <button type="submit" class="game-btn">Find My Map</button>
+            </form>
+        </div>
+
+        <div class="how-it-works">
+            <div class="how-step">
+                <div class="how-icon">🔑</div>
+                <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">🗺️</div>
+                <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">📝</div>
+                <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
+            </div>
+        </div>
     </div>
 
     <div id="gameUI" style="display:none;">
         
         <div class="header main-header">
-            <h1>FEI TeamArt Badge Milestone Map</h1>
+            <h1>FEI TeamArt Milestone Map</h1>
             <h2 id="welcomeText" style="font-size:18px; color:#666; font-weight:400; margin-top:5px;">Student Report</h2>
             
             <div class="progress-container">
@@ -47,9 +66,7 @@
 
         <div class="card teacher-card">
             <div class="section-title">📝 Teacher's Note</div>
-            <div class="teacher-text" id="teacherNote">
-                Loading...
-            </div>
+            <div class="teacher-text" id="teacherNote">Loading...</div>
             <div class="tag-container" id="strengthTags"></div>
         </div>
 
@@ -58,7 +75,7 @@
             <div class="spotlight-grid" id="spotlightGrid"></div>
         </div>
 
-        <div class="card">
+        <div class="card map-card-bg">
             <div class="section-title">🗺️ Your Badge Collection</div>
             
             <div class="map-legend">
