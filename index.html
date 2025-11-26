@@ -3,112 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Adventure Map</title>
+<title>LFC Classics - Student Journey</title>
 <style>
-    /* --- GENERAL PAGE STYLES --- */
+    /* --- 1. ATMOSPHERE (Gallery Vibe) --- */
     body {
-        font-family: 'Arial', sans-serif;
-        background-color: #2c3e50; /* Dark background to make the map pop */
-        color: white;
+        font-family: 'Georgia', 'Times New Roman', serif; /* CLASSIC FONT */
+        background-color: #1a1a1a; /* Dark Gallery Wall color */
+        color: #f0f0f0;
         text-align: center;
         margin: 0;
-        padding: 20px;
+        padding: 40px 20px;
+        background-image: radial-gradient(circle at center, #2a2a2a 0%, #111 100%); /* Subtle lighting */
+        min-height: 100vh;
     }
 
+    /* --- 2. TYPOGRAPHY (The Title) --- */
     h1 {
+        font-weight: normal;
         margin-bottom: 10px;
-        color: #ffd700; /* Gold Title */
-        text-shadow: 2px 2px 4px #000;
+        color: #d4af37; /* Muted Gold */
+        letter-spacing: 3px; /* Elegant spacing */
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        border-bottom: 1px solid #d4af37;
+        display: inline-block;
+        padding-bottom: 10px;
     }
 
     .subtitle {
-        margin-bottom: 30px;
+        margin-top: 15px;
+        margin-bottom: 40px;
         font-style: italic;
-        opacity: 0.8;
+        color: #aaa;
+        font-family: 'Helvetica Neue', sans-serif; /* Clean contrast for small text */
+        font-weight: 300;
+        letter-spacing: 1px;
     }
 
-    /* --- INPUT SECTION (The Key) --- */
+    /* --- 3. THE "MUSEUM PLAQUE" (Input Section) --- */
     .input-section {
-        margin-bottom: 30px;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 20px;
+        margin-bottom: 40px;
+        background: rgba(255, 255, 255, 0.05); /* Very subtle glass effect */
+        padding: 20px 40px;
         display: inline-block;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.3); /* Faint gold border */
+        border-radius: 2px; /* Sharp, classic corners */
     }
 
     input[type="text"] {
-        padding: 10px;
-        border-radius: 5px;
+        padding: 12px;
+        background: transparent;
         border: none;
-        width: 200px;
-        font-size: 16px;
+        border-bottom: 1px solid #666;
+        color: #fff;
+        font-family: 'Georgia', serif;
+        font-size: 18px;
+        width: 250px;
+        text-align: center;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    input[type="text"]:focus {
+        border-bottom: 1px solid #d4af37; /* Gold highlight on focus */
+    }
+
+    input[type="text"]::placeholder {
+        color: #555;
+        font-style: italic;
     }
 
     button {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-        background-color: #ffd700;
-        color: #333;
-        font-weight: bold;
+        margin-left: 20px;
+        padding: 10px 30px;
+        border: 1px solid #d4af37;
+        background-color: transparent;
+        color: #d4af37;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
         cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s;
+        transition: all 0.4s ease;
     }
 
     button:hover {
-        background-color: #ffcc00;
+        background-color: #d4af37;
+        color: #000;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
     }
 
-    /* --- THE MAP WORLD (The Container) --- */
+    /* --- 4. THE ART MAP (The Frame) --- */
     .map-container {
-        position: relative; /* Defines the boundaries */
+        position: relative;
         width: 100%; 
-        max-width: 1000px;
-        aspect-ratio: 16 / 9; /* Keeps 16:9 shape */
+        max-width: 1100px;
+        aspect-ratio: 16 / 9; 
         margin: 0 auto;
         
-        /* YOUR MAP IMAGE IS HERE */
+        /* YOUR MAP IMAGE */
         background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg'); 
         
         background-size: cover;
         background-position: center;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        border: 5px solid #4a3b2a; /* Wood frame look */
-        overflow: hidden; 
         
-        opacity: 0.5; /* Dimmed until code is entered */
-        transition: opacity 1s;
+        /* The Frame Effect */
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        border: 10px solid #111; 
+        outline: 1px solid #333;
+        
+        overflow: hidden; 
+        opacity: 0.3; /* Start dim/mysterious */
+        filter: grayscale(80%); /* Start mostly black & white (Classics feel) */
+        transition: all 1.5s ease; /* Slow, dreamy fade in */
     }
 
+    /* When active, the map bursts into color */
     .map-container.active {
-        opacity: 1; /* Lights up when code is correct */
+        opacity: 1; 
+        filter: grayscale(0%);
     }
 
-    /* --- BADGE SPOTS (The Stickers) --- */
+    /* --- 5. THE BADGES (Surreal Elements) --- */
     .badge-spot {
         position: absolute;
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         transform: translate(-50%, -50%);
         z-index: 10;
         cursor: pointer;
-        
-        /* Hidden by default until unlocked */
         display: none; 
         
-        /* Animation when appearing */
-        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        /* Dreamy float animation */
+        animation: floatIn 1s ease-out forwards;
     }
 
-    @keyframes popIn {
-        0% { transform: translate(-50%, -50%) scale(0); }
-        100% { transform: translate(-50%, -50%) scale(1); }
+    @keyframes floatIn {
+        0% { transform: translate(-50%, -40%) scale(0); opacity: 0; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     }
 
-    /* --- FLIP CARD DESIGN --- */
     .badge-card {
         width: 100%;
         height: 100%;
@@ -120,7 +154,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-        transition: transform 0.6s;
+        transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Smoother flip */
         transform-style: preserve-3d;
     }
 
@@ -135,70 +169,60 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 50%;
-        border: 3px solid #ffd700;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        
+        /* More delicate border */
+        border: 2px solid #fff; 
+        outline: 4px solid rgba(212, 175, 55, 0.5); /* Gold Halo */
+        
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         background: #fff;
-        padding: 2px;
-        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .badge-front {
-        background: radial-gradient(circle, #fff 40%, #f0f0f0 100%);
+        /* Paper texture feel */
+        background-color: #fdfbf7;
+        background-image: linear-gradient(to bottom, #fdfbf7, #e8e6e1);
     }
 
     .badge-front h3 {
-        font-size: 10px;
+        font-family: 'Georgia', serif;
+        font-size: 11px;
         margin: 0;
         color: #333;
-        font-weight: bold;
+        letter-spacing: 1px;
         text-transform: uppercase;
-        line-height: 1.1;
     }
     
-    .badge-front small {
-        font-size: 8px;
-        color: #666;
-    }
-
     .badge-back {
-        background-color: #222;
-        color: white;
+        background-color: #000;
         transform: rotateY(180deg);
-        overflow: hidden;
     }
 
     .badge-back img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 0.9;
     }
 
-    /* --- MAP COORDINATES (Manual Placement) --- */
-    /* IMPORTANT: Tweak these numbers to move your badges */
-    
-    /* Level 1: Bottom Left */
+    /* --- POSITIONS (Same as before) --- */
     .pos-1 { top: 80%; left: 15%; } 
-
-    /* Level 2: Moving Up/Right */
     .pos-2 { top: 65%; left: 30%; }
-
-    /* Level 3: Center */
     .pos-3 { top: 50%; left: 50%; }
-
-    /* Level 4: Portrait Master */
     .pos-4 { top: 35%; left: 70%; } 
-
-    /* Level 5: Portfolio Maker (Finish) */
     .pos-5 { top: 20%; left: 85%; } 
 
-    /* Error Message */
     #error-msg {
-        color: #ff6b6b;
-        margin-top: 10px;
+        color: #ff8888;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 12px;
+        margin-top: 15px;
+        letter-spacing: 1px;
         display: none;
     }
 
@@ -206,13 +230,13 @@
 </head>
 <body>
 
-    <h1>Art Adventure Map</h1>
-    <p class="subtitle">Enter your explorer code to reveal your progress.</p>
+    <h1>LFC Classics</h1>
+    <p class="subtitle">The Art Adventure Map</p>
 
     <div class="input-section">
-        <input type="text" id="student-code" placeholder="Enter Code (e.g. 123)">
-        <button onclick="checkProgress()">Reveal Map</button>
-        <p id="error-msg">Code not found! Try again.</p>
+        <input type="text" id="student-code" placeholder="Enter Access Code">
+        <button onclick="checkProgress()">Explore</button>
+        <p id="error-msg">Unknown access code.</p>
     </div>
 
     <div class="map-container" id="game-map">
@@ -220,13 +244,8 @@
         <div class="badge-spot pos-1" id="badge-1">
             <div class="badge-card">
                 <div class="badge-inner">
-                    <div class="badge-front">
-                        <h3>Sketching</h3>
-                        <small>Level 1</small>
-                    </div>
-                    <div class="badge-back">
-                        <img src="https://via.placeholder.com/100/FF0000/FFFFFF?text=Art+1" alt="Art">
-                    </div>
+                    <div class="badge-front"><h3>Sketch</h3></div>
+                    <div class="badge-back"><img src="https://via.placeholder.com/100/333/fff?text=Art" alt="Art"></div>
                 </div>
             </div>
         </div>
@@ -234,13 +253,8 @@
         <div class="badge-spot pos-2" id="badge-2">
             <div class="badge-card">
                 <div class="badge-inner">
-                    <div class="badge-front">
-                        <h3>Color</h3>
-                        <small>Level 2</small>
-                    </div>
-                    <div class="badge-back">
-                        <img src="https://via.placeholder.com/100/00FF00/FFFFFF?text=Art+2" alt="Art">
-                    </div>
+                    <div class="badge-front"><h3>Color</h3></div>
+                    <div class="badge-back"><img src="https://via.placeholder.com/100/444/fff?text=Art" alt="Art"></div>
                 </div>
             </div>
         </div>
@@ -248,13 +262,8 @@
         <div class="badge-spot pos-3" id="badge-3">
             <div class="badge-card">
                 <div class="badge-inner">
-                    <div class="badge-front">
-                        <h3>Shapes</h3>
-                        <small>Level 3</small>
-                    </div>
-                    <div class="badge-back">
-                        <img src="https://via.placeholder.com/100/0000FF/FFFFFF?text=Art+3" alt="Art">
-                    </div>
+                    <div class="badge-front"><h3>Form</h3></div>
+                    <div class="badge-back"><img src="https://via.placeholder.com/100/555/fff?text=Art" alt="Art"></div>
                 </div>
             </div>
         </div>
@@ -262,12 +271,8 @@
         <div class="badge-spot pos-4" id="badge-4">
             <div class="badge-card">
                 <div class="badge-inner">
-                    <div class="badge-front">
-                        <h3>Portrait<br>Master</h3>
-                    </div>
-                    <div class="badge-back">
-                        <img src="https://via.placeholder.com/100/FFFF00/000000?text=Face" alt="Portrait">
-                    </div>
+                    <div class="badge-front"><h3>Portrait<br>Master</h3></div>
+                    <div class="badge-back"><img src="https://via.placeholder.com/100/666/fff?text=Face" alt="Face"></div>
                 </div>
             </div>
         </div>
@@ -275,12 +280,8 @@
         <div class="badge-spot pos-5" id="badge-5">
             <div class="badge-card">
                 <div class="badge-inner">
-                    <div class="badge-front">
-                        <h3>Portfolio<br>Maker</h3>
-                    </div>
-                    <div class="badge-back">
-                        <img src="https://via.placeholder.com/100/purple/FFFFFF?text=Book" alt="Portfolio">
-                    </div>
+                    <div class="badge-front"><h3>Portfolio<br>Maker</h3></div>
+                    <div class="badge-back"><img src="https://via.placeholder.com/100/777/fff?text=Book" alt="Book"></div>
                 </div>
             </div>
         </div>
@@ -293,28 +294,25 @@
             var map = document.getElementById('game-map');
             var error = document.getElementById('error-msg');
 
-            // Reset
             error.style.display = 'none';
-            // Hide all badges first
             var allBadges = document.querySelectorAll('.badge-spot');
             allBadges.forEach(b => b.style.display = 'none');
             map.classList.remove('active');
 
-            // --- DEFINE STUDENT LOGIC HERE ---
-            
-            if (code === '123') { // Example Student 1
+            // --- STUDENT CODES ---
+            if (code === '123') { 
                 map.classList.add('active'); 
                 document.getElementById('badge-1').style.display = 'block'; 
                 document.getElementById('badge-2').style.display = 'block'; 
             } 
-            else if (code === '456') { // Example Student 2 (Advanced)
+            else if (code === '456') { 
                 map.classList.add('active');
                 document.getElementById('badge-1').style.display = 'block';
                 document.getElementById('badge-2').style.display = 'block';
                 document.getElementById('badge-3').style.display = 'block';
-                document.getElementById('badge-4').style.display = 'block'; // Portrait
+                document.getElementById('badge-4').style.display = 'block'; 
             }
-            else if (code === 'master') { // Show ALL (For you to test position)
+            else if (code === 'master') { 
                 map.classList.add('active');
                 allBadges.forEach(b => b.style.display = 'block');
             }
