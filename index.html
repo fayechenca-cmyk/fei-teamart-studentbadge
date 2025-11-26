@@ -263,50 +263,53 @@
     </div>
 
     <script>
-        // THIS IS YOUR STUDENT DATABASE
-        // I have pre-filled it with the data you sent me.
+        // --- REAL STUDENT DATABASE ---
+        // I have converted your JSON data into the format the map needs.
+        // NOTE: If you do not have the 'artworks' folder created, the images will be broken.
         
         const studentDatabase = {
             "amy": {
                 name: "Amy",
                 badges: ["Sustainable Creator", "Student Led"],
-                image: "https://via.placeholder.com/150/9D86E9/FFFFFF?text=Amy+Art" // Replace with real link
+                image: "artworks/amy_bird.jpg"
             },
             "regina": {
                 name: "Regina",
-                // Regina has many, showing top 5
-                badges: ["Figure Sketch", "Still Life", "Interior Design", "Painting", "Materials"],
-                image: "https://via.placeholder.com/150/FFB6C1/FFFFFF?text=Regina+Art"
+                // Showing top 5 recent/important badges from her list of 7
+                badges: ["Figure Sketch", "Still Life", "Interior Design", "Art Painting", "Materials"],
+                image: "artworks/regina_portrait_study.jpg"
             },
             "wallace": {
                 name: "Wallace",
                 badges: ["Student Led", "Focus Sprinter"],
-                image: "https://via.placeholder.com/150/87CEEB/FFFFFF?text=Wallace+Art"
+                image: "artworks/wallace_mech_runner.jpg"
             },
             "cameron": {
                 name: "Cameron",
                 badges: ["Focus Sprinter"],
-                image: "https://via.placeholder.com/150/20B2AA/FFFFFF?text=Cameron+Art"
+                // Cameron had no featured_art in JSON, so I used a placeholder
+                image: "https://placehold.co/150x150/20B2AA/FFFFFF?text=Cameron+Art"
             },
             "judy": {
                 name: "Judy",
                 badges: ["Student Led"],
-                image: "https://via.placeholder.com/150/FFA07A/FFFFFF?text=Judy+Art"
+                image: "artworks/judy_creature.jpg"
             },
             "xinyue": {
                 name: "Xinyue",
                 badges: ["Student Led"],
-                image: "https://via.placeholder.com/150/FFD700/FFFFFF?text=Xinyue+Art"
+                image: "artworks/xinyue_kpop_illustration.jpg"
             },
             "adrian": {
                 name: "Adrian",
                 badges: ["Storyteller"],
-                image: "https://via.placeholder.com/150/333333/FFFFFF?text=Adrian+Art"
+                image: "artworks/adrian_forest_monster.jpg"
             },
             "serena": {
                 name: "Serena",
                 badges: ["Animation Begin"],
-                image: "https://via.placeholder.com/150/555555/FFFFFF?text=Serena+Art"
+                // Serena had no featured_art in JSON, so I used a placeholder
+                image: "https://placehold.co/150x150/555555/FFFFFF?text=Serena+Art"
             }
         };
 
@@ -350,7 +353,8 @@
                         // Update the Text Title of the badge
                         spotElement.querySelector('h3').innerText = badgeName;
                         
-                        // Update the Image (Using the placeholder defined in database)
+                        // Update the Image
+                        // If the student image is missing or broken, it will show an empty box
                         spotElement.querySelector('img').src = student.image;
                     }
                 });
