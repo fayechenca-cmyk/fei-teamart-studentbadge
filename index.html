@@ -3,128 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LFC Classics - Student Journey</title>
+<title>FEI TeamArt - Student Journey</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
 <style>
-    /* --- 1. ATMOSPHERE (Gallery Vibe) --- */
+    /* --- 1. BRAND COLORS & FONTS --- */
     body {
-        font-family: 'Georgia', 'Times New Roman', serif; /* CLASSIC FONT */
-        background-color: #1a1a1a; /* Dark Gallery Wall color */
-        color: #f0f0f0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #E6F9F5; /* Mint Green */
+        color: #333;
         text-align: center;
         margin: 0;
         padding: 40px 20px;
-        background-image: radial-gradient(circle at center, #2a2a2a 0%, #111 100%); /* Subtle lighting */
         min-height: 100vh;
     }
 
-    /* --- 2. TYPOGRAPHY (The Title) --- */
     h1 {
-        font-weight: normal;
+        font-weight: 800;
         margin-bottom: 10px;
-        color: #d4af37; /* Muted Gold */
-        letter-spacing: 3px; /* Elegant spacing */
-        text-transform: uppercase;
+        color: #1a1a1a;
         font-size: 2.5rem;
-        border-bottom: 1px solid #d4af37;
-        display: inline-block;
-        padding-bottom: 10px;
+        letter-spacing: -1px;
     }
 
     .subtitle {
-        margin-top: 15px;
+        margin-top: 5px;
         margin-bottom: 40px;
-        font-style: italic;
-        color: #aaa;
-        font-family: 'Helvetica Neue', sans-serif; /* Clean contrast for small text */
-        font-weight: 300;
-        letter-spacing: 1px;
+        color: #666;
+        font-weight: 400;
+        font-size: 1.1rem;
     }
 
-    /* --- 3. THE "MUSEUM PLAQUE" (Input Section) --- */
+    /* --- INPUT CARD --- */
     .input-section {
-        margin-bottom: 40px;
-        background: rgba(255, 255, 255, 0.05); /* Very subtle glass effect */
-        padding: 20px 40px;
+        background: #ffffff;
+        padding: 30px 40px;
         display: inline-block;
-        border: 1px solid rgba(212, 175, 55, 0.3); /* Faint gold border */
-        border-radius: 2px; /* Sharp, classic corners */
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        margin-bottom: 40px;
     }
 
     input[type="text"] {
-        padding: 12px;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid #666;
-        color: #fff;
-        font-family: 'Georgia', serif;
-        font-size: 18px;
-        width: 250px;
+        padding: 15px;
+        background: #f4f4f4;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        width: 220px;
         text-align: center;
         outline: none;
         transition: border 0.3s;
     }
 
     input[type="text"]:focus {
-        border-bottom: 1px solid #d4af37; /* Gold highlight on focus */
-    }
-
-    input[type="text"]::placeholder {
-        color: #555;
-        font-style: italic;
+        border-color: #9D86E9; /* Lavender */
+        background: #fff;
     }
 
     button {
-        margin-left: 20px;
-        padding: 10px 30px;
-        border: 1px solid #d4af37;
-        background-color: transparent;
-        color: #d4af37;
-        font-family: 'Helvetica Neue', sans-serif;
+        margin-left: 10px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         font-size: 14px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
         cursor: pointer;
-        transition: all 0.4s ease;
+        transition: transform 0.2s;
     }
 
     button:hover {
-        background-color: #d4af37;
-        color: #000;
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        transform: translateY(-2px);
     }
 
-    /* --- 4. THE ART MAP (The Frame) --- */
+    /* --- MAP CONTAINER --- */
     .map-container {
         position: relative;
         width: 100%; 
         max-width: 1100px;
         aspect-ratio: 16 / 9; 
         margin: 0 auto;
-        
-        /* YOUR MAP IMAGE */
         background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg'); 
-        
         background-size: cover;
         background-position: center;
-        
-        /* The Frame Effect */
-        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        border: 10px solid #111; 
-        outline: 1px solid #333;
-        
+        border-radius: 25px;
+        border: 8px solid #ffffff; 
+        box-shadow: 0 20px 40px rgba(157, 134, 233, 0.2);
         overflow: hidden; 
-        opacity: 0.3; /* Start dim/mysterious */
-        filter: grayscale(80%); /* Start mostly black & white (Classics feel) */
-        transition: all 1.5s ease; /* Slow, dreamy fade in */
+        opacity: 0.6; 
+        filter: grayscale(30%); 
+        transition: all 1s ease;
     }
 
-    /* When active, the map bursts into color */
     .map-container.active {
         opacity: 1; 
         filter: grayscale(0%);
     }
 
-    /* --- 5. THE BADGES (Surreal Elements) --- */
+    /* --- BADGES --- */
     .badge-spot {
         position: absolute;
         width: 100px;
@@ -132,15 +117,13 @@
         transform: translate(-50%, -50%);
         z-index: 10;
         cursor: pointer;
-        display: none; 
-        
-        /* Dreamy float animation */
-        animation: floatIn 1s ease-out forwards;
+        display: none; /* Hidden by default */
+        animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
 
-    @keyframes floatIn {
-        0% { transform: translate(-50%, -40%) scale(0); opacity: 0; }
-        100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    @keyframes popIn {
+        0% { transform: translate(-50%, -50%) scale(0); }
+        100% { transform: translate(-50%, -50%) scale(1); }
     }
 
     .badge-card {
@@ -154,7 +137,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-        transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Smoother flip */
+        transition: transform 0.6s;
         transform-style: preserve-3d;
     }
 
@@ -169,12 +152,8 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 50%;
-        
-        /* More delicate border */
-        border: 2px solid #fff; 
-        outline: 4px solid rgba(212, 175, 55, 0.5); /* Gold Halo */
-        
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        border: 4px solid #ffffff; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -183,23 +162,31 @@
         overflow: hidden;
     }
 
-    .badge-front {
-        /* Paper texture feel */
-        background-color: #fdfbf7;
-        background-image: linear-gradient(to bottom, #fdfbf7, #e8e6e1);
-    }
+    .badge-front { background: #ffffff; }
 
     .badge-front h3 {
-        font-family: 'Georgia', serif;
-        font-size: 11px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px; /* Smaller font to fit long titles */
         margin: 0;
-        color: #333;
-        letter-spacing: 1px;
+        color: #1a1a1a;
+        font-weight: 800;
         text-transform: uppercase;
+        line-height: 1.2;
+        padding: 0 5px;
     }
     
+    .badge-front::after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: #9D86E9;
+        border-radius: 50%;
+        margin-top: 4px;
+    }
+
     .badge-back {
-        background-color: #000;
+        background-color: #1a1a1a;
         transform: rotateY(180deg);
     }
 
@@ -207,10 +194,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.9;
     }
 
-    /* --- POSITIONS (Same as before) --- */
+    /* --- POSITIONS --- */
     .pos-1 { top: 80%; left: 15%; } 
     .pos-2 { top: 65%; left: 30%; }
     .pos-3 { top: 50%; left: 50%; }
@@ -218,106 +204,162 @@
     .pos-5 { top: 20%; left: 85%; } 
 
     #error-msg {
-        color: #ff8888;
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 12px;
+        color: #E05D5D;
+        font-weight: 600;
+        font-size: 13px;
         margin-top: 15px;
-        letter-spacing: 1px;
         display: none;
     }
-
 </style>
 </head>
 <body>
 
-    <h1>LFC Classics</h1>
-    <p class="subtitle">The Art Adventure Map</p>
+    <h1 id="welcome-title">Student Map</h1>
+    <p class="subtitle" id="welcome-sub">Enter your name to see your creative journey.</p>
 
     <div class="input-section">
-        <input type="text" id="student-code" placeholder="Enter Access Code">
-        <button onclick="checkProgress()">Explore</button>
-        <p id="error-msg">Unknown access code.</p>
+        <input type="text" id="student-code" placeholder="Enter Name (e.g. Amy)">
+        <button onclick="checkProgress()">Explore Map</button>
+        <p id="error-msg">Student not found. Try checking the spelling!</p>
     </div>
 
     <div class="map-container" id="game-map">
 
         <div class="badge-spot pos-1" id="badge-1">
-            <div class="badge-card">
-                <div class="badge-inner">
-                    <div class="badge-front"><h3>Sketch</h3></div>
-                    <div class="badge-back"><img src="https://via.placeholder.com/100/333/fff?text=Art" alt="Art"></div>
-                </div>
-            </div>
+            <div class="badge-card"><div class="badge-inner">
+                <div class="badge-front"><h3>Loading...</h3></div>
+                <div class="badge-back"><img id="img-1" src="" alt="Art"></div>
+            </div></div>
         </div>
 
         <div class="badge-spot pos-2" id="badge-2">
-            <div class="badge-card">
-                <div class="badge-inner">
-                    <div class="badge-front"><h3>Color</h3></div>
-                    <div class="badge-back"><img src="https://via.placeholder.com/100/444/fff?text=Art" alt="Art"></div>
-                </div>
-            </div>
+            <div class="badge-card"><div class="badge-inner">
+                <div class="badge-front"><h3>Loading...</h3></div>
+                <div class="badge-back"><img id="img-2" src="" alt="Art"></div>
+            </div></div>
         </div>
 
         <div class="badge-spot pos-3" id="badge-3">
-            <div class="badge-card">
-                <div class="badge-inner">
-                    <div class="badge-front"><h3>Form</h3></div>
-                    <div class="badge-back"><img src="https://via.placeholder.com/100/555/fff?text=Art" alt="Art"></div>
-                </div>
-            </div>
+            <div class="badge-card"><div class="badge-inner">
+                <div class="badge-front"><h3>Loading...</h3></div>
+                <div class="badge-back"><img id="img-3" src="" alt="Art"></div>
+            </div></div>
         </div>
 
         <div class="badge-spot pos-4" id="badge-4">
-            <div class="badge-card">
-                <div class="badge-inner">
-                    <div class="badge-front"><h3>Portrait<br>Master</h3></div>
-                    <div class="badge-back"><img src="https://via.placeholder.com/100/666/fff?text=Face" alt="Face"></div>
-                </div>
-            </div>
+            <div class="badge-card"><div class="badge-inner">
+                <div class="badge-front"><h3>Loading...</h3></div>
+                <div class="badge-back"><img id="img-4" src="" alt="Art"></div>
+            </div></div>
         </div>
 
         <div class="badge-spot pos-5" id="badge-5">
-            <div class="badge-card">
-                <div class="badge-inner">
-                    <div class="badge-front"><h3>Portfolio<br>Maker</h3></div>
-                    <div class="badge-back"><img src="https://via.placeholder.com/100/777/fff?text=Book" alt="Book"></div>
-                </div>
-            </div>
+            <div class="badge-card"><div class="badge-inner">
+                <div class="badge-front"><h3>Loading...</h3></div>
+                <div class="badge-back"><img id="img-5" src="" alt="Art"></div>
+            </div></div>
         </div>
 
     </div>
 
     <script>
+        // THIS IS YOUR STUDENT DATABASE
+        // I have pre-filled it with the data you sent me.
+        
+        const studentDatabase = {
+            "amy": {
+                name: "Amy",
+                badges: ["Sustainable Creator", "Student Led"],
+                image: "https://via.placeholder.com/150/9D86E9/FFFFFF?text=Amy+Art" // Replace with real link
+            },
+            "regina": {
+                name: "Regina",
+                // Regina has many, showing top 5
+                badges: ["Figure Sketch", "Still Life", "Interior Design", "Painting", "Materials"],
+                image: "https://via.placeholder.com/150/FFB6C1/FFFFFF?text=Regina+Art"
+            },
+            "wallace": {
+                name: "Wallace",
+                badges: ["Student Led", "Focus Sprinter"],
+                image: "https://via.placeholder.com/150/87CEEB/FFFFFF?text=Wallace+Art"
+            },
+            "cameron": {
+                name: "Cameron",
+                badges: ["Focus Sprinter"],
+                image: "https://via.placeholder.com/150/20B2AA/FFFFFF?text=Cameron+Art"
+            },
+            "judy": {
+                name: "Judy",
+                badges: ["Student Led"],
+                image: "https://via.placeholder.com/150/FFA07A/FFFFFF?text=Judy+Art"
+            },
+            "xinyue": {
+                name: "Xinyue",
+                badges: ["Student Led"],
+                image: "https://via.placeholder.com/150/FFD700/FFFFFF?text=Xinyue+Art"
+            },
+            "adrian": {
+                name: "Adrian",
+                badges: ["Storyteller"],
+                image: "https://via.placeholder.com/150/333333/FFFFFF?text=Adrian+Art"
+            },
+            "serena": {
+                name: "Serena",
+                badges: ["Animation Begin"],
+                image: "https://via.placeholder.com/150/555555/FFFFFF?text=Serena+Art"
+            }
+        };
+
         function checkProgress() {
-            var code = document.getElementById('student-code').value.toLowerCase();
+            var code = document.getElementById('student-code').value.trim().toLowerCase();
             var map = document.getElementById('game-map');
             var error = document.getElementById('error-msg');
+            var title = document.getElementById('welcome-title');
+            var sub = document.getElementById('welcome-sub');
 
+            // Reset Display
             error.style.display = 'none';
-            var allBadges = document.querySelectorAll('.badge-spot');
-            allBadges.forEach(b => b.style.display = 'none');
             map.classList.remove('active');
+            
+            // Hide all 5 badges initially
+            for(let i=1; i<=5; i++) {
+                document.getElementById('badge-'+i).style.display = 'none';
+            }
 
-            // --- STUDENT CODES ---
-            if (code === '123') { 
-                map.classList.add('active'); 
-                document.getElementById('badge-1').style.display = 'block'; 
-                document.getElementById('badge-2').style.display = 'block'; 
-            } 
-            else if (code === '456') { 
+            // CHECK DATABASE
+            if (studentDatabase[code]) {
+                var student = studentDatabase[code];
+                
+                // 1. Light up map
                 map.classList.add('active');
-                document.getElementById('badge-1').style.display = 'block';
-                document.getElementById('badge-2').style.display = 'block';
-                document.getElementById('badge-3').style.display = 'block';
-                document.getElementById('badge-4').style.display = 'block'; 
-            }
-            else if (code === 'master') { 
-                map.classList.add('active');
-                allBadges.forEach(b => b.style.display = 'block');
-            }
-            else {
+                
+                // 2. Personalize Text
+                title.innerText = "Welcome, " + student.name + "!";
+                sub.innerText = "Here are the badges you have earned so far.";
+
+                // 3. Loop through their badges and show them on the map
+                student.badges.forEach((badgeName, index) => {
+                    // We only have 5 spots on the map, so stop if they have more than 5
+                    if (index < 5) {
+                        var spotID = 'badge-' + (index + 1);
+                        var spotElement = document.getElementById(spotID);
+                        
+                        // Show the spot
+                        spotElement.style.display = 'block';
+                        
+                        // Update the Text Title of the badge
+                        spotElement.querySelector('h3').innerText = badgeName;
+                        
+                        // Update the Image (Using the placeholder defined in database)
+                        spotElement.querySelector('img').src = student.image;
+                    }
+                });
+
+            } else {
+                // Code not found
                 error.style.display = 'block';
+                title.innerText = "Student Map";
+                sub.innerText = "Enter your name to see your creative journey.";
             }
         }
     </script>
