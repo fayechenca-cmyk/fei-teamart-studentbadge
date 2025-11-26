@@ -4,15 +4,17 @@
     "display_name": "Amy",
     "achievements": [
       { "badge_id": "sustainable_creator", "level": "explorer", "date": "2025-10-20" },
-      { "badge_id": "student_led",         "level": "beginner", "date": "2025-10-15" }
+      { "badge_id": "student_led",         "level": "beginner", "date": "2025-10-15" },
+      { "badge_id": "material_explore",    "level": "intermediate", "date": "2025-11-20" },
+      { "badge_id": "figure_sketch",       "level": "beginner", "date": "2025-11-25" }
     ],
     "notes": [
       { "date": "2025-10-20", "text": "You reused cardboard so thoughtfully — proud of your persistence." },
-      { "date": "2025-10-27", "text": "Your dream: illustrate a mini animal book. Let’s plan 6 pages!" }
+      { "date": "2025-11-25", "text": "Great job on the watercolor figure! Your creativity with different materials is shining." }
     ],
     "goals": [
-      { "text": "Finish Basic Shapes study", "due": "2025-11-02" },
-      { "text": "Try a recycled-sculpture mockup", "due": "2025-11-09" }
+      { "text": "Animation Character Study (Japanese Art Style)", "due": "2025-12-05" },
+      { "text": "Finish Basic Shapes study", "due": "2025-11-02" }
     ],
     "critiques": [
       { "date": "2025-10-15", "strength": "Strong silhouettes and color choices.", "next": "Slow down at line starts; add cast shadows." }
@@ -25,49 +27,50 @@
         "pdf": "pdfs/amy_bird_process.pdf"
       }
     ],
-    "teacher_note": "Wonderful sustainability mindset and creative risk-taking."
+    "teacher_note": "A highly creative explorer! Amy thrives when mixing materials and is currently developing a unique Japanese animation style.",
+    "tags": ["creative", "mixed-media", "animation-interest"]
   },
 
   {
     "id": "REGINA-16",
     "display_name": "Regina",
     "achievements": [
-      { "badge_id": "figure_sketch",         "level": "advanced",     "date": "2025-10-22" },
-      { "badge_id": "still_life",            "level": "advanced",     "date": "2025-10-22" },
-      { "badge_id": "interior_design",       "level": "intermediate", "date": "2025-09-30" },
-      { "badge_id": "art_painting",          "level": "intermediate", "date": "2025-09-25" },
-      { "badge_id": "material_explore",      "level": "intermediate", "date": "2025-09-18" },
-      { "badge_id": "observation_detective", "level": "advanced",     "date": "2025-08-28" },
-      { "badge_id": "art_painting",          "level": "intermediate", "date": "2025-10-05" }
+      { "badge_id": "figure_sketch",       "level": "advanced",     "date": "2025-10-22" },
+      { "badge_id": "still_life",          "level": "advanced",     "date": "2025-10-22" },
+      { "badge_id": "interior_design",     "level": "intermediate", "date": "2025-09-30" },
+      { "badge_id": "art_painting",        "level": "intermediate", "date": "2025-09-25" },
+      { "badge_id": "material_explore",    "level": "intermediate", "date": "2025-09-18" },
+      { "badge_id": "observation_detective", "level": "advanced",   "date": "2025-08-28" },
+      { "badge_id": "basic_sketch",        "level": "advanced",     "date": "2025-11-01" },
+      { "badge_id": "costume_design",      "level": "advanced",     "date": "2025-11-10" },
+      { "badge_id": "landscape",           "level": "intermediate", "date": "2025-11-15" },
+      { "badge_id": "digital_creator",     "level": "advanced",     "date": "2025-11-20" }
     ],
     "notes": [
-      { "date": "2025-09-15", "text": "Consistent technical excellence and discipline across mediums." },
-      { "date": "2025-09-28", "text": "Strong skull/facial structure study; smooth transition to portrait sketching." },
-      { "date": "2025-10-22", "text": "Refining shading and exploring color to add expression to technical skill." }
+      { "date": "2025-11-25", "text": "Regina demonstrates professional-level maturity in her artwork. A complete student." }
     ],
     "goals": [
-      { "text": "3 shaded portrait studies emphasizing light structure and soft gradation.", "due": "2025-11-10" },
       { "text": "1 colored portrait illustration integrating mood and personal style.", "due": "2025-11-24" },
-      { "text": "1 process sheet comparing realistic vs. expressive portrait techniques.", "due": "2025-12-05" }
+      { "text": "Portfolio review and curation.", "due": "2025-12-15" }
     ],
     "critiques": [
       {
         "date": "2025-10-10",
-        "strength": "Excellent proportion control and value transitions; balanced compositions.",
-        "next": "Invite more spontaneity and emotional depth in portrait rendering."
+        "strength": "Excellent proportion control and value transitions.",
+        "next": "Invite more spontaneity and emotional depth."
       }
     ],
     "featured_art": [
       {
-        "title": "Light & Shadow Portrait Study",
+        "title": "Light & Shadow Portrait",
         "thumb": "artworks/regina_portrait_study.jpg",
-        "caption": "Graphite + marker exploring facial structure and value.",
+        "caption": "Graphite + marker exploring facial structure.",
         "pdf": "pdfs/regina_portrait_study_process.pdf"
       }
     ],
-    "teacher_note": "Regina’s next milestone is blending her precise technique with expressive choices to develop a personal voice.",
-    "current_phase": "From technical mastery toward expressive illustration.",
-    "tags": ["mature","thoughtful","efficient","precise","fast-learner","technically-skilled"]
+    "teacher_note": "Regina is a very complete student creating mature, professional artwork. She has achieved nearly every major milestone with excellence.",
+    "current_phase": "Professional Portfolio Development",
+    "tags": ["professional", "mature", "technically-skilled", "advanced"]
   },
 
   {
@@ -78,24 +81,21 @@
       { "badge_id": "focus_sprinter",  "level": "beginner", "date": "2025-10-08" }
     ],
     "notes": [
-      { "date": "2025-10-01", "text": "Shows interest in creative and interactive tasks. Responds better when learning feels fun." },
-      { "date": "2025-10-15", "text": "Enjoys freedom-based projects such as crafts or choice-driven design." },
       { "date": "2025-10-22", "text": "Focus improves with autonomy and clear goals." }
     ],
     "goals": [
-      { "text": "Rebuild engagement: 3 choice-based sessions (game-character, robot, or creature).", "due": "2025-11-05" },
-      { "text": "Foundation bridge: 2 mini-lessons on volume inside his chosen subject.", "due": "2025-11-12" }
+      { "text": "Rebuild engagement: 3 choice-based sessions.", "due": "2025-11-05" }
     ],
     "featured_art": [
       {
-        "title": "Mech-Runner (choice sketch)",
+        "title": "Mech-Runner",
         "thumb": "artworks/wallace_mech_runner.jpg",
-        "caption": "Box + cylinder build-up, single light source.",
+        "caption": "Box + cylinder build-up.",
         "pdf": "pdfs/wallace_mech_runner_process.pdf"
       }
     ],
     "teacher_note": "Blend freedom with skill. Link his interests in design and games with structured drawing targets.",
-    "tags": ["creative-thinker", "prefers-freedom", "project-based", "quick-learner"]
+    "tags": ["creative-thinker", "prefers-freedom", "project-based"]
   },
 
   {
@@ -111,14 +111,13 @@
       ]
     },
     "notes": [
-      { "date": "2025-10-23", "text": "Very patient, calm, and reliable student. Excellent focus and concentration." }
+      { "date": "2025-10-23", "text": "Very patient, calm, and reliable student." }
     ],
     "goals": [
-      { "text": "Strengthen line control through calm repetition exercises.", "due": "2025-11-10" },
-      { "text": "Design and complete a high-clarity poster.", "due": "2025-11-17" }
+      { "text": "Strengthen line control through calm repetition exercises.", "due": "2025-11-10" }
     ],
     "teacher_note": "Cameron thrives in calm, structured environments.",
-    "tags": ["follows-instruction", "patient", "clean-style", "stable-focus"]
+    "tags": ["follows-instruction", "patient", "clean-style"]
   },
 
   {
@@ -134,21 +133,20 @@
       ]
     },
     "notes": [
-      { "date": "2025-10-23", "text": "Judy is creative and capable. Her personality is strong-minded and independent." }
+      { "date": "2025-11-25", "text": "Exceptional hand control. She is performing above her peer group level." }
     ],
     "goals": [
-      { "text": "Encourage openness in sharing her thoughts.", "due": "2025-11-20" },
-      { "text": "Develop stronger character design.", "due": "2025-12-05" }
+      { "text": "Advanced control exercises.", "due": "2025-12-05" }
     ],
     "featured_art": [
       {
-        "title": "Creative Creature Illustration",
+        "title": "Creative Creature",
         "thumb": "artworks/judy_creature.jpg",
         "caption": "Fantasy-themed drawing showing early creativity."
       }
     ],
-    "teacher_note": "Judy has a clear sense of self. Her strength lies in her independence and creative instinct.",
-    "tags": ["creative", "strong-minded", "independent"]
+    "teacher_note": "Judy has excellent hand control and is advanced for her peer group. She is ready to learn more complex techniques immediately.",
+    "tags": ["creative", "strong-minded", "high-potential", "precise"]
   },
 
   {
@@ -163,21 +161,18 @@
         { "id": "basic_sketch", "reason": "Strengthen visual organization." }
       ]
     },
-    "notes": [
-      { "date": "2025-10-23", "text": "Xinyue is imaginative and free-spirited. She enjoys K-pop culture." }
-    ],
     "goals": [
       { "text": "Strengthen her understanding of composition.", "due": "2025-11-25" }
     ],
     "featured_art": [
       {
-        "title": "K-pop Inspired Illustration",
+        "title": "K-pop Illustration",
         "thumb": "artworks/xinyue_kpop_illustration.jpg",
         "caption": "A lively illustration inspired by her favorite idol group."
       }
     ],
     "teacher_note": "The goal is to protect her imagination while gradually building focus.",
-    "tags": ["creative", "free-spirited", "kpop-inspired", "pattern-design"]
+    "tags": ["creative", "free-spirited", "kpop-inspired"]
   },
 
   {
@@ -192,15 +187,12 @@
         { "id": "storyteller", "reason": "Builds on his natural skill in storyboarding." }
       ]
     },
-    "notes": [
-      { "date": "2025-10-23", "text": "Adrian is deeply thoughtful with highly refined personal taste." }
-    ],
     "goals": [
       { "text": "Channel his deep aesthetic taste into visual storytelling projects.", "due": "2025-12-10" }
     ],
     "featured_art": [
       {
-        "title": "Forest Chase Horror Scene",
+        "title": "Forest Chase Horror",
         "thumb": "artworks/adrian_forest_monster.jpg",
         "caption": "An evocative horror chase scene, rich with layered tone."
       }
@@ -221,9 +213,6 @@
         { "id": "storyteller", "reason": "Introduces sketching in a loose, non-pressured way." }
       ]
     },
-    "notes": [
-      { "date": "2025-10-23", "text": "Serena is a cool, self-aware student who knows what she wants." }
-    ],
     "goals": [
       { "text": "Support Serena’s sketch confidence by offering expressive, low-pressure activities.", "due": "2025-11-30" }
     ],
