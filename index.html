@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEI TeamArt Student Report</title>
+    <title>FEI TeamArt Badge Milestone Map</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,23 +17,26 @@
 
     <div id="gate">
         <div class="gate-title">FEI TeamArt Portal</div>
-        <p style="margin-bottom:20px; color:#666;">Enter your Name or ID Code:</p>
+        <p style="margin-bottom:20px; color:#666;">Enter your Name to view your report:</p>
+        
         <form id="codeForm">
             <input type="text" id="codeInput" class="input" placeholder="e.g. Regina">
             <br>
-            <button type="submit" class="game-btn">View Report</button>
+            <button type="submit" class="game-btn">Open My Map</button>
         </form>
-        <div class="gate-note">Try: Regina (She has full data)</div>
+        
+        <div class="gate-note">Try typing: Regina</div>
     </div>
 
     <div id="gameUI" style="display:none;">
         
         <div class="header main-header">
-            <h1 id="welcomeText">Welcome!</h1>
+            <h1>FEI TeamArt Badge Milestone Map</h1>
+            <h2 id="welcomeText" style="font-size:18px; color:#666; font-weight:400; margin-top:5px;">Student Report</h2>
             
             <div class="progress-container">
                 <div class="progress-label">
-                    <span id="progressCount">0 / 0 Artifacts</span>
+                    <span id="progressCount">0 / 0 Badges Collected</span>
                     <span id="progressPct">0%</span>
                 </div>
                 <div class="progress-rail">
@@ -43,25 +48,23 @@
         <div class="card teacher-card">
             <div class="section-title">📝 Teacher's Note</div>
             <div class="teacher-text" id="teacherNote">
-                Loading teacher feedback...
+                Loading...
             </div>
-            <div class="tag-container" id="strengthTags">
-                </div>
+            <div class="tag-container" id="strengthTags"></div>
         </div>
 
         <div class="card">
             <div class="section-title">🎨 Masterpiece Spotlight</div>
-            <p style="font-size:14px; color:#666; margin-bottom:15px;">Selected highlights from this term.</p>
-            <div class="spotlight-grid" id="spotlightGrid">
-                </div>
+            <div class="spotlight-grid" id="spotlightGrid"></div>
         </div>
 
         <div class="card">
-            <div class="section-title">🗺️ Your Adventure Map</div>
+            <div class="section-title">🗺️ Your Badge Collection</div>
+            
             <div class="map-legend">
                 <span class="legend-item"><span class="dot earned"></span> Achieved</span>
-                <span class="legend-item"><span class="dot next"></span> Recommended Next</span>
-                <span class="legend-item"><span class="dot locked"></span> Future Goal</span>
+                <span class="legend-item"><span class="dot next"></span> Recommended</span>
+                <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
             </div>
             
             <div class="badge-grid" id="badgeGrid">
@@ -69,6 +72,7 @@
         </div>
 
         <div class="footer">
+            <p>All badges are originally designed by FEI TeamArt Students.</p>
             <p>© 2025 FEI TeamArt</p>
         </div>
 
