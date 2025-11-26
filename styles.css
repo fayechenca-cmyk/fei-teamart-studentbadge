@@ -1,109 +1,106 @@
-/* --- 1. THE MAP CONTAINER --- */
-.map-container {
-    position: relative; /* Defines the boundaries of the world */
-    width: 100%; 
-    max-width: 1200px;
-    /* This keeps the map a perfect rectangle (16:9 ratio) on all screens */
-    aspect-ratio: 16 / 9; 
-    margin: 0 auto;
-    
-    /* !!! IMPORTANT: Replace this link with your actual Map Image URL !!! */
-    background-image: url('https://placehold.co/1200x675/png?text=Upload+Your+Map+Image+Here'); 
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden; 
+/* GLOBAL SETTINGS */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: radial-gradient(circle at 0% 0%, rgba(199, 210, 254, 0.5), transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(103, 232, 249, 0.5), transparent 50%),
+              #fffdf8; 
+  color: #1a1d2b;
+  margin: 0; padding: 0;
+  min-height: 100vh;
 }
 
-/* --- 2. THE BADGE SPOTS (The "Pins" on the map) --- */
-.badge-spot {
-    position: absolute; /* Allows us to move them freely */
-    width: 100px;  /* Size of the badge */
-    height: 100px;
-    transform: translate(-50%, -50%); /* Centers the badge exactly on the coordinate */
-    z-index: 10;
-    cursor: pointer;
+.wrapper { max-width: 1000px; margin: auto; padding: 20px; }
+
+/* HEADER & CARDS */
+.header, .card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* --- 3. THE FLIP CARD DESIGN (Your Badges) --- */
-.badge-card {
-    width: 100%;
-    height: 100%;
-    perspective: 1000px; /* Gives the 3D effect */
+.main-header { text-align: center; }
+h1 { margin: 0 0 8px; font-family: 'Montserrat', sans-serif; font-weight:800; color: #1a1d2b; font-size: 32px; }
+.section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 15px; }
+
+/* LOGIN GATE */
+#gate {
+  background: #fff;
+  border: 4px solid #67e8f9; 
+  padding: 40px;
+  border-radius: 25px;
+  max-width: 480px;
+  margin: 80px auto;
+  text-align: center;
+  box-shadow: 0 10px 30px -10px rgba(103, 232, 249, 0.5);
 }
 
-.badge-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.gate-title {
+  font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800;
+  color: #1a1d2b; margin-bottom: 25px; text-transform: uppercase;
+}
+.input {
+  width: 80%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px;
+  font-size: 18px; text-align: center; margin-bottom: 20px;
+  background: #f9fafb;
+}
+.input:focus { outline: none; border-color: #67e8f9; background: #fff; }
+
+.game-btn {
+  width: 100%; padding: 18px;
+  background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+  color: #1a1d2b;
+  border: none; border-radius: 15px;
+  font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.game-btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
+
+/* BADGE GRID */
+.badge-grid {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
 }
 
-.badge-spot:hover .badge-inner {
-    transform: rotateY(180deg); /* The flipping action */
+.map-node {
+  width: 110px; text-align: center; position: relative;
+  opacity: 0; animation: popIn 0.5s forwards ease-out;
+}
+.map-node:hover { transform: translateY(-5px); cursor: pointer; }
+
+/* VISUAL CIRCLE */
+.node-visual {
+  width: 80px; height: 80px; margin: 0 auto 8px; border-radius: 50%;
+  background: #fff; border: 4px solid #e5e7eb; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: grid; place-items: center; position: relative;
+  font-size: 32px; /* Emoji Size */
+  transition: all 0.3s ease;
 }
 
-/* The Front and Back faces */
-.badge-front, .badge-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 50%; /* Makes them circular */
-    border: 3px solid #ffd700; /* Gold border */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: #fff;
-    padding: 5px;
-}
+.node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.node-label { font-size: 12px; font-weight: 600; line-height: 1.2; color: #555; }
 
-.badge-front {
-    background: linear-gradient(135deg, #fff3e0, #ffffff);
-}
+/* STATES */
+.map-node.locked .node-visual { opacity: 0.6; filter: grayscale(100%); }
+.map-node.unlocked .node-visual { border-width: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.1); background: #fff; }
+.map-node.unlocked .node-label { color: #000; font-weight: 700; }
+.map-node.recommended .node-visual { border-color: #f59e0b !important; animation: pulse 2s infinite; }
 
-.badge-front h3 {
-    font-size: 11px; /* Small text to fit in circle */
-    margin: 0;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+/* ICONS */
+.check-mark { position: absolute; top: 0; right: 0; font-size: 16px; background:white; border-radius:50%; width:20px; height:20px; display:grid; place-items:center; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+.quest-mark { position: absolute; top: -5px; right: -5px; font-size: 20px; }
+.lock-icon { font-size: 20px; opacity: 0.5; }
 
-/* The Back side (Student Art) */
-.badge-back {
-    background-color: #333;
-    color: white;
-    transform: rotateY(180deg);
-    overflow: hidden; /* Clips the image to the circle */
-}
+/* PROGRESS BAR */
+.progress-container { margin-top: 10px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.progress-rail { height: 12px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
+.footer { text-align: center; margin-top: 30px; font-size: 12px; color: #999; }
 
-.badge-back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures student art fills the circle */
-}
-
-/* --- 4. MAP COORDINATES (Where the badges go) --- */
-/* Think of Top 0% as the top edge, Left 0% as the left edge */
-
-/* Spot 1: Bottom Left */
-.pos-1 { top: 80%; left: 10%; }
-
-/* Spot 2: Moving Up */
-.pos-2 { top: 60%; left: 25%; }
-
-/* Spot 3: Middle */
-.pos-3 { top: 40%; left: 50%; }
-
-/* Spot 4: Right Side */
-.pos-4 { top: 30%; left: 75%; }
-
-/* Spot 5: Top Right (Finish Line) */
-.pos-5 { top: 15%; left: 85%; }
+@keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
