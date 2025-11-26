@@ -1,372 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FEI TeamArt - Student Journey</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-
-<style>
-    /* --- 1. BRAND COLORS & FONTS --- */
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: #E6F9F5; /* Mint Green */
-        color: #333;
-        text-align: center;
-        margin: 0;
-        padding: 40px 20px;
-        min-height: 100vh;
-    }
-
-    h1 {
-        font-weight: 800;
-        margin-bottom: 10px;
-        color: #1a1a1a;
-        font-size: 2.5rem;
-        letter-spacing: -1px;
-    }
-
-    .subtitle {
-        margin-top: 5px;
-        margin-bottom: 40px;
-        color: #666;
-        font-weight: 400;
-        font-size: 1.1rem;
-    }
-
-    /* --- INPUT CARD --- */
-    .input-section {
-        background: #ffffff;
-        padding: 30px 40px;
-        display: inline-block;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        margin-bottom: 40px;
-    }
-
-    input[type="text"] {
-        padding: 15px;
-        background: #f4f4f4;
-        border: 2px solid #eee;
-        border-radius: 10px;
-        color: #333;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        width: 220px;
-        text-align: center;
-        outline: none;
-        transition: border 0.3s;
-    }
-
-    input[type="text"]:focus {
-        border-color: #9D86E9; /* Lavender */
-        background: #fff;
-    }
-
-    button {
-        margin-left: 10px;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 10px;
-        background-color: #1a1a1a;
-        color: #ffffff;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-
-    button:hover {
-        transform: translateY(-2px);
-    }
-
-    /* --- MAP CONTAINER --- */
-    .map-container {
-        position: relative;
-        width: 100%; 
-        max-width: 1100px;
-        aspect-ratio: 16 / 9; 
-        margin: 0 auto;
-        background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg'); 
-        background-size: cover;
-        background-position: center;
-        border-radius: 25px;
-        border: 8px solid #ffffff; 
-        box-shadow: 0 20px 40px rgba(157, 134, 233, 0.2);
-        overflow: hidden; 
-        opacity: 0.6; 
-        filter: grayscale(30%); 
-        transition: all 1s ease;
-    }
-
-    .map-container.active {
-        opacity: 1; 
-        filter: grayscale(0%);
-    }
-
-    /* --- BADGES --- */
-    .badge-spot {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        cursor: pointer;
-        display: none; /* Hidden by default */
-        animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-
-    @keyframes popIn {
-        0% { transform: translate(-50%, -50%) scale(0); }
-        100% { transform: translate(-50%, -50%) scale(1); }
-    }
-
-    .badge-card {
-        width: 100%;
-        height: 100%;
-        perspective: 1000px;
-    }
-
-    .badge-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-    }
-
-    .badge-spot:hover .badge-inner {
-        transform: rotateY(180deg);
-    }
-
-    .badge-front, .badge-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 50%;
-        border: 4px solid #ffffff; 
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background: #fff;
-        overflow: hidden;
-    }
-
-    .badge-front { background: #ffffff; }
-
-    .badge-front h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 10px; /* Smaller font to fit long titles */
-        margin: 0;
-        color: #1a1a1a;
-        font-weight: 800;
-        text-transform: uppercase;
-        line-height: 1.2;
-        padding: 0 5px;
-    }
-    
-    .badge-front::after {
-        content: '';
-        display: block;
-        width: 6px;
-        height: 6px;
-        background-color: #9D86E9;
-        border-radius: 50%;
-        margin-top: 4px;
-    }
-
-    .badge-back {
-        background-color: #1a1a1a;
-        transform: rotateY(180deg);
-    }
-
-    .badge-back img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* --- POSITIONS --- */
-    .pos-1 { top: 80%; left: 15%; } 
-    .pos-2 { top: 65%; left: 30%; }
-    .pos-3 { top: 50%; left: 50%; }
-    .pos-4 { top: 35%; left: 70%; } 
-    .pos-5 { top: 20%; left: 85%; } 
-
-    #error-msg {
-        color: #E05D5D;
-        font-weight: 600;
-        font-size: 13px;
-        margin-top: 15px;
-        display: none;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEI TeamArt Student Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1 id="welcome-title">Student Map</h1>
-    <p class="subtitle" id="welcome-sub">Enter your name to see your creative journey.</p>
+<div class="wrapper">
 
-    <div class="input-section">
-        <input type="text" id="student-code" placeholder="Enter Name (e.g. Amy)">
-        <button onclick="checkProgress()">Explore Map</button>
-        <p id="error-msg">Student not found. Try checking the spelling!</p>
+    <div id="gate">
+        <div class="gate-title">FEI TeamArt Portal</div>
+        <p style="margin-bottom:20px; color:#666;">Enter your Name or ID Code:</p>
+        <form id="codeForm">
+            <input type="text" id="codeInput" class="input" placeholder="e.g. Regina">
+            <br>
+            <button type="submit" class="game-btn">View Report</button>
+        </form>
+        <div class="gate-note">Try: Regina (She has full data)</div>
     </div>
 
-    <div class="map-container" id="game-map">
-
-        <div class="badge-spot pos-1" id="badge-1">
-            <div class="badge-card"><div class="badge-inner">
-                <div class="badge-front"><h3>Loading...</h3></div>
-                <div class="badge-back"><img id="img-1" src="" alt="Art"></div>
-            </div></div>
-        </div>
-
-        <div class="badge-spot pos-2" id="badge-2">
-            <div class="badge-card"><div class="badge-inner">
-                <div class="badge-front"><h3>Loading...</h3></div>
-                <div class="badge-back"><img id="img-2" src="" alt="Art"></div>
-            </div></div>
-        </div>
-
-        <div class="badge-spot pos-3" id="badge-3">
-            <div class="badge-card"><div class="badge-inner">
-                <div class="badge-front"><h3>Loading...</h3></div>
-                <div class="badge-back"><img id="img-3" src="" alt="Art"></div>
-            </div></div>
-        </div>
-
-        <div class="badge-spot pos-4" id="badge-4">
-            <div class="badge-card"><div class="badge-inner">
-                <div class="badge-front"><h3>Loading...</h3></div>
-                <div class="badge-back"><img id="img-4" src="" alt="Art"></div>
-            </div></div>
-        </div>
-
-        <div class="badge-spot pos-5" id="badge-5">
-            <div class="badge-card"><div class="badge-inner">
-                <div class="badge-front"><h3>Loading...</h3></div>
-                <div class="badge-back"><img id="img-5" src="" alt="Art"></div>
-            </div></div>
-        </div>
-
-    </div>
-
-    <script>
-        // --- REAL STUDENT DATABASE ---
-        // I have converted your JSON data into the format the map needs.
-        // NOTE: If you do not have the 'artworks' folder created, the images will be broken.
+    <div id="gameUI" style="display:none;">
         
-        const studentDatabase = {
-            "amy": {
-                name: "Amy",
-                badges: ["Sustainable Creator", "Student Led"],
-                image: "artworks/amy_bird.jpg"
-            },
-            "regina": {
-                name: "Regina",
-                // Showing top 5 recent/important badges from her list of 7
-                badges: ["Figure Sketch", "Still Life", "Interior Design", "Art Painting", "Materials"],
-                image: "artworks/regina_portrait_study.jpg"
-            },
-            "wallace": {
-                name: "Wallace",
-                badges: ["Student Led", "Focus Sprinter"],
-                image: "artworks/wallace_mech_runner.jpg"
-            },
-            "cameron": {
-                name: "Cameron",
-                badges: ["Focus Sprinter"],
-                // Cameron had no featured_art in JSON, so I used a placeholder
-                image: "https://placehold.co/150x150/20B2AA/FFFFFF?text=Cameron+Art"
-            },
-            "judy": {
-                name: "Judy",
-                badges: ["Student Led"],
-                image: "artworks/judy_creature.jpg"
-            },
-            "xinyue": {
-                name: "Xinyue",
-                badges: ["Student Led"],
-                image: "artworks/xinyue_kpop_illustration.jpg"
-            },
-            "adrian": {
-                name: "Adrian",
-                badges: ["Storyteller"],
-                image: "artworks/adrian_forest_monster.jpg"
-            },
-            "serena": {
-                name: "Serena",
-                badges: ["Animation Begin"],
-                // Serena had no featured_art in JSON, so I used a placeholder
-                image: "https://placehold.co/150x150/555555/FFFFFF?text=Serena+Art"
-            }
-        };
-
-        function checkProgress() {
-            var code = document.getElementById('student-code').value.trim().toLowerCase();
-            var map = document.getElementById('game-map');
-            var error = document.getElementById('error-msg');
-            var title = document.getElementById('welcome-title');
-            var sub = document.getElementById('welcome-sub');
-
-            // Reset Display
-            error.style.display = 'none';
-            map.classList.remove('active');
+        <div class="header main-header">
+            <h1 id="welcomeText">Welcome!</h1>
             
-            // Hide all 5 badges initially
-            for(let i=1; i<=5; i++) {
-                document.getElementById('badge-'+i).style.display = 'none';
-            }
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span id="progressCount">0 / 0 Artifacts</span>
+                    <span id="progressPct">0%</span>
+                </div>
+                <div class="progress-rail">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
 
-            // CHECK DATABASE
-            if (studentDatabase[code]) {
-                var student = studentDatabase[code];
-                
-                // 1. Light up map
-                map.classList.add('active');
-                
-                // 2. Personalize Text
-                title.innerText = "Welcome, " + student.name + "!";
-                sub.innerText = "Here are the badges you have earned so far.";
+        <div class="card teacher-card">
+            <div class="section-title">📝 Teacher's Note</div>
+            <div class="teacher-text" id="teacherNote">
+                Loading teacher feedback...
+            </div>
+            <div class="tag-container" id="strengthTags">
+                </div>
+        </div>
 
-                // 3. Loop through their badges and show them on the map
-                student.badges.forEach((badgeName, index) => {
-                    // We only have 5 spots on the map, so stop if they have more than 5
-                    if (index < 5) {
-                        var spotID = 'badge-' + (index + 1);
-                        var spotElement = document.getElementById(spotID);
-                        
-                        // Show the spot
-                        spotElement.style.display = 'block';
-                        
-                        // Update the Text Title of the badge
-                        spotElement.querySelector('h3').innerText = badgeName;
-                        
-                        // Update the Image
-                        // If the student image is missing or broken, it will show an empty box
-                        spotElement.querySelector('img').src = student.image;
-                    }
-                });
+        <div class="card">
+            <div class="section-title">🎨 Masterpiece Spotlight</div>
+            <p style="font-size:14px; color:#666; margin-bottom:15px;">Selected highlights from this term.</p>
+            <div class="spotlight-grid" id="spotlightGrid">
+                </div>
+        </div>
 
-            } else {
-                // Code not found
-                error.style.display = 'block';
-                title.innerText = "Student Map";
-                sub.innerText = "Enter your name to see your creative journey.";
-            }
-        }
-    </script>
+        <div class="card">
+            <div class="section-title">🗺️ Your Adventure Map</div>
+            <div class="map-legend">
+                <span class="legend-item"><span class="dot earned"></span> Achieved</span>
+                <span class="legend-item"><span class="dot next"></span> Recommended Next</span>
+                <span class="legend-item"><span class="dot locked"></span> Future Goal</span>
+            </div>
+            
+            <div class="badge-grid" id="badgeGrid">
+                </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 FEI TeamArt</p>
+        </div>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
