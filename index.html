@@ -1,102 +1,474 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEI TeamArt Badge Map</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div class="wrapper">
-
-    <div id="gate">
-        <div class="gate-banner">
-            <div class="banner-overlay"></div>
-        </div>
-
-        <div class="gate-content">
-            <div class="gate-title">FEI TeamArt Portal</div>
+<div id="fei-embed-root">
+    <!-- =========================
+         1. SCOPED CSS STYLES
+         ========================= -->
+    <style>
+        /* RESET: Ensure we don't inherit weird styles from parent */
+        #fei-embed-root {
+            all: initial; /* Resets inheritance */
+            font-family: 'Open Sans', sans-serif;
+            display: block;
+            width: 100%;
+            height: auto; /* Allow it to grow */
+            min-height: 800px; /* Minimum height for visual appeal */
+            position: relative;
+            box-sizing: border-box;
             
-            <p style="margin-bottom:15px; color:#555; font-weight:600;">Enter your Student ID to unlock your map:</p>
-            <form id="codeForm">
-                <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
-                <br>
-                <button type="submit" class="game-btn">Find My Map</button>
-            </form>
-        </div>
+            /* MAP BACKGROUND - Scoped to this div only */
+            background-image: 
+                linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 
+                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* PADDING */
+            padding: 40px 20px;
+        }
 
-        <div class="how-it-works">
-            <div class="how-step">
-                <div class="how-icon">🔑</div>
-                <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
-            </div>
-            <div class="how-step">
-                <div class="how-icon">🗺️</div>
-                <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
-            </div>
-            <div class="how-step">
-                <div class="how-icon">📝</div>
-                <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
-            </div>
-        </div>
-    </div>
+        /* FONTS IMPORT */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-    <div id="gameUI" style="display:none;">
+        /* WRAPPER INSIDE EMBED */
+        #fei-embed-root .inner-wrapper { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif; /* Re-apply font inside reset */
+        }
+
+        /* --- LOGIN GATE --- */
+        #fei-embed-root #gate {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            max-width: 480px; 
+            margin: 0 auto; /* Natural centering */
+            text-align: center;
+            overflow: hidden; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #fei-embed-root .gate-banner {
+            height: 140px;
+            width: 100%;
+            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        #fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
+
+        #fei-embed-root .gate-title { 
+            font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; 
+            margin-bottom: 10px; margin-top: -25px; color: #1a1d2b;
+            position: relative; z-index: 10;
+            line-height: 1.2;
+        }
+
+        #fei-embed-root .gate-desc {
+            margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px;
+        }
+
+        /* How It Works Grid */
+        #fei-embed-root .how-it-works {
+            display: flex;
+            border-top: 1px solid #eee;
+            background: #f8fafc;
+        }
+        #fei-embed-root .how-step {
+            flex: 1;
+            padding: 15px 5px;
+            border-right: 1px solid #eee;
+        }
+        #fei-embed-root .how-step:last-child { border-right: none; }
+        #fei-embed-root .how-icon { font-size: 22px; margin-bottom: 5px; display: block;}
+        #fei-embed-root .how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; display: block; }
+        #fei-embed-root .how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
+
+        /* Input & Button */
+        #fei-embed-root .input { 
+            width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
+            font-size: 16px; text-align: center; margin-bottom: 15px; 
+            background: #fff; color: #333; box-sizing: border-box;
+            transition: all 0.3s;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #fei-embed-root .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
+
+        #fei-embed-root .game-btn {
+            width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+            color: #1a1d2b; border: none; border-radius: 12px; 
+            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+        }
+        #fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+        /* --- DASHBOARD UI --- */
+        #fei-embed-root .header, #fei-embed-root .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #1a1d2b;
+        }
+
+        #fei-embed-root .main-header { text-align: center; margin-top: 0px; }
+        #fei-embed-root h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
+        #fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; font-family: 'Open Sans', sans-serif;}
         
-        <div class="header main-header">
-            <h1>FEI TeamArt Milestone Map</h1>
-            <h2 id="welcomeText" style="font-size:18px; color:#666; font-weight:400; margin-top:5px;">Student Report</h2>
-            
-            <div class="progress-container">
-                <div class="progress-label">
-                    <span id="progressCount">0 / 0 Badges Collected</span>
-                    <span id="progressPct">0%</span>
+        #fei-embed-root .section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
+
+        /* Teacher Card */
+        #fei-embed-root .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
+        #fei-embed-root .teacher-text {
+            font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
+            background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
+        }
+        #fei-embed-root .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        #fei-embed-root .tag {
+            background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* Spotlight */
+        #fei-embed-root .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        #fei-embed-root .spotlight-item { width: 180px; text-align: center; }
+        #fei-embed-root .spotlight-frame {
+            width: 100%; height: 180px; background: #fff; padding: 8px; box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
+            margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
+        }
+        #fei-embed-root .spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
+        #fei-embed-root .spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
+        #fei-embed-root .spotlight-img { width: 100%; height: 100%; object-fit: cover; }
+        #fei-embed-root .spotlight-caption { font-size: 13px; font-weight: 700; color: #555; }
+        #fei-embed-root .spotlight-sub { font-size: 11px; color: #999; }
+
+        /* Badges */
+        #fei-embed-root .map-card-bg { background: #fff; }
+        #fei-embed-root .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        #fei-embed-root .map-node { 
+            width: 120px; text-align: center; position: relative; 
+            opacity: 0; animation: popIn 0.5s forwards ease-out; 
+        }
+        #fei-embed-root .map-node:hover { transform: translateY(-5px); cursor: pointer; }
+
+        #fei-embed-root .node-visual {
+            width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
+            background: #fff; border: 4px solid #e5e7eb; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
+            transition: all 0.3s ease;
+        }
+        #fei-embed-root .node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        #fei-embed-root .node-icon-fallback { font-size: 32px; }
+        #fei-embed-root .node-label { font-size: 12px; font-weight: 700; line-height: 1.2; color: #444; margin-bottom: 2px; }
+        #fei-embed-root .badge-credit {
+            font-size: 10px; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px;
+            margin-top: 4px; font-weight: 700; font-family: 'Montserrat', sans-serif; opacity: 0.9;
+        }
+
+        /* BADGE STATES (Shiny!) */
+        #fei-embed-root .map-node.locked .node-visual { 
+            opacity: 0.5; filter: grayscale(100%); background: #f0f0f0; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+        #fei-embed-root .map-node.unlocked .node-visual { 
+            border: 3px solid #ffb700; 
+            background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+            box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+            transform: scale(1.08); z-index: 2;
+        }
+        #fei-embed-root .map-node.unlocked .node-icon-fallback { font-size: 40px; }
+        #fei-embed-root .map-node.unlocked .node-label { color: #1a1d2b; font-weight: 800; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
+        
+        #fei-embed-root .map-node.recommended .node-visual { 
+            border: 3px dashed #f59e0b !important; animation: pulse 2s infinite; background: #fffbeb; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Icons */
+        #fei-embed-root .check-mark { 
+            position: absolute; top: -5px; right: -5px; 
+            background: #10b981; color: white; border: 2px solid white; border-radius: 50%; 
+            width: 24px; height: 24px; display: grid; place-items: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 14px; font-weight: bold;
+        }
+        #fei-embed-root .quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
+
+        /* Progress */
+        #fei-embed-root .progress-container { margin-top: 15px; }
+        #fei-embed-root .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #555; }
+        #fei-embed-root .progress-rail { height: 10px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
+        #fei-embed-root .progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
+
+        #fei-embed-root .map-legend { text-align: center; margin-bottom: 20px; font-size: 12px; color: #666; }
+        #fei-embed-root .legend-item { margin: 0 10px; }
+        #fei-embed-root .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+        #fei-embed-root .dot.earned { background: #10b981; } #fei-embed-root .dot.next { background: #f59e0b; } #fei-embed-root .dot.locked { background: #e5e7eb; }
+
+        #fei-embed-root .footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+        @keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    </style>
+
+    <!-- =========================
+         2. HTML STRUCTURE
+         ========================= -->
+    <div class="inner-wrapper">
+
+        <!-- LOGIN GATE -->
+        <div id="gate">
+            <div class="gate-banner"></div>
+            <div class="gate-content">
+                <div class="gate-title">FEI TeamArt Portal</div>
+                <p class="gate-desc">Enter your Student ID to unlock your map:</p>
+                
+                <form id="codeForm">
+                    <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
+                    <br>
+                    <button type="submit" class="game-btn">Find My Map</button>
+                </form>
+            </div>
+
+            <div class="how-it-works">
+                <div class="how-step">
+                    <div class="how-icon">🔑</div>
+                    <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
                 </div>
-                <div class="progress-rail">
-                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                <div class="how-step">
+                    <div class="how-icon">🗺️</div>
+                    <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
+                </div>
+                <div class="how-step">
+                    <div class="how-icon">📝</div>
+                    <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
                 </div>
             </div>
         </div>
 
-        <div class="card teacher-card">
-            <div class="section-title">📝 Teacher's Note</div>
-            <div class="teacher-text" id="teacherNote">Loading...</div>
-            <div class="tag-container" id="strengthTags"></div>
-        </div>
-
-        <div class="card">
-            <div class="section-title">🎨 Masterpiece Spotlight</div>
-            <div class="spotlight-grid" id="spotlightGrid"></div>
-        </div>
-
-        <div class="card map-card-bg">
-            <div class="section-title">🗺️ Your Badge Collection</div>
+        <!-- REPORT UI (Hidden until login) -->
+        <div id="gameUI" style="display:none;">
             
-            <div class="map-legend">
-                <span class="legend-item"><span class="dot earned"></span> Achieved</span>
-                <span class="legend-item"><span class="dot next"></span> Recommended</span>
-                <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
-            </div>
-            
-            <div class="badge-grid" id="badgeGrid">
+            <div class="header main-header">
+                <h1>FEI TeamArt Milestone Map</h1>
+                <h2 id="welcomeText">Student Report</h2>
+                
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span id="progressCount">0 / 0 Badges Collected</span>
+                        <span id="progressPct">0%</span>
+                    </div>
+                    <div class="progress-rail">
+                        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                    </div>
                 </div>
-        </div>
+            </div>
 
-        <div class="footer">
-            <p>All badges are originally designed by FEI TeamArt Students.</p>
-            <p>© 2025 FEI TeamArt</p>
-        </div>
+            <div class="card teacher-card">
+                <div class="section-title">📝 Teacher's Note</div>
+                <div class="teacher-text" id="teacherNote">Loading...</div>
+                <div class="tag-container" id="strengthTags"></div>
+            </div>
 
+            <div class="card">
+                <div class="section-title">🎨 Masterpiece Spotlight</div>
+                <div class="spotlight-grid" id="spotlightGrid"></div>
+            </div>
+
+            <div class="card map-card-bg">
+                <div class="section-title">🗺️ Your Badge Collection</div>
+                
+                <div class="map-legend">
+                    <span class="legend-item"><span class="dot earned"></span> Achieved</span>
+                    <span class="legend-item"><span class="dot next"></span> Recommended</span>
+                    <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
+                </div>
+                
+                <div class="badge-grid" id="badgeGrid"></div>
+            </div>
+
+            <div class="footer">
+                <p>All badges are originally designed by FEI TeamArt Students.</p>
+                <p>© 2025 FEI TeamArt</p>
+            </div>
+
+        </div>
     </div>
 </div>
 
-<script src="app.js"></script>
+<!-- =========================
+     3. JAVASCRIPT LOGIC
+     ========================= -->
+<script>
+    // 1. DATA CONFIGURATION
+    const PAGES = [
+        { id:'basic_sketch', title:'Basic Sketch', artist:'Des. by Alex', imgUrl:'', emoji:'✏️', color:'#f59e0b' },
+        { id:'still_life', title:'Still Life', artist:'Des. by Sara', imgUrl:'', emoji:'🍎', color:'#ef4444' },
+        { id:'landscape', title:'Landscape', artist:'Des. by John', imgUrl:'', emoji:'⛰️', color:'#10b981' },
+        { id:'material_explore', title:'Material Explore', artist:'Des. by Xinyue', imgUrl:'', emoji:'🧱', color:'#78716c' },
+        { id:'observation_detective', title:'Observation Detective', artist:'Des. by Leo', imgUrl:'', emoji:'👀', color:'#06b6d4' },
+        { id:'realism_expert', title:'Realism Expert', artist:'Des. by Cameron', imgUrl:'', emoji:'👁️', color:'#374151' }, 
+        { id:'figure_sketch', title:'Figure Sketch', artist:'Des. by Mia', imgUrl:'', emoji:'🧍', color:'#f43f5e' },
+        { id:'portrait_master', title:'Portrait Master', artist:'Des. by Regina', imgUrl:'', emoji:'👤', color:'#be185d' },
+        { id:'interior_design', title:'Interior Design', artist:'Des. by Serena', imgUrl:'', emoji:'🛋️', color:'#d97706' },
+        { id:'costume_design', title:'Costume Design', artist:'Des. by Max', imgUrl:'', emoji:'👗', color:'#db2777' },
+        { id:'hand_crafter', title:'Hand Crafter', artist:'Des. by Alissie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da2dc31c5379bbe21a_feiteamart%20handcrafter.PNG', emoji:'🧵', color:'#ec4899' },
+        { id:'little_architect', title:'Little Creator', artist:'Des. by Cameron', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', emoji:'🏛️', color:'#0ea5e9' },
+        { id:'idea_inventor', title:'Idea Inventor', artist:'Des. by Natalie', imgUrl:'', emoji:'💡', color:'#8b5cf6' },
+        { id:'storyteller', title:'Storyteller', artist:'Des. by Adrian', imgUrl:'', emoji:'📖', color:'#f97316' },
+        { id:'art_painting', title:'Art Painting', artist:'Des. by Regina', imgUrl:'', emoji:'🎨', color:'#3b82f6' },
+        { id:'scene_designer', title:'Scene Designer', artist:'Des. by Tom', imgUrl:'', emoji:'🎬', color:'#6366f1' },
+        { id:'character_designer', title:'Character Designer', artist:'Des. by Judy', imgUrl:'', emoji:'🦸', color:'#8b5cf6' },
+        { id:'digital_creator', title:'Digital Creator', artist:'Des. by Temp', imgUrl:'', emoji:'💻', color:'#0ea5e9' },
+        { id:'animation_beginner', title:'Animator Creator', artist:'Des. by Rainie', imgUrl:'', emoji:'🎞️', color:'#8b5cf6' },
+        { id:'gaming_creator', title:'Gaming Creator', artist:'Des. by Cody', imgUrl:'', emoji:'🎮', color:'#a855f7' },
+        { id:'sustainable_creator', title:'Sustainable Creator', artist:'Des. by Amy', imgUrl:'', emoji:'🌿', color:'#22c55e' },
+        { id:'critical_thinker', title:'Critical Thinker', artist:'Des. by Zoe', imgUrl:'', emoji:'🧠', color:'#ef4444' },
+        { id:'art_history', title:'Art History', artist:'Des. by Ray', imgUrl:'', emoji:'🏺', color:'#eab308' },
+        { id:'fei_volunteer', title:'FEI Volunteer', artist:'Des. by Rebecca', imgUrl:'', emoji:'🤝', color:'#14b8a6' },
+        { id:'community_builder', title:'Community Builder', artist:'Des. by Team', imgUrl:'', emoji:'🏙️', color:'#f59e0b' },
+        { id:'focus_sprinter', title:'Focus Sprinter', artist:'Des. by Cam', imgUrl:'', emoji:'⏱️', color:'#64748b' },
+        { id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'', emoji:'📂', color:'#1e3a8a' }
+    ];
 
-</body>
-</html>
+    // *** IMPORTANT: You must host 'students.json' on GitHub for this to work ***
+    let allStudents = [];
+
+    // 2. INITIALIZATION
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // Load Data
+        fetch('students.json')
+            .then(response => response.json())
+            .then(data => { allStudents = data; })
+            .catch(error => { console.error('Error loading student data:', error); });
+
+        // Login Logic
+        const form = document.getElementById('codeForm');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const code = document.getElementById('codeInput').value.trim();
+                if (!code) return;
+
+                // Find student
+                const student = allStudents.find(s => 
+                    (s.id && s.id.toUpperCase() === code.toUpperCase()) || 
+                    (s.display_name && s.display_name.toUpperCase() === code.toUpperCase())
+                );
+
+                if (student) {
+                    // Unlock
+                    document.getElementById('gate').style.display = 'none';
+                    document.getElementById('gameUI').style.display = 'block';
+                    loadReport(student); 
+                } else {
+                    alert("Student not found! Please check your ID.");
+                }
+            });
+        }
+    });
+
+    // 3. RENDER REPORT
+    function loadReport(student) {
+        document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
+
+        // Teacher Note
+        const noteEl = document.getElementById('teacherNote');
+        noteEl.innerText = student.teacher_note ? `"${student.teacher_note}"` : "Welcome back!";
+
+        // Tags
+        const tagsContainer = document.getElementById('strengthTags');
+        tagsContainer.innerHTML = '';
+        if (student.tags) {
+            student.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+        }
+
+        // Spotlight
+        const spotGrid = document.getElementById('spotlightGrid');
+        spotGrid.innerHTML = '';
+        if (student.featured_art && student.featured_art.length > 0) {
+            student.featured_art.forEach(art => {
+                const div = document.createElement('div');
+                div.className = 'spotlight-item';
+                div.innerHTML = `
+                    <div class="spotlight-frame">
+                        <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
+                    </div>
+                    <div class="spotlight-caption">${art.title}</div>
+                    <div class="spotlight-sub">${art.caption || ''}</div>
+                `;
+                spotGrid.appendChild(div);
+            });
+        } else {
+            spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
+        }
+
+        renderMap(student);
+    }
+
+    function renderMap(student) {
+        const container = document.getElementById('badgeGrid');
+        container.innerHTML = ''; 
+
+        // IDs
+        let earnedIds = [];
+        if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
+
+        let recommendedIds = [];
+        if (student.badges && student.badges.should_target) {
+            recommendedIds = student.badges.should_target.map(t => t.id);
+        }
+
+        // Stats
+        const total = PAGES.length;
+        const count = earnedIds.length;
+        const pct = Math.round((count / total) * 100);
+        document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
+        document.getElementById('progressBar').style.width = `${pct}%`;
+        document.getElementById('progressPct').textContent = `${pct}%`;
+
+        // Render
+        PAGES.forEach((page, index) => {
+            const isUnlocked = earnedIds.includes(page.id);
+            const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
+            
+            const node = document.createElement('div');
+            let statusClass = 'locked';
+            if (isUnlocked) statusClass = 'unlocked';
+            else if (isRecommended) statusClass = 'recommended';
+
+            node.className = `map-node ${statusClass}`;
+            node.style.animationDelay = `${index * 0.05}s`;
+
+            const hasImage = page.imgUrl && page.imgUrl.length > 5;
+            const imageHTML = hasImage 
+                ? `<img src="${page.imgUrl}" class="node-img">` 
+                : `<div class="node-icon-fallback">${page.emoji}</div>`;
+
+            node.innerHTML = `
+                <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
+                    ${imageHTML}
+                    ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
+                    ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
+                </div>
+                <div class="node-label">${page.title}</div>
+                <div class="badge-credit">${page.artist}</div>
+            `;
+            container.appendChild(node);
+        });
+    }
+</script>
