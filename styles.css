@@ -1,5 +1,5 @@
 /* =========================================
-   1. GLOBAL & BACKGROUND
+   1. GLOBAL & BACKGROUND (The Immersive Map)
    ========================================= */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -8,7 +8,7 @@ body {
   
   /* FULL SCREEN MAP BACKGROUND */
   background-image: 
-    linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), /* Dark overlay for readability */
+    linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), /* Dark overlay to make text pop */
     url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
   
   background-size: cover;
@@ -141,7 +141,7 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 .spotlight-sub { font-size: 11px; color: #999; }
 
 /* =========================================
-   4. THE BADGE GRID
+   4. THE BADGE GRID (With Shine & Glow!)
    ========================================= */
 .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 
@@ -154,7 +154,7 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 }
 .map-node:hover { transform: translateY(-5px); cursor: pointer; }
 
-/* The Circle Visual */
+/* The Circle Visual Base */
 .node-visual {
   width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
   background: #fff; border: 4px solid #e5e7eb; 
@@ -167,7 +167,7 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 /* Title and Credits */
 .node-label { font-size: 12px; font-weight: 700; line-height: 1.2; color: #444; margin-bottom: 2px; }
 
-/* --- THE ARTIST CREDIT (New Style) --- */
+/* THE ARTIST CREDIT */
 .badge-credit {
     font-size: 10px;
     color: #6366f1; /* Creative Purple/Blue */
@@ -179,14 +179,50 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
     opacity: 0.9;
 }
 
-/* Badge States */
-.map-node.locked .node-visual { opacity: 0.5; filter: grayscale(100%); }
-.map-node.unlocked .node-visual { border-width: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.1); background: #fff; }
-.map-node.recommended .node-visual { border-color: #f59e0b !important; animation: pulse 2s infinite; background: #fffbeb; }
+/* --- BADGE STATES (THE GLOW UP) --- */
+
+/* 1. LOCKED */
+.map-node.locked .node-visual { 
+    opacity: 0.5; 
+    filter: grayscale(100%); 
+    background: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 2. ACHIEVED (SHINY!) */
+.map-node.unlocked .node-visual { 
+    /* Bright Gold/Orange Border */
+    border: 3px solid #ffb700; 
+    
+    /* Warm inner glow background instead of flat white */
+    background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+    
+    /* The External Glow (Shine effect) */
+    box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+    
+    /* Make it pop out slightly */
+    transform: scale(1.08); 
+    z-index: 2;
+}
+/* Make emoji bigger in unlocked state */
+.map-node.unlocked .node-icon-fallback { font-size: 40px; }
+
+/* 3. RECOMMENDED (PULSING!) */
+.map-node.recommended .node-visual { 
+    border: 3px dashed #f59e0b !important; 
+    animation: pulse 2s infinite; 
+    background: #fffbeb; 
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
 
 /* Icons (Checkmarks etc) */
-.check-mark { position: absolute; top: 0; right: 0; background:white; border-radius:50%; width:22px; height:22px; display:grid; place-items:center; box-shadow:0 2px 4px rgba(0,0,0,0.1); font-size: 12px; color: green;}
-.quest-mark { position: absolute; top: -5px; right: -5px; font-size: 20px; }
+.check-mark { 
+    position: absolute; top: -5px; right: -5px; 
+    background:#10b981; border: 2px solid white; border-radius:50%; 
+    width:24px; height:24px; display:grid; place-items:center; 
+    box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
+}
+.quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
 
 /* Progress Bars & Legend */
 .progress-container { margin-top: 15px; }
