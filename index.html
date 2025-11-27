@@ -1,23 +1,20 @@
 <div id="fei-embed-root">
     <style>
-        /* IMPORT FONTS AT THE VERY TOP */
+        /* IMPORT FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-        /* RESET & WRAPPER - Body Font: Open Sans */
+        /* RESET & WRAPPER */
         #fei-embed-root {
             all: initial; 
-            font-family: 'Open Sans', sans-serif; /* BODY FONT */
+            font-family: 'Open Sans', sans-serif;
             display: block;
             width: 100%;
-            height: auto; 
             min-height: 800px; 
             position: relative;
             box-sizing: border-box;
-            
-            /* MAP BACKGROUND */
             background-image: 
                 linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 
-                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -29,29 +26,17 @@
             width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box;
         }
 
-        /* --- TYPOGRAPHY RULES --- */
-        
-        /* TITLES: Montserrat */
-        #fei-embed-root h1, 
-        #fei-embed-root h2,
-        #fei-embed-root .gate-title,
-        #fei-embed-root .section-title,
-        #fei-embed-root .game-btn,
-        #fei-embed-root .badge-credit,
-        #fei-embed-root .node-label {
+        /* TYPOGRAPHY */
+        #fei-embed-root h1, #fei-embed-root h2, #fei-embed-root h3,
+        #fei-embed-root .gate-title, #fei-embed-root .section-title,
+        #fei-embed-root .game-btn, #fei-embed-root .badge-credit, #fei-embed-root .node-label {
             font-family: 'Montserrat', sans-serif !important;
         }
-
-        /* BODY: Open Sans */
-        #fei-embed-root p,
-        #fei-embed-root .input,
-        #fei-embed-root .teacher-text,
-        #fei-embed-root .gate-desc,
-        #fei-embed-root .how-desc {
+        #fei-embed-root p, #fei-embed-root li, #fei-embed-root div {
             font-family: 'Open Sans', sans-serif !important;
         }
 
-        /* --- LOGIN GATE --- */
+        /* LOGIN GATE */
         #fei-embed-root #gate {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 25px;
@@ -63,44 +48,30 @@
             border: 1px solid rgba(255,255,255,0.5);
             backdrop-filter: blur(10px);
         }
-
         #fei-embed-root .gate-banner {
             height: 140px; width: 100%;
-            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
             background-size: cover; background-position: center; position: relative;
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
-
         #fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
-        
         #fei-embed-root .gate-title { 
-            font-size: 26px; font-weight: 800; 
-            margin-bottom: 10px; margin-top: -25px; color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
+            font-size: 26px; font-weight: 800; margin-bottom: 10px; margin-top: -25px; 
+            color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
         }
-        
         #fei-embed-root .gate-desc { margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px; }
-
-        #fei-embed-root .how-it-works { display: flex; border-top: 1px solid #eee; background: #f8fafc; }
-        #fei-embed-root .how-step { flex: 1; padding: 15px 5px; border-right: 1px solid #eee; }
-        #fei-embed-root .how-step:last-child { border-right: none; }
-        #fei-embed-root .how-icon { font-size: 22px; margin-bottom: 5px; display: block;}
-        #fei-embed-root .how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; display: block; }
-        #fei-embed-root .how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
-
         #fei-embed-root .input { 
             width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
             font-size: 16px; text-align: center; margin-bottom: 15px; 
             background: #fff; color: #333; box-sizing: border-box; transition: all 0.3s;
         }
         #fei-embed-root .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
-
         #fei-embed-root .game-btn {
             width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
             color: #1a1d2b; border: none; border-radius: 12px; 
-            font-size: 16px; font-weight: 800; 
-            text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+            font-size: 16px; font-weight: 800; text-transform: uppercase; cursor: pointer; 
+            transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
         }
         #fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
 
@@ -112,10 +83,9 @@
         #fei-embed-root .main-header { text-align: center; margin-top: 0px; }
         #fei-embed-root h1 { margin: 0 0 5px; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
         #fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; }
-        
         #fei-embed-root .section-title { font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
 
-        /* Teacher & Spotlight */
+        /* TEACHER NOTE SECTION */
         #fei-embed-root .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
         #fei-embed-root .teacher-text {
             font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
@@ -127,6 +97,20 @@
             font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
         }
 
+        /* --- NEW: DETAILED INFO LISTS --- */
+        #fei-embed-root .info-list { list-style: none; padding: 0; margin: 0; }
+        #fei-embed-root .info-item {
+            background: #f9fafb; border-left: 4px solid #ccc; padding: 12px 15px;
+            margin-bottom: 10px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5;
+        }
+        #fei-embed-root .info-item.goal { border-color: #f59e0b; background: #fffbeb; }
+        #fei-embed-root .info-item.critique { border-color: #10b981; background: #ecfdf5; }
+        #fei-embed-root .info-item.note { border-color: #6366f1; background: #eef2ff; }
+        
+        #fei-embed-root .info-date { font-size: 11px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        #fei-embed-root .info-label { font-weight: 700; color: #333; margin-right: 5px; }
+
+        /* SPOTLIGHT */
         #fei-embed-root .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         #fei-embed-root .spotlight-item { width: 180px; text-align: center; }
         #fei-embed-root .spotlight-frame {
@@ -140,7 +124,7 @@
         #fei-embed-root .spotlight-caption { font-size: 13px; font-weight: 700; color: #555; }
         #fei-embed-root .spotlight-sub { font-size: 11px; color: #999; }
 
-        /* Badges */
+        /* MAP BADGES */
         #fei-embed-root .map-card-bg { background: #fff; }
         #fei-embed-root .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
         #fei-embed-root .map-node { 
@@ -148,7 +132,6 @@
             opacity: 0; animation: popIn 0.5s forwards ease-out; 
         }
         #fei-embed-root .map-node:hover { transform: translateY(-5px); cursor: pointer; }
-
         #fei-embed-root .node-visual {
             width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
             background: #fff; border: 4px solid #e5e7eb; 
@@ -163,43 +146,33 @@
             margin-top: 4px; font-weight: 700; opacity: 0.9;
         }
 
-        /* BADGE STATES (Shiny!) */
-        #fei-embed-root .map-node.locked .node-visual { 
-            opacity: 0.5; filter: grayscale(100%); background: #f0f0f0; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-        }
+        /* STATES & ICONS */
+        #fei-embed-root .map-node.locked .node-visual { opacity: 0.5; filter: grayscale(100%); background: #f0f0f0; }
         #fei-embed-root .map-node.unlocked .node-visual { 
-            border: 3px solid #ffb700; 
-            background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+            border: 3px solid #ffb700; background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
             box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
             transform: scale(1.08); z-index: 2;
         }
-        #fei-embed-root .map-node.unlocked .node-icon-fallback { font-size: 40px; }
         #fei-embed-root .map-node.unlocked .node-label { color: #1a1d2b; font-weight: 800; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
-        
         #fei-embed-root .map-node.recommended .node-visual { 
             border: 3px dashed #f59e0b !important; animation: pulse 2s infinite; background: #fffbeb; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
-
-        /* Icons */
         #fei-embed-root .check-mark { 
-            position: absolute; top: -5px; right: -5px; 
-            background: #10b981; color: white; border: 2px solid white; border-radius: 50%; 
-            width: 24px; height: 24px; display: grid; place-items: center; 
+            position: absolute; top: -5px; right: -5px; background: #10b981; color: white; 
+            border: 2px solid white; border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 14px; font-weight: bold;
         }
         #fei-embed-root .quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
 
-        /* Progress */
+        /* PROGRESS & LEGEND */
         #fei-embed-root .progress-container { margin-top: 15px; }
         #fei-embed-root .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #555; }
         #fei-embed-root .progress-rail { height: 10px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
         #fei-embed-root .progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
-
         #fei-embed-root .map-legend { text-align: center; margin-bottom: 20px; font-size: 12px; color: #666; }
         #fei-embed-root .legend-item { margin: 0 10px; }
         #fei-embed-root .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
         #fei-embed-root .dot.earned { background: #10b981; } #fei-embed-root .dot.next { background: #f59e0b; } #fei-embed-root .dot.locked { background: #e5e7eb; }
-
         #fei-embed-root .footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
 
         @keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
@@ -212,28 +185,12 @@
             <div class="gate-banner"></div>
             <div class="gate-content">
                 <div class="gate-title">FEI TeamArt Portal</div>
-                <p class="gate-desc">Enter your Student ID to unlock your map:</p>
-                
+                <p class="gate-desc">Enter your Student Access Code:</p>
                 <form id="codeForm">
-                    <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
+                    <input type="text" id="codeInput" class="input" placeholder="e.g. A7Q9-FOX">
                     <br>
                     <button type="submit" class="game-btn">Find My Map</button>
                 </form>
-            </div>
-
-            <div class="how-it-works">
-                <div class="how-step">
-                    <div class="how-icon">🔑</div>
-                    <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
-                </div>
-                <div class="how-step">
-                    <div class="how-icon">🗺️</div>
-                    <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
-                </div>
-                <div class="how-step">
-                    <div class="how-icon">📝</div>
-                    <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
-                </div>
             </div>
         </div>
 
@@ -242,22 +199,35 @@
             <div class="header main-header">
                 <h1>FEI TeamArt Milestone Map</h1>
                 <h2 id="welcomeText">Student Report</h2>
-                
                 <div class="progress-container">
-                    <div class="progress-label">
-                        <span id="progressCount">0 / 0 Badges Collected</span>
-                        <span id="progressPct">0%</span>
-                    </div>
-                    <div class="progress-rail">
-                        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
-                    </div>
+                    <div class="progress-label"><span id="progressCount">0 Badges</span><span id="progressPct">0%</span></div>
+                    <div class="progress-rail"><div class="progress-bar" id="progressBar" style="width: 0%"></div></div>
                 </div>
             </div>
 
             <div class="card teacher-card">
-                <div class="section-title">📝 Teacher's Note</div>
+                <div class="section-title">📝 Teacher's Summary</div>
                 <div class="teacher-text" id="teacherNote">Loading...</div>
                 <div class="tag-container" id="strengthTags"></div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">📊 Detailed Progress</div>
+                
+                <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#d97706;">🎯 Current Missions</h3>
+                <ul class="info-list" id="goalsList">
+                    <li style="font-size:12px; color:#999; padding:10px;">No active missions listed.</li>
+                </ul>
+
+                <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#10b981;">💡 Teacher Feedback</h3>
+                <ul class="info-list" id="critiquesList">
+                    <li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>
+                </ul>
+
+                <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#6366f1;">📅 Progress Log</h3>
+                <ul class="info-list" id="notesList">
+                    <li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>
+                </ul>
             </div>
 
             <div class="card">
@@ -267,13 +237,11 @@
 
             <div class="card map-card-bg">
                 <div class="section-title">🗺️ Your Badge Collection</div>
-                
                 <div class="map-legend">
                     <span class="legend-item"><span class="dot earned"></span> Achieved</span>
                     <span class="legend-item"><span class="dot next"></span> Recommended</span>
                     <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
                 </div>
-                
                 <div class="badge-grid" id="badgeGrid"></div>
             </div>
 
@@ -319,19 +287,15 @@
         { id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'', emoji:'📂', color:'#1e3a8a' }
     ];
 
-    // *** IMPORTANT: You must host 'students.json' on GitHub for this to work ***
     let allStudents = [];
 
     // 2. INITIALIZATION
     document.addEventListener("DOMContentLoaded", () => {
-        
-        // Load Data
         fetch('students.json')
             .then(response => response.json())
             .then(data => { allStudents = data; })
-            .catch(error => { console.error('Error loading student data:', error); });
+            .catch(error => { console.error('Error loading data:', error); });
 
-        // Login Logic
         const form = document.getElementById('codeForm');
         if (form) {
             form.addEventListener('submit', (e) => {
@@ -339,19 +303,14 @@
                 const code = document.getElementById('codeInput').value.trim();
                 if (!code) return;
 
-                // Find student
-                const student = allStudents.find(s => 
-                    (s.id && s.id.toUpperCase() === code.toUpperCase()) || 
-                    (s.display_name && s.display_name.toUpperCase() === code.toUpperCase())
-                );
+                const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
 
                 if (student) {
-                    // Unlock
                     document.getElementById('gate').style.display = 'none';
                     document.getElementById('gameUI').style.display = 'block';
                     loadReport(student); 
                 } else {
-                    alert("Student not found! Please check your ID.");
+                    alert("Incorrect Code. Please check your private access key.");
                 }
             });
         }
@@ -375,6 +334,52 @@
                 span.innerText = tag;
                 tagsContainer.appendChild(span);
             });
+        }
+
+        // --- NEW: POPULATE DETAILED LISTS ---
+        
+        // 1. Goals
+        const goalsList = document.getElementById('goalsList');
+        goalsList.innerHTML = '';
+        if (student.goals && student.goals.length > 0) {
+            student.goals.forEach(g => {
+                const li = document.createElement('li');
+                li.className = 'info-item goal';
+                li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
+                goalsList.appendChild(li);
+            });
+        } else {
+            goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
+        }
+
+        // 2. Critiques
+        const critList = document.getElementById('critiquesList');
+        critList.innerHTML = '';
+        if (student.critiques && student.critiques.length > 0) {
+            student.critiques.forEach(c => {
+                const li = document.createElement('li');
+                li.className = 'info-item critique';
+                li.innerHTML = `<span class="info-date">${c.date || ''}</span>
+                                <span class="info-label">Strength:</span>${c.strength}<br>
+                                <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
+                critList.appendChild(li);
+            });
+        } else {
+            critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No critiques recorded yet.</li>';
+        }
+
+        // 3. Notes
+        const notesList = document.getElementById('notesList');
+        notesList.innerHTML = '';
+        if (student.notes && student.notes.length > 0) {
+            student.notes.forEach(n => {
+                const li = document.createElement('li');
+                li.className = 'info-item note';
+                li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
+                notesList.appendChild(li);
+            });
+        } else {
+            notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
         }
 
         // Spotlight
@@ -404,7 +409,6 @@
         const container = document.getElementById('badgeGrid');
         container.innerHTML = ''; 
 
-        // IDs
         let earnedIds = [];
         if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
 
@@ -413,7 +417,6 @@
             recommendedIds = student.badges.should_target.map(t => t.id);
         }
 
-        // Stats
         const total = PAGES.length;
         const count = earnedIds.length;
         const pct = Math.round((count / total) * 100);
@@ -421,7 +424,6 @@
         document.getElementById('progressBar').style.width = `${pct}%`;
         document.getElementById('progressPct').textContent = `${pct}%`;
 
-        // Render
         PAGES.forEach((page, index) => {
             const isUnlocked = earnedIds.includes(page.id);
             const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
