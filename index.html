@@ -1,79 +1,70 @@
 <div id="fei-embed-root">
     <style>
-        /* IMPORT FONTS AT THE VERY TOP */
+        /* IMPORT FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-        /* RESET & WRAPPER - Centered Layout */
+        /* RESET & WRAPPER */
         #fei-embed-root {
             all: initial; 
-            font-family: 'Open Sans', sans-serif; /* BODY FONT */
+            font-family: 'Open Sans', sans-serif;
             
-            /* --- LAYOUT FIX: CENTER EVERYTHING --- */
-            display: flex;             /* Use Flexbox */
-            flex-direction: column;    /* Stack items */
-            justify-content: center;   /* Center Vertically (Top/Bottom) */
-            align-items: center;       /* Center Horizontally (Left/Right) */
+            /* CENTER LAYOUT */
+            display: flex;             
+            flex-direction: column;    
+            justify-content: center;   
+            align-items: center;       
             
             width: 100%;
             height: auto; 
-            min-height: 850px; /* Ensure enough height for the map to look good */
+            /* FIXED: Reduced from 850px to 600px to remove empty space */
+            min-height: 600px; 
             position: relative;
             box-sizing: border-box;
             
-            /* UPDATED BACKGROUND IMAGE */
+            /* BACKGROUND */
             background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* Slight tint to make text pop */
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
                 url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
             
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px;
+            /* Changed to scroll to prevent white gaps on some screens */
+            background-attachment: scroll; 
+            
+            padding: 40px 20px;
             color: #1a1d2b;
         }
 
         #fei-embed-root .inner-wrapper { 
-            width: 100%; 
-            max-width: 1000px; 
-            /* No margin needed because the parent (root) does the centering now */
-            box-sizing: border-box;
+            width: 100%; max-width: 1000px; box-sizing: border-box;
         }
 
-        /* --- TYPOGRAPHY RULES --- */
-        #fei-embed-root h1, 
-        #fei-embed-root h2,
-        #fei-embed-root .gate-title,
-        #fei-embed-root .section-title,
-        #fei-embed-root .game-btn,
-        #fei-embed-root .badge-credit,
-        #fei-embed-root .node-label {
+        /* TYPOGRAPHY */
+        #fei-embed-root h1, #fei-embed-root h2, #fei-embed-root .gate-title,
+        #fei-embed-root .section-title, #fei-embed-root .game-btn,
+        #fei-embed-root .badge-credit, #fei-embed-root .node-label {
             font-family: 'Montserrat', sans-serif !important;
         }
-
-        #fei-embed-root p,
-        #fei-embed-root .input,
-        #fei-embed-root .teacher-text,
-        #fei-embed-root .gate-desc,
-        #fei-embed-root .how-desc {
+        #fei-embed-root p, #fei-embed-root .input, #fei-embed-root .teacher-text,
+        #fei-embed-root .gate-desc, #fei-embed-root .how-desc {
             font-family: 'Open Sans', sans-serif !important;
         }
 
-        /* --- LOGIN GATE --- */
+        /* LOGIN GATE */
         #fei-embed-root #gate {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 25px;
             max-width: 480px; 
-            margin: 0 auto; /* Centers horizontally inside wrapper */
+            margin: 0 auto; 
             text-align: center;
             overflow: hidden; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6); /* Stronger shadow for depth */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
             border: 1px solid rgba(255,255,255,0.6);
             backdrop-filter: blur(10px);
         }
 
         #fei-embed-root .gate-banner {
             height: 140px; width: 100%;
-            /* Use the same map image for the banner header */
             background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
             background-size: cover; background-position: center; position: relative;
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
@@ -81,12 +72,10 @@
         }
 
         #fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
-        
         #fei-embed-root .gate-title { 
-            font-size: 26px; font-weight: 800; 
-            margin-bottom: 10px; margin-top: -25px; color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
+            font-size: 26px; font-weight: 800; margin-bottom: 10px; margin-top: -25px; 
+            color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
         }
-        
         #fei-embed-root .gate-desc { margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px; }
 
         #fei-embed-root .how-it-works { display: flex; border-top: 1px solid #eee; background: #f8fafc; }
@@ -106,9 +95,8 @@
         #fei-embed-root .game-btn {
             width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
             color: #1a1d2b; border: none; border-radius: 12px; 
-            font-size: 16px; font-weight: 800; 
-            text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+            font-size: 16px; font-weight: 800; text-transform: uppercase; cursor: pointer; 
+            transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
         }
         #fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
 
@@ -120,7 +108,6 @@
         #fei-embed-root .main-header { text-align: center; margin-top: 0px; }
         #fei-embed-root h1 { margin: 0 0 5px; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
         #fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; }
-        
         #fei-embed-root .section-title { font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
 
         /* Teacher & Spotlight */
@@ -135,7 +122,7 @@
             font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
         }
 
-        /* --- DETAILED INFO LISTS --- */
+        /* Detailed Info Lists */
         #fei-embed-root .info-list { list-style: none; padding: 0; margin: 0; }
         #fei-embed-root .info-item {
             background: #f9fafb; border-left: 4px solid #ccc; padding: 12px 15px;
@@ -387,124 +374,3 @@
                 const span = document.createElement('span');
                 span.className = 'tag';
                 span.innerText = tag;
-                tagsContainer.appendChild(span);
-            });
-        }
-
-        // --- GOALS ---
-        const goalsList = document.getElementById('goalsList');
-        goalsList.innerHTML = '';
-        if (student.goals && student.goals.length > 0) {
-            student.goals.forEach(g => {
-                const li = document.createElement('li');
-                li.className = 'info-item goal';
-                li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
-                goalsList.appendChild(li);
-            });
-        } else {
-            goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
-        }
-
-        // --- CRITIQUES ---
-        const critList = document.getElementById('critiquesList');
-        critList.innerHTML = '';
-        if (student.critiques && student.critiques.length > 0) {
-            student.critiques.forEach(c => {
-                const li = document.createElement('li');
-                li.className = 'info-item critique';
-                li.innerHTML = `<span class="info-date">${c.date || ''}</span>
-                                <span class="info-label">Strength:</span>${c.strength}<br>
-                                <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
-                critList.appendChild(li);
-            });
-        } else {
-            critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
-        }
-
-        // --- NOTES ---
-        const notesList = document.getElementById('notesList');
-        notesList.innerHTML = '';
-        if (student.notes && student.notes.length > 0) {
-            student.notes.forEach(n => {
-                const li = document.createElement('li');
-                li.className = 'info-item note';
-                li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
-                notesList.appendChild(li);
-            });
-        } else {
-            notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
-        }
-
-        // Spotlight
-        const spotGrid = document.getElementById('spotlightGrid');
-        spotGrid.innerHTML = '';
-        if (student.featured_art && student.featured_art.length > 0) {
-            student.featured_art.forEach(art => {
-                const div = document.createElement('div');
-                div.className = 'spotlight-item';
-                div.innerHTML = `
-                    <div class="spotlight-frame">
-                        <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
-                    </div>
-                    <div class="spotlight-caption">${art.title}</div>
-                    <div class="spotlight-sub">${art.caption || ''}</div>
-                `;
-                spotGrid.appendChild(div);
-            });
-        } else {
-            spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
-        }
-
-        renderMap(student);
-    }
-
-    function renderMap(student) {
-        const container = document.getElementById('badgeGrid');
-        container.innerHTML = ''; 
-
-        let earnedIds = [];
-        if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
-
-        let recommendedIds = [];
-        if (student.badges && student.badges.should_target) {
-            recommendedIds = student.badges.should_target.map(t => t.id);
-        }
-
-        const total = PAGES.length;
-        const count = earnedIds.length;
-        const pct = Math.round((count / total) * 100);
-        document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
-        document.getElementById('progressBar').style.width = `${pct}%`;
-        document.getElementById('progressPct').textContent = `${pct}%`;
-
-        PAGES.forEach((page, index) => {
-            const isUnlocked = earnedIds.includes(page.id);
-            const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
-            
-            const node = document.createElement('div');
-            let statusClass = 'locked';
-            if (isUnlocked) statusClass = 'unlocked';
-            else if (isRecommended) statusClass = 'recommended';
-
-            node.className = `map-node ${statusClass}`;
-            node.style.animationDelay = `${index * 0.05}s`;
-
-            const hasImage = page.imgUrl && page.imgUrl.length > 5;
-            const imageHTML = hasImage 
-                ? `<img src="${page.imgUrl}" class="node-img">` 
-                : `<div class="node-icon-fallback">${page.emoji}</div>`;
-
-            node.innerHTML = `
-                <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
-                    ${imageHTML}
-                    ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
-                    ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
-                </div>
-                <div class="node-label">${page.title}</div>
-                <div class="badge-credit">${page.artist}</div>
-            `;
-            container.appendChild(node);
-        });
-    }
-</script>
-</div>
