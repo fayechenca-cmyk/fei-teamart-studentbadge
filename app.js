@@ -8,13 +8,9 @@ const PAGES = [
   { id:'landscape',             title:'Landscape',             artist:'Des. by John',    imgUrl:'', emoji:'⛰️', color:'#10b981' },
   { id:'material_explore',      title:'Material Explore',      artist:'Des. by Xinyue',  imgUrl:'', emoji:'🧱', color:'#78716c' },
   { id:'observation_detective', title:'Observation Detective', artist:'Des. by Leo',     imgUrl:'', emoji:'👀', color:'#06b6d4' },
-  
-  // *** NEW: REALISM BADGE ***
   { id:'realism_expert',        title:'Realism Expert',        artist:'Des. by Cameron', imgUrl:'', emoji:'👁️', color:'#374151' }, 
-
+  { id:'calm_illustration',     title:'Calm Illustration',     artist:'Des. by Cameron', imgUrl:'', emoji:'🌅', color:'#60a5fa' },
   { id:'figure_sketch',         title:'Figure Sketch',         artist:'Des. by Mia',     imgUrl:'', emoji:'🧍', color:'#f43f5e' },
-
-  // *** NEW: PORTRAIT BADGE ***
   { id:'portrait_master',       title:'Portrait Master',       artist:'Des. by Regina',  imgUrl:'', emoji:'👤', color:'#be185d' },
 
   // --- DESIGN & CRAFT ---
@@ -30,7 +26,7 @@ const PAGES = [
   },
   { 
     id:'little_architect', 
-    title:'Little Creator', 
+    title:'Little Architect',  /* REVERTED TO ORIGINAL TITLE */
     artist:'Des. by Cameron', 
     imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', 
     emoji:'🏛️', 
@@ -39,11 +35,10 @@ const PAGES = [
 
   // --- CREATIVE EXPRESSION ---
   { id:'idea_inventor',         title:'Idea Inventor',         artist:'Des. by Natalie', imgUrl:'', emoji:'💡', color:'#8b5cf6' },
+  { id:'student_led',           title:'Student-Led',           artist:'Des. by Judy',    imgUrl:'', emoji:'🚀', color:'#8b5cf6' }, /* ADDED BACK */
   { id:'storyteller',           title:'Storyteller',           artist:'Des. by Adrian',  imgUrl:'', emoji:'📖', color:'#f97316' },
   { id:'art_painting',          title:'Art Painting',          artist:'Des. by Regina',  imgUrl:'', emoji:'🎨', color:'#3b82f6' },
   { id:'scene_designer',        title:'Scene Designer',        artist:'Des. by Tom',     imgUrl:'', emoji:'🎬', color:'#6366f1' },
-
-  // *** NEW: CHARACTER DESIGN BADGE ***
   { id:'character_designer',    title:'Character Designer',    artist:'Des. by Judy',    imgUrl:'', emoji:'🦸', color:'#8b5cf6' },
 
   // --- DIGITAL & FUTURE ---
@@ -58,67 +53,57 @@ const PAGES = [
   { id:'fei_volunteer',         title:'FEI Volunteer',         artist:'Des. by Rebecca', imgUrl:'', emoji:'🤝', color:'#14b8a6' },
   { id:'community_builder',     title:'Community Builder',     artist:'Des. by Team',    imgUrl:'', emoji:'🏙️', color:'#f59e0b' },
   { id:'focus_sprinter',        title:'Focus Sprinter',        artist:'Des. by Cam',     imgUrl:'', emoji:'⏱️', color:'#64748b' },
-
-  // *** NEW: PORTFOLIO BADGE ***
   { id:'portfolio_builder',     title:'Portfolio Builder',     artist:'Des. by Regina',  imgUrl:'', emoji:'📂', color:'#1e3a8a' }
 ];
 
 let allStudents = [];
 
 // ==========================================
-// 2. FETCH DATA & HANDLE LOGIN
+// 2. INITIALIZATION
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  
-  // Load JSON
-  fetch('students.json')
-    .then(response => response.json())
-    .then(data => { allStudents = data; })
-    .catch(error => { console.error('Error loading data:', error); });
+    
+    // Load Data
+    fetch('students.json')
+        .then(response => response.json())
+        .then(data => { allStudents = data; })
+        .catch(error => { console.error('Error loading data:', error); });
 
-  // Handle Login Logic
-  const form = document.getElementById('codeForm');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const code = document.getElementById('codeInput').value.trim();
-      if (!code) return;
+    // Login Logic
+    const form = document.getElementById('codeForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const code = document.getElementById('codeInput').value.trim();
+            if (!code) return;
 
-      // Find Student (by Name or ID)
-      const student = allStudents.find(s => 
-        (s.id && s.id.toUpperCase() === code.toUpperCase()) || 
-        (s.display_name && s.display_name.toUpperCase() === code.toUpperCase())
-      );
+            // Find Student (by ID only)
+            const student = allStudents.find(s => 
+                (s.id && s.id.toUpperCase() === code.toUpperCase())
+            );
 
-      if (student) {
-        // Unlock
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('gameUI').style.display = 'block';
-        loadReport(student); 
-      } else {
-        alert("Name not found! Please try again.");
-      }
-    });
-  }
+            if (student) {
+                document.getElementById('gate').style.display = 'none';
+                document.getElementById('gameUI').style.display = 'block';
+                loadReport(student); 
+            } else {
+                alert("Incorrect Code. Please check your private access key.");
+            }
+        });
+    }
 });
 
 // ==========================================
-// 3. LOAD THE FULL REPORT
+// 3. RENDER REPORT
 // ==========================================
 function loadReport(student) {
-    
-    // A. Header Info
     document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
 
-    // B. Teacher Note
+    // Teacher Note
     const noteEl = document.getElementById('teacherNote');
-    if (student.teacher_note) {
-        noteEl.innerText = `"${student.teacher_note}"`;
-    } else {
-        noteEl.innerText = "Welcome back to your creative journey!";
-    }
+    noteEl.innerText = student.teacher_note ? `"${student.teacher_note}"` : "Welcome back!";
 
-    // C. Strength Tags
+    // Tags
     const tagsContainer = document.getElementById('strengthTags');
     tagsContainer.innerHTML = '';
     if (student.tags) {
@@ -130,10 +115,9 @@ function loadReport(student) {
         });
     }
 
-    // D. Art Spotlight
+    // Spotlight
     const spotGrid = document.getElementById('spotlightGrid');
     spotGrid.innerHTML = '';
-    
     if (student.featured_art && student.featured_art.length > 0) {
         student.featured_art.forEach(art => {
             const div = document.createElement('div');
@@ -151,7 +135,6 @@ function loadReport(student) {
         spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
     }
 
-    // E. Render the Map
     renderMap(student);
 }
 
@@ -159,7 +142,7 @@ function renderMap(student) {
     const container = document.getElementById('badgeGrid');
     container.innerHTML = ''; 
 
-    // 1. Get IDs
+    // IDs
     let earnedIds = [];
     if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
 
@@ -168,7 +151,7 @@ function renderMap(student) {
         recommendedIds = student.badges.should_target.map(t => t.id);
     }
 
-    // 2. Stats
+    // Stats
     const total = PAGES.length;
     const count = earnedIds.length;
     const pct = Math.round((count / total) * 100);
@@ -176,13 +159,12 @@ function renderMap(student) {
     document.getElementById('progressBar').style.width = `${pct}%`;
     document.getElementById('progressPct').textContent = `${pct}%`;
 
-    // 3. Draw Nodes
+    // Render
     PAGES.forEach((page, index) => {
         const isUnlocked = earnedIds.includes(page.id);
         const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
         
         const node = document.createElement('div');
-        
         let statusClass = 'locked';
         if (isUnlocked) statusClass = 'unlocked';
         else if (isRecommended) statusClass = 'recommended';
@@ -190,11 +172,10 @@ function renderMap(student) {
         node.className = `map-node ${statusClass}`;
         node.style.animationDelay = `${index * 0.05}s`;
 
-        // Image Logic
         const hasImage = page.imgUrl && page.imgUrl.length > 5;
         const imageHTML = hasImage 
             ? `<img src="${page.imgUrl}" class="node-img">` 
-            : `<div class="node-icon-fallback" style="font-size:30px;">${page.emoji}</div>`;
+            : `<div class="node-icon-fallback">${page.emoji}</div>`;
 
         node.innerHTML = `
             <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
@@ -205,7 +186,6 @@ function renderMap(student) {
             <div class="node-label">${page.title}</div>
             <div class="badge-credit">${page.artist}</div>
         `;
-        
         container.appendChild(node);
     });
 }
