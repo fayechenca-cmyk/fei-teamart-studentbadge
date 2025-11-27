@@ -1,222 +1,537 @@
 [
   {
+    "id": "REGINA-16",
+    "display_name": "Regina",
+    "teacher_note": "Regina is a calm, highly disciplined learner with a strong technical foundation. She follows complex steps with clarity and finishes efficiently, showing accurate proportion, clean construction, and confident value control. Recent studies of skull, facial muscles, and feature perspectives have noticeably improved her portrait structure. The next stage is to channel her quiet strength into personal voice—using narrative, color mood, and design choices.",
+    "tags": ["Mature", "Thoughtful", "Efficient", "Technically-Skilled", "Observant"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2025-08-15" },
+      { "badge_id": "landscape",           "date": "2025-09-01" },
+      { "badge_id": "observation_detective", "date": "2025-09-10" },
+      { "badge_id": "figure_sketch",       "date": "2025-09-20" },
+      { "badge_id": "portrait_master",     "date": "2025-10-05" },
+      { "badge_id": "costume_design",      "date": "2025-10-15" },
+      { "badge_id": "art_painting",        "date": "2025-11-01" },
+      { "badge_id": "digital_creator",     "date": "2025-11-10" },
+      { "badge_id": "art_history",         "date": "2025-11-15" },
+      { "badge_id": "scene_designer",      "date": "2025-11-20" }, 
+      { "badge_id": "still_life",          "date": "2025-08-30" },
+      { "badge_id": "interior_design",     "date": "2025-09-25" }
+    ],
+    "badges": {
+      "should_target": [ 
+        { "id": "portfolio_builder" }, 
+        { "id": "critical_thinker" },
+        { "id": "sustainable_creator" },
+        { "id": "storyteller" }
+      ]
+    },
+    "featured_art": [
+      {
+        "title": "Jewel Design: Charoite Ring",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685de1fbdabfd86614b1cf78_51fa0ecd4bb5cbc6da67369e35741a63.JPG",
+        "caption": "Elegant ring concept inspired by her favorite color purple."
+      },
+      {
+        "title": "Light & Shadow Portrait",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6833d716df5f1f8dd4b273b6_IMG_2530.jpg",
+        "caption": "Graphite + marker exploring facial structure."
+      }
+    ]
+  },
+
+  {
     "id": "A7Q9-FOX",
     "display_name": "Amy",
+    "teacher_note": "Amy is an exceptionally creative young artist with a powerful imagination. She works like a true 'student lab' member—brave, experimental, and willing to explore new techniques. While her creativity is far ahead of her age, she is growing into her technical skills beautifully. Encouraging patience will help her achieve higher-quality results when she wants to develop a polished piece.",
+    "tags": ["Imaginative", "Experimental", "Joyful", "Story-Driven"],
     "achievements": [
-      { "badge_id": "sustainable_creator", "level": "explorer", "date": "2025-10-20" },
-      { "badge_id": "student_led",         "level": "beginner", "date": "2025-10-15" },
-      { "badge_id": "material_explore",    "level": "intermediate", "date": "2025-11-20" },
-      { "badge_id": "figure_sketch",       "level": "beginner", "date": "2025-11-25" }
+      { "badge_id": "little_architect",      "date": "2025-05-10" },
+      { "badge_id": "observation_detective", "date": "2025-06-15" },
+      { "badge_id": "material_explore",      "date": "2025-07-20" },
+      { "badge_id": "hand_crafter",          "date": "2025-08-05" },
+      { "badge_id": "idea_inventor",         "date": "2025-09-12" },
+      { "badge_id": "animation_beginner",    "date": "2025-10-30" },
+      { "badge_id": "student_led",           "date": "2025-11-15" },
+      { "badge_id": "sustainable_creator",   "date": "2025-10-20" }
     ],
-    "notes": [
-      { "date": "2025-10-20", "text": "You reused cardboard so thoughtfully — proud of your persistence." },
-      { "date": "2025-11-25", "text": "Great job on the watercolor figure! Your creativity with different materials is shining." }
-    ],
+    "badges": {
+      "should_target": [
+        { "id": "character_designer" },
+        { "id": "storyteller" },
+        { "id": "realism_expert" },
+        { "id": "landscape" },
+        { "id": "still_life" }
+      ]
+    },
     "goals": [
-      { "text": "Animation Character Study (Japanese Art Style)", "due": "2025-12-05" },
-      { "text": "Finish Basic Shapes study", "due": "2025-11-02" }
+      { "text": "Practice patience to refine foundational drawing skills.", "due": "Ongoing" },
+      { "text": "Transform imagination into structured character concepts.", "due": "2025-12-20" }
     ],
     "critiques": [
-      { "date": "2025-10-15", "strength": "Strong silhouettes and color choices.", "next": "Slow down at line starts; add cast shadows." }
+      {
+        "date": "2025-11-27",
+        "strength": "Exceptionally creative; builds own storyboards at home.",
+        "next": "Develop focus and patience to refine the clarity of visual ideas."
+      }
     ],
     "featured_art": [
       {
         "title": "Recycled Bird",
-        "thumb": "artworks/amy_bird.jpg",
-        "caption": "Cardboard + thread",
-        "pdf": "pdfs/amy_bird_process.pdf"
+        "thumb": "https://placehold.co/400x400?text=Recycled+Bird",
+        "caption": "Cardboard + thread sculpture."
       }
-    ],
-    "teacher_note": "A highly creative explorer! Amy thrives when mixing materials and is currently developing a unique Japanese animation style.",
-    "tags": ["creative", "mixed-media", "animation-interest"]
+    ]
   },
 
   {
-    "id": "REGINA-16",
-    "display_name": "Regina",
+    "id": "WALLACE-49X8",
+    "display_name": "Wallace",
+    "teacher_note": "Wallace has shown clear improvement in foundational sketching and creative thinking. His 'Idea Inventor' and 'Hand Crafter' badges show a strong imagination and hands-on skill. The next step is helping him balance freedom and structure — encouraging one realism work and a small still life or landscape project to deepen artistic patience and accuracy.",
+    "tags": ["Creative-Mind", "Hand-Crafter", "Idea-Inventor", "Foundation-Sketch"],
     "achievements": [
-      { "badge_id": "figure_sketch",       "level": "advanced",     "date": "2025-10-22" },
-      { "badge_id": "still_life",          "level": "advanced",     "date": "2025-10-22" },
-      { "badge_id": "interior_design",     "level": "intermediate", "date": "2025-09-30" },
-      { "badge_id": "art_painting",        "level": "intermediate", "date": "2025-09-25" },
-      { "badge_id": "material_explore",    "level": "intermediate", "date": "2025-09-18" },
-      { "badge_id": "observation_detective", "level": "advanced",   "date": "2025-08-28" },
-      { "badge_id": "basic_sketch",        "level": "advanced",     "date": "2025-11-01" },
-      { "badge_id": "costume_design",      "level": "advanced",     "date": "2025-11-10" },
-      { "badge_id": "landscape",           "level": "intermediate", "date": "2025-11-15" },
-      { "badge_id": "digital_creator",     "level": "advanced",     "date": "2025-11-20" }
+      { "badge_id": "basic_sketch",        "date": "2025-09-15" },
+      { "badge_id": "focus_sprinter",      "date": "2025-10-08" },
+      { "badge_id": "hand_crafter",        "date": "2025-10-12" },
+      { "badge_id": "idea_inventor",       "date": "2025-10-22" },
+      { "badge_id": "calm_illustration",   "date": "2025-09-10" }
     ],
-    "notes": [
-      { "date": "2025-11-25", "text": "Regina demonstrates professional-level maturity in her artwork. A complete student." }
-    ],
+    "badges": {
+      "should_target": [
+        { "id": "realism_expert" },
+        { "id": "still_life" },
+        { "id": "landscape" },
+        { "id": "character_designer" }
+      ]
+    },
     "goals": [
-      { "text": "1 colored portrait illustration integrating mood and personal style.", "due": "2025-11-24" },
-      { "text": "Portfolio review and curation.", "due": "2025-12-15" }
+      { "text": "Complete one realism artwork to experience deeper focus.", "due": "2025-11-30" },
+      { "text": "Try one simple still life or landscape to practice form and space.", "due": "2025-12-10" }
     ],
     "critiques": [
       {
-        "date": "2025-10-10",
-        "strength": "Excellent proportion control and value transitions.",
-        "next": "Invite more spontaneity and emotional depth."
+        "date": "2025-11-02",
+        "strength": "Skill improves quickly with focused effort; shows confidence in creative subjects.",
+        "next": "Balance creative freedom with structured observation practice."
       }
-    ],
-    "featured_art": [
-      {
-        "title": "Jewelry Design - Ring",
-        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685de1fbdabfd86614b1cf78_51fa0ecd4bb5cbc6da67369e35741a63.JPG",
-        "caption": "An Idea came from her favourite colour Purple.",
-        "pdf": "pdfs/regina_portrait_study_process.pdf"
-      }
-    ],
-    "teacher_note": "Regina is a very complete student creating mature, professional artwork. She has achieved nearly every major milestone with excellence.",
-    "current_phase": "Professional Portfolio Development",
-    "tags": ["professional", "mature", "technically-skilled", "advanced"]
-  },
-
-  {
-    "id": "WALLACE-12",
-    "display_name": "Wallace",
-    "achievements": [
-      { "badge_id": "student_led",     "level": "sparker",  "date": "2025-10-22" },
-      { "badge_id": "focus_sprinter",  "level": "beginner", "date": "2025-10-08" }
-    ],
-    "notes": [
-      { "date": "2025-10-22", "text": "Focus improves with autonomy and clear goals." }
-    ],
-    "goals": [
-      { "text": "Rebuild engagement: 3 choice-based sessions.", "due": "2025-11-05" }
     ],
     "featured_art": [
       {
         "title": "Mech-Runner",
         "thumb": "artworks/wallace_mech_runner.jpg",
-        "caption": "Box + cylinder build-up.",
-        "pdf": "pdfs/wallace_mech_runner_process.pdf"
+        "caption": "Box + cylinder build-up."
       }
-    ],
-    "teacher_note": "Blend freedom with skill. Link his interests in design and games with structured drawing targets.",
-    "tags": ["creative-thinker", "prefers-freedom", "project-based"]
+    ]
   },
 
   {
     "id": "CAMERON-11",
     "display_name": "Cameron",
+    "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
+    "tags": ["Patient", "Calm-Focus", "Quality-Seeker", "Foundation-Complete"],
     "achievements": [
-      { "badge_id": "focus_sprinter", "level": "beginner", "date": "2025-10-12" }
+      { "badge_id": "basic_sketch",          "date": "2025-08-10" },
+      { "badge_id": "still_life",            "date": "2025-08-17" },
+      { "badge_id": "material_explore",      "date": "2025-08-24" },
+      { "badge_id": "observation_detective", "date": "2025-09-01" },
+      { "badge_id": "calm_illustration",     "date": "2025-09-10" },
+      { "badge_id": "little_architect",      "date": "2025-09-15" },
+      { "badge_id": "idea_inventor",         "date": "2025-09-30" },
+      { "badge_id": "storyteller",           "date": "2025-10-05" },
+      { "badge_id": "art_painting",          "date": "2025-10-12" }
     ],
     "badges": {
       "should_target": [
-        { "id": "basic_sketch", "reason": "Matches his steady hand and patience." },
-        { "id": "digital_creator", "reason": "Builds on his interest in making work look polished." }
+        { "id": "realism_expert" },
+        { "id": "portrait_master" },
+        { "id": "art_history" },
+        { "id": "digital_creator" }
       ]
     },
-    "notes": [
-      { "date": "2025-10-23", "text": "Very patient, calm, and reliable student." }
-    ],
     "goals": [
-      { "text": "Strengthen line control through calm repetition exercises.", "due": "2025-11-10" }
+      { "text": "Complete a realistic drawing with accurate proportion.", "due": "2025-11-30" },
+      { "text": "Digital Art: Explore design tools and layers.", "due": "Ongoing" }
     ],
-    "teacher_note": "Cameron thrives in calm, structured environments.",
-    "tags": ["follows-instruction", "patient", "clean-style"]
+    "critiques": [
+      {
+        "date": "2025-10-23",
+        "strength": "Produces clean and high-quality outcomes with patience.",
+        "next": "Try to express more personal preference or creative direction."
+      }
+    ],
+    "featured_art": []
   },
 
   {
     "id": "JUDY-07",
     "display_name": "Judy",
+    "teacher_note": "Judy has excellent hand control and is advanced for her peer group. She is ready to learn more complex techniques immediately.",
+    "tags": ["High-Potential", "Precise", "Strong-Minded"],
     "achievements": [
-      { "badge_id": "student_led", "level": "beginner", "date": "2025-10-23" }
+      { "badge_id": "student_led", "date": "2025-10-23" }
     ],
     "badges": {
       "should_target": [
-        { "id": "figure_sketch", "reason": "Encourages emotional awareness." },
-        { "id": "basic_sketch", "reason": "Supports her analytical side." }
+        { "id": "figure_sketch" },
+        { "id": "character_designer" }
       ]
     },
-    "notes": [
-      { "date": "2025-11-25", "text": "Exceptional hand control. She is performing above her peer group level." }
-    ],
-    "goals": [
-      { "text": "Advanced control exercises.", "due": "2025-12-05" }
-    ],
     "featured_art": [
       {
         "title": "Creative Creature",
-        "thumb": "artworks/judy_creature.jpg",
-        "caption": "Fantasy-themed drawing showing early creativity."
+        "thumb": "https://placehold.co/400x400?text=Creature",
+        "caption": "Fantasy-themed drawing."
       }
-    ],
-    "teacher_note": "Judy has excellent hand control and is advanced for her peer group. She is ready to learn more complex techniques immediately.",
-    "tags": ["creative", "strong-minded", "high-potential", "precise"]
+    ]
   },
 
   {
     "id": "XINYUE-12",
     "display_name": "Xinyue",
+    "teacher_note": "Xinyue is one of the most inventive and student-led learners in the studio. She constantly brings fresh ideas and playful imagination to class. The focus now is to guide her to slow down, observe deeply, and strengthen technical realism while protecting her creativity and freedom.",
+    "tags": ["Idea-Inventor", "Digital-Creator", "Student-Led", "Creative-Lead"],
     "achievements": [
-      { "badge_id": "student_led", "level": "beginner", "date": "2025-10-23" }
+      { "badge_id": "basic_sketch",        "date": "2025-11-27" },
+      { "badge_id": "still_life",          "date": "2025-11-27" },
+      { "badge_id": "hand_crafter",        "date": "2025-11-27" },
+      { "badge_id": "digital_creator",     "date": "2025-11-27" },
+      { "badge_id": "character_designer",  "date": "2025-11-27" },
+      { "badge_id": "storyteller",         "date": "2025-11-27" },
+      { "badge_id": "idea_inventor",       "date": "2025-11-27" },
+      { "badge_id": "costume_design",      "date": "2025-11-27" }
     ],
     "badges": {
       "should_target": [
-        { "id": "costume_design", "reason": "Connects her cute, K-pop-inspired style with design." },
-        { "id": "basic_sketch", "reason": "Strengthen visual organization." }
+        { "id": "realism_expert" },
+        { "id": "portrait_master" },
+        { "id": "art_history" }
       ]
     },
     "goals": [
-      { "text": "Strengthen her understanding of composition.", "due": "2025-11-25" }
+      { "text": "Develop patience and precision through one realism or portrait study.", "due": "2025-12-20" },
+      { "text": "Explore an art historical theme and create an artwork inspired by a master’s style.", "due": "2026-01-15" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Exceptionally imaginative and self-driven; often the first to propose new ideas.",
+        "next": "Encourage deeper focus and slower working habits to refine technical quality."
+      }
     ],
     "featured_art": [
       {
-        "title": "K-pop Illustration",
-        "thumb": "artworks/xinyue_kpop_illustration.jpg",
-        "caption": "A lively illustration inspired by her favorite idol group."
+        "title": "Digital Character Story",
+        "thumb": "artworks/xinyue_digital_story.jpg",
+        "caption": "A vivid digital illustration combining fantasy elements and strong narrative charm."
       }
-    ],
-    "teacher_note": "The goal is to protect her imagination while gradually building focus.",
-    "tags": ["creative", "free-spirited", "kpop-inspired"]
+    ]
   },
 
   {
     "id": "ADRIAN-14",
     "display_name": "Adrian",
+    "teacher_note": "Adrian has become one of our strongest storytelling students, combining refined personal taste with rich narrative imagination. He thinks naturally in scenes and sequences. My goal is to protect his unique creative voice while quietly strengthening the technical tools—like structure and detail—that will support the powerful stories he wants to tell.",
+    "tags": ["Narrative-Driven", "Refined-Taste", "Creative-Thinker", "Atmospheric"],
     "achievements": [
-      { "badge_id": "storyteller", "level": "beginner", "date": "2025-10-23" }
+      { "badge_id": "basic_sketch",          "date": "2025-08-20" },
+      { "badge_id": "observation_detective", "date": "2025-09-05" },
+      { "badge_id": "storyteller",           "date": "2025-09-15" },
+      { "badge_id": "idea_inventor",         "date": "2025-09-30" },
+      { "badge_id": "figure_sketch",         "date": "2025-10-10" },
+      { "badge_id": "character_designer",    "date": "2025-10-25" },
+      { "badge_id": "scene_designer",        "date": "2025-11-05" },
+      { "badge_id": "digital_creator",       "date": "2025-11-20" }
     ],
     "badges": {
       "should_target": [
-        { "id": "scene_designer", "reason": "Connects with his strong interest in dark themes." },
-        { "id": "storyteller", "reason": "Builds on his natural skill in storyboarding." }
+        { "id": "portrait_master" },
+        { "id": "art_history" },
+        { "id": "animation_beginner" },
+        { "id": "portfolio_builder" },
+        { "id": "realism_expert" }
       ]
     },
     "goals": [
-      { "text": "Channel his deep aesthetic taste into visual storytelling projects.", "due": "2025-12-10" }
+      { "text": "Portrait Master: Focus on facial structure while keeping your style.", "due": "Next Month" },
+      { "text": "Realism Practice: One focused piece to study detail.", "due": "2025-12-15" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Designs characters and frames scenes with natural cinematic instinct.",
+        "next": "Strengthen technical structure to support your moody, atmospheric style."
+      }
     ],
     "featured_art": [
       {
         "title": "Forest Chase Horror",
-        "thumb": "artworks/adrian_forest_monster.jpg",
-        "caption": "An evocative horror chase scene, rich with layered tone."
+        "thumb": "https://placehold.co/400x400?text=Horror+Scene",
+        "caption": "Evocative horror chase scene showing atmospheric depth."
       }
-    ],
-    "teacher_note": "Adrian responds best to open-ended prompts and emotionally intelligent feedback.",
-    "tags": ["narrative-driven", "visually-sensitive", "dark-aesthetic"]
+    ]
   },
 
   {
     "id": "SERENA-13",
     "display_name": "Serena",
+    "teacher_note": "Serena continues to grow as a thoughtful and efficient art student. Her strength lies in her focus and technical clarity. While she may not always express herself outwardly, her work reveals a strong sense of visual order and problem-solving. As she moves forward, the next step is to stretch her creative voice through storytelling, concept design, and more personalized expression.",
+    "tags": ["Consistent", "Technically-Capable", "Efficient", "Design-Focused"],
     "achievements": [
-      { "badge_id": "animation_beginner", "level": "beginner", "date": "2025-10-23" }
+      { "badge_id": "basic_sketch",        "date": "2025-08-15" },
+      { "badge_id": "interior_design",     "date": "2025-09-25" },
+      { "badge_id": "digital_creator",     "date": "2025-11-10" },
+      { "badge_id": "observation_detective", "date": "2025-09-10" }
     ],
     "badges": {
       "should_target": [
-        { "id": "figure_sketch", "reason": "Builds facial expression skills." },
-        { "id": "storyteller", "reason": "Introduces sketching in a loose, non-pressured way." }
+        { "id": "figure_sketch" },
+        { "id": "still_life" },
+        { "id": "storyteller" },
+        { "id": "portfolio_builder" },
+        { "id": "critical_thinker" }
       ]
     },
     "goals": [
-      { "text": "Support Serena’s sketch confidence by offering expressive, low-pressure activities.", "due": "2025-11-30" }
+      { "text": "Complete full Figure Sketch Level 1 requirements.", "due": "Next Month" },
+      { "text": "Finish one observational Still Life project.", "due": "Ongoing" }
     ],
-    "teacher_note": "Serena thrives in structured but low-stakes environments. Avoid heavy critique.",
-    "tags": ["expression-focused", "low-pressure", "independent"]
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Strong confidence in line work and proportions.",
+        "next": "Focus on connecting visuals with meaning and narration."
+      }
+    ],
+    "featured_art": [] 
+  },
+
+  {
+    "id": "TEMP-09",
+    "display_name": "Temp",
+    "teacher_note": "Temp is one of the most naturally talented and thoughtful young learners. She absorbs knowledge instantly, responds with meaningful ideas, and shows mature understanding beyond her age. Even when she says “I have no idea,” a small inspiration is enough for her to unlock rich feedback and creativity. This sets her apart from many students—she thinks deeply, expresses warmly, and always tries her best.",
+    "tags": ["Independent", "Fast-Learner", "Multi-Talented", "Mature"],
+    "achievements": [
+      { "badge_id": "realism_expert",      "date": "2025-11-20" },
+      { "badge_id": "still_life",          "date": "2025-11-15" },
+      { "badge_id": "observation_detective", "date": "2025-11-10" },
+      { "badge_id": "basic_sketch",        "date": "2025-10-01" },
+      { "badge_id": "hand_crafter",        "date": "2025-10-15" },
+      { "badge_id": "little_architect",    "date": "2025-10-20" }, 
+      { "badge_id": "idea_inventor",       "date": "2025-11-05" },
+      { "badge_id": "digital_creator",     "date": "2025-11-25" },
+      { "badge_id": "storyteller",         "date": "2025-11-26" } 
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "portrait_master" },
+        { "id": "scene_designer" },
+        { "id": "landscape" },
+        { "id": "animation_beginner" }
+      ]
+    },
+    "featured_art": []
+  },
+
+  {
+    "id": "CODY-22",
+    "display_name": "Cody",
+    "teacher_note": "Cody is a truly exceptional student with a rare combination of intelligence and technical intuition. He is currently our most advanced student in AI tools and gaming concepts. When he locks into a topic, his performance is outstanding. My goal is to help him strengthen his concentration while supporting his passion for building worlds through both hand-drawn and AI-powered methods.",
+    "tags": ["Tech-Savvy", "AI-Expert", "Game-Design", "Creative-Thinker"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2024-05-15" },
+      { "badge_id": "material_explore",    "date": "2024-06-20" },
+      { "badge_id": "hand_crafter",        "date": "2024-07-10" },
+      { "badge_id": "idea_inventor",       "date": "2024-09-05" },
+      { "badge_id": "digital_creator",     "date": "2025-02-15" },
+      { "badge_id": "gaming_creator",      "date": "2025-05-20" },
+      { "badge_id": "character_designer",  "date": "2025-08-10" },
+      { "badge_id": "storyteller",         "date": "2025-10-01" },
+      { "badge_id": "still_life",          "date": "2025-11-15" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "focus_sprinter" },
+        { "id": "animation_beginner" },
+        { "id": "realism_expert" }
+      ]
+    },
+    "goals": [
+      { "text": "Focus Sprinter: Practice sustaining concentration for 20-minute blocks.", "due": "Ongoing" },
+      { "text": "Animation: Create a simple loop using AI + hand-drawing.", "due": "2025-12-15" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Unique technical creativity; mastery of AI prompting far beyond his age.",
+        "next": "Build foundational discipline (Realism) to support your digital ideas."
+      }
+    ],
+    "featured_art": []
+  },
+
+  {
+    "id": "SAM-18",
+    "display_name": "Sam",
+    "teacher_note": "Sam is one of the most well-rounded, capable, and self-driven students I’ve ever taught. She learns incredibly fast, producing solid work with precision and independence. Although she is preparing for a future in law, her artistic training has sharpened her visual communication and analytical thinking—skills that will serve her well in any academic path.",
+    "tags": ["Ambitious", "Well-Rounded", "Fast-Learner", "Disciplined"],
+    "achievements": [
+      { "badge_id": "basic_sketch",          "date": "2022-05-10" },
+      { "badge_id": "still_life",            "date": "2022-08-15" },
+      { "badge_id": "landscape",             "date": "2022-11-20" },
+      { "badge_id": "material_explore",      "date": "2023-02-10" },
+      { "badge_id": "observation_detective", "date": "2023-04-05" },
+      { "badge_id": "idea_inventor",         "date": "2023-06-15" },
+      { "badge_id": "hand_crafter",          "date": "2023-08-20" },
+      { "badge_id": "storyteller",           "date": "2023-10-30" },
+      { "badge_id": "figure_sketch",         "date": "2024-01-15" },
+      { "badge_id": "character_designer",    "date": "2024-03-10" },
+      { "badge_id": "interior_design",       "date": "2024-05-20" },
+      { "badge_id": "little_architect",      "date": "2024-07-05" },
+      { "badge_id": "costume_design",        "date": "2024-09-15" },
+      { "badge_id": "art_painting",          "date": "2024-11-10" },
+      { "badge_id": "digital_creator",       "date": "2025-01-20" },
+      { "badge_id": "portrait_master",       "date": "2025-04-15" },
+      { "badge_id": "art_history",           "date": "2025-08-10" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "portfolio_builder" },
+        { "id": "critical_thinker" }
+      ]
+    },
+    "goals": [
+      { "text": "Curate a small Art Portfolio to support university applications.", "due": "2025-12-30" },
+      { "text": "Critical Thinking: Connect art analysis with your writing skills.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Accomplishes almost anything she decides to do with efficiency and patience.",
+        "next": "Use your art background to strengthen your analytical and storytelling skills for Law."
+      }
+    ],
+    "featured_art": []
+  },
+
+  {
+    "id": "ALISSIE-05",
+    "display_name": "Alissie",
+    "teacher_note": "Alissie is a bright and joyful young artist who is highly efficient at learning new skills. She is confident, expressive, and unafraid to engage with challenges. With her intelligence and curiosity, she is well on her way to becoming a well-rounded and expressive artist.",
+    "tags": ["Joyful", "Efficient", "Expressive", "Multi-Talented"],
+    "achievements": [
+      { "badge_id": "basic_sketch",          "date": "2025-09-01" },
+      { "badge_id": "still_life",            "date": "2025-09-15" },
+      { "badge_id": "observation_detective", "date": "2025-09-25" },
+      { "badge_id": "material_explore",      "date": "2025-10-05" },
+      { "badge_id": "idea_inventor",         "date": "2025-10-15" },
+      { "badge_id": "storyteller",           "date": "2025-10-25" },
+      { "badge_id": "character_designer",    "date": "2025-11-05" },
+      { "badge_id": "hand_crafter",          "date": "2025-11-15" },
+      { "badge_id": "digital_creator",       "date": "2025-11-20" },
+      { "badge_id": "portrait_master",       "date": "2025-11-25" },
+      { "badge_id": "realism_expert",        "date": "2025-11-27" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "scene_designer" },
+        { "id": "interior_design" },
+        { "id": "costume_design" },
+        { "id": "art_history" },
+        { "id": "portfolio_builder" }
+      ]
+    },
+    "goals": [
+      { "text": "Scene Designer: Build environments around your characters.", "due": "Next Month" },
+      { "text": "Portfolio: Begin collecting and curating your growing body of work.", "due": "2025-12-20" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Highly efficient at learning new skills; grasps concepts quickly.",
+        "next": "Continue developing realism skills beyond the introductory level."
+      }
+    ],
+    "featured_art": []
+  },
+
+  {
+    "id": "NATALIE-17",
+    "display_name": "Natalie",
+    "teacher_note": "Natalie is a warm, sociable, and generous student who brings a special light to the classroom. She is emotionally intelligent, deeply independent, and determined. Now balancing high school life, she is showing great maturity by shifting her focus toward refining technical drawing skills and embracing challenges she doesn't yet love.",
+    "tags": ["Sociable", "Independent", "Emotionally-Intelligent", "Determined"],
+    "achievements": [
+      { "badge_id": "basic_sketch",          "date": "2024-09-10" },
+      { "badge_id": "still_life",            "date": "2024-10-15" },
+      { "badge_id": "landscape",             "date": "2024-11-20" },
+      { "badge_id": "material_explore",      "date": "2025-01-10" },
+      { "badge_id": "observation_detective", "date": "2025-02-15" },
+      { "badge_id": "idea_inventor",         "date": "2025-03-20" },
+      { "badge_id": "art_painting",          "date": "2025-04-25" },
+      { "badge_id": "portrait_master",       "date": "2025-05-30" },
+      { "badge_id": "figure_sketch",         "date": "2025-06-10" },
+      { "badge_id": "character_designer",    "date": "2025-07-20" },
+      { "badge_id": "hand_crafter",          "date": "2025-08-15" },
+      { "badge_id": "digital_creator",       "date": "2025-09-25" },
+      { "badge_id": "animation_beginner",    "date": "2025-11-27" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "art_history" },
+        { "id": "portfolio_builder" },
+        { "id": "community_builder" },
+        { "id": "critical_thinker" }
+      ]
+    },
+    "goals": [
+      { "text": "Refine technical drawing skills (structure & form).", "due": "Ongoing" },
+      { "text": "Start curating best works for a future portfolio.", "due": "2025-12-30" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Natural ability to connect; willing to embrace difficult tasks with a growth mindset.",
+        "next": "Deepen understanding of art history to build context for your expressive style."
+      }
+    ],
+    "featured_art": []
+  },
+
+  {
+    "id": "RAINIE-08",
+    "display_name": "Rainie",
+    "teacher_note": "Rainie has leveled up significantly! Her fundamentals—lines, structure, composition—are much more solid, and she now works like an independent creator. She shines brightest in animation, showing strong initiative and patience with details. She has real potential to become a remarkable young creator.",
+    "tags": ["Animator-Focus", "Independent", "Creative", "Leveled-Up"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2025-08-10" },
+      { "badge_id": "idea_inventor",       "date": "2025-08-25" },
+      { "badge_id": "storyteller",         "date": "2025-09-10" },
+      { "badge_id": "figure_sketch",       "date": "2025-09-25" },
+      { "badge_id": "hand_crafter",        "date": "2025-10-05" },
+      { "badge_id": "scene_designer",      "date": "2025-10-20" },
+      { "badge_id": "character_designer",  "date": "2025-11-01" },
+      { "badge_id": "digital_creator",     "date": "2025-11-15" },
+      { "badge_id": "animation_beginner",  "date": "2025-11-27" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "portfolio_builder" },
+        { "id": "landscape" },
+        { "id": "art_painting" },
+        { "id": "art_history" },
+        { "id": "realism_expert" }
+      ]
+    },
+    "goals": [
+      { "text": "Portfolio: Organize animation clips and character designs.", "due": "Next Month" },
+      { "text": "Realism: Complete one detailed study to understand depth.", "due": "2025-12-20" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-27",
+        "strength": "Consistently brings new ideas without needing outside encouragement.",
+        "next": "Practice larger scenes (Landscape) to create richer story worlds."
+      }
+    ],
+    "featured_art": []
   }
 ]
