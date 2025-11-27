@@ -1,49 +1,39 @@
 <div id="fei-embed-root">
-    <!-- =========================
-         1. SCOPED CSS STYLES
-         ========================= -->
     <style>
-        /* RESET: Ensure we don't inherit weird styles from parent */
+        /* RESET & WRAPPER */
         #fei-embed-root {
-            all: initial; /* Resets inheritance */
+            all: initial; 
             font-family: 'Open Sans', sans-serif;
             display: block;
             width: 100%;
-            height: auto; /* Allow it to grow */
-            min-height: 800px; /* Minimum height for visual appeal */
+            height: auto; 
+            min-height: 800px; 
             position: relative;
             box-sizing: border-box;
             
-            /* MAP BACKGROUND - Scoped to this div only */
+            /* MAP BACKGROUND */
             background-image: 
                 linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 
-                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
-            /* PADDING */
             padding: 40px 20px;
         }
 
-        /* FONTS IMPORT */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-        /* WRAPPER INSIDE EMBED */
         #fei-embed-root .inner-wrapper { 
-            width: 100%; 
-            max-width: 1000px; 
-            margin: 0 auto;
-            box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif; /* Re-apply font inside reset */
+            width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif; 
         }
 
-        /* --- LOGIN GATE --- */
+        /* LOGIN GATE */
         #fei-embed-root #gate {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 25px;
             max-width: 480px; 
-            margin: 0 auto; /* Natural centering */
+            margin: 0 auto; 
             text-align: center;
             overflow: hidden; 
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
@@ -53,51 +43,31 @@
         }
 
         #fei-embed-root .gate-banner {
-            height: 140px;
-            width: 100%;
-            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
+            height: 140px; width: 100%;
+            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+            background-size: cover; background-position: center; position: relative;
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
 
         #fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
-
         #fei-embed-root .gate-title { 
             font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; 
-            margin-bottom: 10px; margin-top: -25px; color: #1a1d2b;
-            position: relative; z-index: 10;
-            line-height: 1.2;
+            margin-bottom: 10px; margin-top: -25px; color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
         }
+        #fei-embed-root .gate-desc { margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px; }
 
-        #fei-embed-root .gate-desc {
-            margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px;
-        }
-
-        /* How It Works Grid */
-        #fei-embed-root .how-it-works {
-            display: flex;
-            border-top: 1px solid #eee;
-            background: #f8fafc;
-        }
-        #fei-embed-root .how-step {
-            flex: 1;
-            padding: 15px 5px;
-            border-right: 1px solid #eee;
-        }
+        #fei-embed-root .how-it-works { display: flex; border-top: 1px solid #eee; background: #f8fafc; }
+        #fei-embed-root .how-step { flex: 1; padding: 15px 5px; border-right: 1px solid #eee; }
         #fei-embed-root .how-step:last-child { border-right: none; }
         #fei-embed-root .how-icon { font-size: 22px; margin-bottom: 5px; display: block;}
         #fei-embed-root .how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; display: block; }
         #fei-embed-root .how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
 
-        /* Input & Button */
         #fei-embed-root .input { 
             width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
             font-size: 16px; text-align: center; margin-bottom: 15px; 
-            background: #fff; color: #333; box-sizing: border-box;
-            transition: all 0.3s;
+            background: #fff; color: #333; box-sizing: border-box; transition: all 0.3s;
             font-family: 'Open Sans', sans-serif;
         }
         #fei-embed-root .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
@@ -111,23 +81,17 @@
         }
         #fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
 
-        /* --- DASHBOARD UI --- */
+        /* DASHBOARD UI */
         #fei-embed-root .header, #fei-embed-root .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            color: #1a1d2b;
+            background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 25px;
+            margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #1a1d2b;
         }
-
         #fei-embed-root .main-header { text-align: center; margin-top: 0px; }
         #fei-embed-root h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
         #fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; font-family: 'Open Sans', sans-serif;}
-        
         #fei-embed-root .section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
 
-        /* Teacher Card */
+        /* Teacher & Spotlight */
         #fei-embed-root .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
         #fei-embed-root .teacher-text {
             font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
@@ -139,7 +103,6 @@
             font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
         }
 
-        /* Spotlight */
         #fei-embed-root .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         #fei-embed-root .spotlight-item { width: 180px; text-align: center; }
         #fei-embed-root .spotlight-frame {
@@ -219,12 +182,8 @@
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 
-    <!-- =========================
-         2. HTML STRUCTURE
-         ========================= -->
     <div class="inner-wrapper">
 
-        <!-- LOGIN GATE -->
         <div id="gate">
             <div class="gate-banner"></div>
             <div class="gate-content">
@@ -254,7 +213,6 @@
             </div>
         </div>
 
-        <!-- REPORT UI (Hidden until login) -->
         <div id="gameUI" style="display:none;">
             
             <div class="header main-header">
@@ -304,9 +262,6 @@
     </div>
 </div>
 
-<!-- =========================
-     3. JAVASCRIPT LOGIC
-     ========================= -->
 <script>
     // 1. DATA CONFIGURATION
     const PAGES = [
@@ -316,6 +271,10 @@
         { id:'material_explore', title:'Material Explore', artist:'Des. by Xinyue', imgUrl:'', emoji:'🧱', color:'#78716c' },
         { id:'observation_detective', title:'Observation Detective', artist:'Des. by Leo', imgUrl:'', emoji:'👀', color:'#06b6d4' },
         { id:'realism_expert', title:'Realism Expert', artist:'Des. by Cameron', imgUrl:'', emoji:'👁️', color:'#374151' }, 
+        
+        // ** NEW BADGE ADDED HERE **
+        { id:'calm_illustration', title:'Calm Illustration', artist:'Des. by Cameron', imgUrl:'', emoji:'🌅', color:'#60a5fa' },
+
         { id:'figure_sketch', title:'Figure Sketch', artist:'Des. by Mia', imgUrl:'', emoji:'🧍', color:'#f43f5e' },
         { id:'portrait_master', title:'Portrait Master', artist:'Des. by Regina', imgUrl:'', emoji:'👤', color:'#be185d' },
         { id:'interior_design', title:'Interior Design', artist:'Des. by Serena', imgUrl:'', emoji:'🛋️', color:'#d97706' },
@@ -472,3 +431,4 @@
         });
     }
 </script>
+</div>
