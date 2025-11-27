@@ -8,7 +8,7 @@
             all: initial; 
             font-family: 'Open Sans', sans-serif;
             
-            /* CENTER LAYOUT */
+            /* FLEXBOX CENTER LAYOUT */
             display: flex;             
             flex-direction: column;    
             justify-content: center;   
@@ -16,22 +16,24 @@
             
             width: 100%;
             height: auto; 
-            /* FIXED: Reduced from 850px to 600px to remove empty space */
-            min-height: 600px; 
+            
+            /* CRITICAL FIX: Fill the screen, but allow growing */
+            min-height: 100vh; 
+            
             position: relative;
             box-sizing: border-box;
             
-            /* BACKGROUND */
+            /* BACKGROUND FIX: Fixed attachment prevents it from running out */
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
                 url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
             
             background-size: cover;
             background-position: center;
-            /* Changed to scroll to prevent white gaps on some screens */
-            background-attachment: scroll; 
+            background-attachment: fixed; /* Keeps bg full even when scrolling long reports */
             
-            padding: 40px 20px;
+            /* Padding ensures content is never cropped at edges */
+            padding: 60px 20px;
             color: #1a1d2b;
         }
 
@@ -46,7 +48,7 @@
             font-family: 'Montserrat', sans-serif !important;
         }
         #fei-embed-root p, #fei-embed-root .input, #fei-embed-root .teacher-text,
-        #fei-embed-root .gate-desc, #fei-embed-root .how-desc {
+        #fei-embed-root .gate-desc, #fei-embed-root .how-desc, #fei-embed-root li {
             font-family: 'Open Sans', sans-serif !important;
         }
 
@@ -374,3 +376,124 @@
                 const span = document.createElement('span');
                 span.className = 'tag';
                 span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+        }
+
+        // --- GOALS ---
+        const goalsList = document.getElementById('goalsList');
+        goalsList.innerHTML = '';
+        if (student.goals && student.goals.length > 0) {
+            student.goals.forEach(g => {
+                const li = document.createElement('li');
+                li.className = 'info-item goal';
+                li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
+                goalsList.appendChild(li);
+            });
+        } else {
+            goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
+        }
+
+        // --- CRITIQUES ---
+        const critList = document.getElementById('critiquesList');
+        critList.innerHTML = '';
+        if (student.critiques && student.critiques.length > 0) {
+            student.critiques.forEach(c => {
+                const li = document.createElement('li');
+                li.className = 'info-item critique';
+                li.innerHTML = `<span class="info-date">${c.date || ''}</span>
+                                <span class="info-label">Strength:</span>${c.strength}<br>
+                                <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
+                critList.appendChild(li);
+            });
+        } else {
+            critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
+        }
+
+        // --- NOTES ---
+        const notesList = document.getElementById('notesList');
+        notesList.innerHTML = '';
+        if (student.notes && student.notes.length > 0) {
+            student.notes.forEach(n => {
+                const li = document.createElement('li');
+                li.className = 'info-item note';
+                li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
+                notesList.appendChild(li);
+            });
+        } else {
+            notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
+        }
+
+        // Spotlight
+        const spotGrid = document.getElementById('spotlightGrid');
+        spotGrid.innerHTML = '';
+        if (student.featured_art && student.featured_art.length > 0) {
+            student.featured_art.forEach(art => {
+                const div = document.createElement('div');
+                div.className = 'spotlight-item';
+                div.innerHTML = `
+                    <div class="spotlight-frame">
+                        <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
+                    </div>
+                    <div class="spotlight-caption">${art.title}</div>
+                    <div class="spotlight-sub">${art.caption || ''}</div>
+                `;
+                spotGrid.appendChild(div);
+            });
+        } else {
+            spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
+        }
+
+        renderMap(student);
+    }
+
+    function renderMap(student) {
+        const container = document.getElementById('badgeGrid');
+        container.innerHTML = ''; 
+
+        let earnedIds = [];
+        if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
+
+        let recommendedIds = [];
+        if (student.badges && student.badges.should_target) {
+            recommendedIds = student.badges.should_target.map(t => t.id);
+        }
+
+        const total = PAGES.length;
+        const count = earnedIds.length;
+        const pct = Math.round((count / total) * 100);
+        document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
+        document.getElementById('progressBar').style.width = `${pct}%`;
+        document.getElementById('progressPct').textContent = `${pct}%`;
+
+        PAGES.forEach((page, index) => {
+            const isUnlocked = earnedIds.includes(page.id);
+            const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
+            
+            const node = document.createElement('div');
+            let statusClass = 'locked';
+            if (isUnlocked) statusClass = 'unlocked';
+            else if (isRecommended) statusClass = 'recommended';
+
+            node.className = `map-node ${statusClass}`;
+            node.style.animationDelay = `${index * 0.05}s`;
+
+            const hasImage = page.imgUrl && page.imgUrl.length > 5;
+            const imageHTML = hasImage 
+                ? `<img src="${page.imgUrl}" class="node-img">` 
+                : `<div class="node-icon-fallback">${page.emoji}</div>`;
+
+            node.innerHTML = `
+                <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
+                    ${imageHTML}
+                    ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
+                    ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
+                </div>
+                <div class="node-label">${page.title}</div>
+                <div class="badge-credit">${page.artist}</div>
+            `;
+            container.appendChild(node);
+        });
+    }
+</script>
+</div>
