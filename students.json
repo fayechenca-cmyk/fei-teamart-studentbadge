@@ -204,25 +204,40 @@
     "featured_art": []
   },
 
-  {
+ {
     "id": "JUDY-07",
     "display_name": "Judy",
-    "teacher_note": "Judy has excellent hand control and is advanced for her peer group. She is ready to learn more complex techniques immediately.",
-    "tags": ["High-Potential", "Precise", "Strong-Minded"],
+    "teacher_note": "Judy shows solid creativity and independent thinking. Though new, she learns fast and has strong artistic genes (similar to her sister Rebecca). She is strong-minded and works confidently. My goal is to help her refine her attention to detail and finishing quality while keeping her independent creative spirit alive.",
+    "tags": ["Independent", "Fast-Learner", "Strong-Minded", "High-Potential"],
     "achievements": [
-      { "badge_id": "student_led", "date": "2025-10-23" }
+      { "badge_id": "material_explore",    "date": "2025-10-10" },
+      { "badge_id": "hand_crafter",        "date": "2025-10-25" },
+      { "badge_id": "idea_inventor",       "date": "2025-11-15" }
     ],
     "badges": {
       "should_target": [
-        { "id": "figure_sketch" },
-        { "id": "character_designer" }
+        { "id": "storyteller" },
+        { "id": "character_designer" },
+        { "id": "digital_creator" },
+        { "id": "realism_expert" }
       ]
     },
+    "goals": [
+      { "text": "Storytelling: Organize narrative details for clarity (Level 2).", "due": "Next Month" },
+      { "text": "Detail Focus: Complete one fine-art style piece with high finish quality.", "due": "2025-12-20" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Quick learner with confident, original ideas.",
+        "next": "Focus on attention to detail and patience in finishing work."
+      }
+    ],
     "featured_art": [
       {
         "title": "Creative Creature",
-        "thumb": "https://placehold.co/400x400?text=Creature",
-        "caption": "Fantasy-themed drawing."
+        "thumb": "https://placehold.co/400x400?text=Creature+Concept",
+        "caption": "Fantasy-themed drawing showing early creativity."
       }
     ]
   },
