@@ -125,7 +125,42 @@
     ],
     "featured_art": []
   },
-  
+
+  {
+    "id": "MELODY-21",
+    "display_name": "Melody",
+    "teacher_note": "Melody is naturally expressive and creative. Even though she didn’t focus much on technical training, she developed strong storytelling and idea-based creativity during our classes. She earned several important badges early on, showing her potential in narrative thinking and illustration. With her warm personality and imaginative mind, she has everything she needs to grow into a confident young artist.",
+    "tags": ["Warm", "Sociable", "Storyteller", "Expressive"],
+    "achievements": [
+      { "badge_id": "idea_inventor",         "date": "2024-02-10" },
+      { "badge_id": "student_led",           "date": "2024-03-15" },
+      { "badge_id": "storyteller",           "date": "2024-04-20" },
+      { "badge_id": "observation_detective", "date": "2024-05-05" },
+      { "badge_id": "costume_design",        "date": "2024-06-01" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "character_designer" },
+        { "id": "figure_sketch" },
+        { "id": "landscape" },
+        { "id": "still_life" },
+        { "id": "realism_expert" },
+        { "id": "digital_creator" }
+      ]
+    },
+    "goals": [
+      { "text": "Build confidence with human proportions (Figure Sketch).", "due": "Recommended" },
+      { "text": "Learn digital tools to match storytelling ability.", "due": "Future" }
+    ],
+    "critiques": [
+      {
+        "date": "2024-06-15",
+        "strength": "Natural ability to turn life experiences into artistic ideas.",
+        "next": "Strengthen foundation and accuracy through Still Life and Realism."
+      }
+    ],
+    "featured_art": []
+  },
   {
     "id": "WALLACE-49X8",
     "display_name": "Wallace",
