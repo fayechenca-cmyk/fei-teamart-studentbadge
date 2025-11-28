@@ -83,7 +83,37 @@
       }
     ]
   },
-
+  
+{
+    "id": "BELLA-16",
+    "display_name": "Bella",
+    "teacher_note": "She is a quiet but strong learner with a 'survivor' mindset—observing, adjusting, and finding her own solutions independently. I believe she has many unspoken ideas and emotions. My goal is to help her slowly open up through art, peer learning, and master-study practice.",
+    "tags": ["Quiet", "Problem-Solver", "Independent", "Observant"],
+    "achievements": [
+      { "badge_id": "Idea_Inventor",    "date": "2025-11-15" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "idea_inventor" },
+        { "id": "basic_sketch" },
+        { "id": "art_history" },
+        { "id": "observation_detective" }
+      ]
+    },
+    "goals": [
+      { "text": "Master Study: Copy small sections of artwork to build a visual library.", "due": "Next Month" },
+      { "text": "Structure: Work on clearer shapes and cleaner outlines.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Strong problem-solving ability; finds independent ways to solve challenges.",
+        "next": "Practice 'copying and pasting' details from masters to build confidence."
+      }
+    ],
+    "featured_art": []
+  },
+  
   {
     "id": "KATY-06",
     "display_name": "Katy",
