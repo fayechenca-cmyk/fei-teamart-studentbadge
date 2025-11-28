@@ -41,6 +41,37 @@
   },
 
   {
+    "id": "JOJO-25",
+    "display_name": "Jojo",
+    "teacher_note": "Jojo just joined and already shows a strong passion for art. She has a solid foundation and confidence across subjects. Unlike many her age, she doesn't just imagine ideas—she successfully makes them happen on paper. I'm excited to see her turn her curiosity into clear, well-finished works.",
+    "tags": ["Passionate", "Strong-Foundation", "Experimental", "Finisher"],
+    "achievements": [
+      { "badge_id": "material_explore",    "date": "2025-11-20" },
+      { "badge_id": "idea_inventor",       "date": "2025-11-28" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "hand_crafter" },
+        { "id": "storyteller" },
+        { "id": "realism_expert" },
+        { "id": "basic_sketch" }
+      ]
+    },
+    "goals": [
+      { "text": "Comic/Illustration: Design full illustrations with background and story.", "due": "Next Month" },
+      { "text": "Realism Practice: Object studies to observe structure and details.", "due": "2025-12-20" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "High execution skill; turns abstract ideas into finished pieces.",
+        "next": "Practice slowing down to understand visual structure (how things work)."
+      }
+    ],
+    "featured_art": []
+  },
+  
+  {
     "id": "A7Q9-FOX",
     "display_name": "Amy",
     "teacher_note": "Amy is an exceptionally creative young artist with a powerful imagination. She works like a true 'student lab' member—brave, experimental, and willing to explore new techniques. While her creativity is far ahead of her age, she is growing into her technical skills beautifully. Encouraging patience will help her achieve higher-quality results when she wants to develop a polished piece.",
