@@ -201,7 +201,11 @@
         "next": "Try to express more personal preference or creative direction."
       }
     ],
-    "featured_art": []
+    "featured_art": [ {
+        "title": "Paper House",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a36bb79aa9af43daa19_Screen%20Shot%202023-10-17%20at%208.16.23%20PM.png",
+        "caption": "He is so paitient to finish this Cardboard House. It is one of my favourite handmade House"
+      }]
   },
 
  {
