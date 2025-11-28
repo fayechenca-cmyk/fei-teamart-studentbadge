@@ -143,6 +143,38 @@
     ],
     "featured_art": []
   },
+
+  {
+    "id": "AMY-11",
+    "display_name": "Amy G",
+    "teacher_note": "Amy listens well to arrangements, brings her own ideas, and expresses her needs clearly. She is a joy to work with! My goal is to encourage her to propose more of her own project themes and build simple stories behind her characters so she can grow into a student-led creator.",
+    "tags": ["Easy-Going", "Communicative", "Character-Interest", "Cooperative"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2025-10-01" },
+      { "badge_id": "character_designer",  "date": "2025-11-15" },
+      { "badge_id": "material_explore",    "date": "2025-11-28" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "idea_inventor" },
+        { "id": "storyteller" },
+        { "id": "student_led" },
+        { "id": "costume_design" }
+      ]
+    },
+    "goals": [
+      { "text": "Propose your own project theme.", "due": "Next Month" },
+      { "text": "Build a simple story behind your character.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Expresses needs clearly and listens well to guidance.",
+        "next": "Take the lead on small parts of the process like color choices."
+      }
+    ],
+    "featured_art": []
+  },
   
   {
     "id": "ELSA-09",
