@@ -83,7 +83,49 @@
       }
     ]
   },
-
+  
+{
+    "id": "REBECCA-14",
+    "display_name": "Rebecca",
+    "teacher_note": "Rebecca learns fast and executes with precision. Her drawing level is among the top in the group. Perfectionism can sometimes slow down her choices, so we will focus on time-boxing decisions to balance quality with speed. She is ready to pair portrait mastery with original concepts and a small student-led project.",
+    "tags": ["Advanced-Drawing", "Precision", "High-Potential", "Perfectionist"],
+    "achievements": [
+      { "badge_id": "basic_sketch",          "date": "2024-05-10" },
+      { "badge_id": "still_life",            "date": "2024-06-15" },
+      { "badge_id": "landscape",             "date": "2024-08-20" },
+      { "badge_id": "material_explore",      "date": "2024-10-05" },
+      { "badge_id": "observation_detective", "date": "2024-11-10" },
+      { "badge_id": "realism_expert",        "date": "2025-01-15" },
+      { "badge_id": "calm_illustration",     "date": "2025-03-10" },
+      { "badge_id": "figure_sketch",         "date": "2025-05-20" },
+      { "badge_id": "hand_crafter",          "date": "2025-08-05" },
+      { "badge_id": "digital_creator",       "date": "2025-10-15" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "portrait_master" },
+        { "id": "portfolio_builder" },
+        { "id": "art_history" },
+        { "id": "critical_thinker" },
+        { "id": "student_led" },
+        { "id": "animation_beginner" }
+      ]
+    },
+    "goals": [
+      { "text": "Complete two timed portrait studies (45 min each).", "due": "2025-12-15" },
+      { "text": "Create one original concept: make A/B choice within 10 mins.", "due": "2025-12-20" },
+      { "text": "Select 6–10 portfolio-ready works with process notes.", "due": "2026-01-10" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Top-tier drawing skills with high precision.",
+        "next": "Practice faster decision-making (ship v1, then polish)."
+      }
+    ],
+    "featured_art": []
+  },
+  
   {
     "id": "WALLACE-49X8",
     "display_name": "Wallace",
