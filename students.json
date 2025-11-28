@@ -83,6 +83,38 @@
       }
     ]
   },
+
+  {
+    "id": "ELSA-09",
+    "display_name": "Elsa",
+    "teacher_note": "Elsa may be very introverted and quiet, but she listens carefully and follows every step with clarity. When inspired, she begins to show her own ideas, and her confidence grows each time. She has already shown more expression after just two lessons. She has gentle but strong potential, and I’m excited to explore more ideas with her.",
+    "tags": ["Introverted", "Careful-Listener", "Growing-Confidence", "Gentle-Potential"],
+    "achievements": [
+      { "badge_id": "material_explore",    "date": "2025-11-10" },
+      { "badge_id": "hand_crafter",        "date": "2025-11-20" },
+      { "badge_id": "basic_sketch",        "date": "2025-11-25" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "idea_inventor" },
+        { "id": "storyteller" },
+        { "id": "student_led" },
+        { "id": "costume_design" }
+      ]
+    },
+    "goals": [
+      { "text": "Idea Inventor: Build confidence in contributing your own ideas.", "due": "Next Month" },
+      { "text": "Complete full artwork pieces with personal design elements.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Follows instructions clearly; showing more creativity once feeling safe.",
+        "next": "Practice planning and outlining your own concepts step by step."
+      }
+    ],
+    "featured_art": []
+  },
   
 {
     "id": "REBECCA-20",
