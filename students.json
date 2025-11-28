@@ -70,6 +70,36 @@
     ],
     "featured_art": []
   },
+
+  {
+    "id": "SELENA-09",
+    "display_name": "Selena",
+    "teacher_note": "Selena is nine but shows a maturity beyond her age. She communicates her thoughts with confidence and is growing into a grounded, thoughtful young person. She has successfully moved from drawing into her first handcraft project and is now ready to expand her characters into full scenes.",
+    "tags": ["Mature", "Communicator", "Thoughtful", "Story-Driven"],
+    "achievements": [
+      { "badge_id": "hand_crafter",        "date": "2025-11-20" },
+      { "badge_id": "storyteller",         "date": "2025-11-28" },
+      { "badge_id": "character_designer",  "date": "2025-11-28" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "scene_designer" },
+        { "id": "student_led" }
+      ]
+    },
+    "goals": [
+      { "text": "Scene Design: Create backgrounds that support your narrative.", "due": "Next Month" },
+      { "text": "Communication: Practice explaining your design choices to the group.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Clear expression of ideas and strong listening skills.",
+        "next": "Develop a short series (mini-comic) to see how plot works across multiple images."
+      }
+    ],
+    "featured_art": []
+  },
   
   {
     "id": "A7Q9-FOX",
