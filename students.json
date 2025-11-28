@@ -287,7 +287,50 @@
       }
     ]
   },
-
+  
+{
+    "id": "KAYLEEN-15",
+    "display_name": "Kayleen",
+    "teacher_note": "Kayleen is a highly gifted and self-motivated student. Her ability to learn independently sets her apart—I still remember her personal animation project with over 120 layers! She has a natural sense of composition and accuracy that is rare for her age. I believe she has the potential to succeed in any field of visual art, especially animation.",
+    "tags": ["Gifted", "Animator", "Independent", "Self-Motivated"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2024-05-10" },
+      { "badge_id": "landscape",           "date": "2024-06-20" },
+      { "badge_id": "figure_sketch",       "date": "2024-08-15" },
+      { "badge_id": "animation_beginner",  "date": "2024-10-01" },
+      { "badge_id": "digital_creator",     "date": "2024-11-10" },
+      { "badge_id": "character_designer",  "date": "2025-01-20" },
+      { "badge_id": "student_led",         "date": "2025-03-15" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "still_life" },
+        { "id": "realism_expert" },
+        { "id": "storyteller" },
+        { "id": "art_history" },
+        { "id": "critical_thinker" }
+      ]
+    },
+    "goals": [
+      { "text": "Continue nurturing your animation path.", "due": "Future" },
+      { "text": "Strengthen foundations with Still Life and Realism studies.", "due": "Recommended" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Drawing accuracy without needing guidance; perseverance in complex projects (120+ layers!).",
+        "next": "Expand artistic language through Art History and Realism."
+      }
+    ],
+    "featured_art": [
+      {
+        "title": "Animation Project",
+        "thumb": "https://placehold.co/400x400?text=120+Layer+Animation",
+        "caption": "A massive personal project featuring over 120 layers."
+      }
+    ]
+  },
+  
   {
     "id": "ADRIAN-14",
     "display_name": "Adrian",
