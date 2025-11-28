@@ -264,6 +264,35 @@
   },
 
   {
+    "id": "CHLOE-01",
+    "display_name": "Chloe",
+    "teacher_note": "Chloe is one of the youngest students but shows a very strong creative drive. At home, she can stay focused on art-making for hours. In class, she is quiet but highly engaged, always adding new ideas. She has earned the Idea Inventor badge for her ability to generate constant, original ideas. I am excited to guide this creativity into structured projects.",
+    "tags": ["Youngest", "Focused", "Creative-Drive", "Self-Directed"],
+    "achievements": [
+      { "badge_id": "idea_inventor", "date": "2025-11-28" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "character_designer" },
+        { "id": "material_explore" },
+        { "id": "focus_sprinter" }
+      ]
+    },
+    "goals": [
+      { "text": "Character Design: Build characters with personality and story.", "due": "Next Month" },
+      { "text": "Focus Sprint: Strengthen hand control through regular practice.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Exceptional concentration for her age (worked 2 hours continuously).",
+        "next": "Guide natural creativity into more structured projects."
+      }
+    ],
+    "featured_art": []
+  },
+  
+  {
     "id": "CAMERON-11",
     "display_name": "Cameron",
     "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
