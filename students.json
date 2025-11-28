@@ -85,6 +85,36 @@
   },
 
   {
+    "id": "KATY-06",
+    "display_name": "Katy",
+    "teacher_note": "Katy is a cheerful 'chatting box' with endless ideas. Her energy and open communication make the class lively, and she learns quickly when guided. I deeply appreciate her parents’ support and involvement; it gives her a very strong foundation to grow as an artist and as a communicator.",
+    "tags": ["Cheerful", "Fast-Learner", "Communicative", "Imaginative"],
+    "achievements": [
+      { "badge_id": "character_designer",  "date": "2025-11-20" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "material_explore" },
+        { "id": "hand_crafter" },
+        { "id": "observation_detective" },
+        { "id": "storyteller" }
+      ]
+    },
+    "goals": [
+      { "text": "Material Explorer: Explore different tools to express ideas playfully.", "due": "In Progress" },
+      { "text": "Communication: Practice presenting ideas clearly and listening to feedback.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-11-28",
+        "strength": "Fast learner who stays engaged the whole hour.",
+        "next": "Practice looking more carefully at references (Observation) to solve drawing problems."
+      }
+    ],
+    "featured_art": []
+  },
+  
+  {
     "id": "ELSA-09",
     "display_name": "Elsa",
     "teacher_note": "Elsa may be very introverted and quiet, but she listens carefully and follows every step with clarity. When inspired, she begins to show her own ideas, and her confidence grows each time. She has already shown more expression after just two lessons. She has gentle but strong potential, and I’m excited to explore more ideas with her.",
