@@ -68,7 +68,13 @@
         "next": "Practice slowing down to understand visual structure (how things work)."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Rainbow Watercolour Collage",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6929ecde54eedfc9f6f798ec_Screenshot%202025-11-28%20at%2010.41.31%E2%80%AFAM.png",
+        "caption": "Watercolour + Hand Craft."
+      }
+    ]
   },
 
   {
@@ -172,7 +178,13 @@
         "next": "Practice 'copying and pasting' details from masters to build confidence."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+       {
+        "title": "A Winter Sweater",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6929f2ec7ea21b64081d90d1_Screenshot%202025-11-28%20at%2011.07.04%E2%80%AFAM.png",
+        "caption": "Acrylic Marker."
+      }
+    ]
   },
   
   {
@@ -202,7 +214,13 @@
         "next": "Practice looking more carefully at references (Observation) to solve drawing problems."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Collage Bird",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6929ecea8e9ff6a515bf5b9d_Screenshot%202025-11-28%20at%2010.41.44%E2%80%AFAM.png",
+        "caption": "Collage."
+      }
+    ]
   },
 
   {
@@ -234,7 +252,13 @@
         "next": "Take the lead on small parts of the process like color choices."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Handcraft Fun Night",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6929eca8709cc1f9afc34495_Screenshot%202025-11-28%20at%2010.40.36%E2%80%AFAM.png",
+        "caption": "Collage."
+      }
+    ]
   },
   
   {
@@ -266,7 +290,11 @@
         "next": "Practice planning and outlining your own concepts step by step."
       }
     ],
-    "featured_art": []
+    "featured_art": [ {
+        "title": "Collage Peacock",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/690254df13b8735e8f75a985_Screenshot%202025-10-29%20at%2010.53.16%E2%80%AFAM.png",
+        "caption": "Collage."
+      }]
   },
   
 {
@@ -308,7 +336,13 @@
         "next": "Practice faster decision-making (ship v1, then polish)."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Collage Landscape",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/690254dff7fe8ab0da931abb_Screenshot%202025-10-29%20at%2010.49.40%E2%80%AFAM.png",
+        "caption": "Collage + Watercolour."
+      }
+    ]
   },
 
   {
@@ -344,7 +378,13 @@
         "next": "Strengthen foundation and accuracy through Still Life and Realism."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+         {
+        "title": "A beautiful European Chair",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685df2402427c13e600d9279_Screen%20Shot%202024-01-13%20at%202.59.10%20PM.png",
+        "caption": "Acrylic Markers."
+      }
+    ]
   },
   {
     "id": "WALLACE-49X8",
@@ -379,9 +419,9 @@
     ],
     "featured_art": [
       {
-        "title": "Mech-Runner",
-        "thumb": "artworks/wallace_mech_runner.jpg",
-        "caption": "Box + cylinder build-up."
+        "title": "Paper House",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/689901f270f73353d7fc07df_Screenshot%202025-08-10%20at%201.30.28%E2%80%AFPM.png",
+        "caption": "Box + Cardboard."
       }
     ]
   },
@@ -412,7 +452,13 @@
         "next": "Guide natural creativity into more structured projects."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+        {
+        "title": "A Winter Sweater",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6929ec898833adf424f2ca5a_d846c80ab802f04244365483b552fbb5.JPG",
+        "caption": "Acrylic Marker."
+      }
+    ]
   },
   
   {
@@ -682,7 +728,13 @@
         { "id": "animation_beginner" }
       ]
     },
-    "featured_art": []
+    "featured_art": [
+       {
+        "title": "A Realistic Dog",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/68daf5253dc15612a294ffb6_88f00564162f6054a7e7e03c9dfe94e7.JPG",
+        "caption": "Colourpencil."
+      }
+    ]
   },
 
   {
@@ -719,7 +771,13 @@
         "next": "Build foundational discipline (Realism) to support your digital ideas."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+       {
+        "title": "A Badge Design",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da8041d3d9ce2e5caa_feiteamart%20digtal%20gaming%20creator.PNG",
+        "caption": "Colourpencil."
+      }
+    ]
   },
 
   {
@@ -763,7 +821,12 @@
         "next": "Use your art background to strengthen your analytical and storytelling skills for Law."
       }
     ],
-    "featured_art": []
+    "featured_art": 
+     {
+        "title": "Illustration",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a53d38d56bbb93da054_WechatIMG455.jpeg",
+        "caption": "Markers."
+      }
   },
 
   {
@@ -804,7 +867,13 @@
         "next": "Continue developing realism skills beyond the introductory level."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Manga Portriat",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69308ab602fb8f7e33564999_9AC00B77-10F0-4FF2-BE02-98652E900992.jpg",
+        "caption": "Marker + Colourpencil."
+      }
+    ]
   },
 
   {
@@ -846,7 +915,11 @@
         "next": "Deepen understanding of art history to build context for your expressive style."
       }
     ],
-    "featured_art": []
+    "featured_art": [{
+        "title": "Digtal Illustration",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a53d38d56bbb93da054_WechatIMG455.jpeg",
+        "caption": "Markers."
+      }]
   },
 
   {
@@ -885,6 +958,12 @@
         "next": "Practice larger scenes (Landscape) to create richer story worlds."
       }
     ],
-    "featured_art": []
+    "featured_art": [
+      {
+        "title": "Digtal Illustration",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685dedc234be002fc7874a8f_dfcbf8de2febb64ef40faf1cb3516e6d.JPG",
+        "caption": "Procreate."
+      }
+    ]
   }
 ]
