@@ -467,46 +467,55 @@
   },
   
   {
-    "id": "CAMERON-11",
-    "display_name": "Cameron",
-    "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
-    "tags": ["Patient", "Calm-Focus", "Quality-Seeker", "Foundation-Complete"],
-    "achievements": [
-      { "badge_id": "basic_sketch",          "date": "2025-08-10" },
-      { "badge_id": "still_life",            "date": "2025-08-17" },
-      { "badge_id": "material_explore",      "date": "2025-08-24" },
-      { "badge_id": "observation_detective", "date": "2025-09-01" },
-      { "badge_id": "calm_illustration",     "date": "2025-09-10" },
-      { "badge_id": "little_architect",      "date": "2025-09-15" },
-      { "badge_id": "idea_inventor",         "date": "2025-09-30" },
-      { "badge_id": "storyteller",           "date": "2025-10-05" },
-      { "badge_id": "art_painting",          "date": "2025-10-12" }
-    ],
-    "badges": {
-      "should_target": [
-        { "id": "realism_expert" },
-        { "id": "portrait_master" },
-        { "id": "art_history" },
-        { "id": "digital_creator" }
-      ]
-    },
-    "goals": [
-      { "text": "Complete a realistic drawing with accurate proportion.", "due": "2025-11-30" },
-      { "text": "Digital Art: Explore design tools and layers.", "due": "Ongoing" }
-    ],
-    "critiques": [
-      {
-        "date": "2025-10-23",
-        "strength": "Produces clean and high-quality outcomes with patience.",
-        "next": "Try to express more personal preference or creative direction."
-      }
-    ],
-    "featured_art": [ {
-        "title": "Paper House",
-        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a36bb79aa9af43daa19_Screen%20Shot%202023-10-17%20at%208.16.23%20PM.png",
-        "caption": "He is so paitient to finish this Cardboard House. It is one of my favourite handmade House"
-      }]
+  "id": "CAMERON-11",
+  "display_name": "Cameron",
+  "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
+  "tags": ["Patient", "Calm-Focus", "Quality-Seeker", "Foundation-Complete"],
+  "achievements": [
+    { "badge_id": "basic_sketch",          "date": "2025-08-10" },
+    { "badge_id": "still_life",            "date": "2025-08-17" },
+    { "badge_id": "material_explore",      "date": "2025-08-24" },
+    { "badge_id": "observation_detective", "date": "2025-09-01" },
+    { "badge_id": "calm_illustration",     "date": "2025-09-10" },
+    { "badge_id": "little_architect",      "date": "2025-09-15" },
+    { "badge_id": "idea_inventor",         "date": "2025-09-30" },
+    { "badge_id": "storyteller",           "date": "2025-10-05" },
+    { "badge_id": "art_painting",          "date": "2025-10-12" }
+  ],
+  "badges": {
+    "should_target": [
+      { "id": "realism_expert" },
+      { "id": "portrait_master" },
+      { "id": "art_history" },
+      { "id": "digital_creator" }
+    ]
   },
+  "goals": [
+    { "text": "Complete a realistic drawing with accurate proportion.", "due": "2025-11-30" },
+    { "text": "Digital Art: Explore design tools and layers.", "due": "Ongoing" }
+  ],
+  "critiques": [
+    {
+      "date": "2025-10-23",
+      "strength": "Produces clean and high-quality outcomes with patience.",
+      "next": "Try to express more personal preference or creative direction."
+    }
+  ],
+
+  "christmas_2025": {
+    "message": "Dear Cameron, Thank you for creating with me this year. I love how you notice small details and turn them into calm, thoughtful drawings. You are building a strong foundation step by step. I hope you keep exploring new ideas and enjoying art in 2026. — Fei",
+    "gift_code": "PUT-YOUR-AMAZON-CODE-HERE",
+    "redeem_url": "https://www.amazon.com/gc/redeem"
+  },
+
+  "featured_art": [
+    {
+      "title": "Paper House",
+      "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a36bb79aa9af43daa19_Screen%20Shot%202023-10-17%20at%208.16.23%20PM.png",
+      "caption": "He is so paitient to finish this Cardboard House. It is one of my favourite handmade House"
+    }
+  ]
+},
 
  {
     "id": "JUDY-07",
