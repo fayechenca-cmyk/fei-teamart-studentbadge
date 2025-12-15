@@ -465,57 +465,55 @@
       }
     ]
   },
-  
+ 
   {
-  "id": "CAMERON-11",
-  "display_name": "Cameron",
-  "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
-  "tags": ["Patient", "Calm-Focus", "Quality-Seeker", "Foundation-Complete"],
-  "achievements": [
-    { "badge_id": "basic_sketch",          "date": "2025-08-10" },
-    { "badge_id": "still_life",            "date": "2025-08-17" },
-    { "badge_id": "material_explore",      "date": "2025-08-24" },
-    { "badge_id": "observation_detective", "date": "2025-09-01" },
-    { "badge_id": "calm_illustration",     "date": "2025-09-10" },
-    { "badge_id": "little_architect",      "date": "2025-09-15" },
-    { "badge_id": "idea_inventor",         "date": "2025-09-30" },
-    { "badge_id": "storyteller",           "date": "2025-10-05" },
-    { "badge_id": "art_painting",          "date": "2025-10-12" }
-  ],
-  "badges": {
-    "should_target": [
-      { "id": "realism_expert" },
-      { "id": "portrait_master" },
-      { "id": "art_history" },
-      { "id": "digital_creator" }
+    "id": "CAMERON-11",
+    "display_name": "Cameron",
+    "teacher_note": "Cameron is a quiet, focused learner who benefits from clear structure and visible outcomes. While not overly expressive, he is dependable and calm. I recommend continuing with foundation work while gently encouraging his creative voice.",
+    "tags": ["Patient", "Calm-Focus", "Quality-Seeker", "Foundation-Complete"],
+    "achievements": [
+      { "badge_id": "basic_sketch",        "date": "2025-08-10" },
+      { "badge_id": "still_life",          "date": "2025-08-17" },
+      { "badge_id": "material_explore",    "date": "2025-08-24" },
+      { "badge_id": "observation_detective", "date": "2025-09-01" },
+      { "badge_id": "calm_illustration",   "date": "2025-09-10" },
+      { "badge_id": "little_architect",    "date": "2025-09-15" },
+      { "badge_id": "idea_inventor",       "date": "2025-09-30" },
+      { "badge_id": "storyteller",         "date": "2025-10-05" },
+      { "badge_id": "art_painting",        "date": "2025-10-12" }
+    ],
+    "badges": {
+      "should_target": [
+        { "id": "realism_expert" },
+        { "id": "portrait_master" },
+        { "id": "art_history" },
+        { "id": "digital_creator" }
+      ]
+    },
+    "goals": [
+      { "text": "Complete a realistic drawing with accurate proportion.", "due": "2025-11-30" },
+      { "text": "Digital Art: Explore design tools and layers.", "due": "Ongoing" }
+    ],
+    "critiques": [
+      {
+        "date": "2025-10-23",
+        "strength": "Produces clean and high-quality outcomes with patience.",
+        "next": "Try to express more personal preference or creative direction."
+      }
+    ],
+    "christmas_gift": {
+      "message": "Dear Cameron, Thank you for creating with me this year. I love how you notice small details and turn them into calm, thoughtful drawings. You are building a strong foundation step by step. I hope you keep exploring new ideas and enjoying art in 2026.",
+      "link": "https://www.amazon.com/gc/redeem",
+      "code_display": "CODE: CAMERON-XMAS-25"
+    },
+    "featured_art": [
+      {
+        "title": "Paper House",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a36bb79aa9af43daa19_Screen%20Shot%202023-10-17%20at%208.16.23%20PM.png",
+        "caption": "He is so patient to finish this Cardboard House. It is one of my favourite handmade Houses."
+      }
     ]
   },
-  "goals": [
-    { "text": "Complete a realistic drawing with accurate proportion.", "due": "2025-11-30" },
-    { "text": "Digital Art: Explore design tools and layers.", "due": "Ongoing" }
-  ],
-  "critiques": [
-    {
-      "date": "2025-10-23",
-      "strength": "Produces clean and high-quality outcomes with patience.",
-      "next": "Try to express more personal preference or creative direction."
-    }
-  ]
-  },
-  "christmas_2025": {
-    "message": "Dear Cameron, Thank you for creating with me this year. I love how you notice small details and turn them into calm, thoughtful drawings. You are building a strong foundation step by step. I hope you keep exploring new ideas and enjoying art in 2026. — Fei",
-    "gift_code": "PUT-YOUR-AMAZON-CODE-HERE",
-    "redeem_url": "https://www.amazon.com/gc/redeem"
-  },
-
-  "featured_art": [
-    {
-      "title": "Paper House",
-      "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a36bb79aa9af43daa19_Screen%20Shot%202023-10-17%20at%208.16.23%20PM.png",
-      "caption": "He is so paitient to finish this Cardboard House. It is one of my favourite handmade House"
-    }
-  ]
-},
 
  {
     "id": "JUDY-07",
@@ -669,6 +667,11 @@
         { "id": "realism_expert" }
       ]
     },
+    "christmas_gift": {
+      "message": "Dear Adrian, Thank you for drawing with me this year. I really admire your focus and the way you explore darker, more dramatic ideas in your art. Your style is becoming sharper and more confident. I hope you keep training your lines and using your imagination bravely in 2026.",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: ADRIAN-XMAS-25"
+    },
     "goals": [
       { "text": "Portrait Master: Focus on facial structure while keeping your style.", "due": "Next Month" },
       { "text": "Realism Practice: One focused piece to study detail.", "due": "2025-12-15" }
@@ -689,7 +692,7 @@
     ]
   },
 
-  {
+ {
     "id": "SERENA-13",
     "display_name": "Serena",
     "teacher_note": "Serena continues to grow as a thoughtful and efficient art student. Her strength lies in her focus and technical clarity. While she may not always express herself outwardly, her work reveals a strong sense of visual order and problem-solving. As she moves forward, the next step is to stretch her creative voice through storytelling, concept design, and more personalized expression.",
@@ -708,12 +711,11 @@
         { "id": "portfolio_builder" },
         { "id": "critical_thinker" }
       ]
-     },
+    },
     "christmas_gift": {
-      "message": "Dear Serena,🎄
-Thank you for spending your time drawing with me this year. I really appreciate your calm, independent way of learning and how you always find your own balance between study and life. I hope art can stay as a relaxing, happy space for you in 2026.",
+      "message": "Dear Serena, 🎄\nThank you for spending your time drawing with me this year. I really appreciate your calm, independent way of learning and how you always find your own balance between study and life. I hope art can stay as a relaxing, happy space for you in 2026.",
       "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
-      "code_display": "CODE: serena-XMAS-25"
+      "code_display": "CODE: SERENA-XMAS-25"
     },
     "goals": [
       { "text": "Complete full Figure Sketch Level 1 requirements.", "due": "Next Month" },
@@ -728,8 +730,7 @@ Thank you for spending your time drawing with me this year. I really appreciate 
     ],
     "featured_art": [] 
   },
-
-  {
+ {
     "id": "TEMP-09",
     "display_name": "Temp",
     "teacher_note": "Temp is one of the most naturally talented and thoughtful young learners. She absorbs knowledge instantly, responds with meaningful ideas, and shows mature understanding beyond her age. Even when she says “I have no idea,” a small inspiration is enough for her to unlock rich feedback and creativity. This sets her apart from many students—she thinks deeply, expresses warmly, and always tries her best.",
@@ -753,16 +754,21 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         { "id": "animation_beginner" }
       ]
     },
+    "christmas_gift": {
+      "message": "Dear Temp, Merry Christmas! 🎄 You are such a thoughtful and naturally talented artist. I am always amazed by how quickly you absorb new ideas and how much heart you put into your work. Even when you feel unsure, you always find a brilliant solution. Keep trusting your instincts in 2026!",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: TEMP-XMAS-25"
+    },
     "featured_art": [
-       {
+      {
         "title": "A Realistic Dog",
         "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/68daf5253dc15612a294ffb6_88f00564162f6054a7e7e03c9dfe94e7.JPG",
-        "caption": "Colourpencil."
+        "caption": "Colored pencil study showing great attention to texture."
       }
     ]
   },
 
-  {
+{
     "id": "CODY-22",
     "display_name": "Cody",
     "teacher_note": "Cody is a truly exceptional student with a rare combination of intelligence and technical intuition. He is currently our most advanced student in AI tools and gaming concepts. When he locks into a topic, his performance is outstanding. My goal is to help him strengthen his concentration while supporting his passion for building worlds through both hand-drawn and AI-powered methods.",
@@ -785,6 +791,11 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         { "id": "realism_expert" }
       ]
     },
+    "christmas_gift": {
+      "message": "Dear Cody, Merry Christmas! 🎄 It is rare to see a student with such a sharp mind for both technology and art. Your world-building skills are incredible. I look forward to seeing what new digital worlds you create (with laser focus!) in 2026.",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: CODY-XMAS-25"
+    },
     "goals": [
       { "text": "Focus Sprinter: Practice sustaining concentration for 20-minute blocks.", "due": "Ongoing" },
       { "text": "Animation: Create a simple loop using AI + hand-drawing.", "due": "2025-12-15" }
@@ -797,10 +808,10 @@ Thank you for spending your time drawing with me this year. I really appreciate 
       }
     ],
     "featured_art": [
-       {
+      {
         "title": "A Badge Design",
         "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da8041d3d9ce2e5caa_feiteamart%20digtal%20gaming%20creator.PNG",
-        "caption": "Colourpencil."
+        "caption": "Digital Design created for the Gaming Creator badge."
       }
     ]
   },
@@ -854,23 +865,23 @@ Thank you for spending your time drawing with me this year. I really appreciate 
       }
   },
 
-  {
+ {
     "id": "ALISSIE-05",
     "display_name": "Alissie",
     "teacher_note": "Alissie is a bright and joyful young artist who is highly efficient at learning new skills. She is confident, expressive, and unafraid to engage with challenges. With her intelligence and curiosity, she is well on her way to becoming a well-rounded and expressive artist.",
     "tags": ["Joyful", "Efficient", "Expressive", "Multi-Talented"],
     "achievements": [
-      { "badge_id": "basic_sketch",          "date": "2025-09-01" },
-      { "badge_id": "still_life",            "date": "2025-09-15" },
+      { "badge_id": "basic_sketch",        "date": "2025-09-01" },
+      { "badge_id": "still_life",          "date": "2025-09-15" },
       { "badge_id": "observation_detective", "date": "2025-09-25" },
-      { "badge_id": "material_explore",      "date": "2025-10-05" },
-      { "badge_id": "idea_inventor",         "date": "2025-10-15" },
-      { "badge_id": "storyteller",           "date": "2025-10-25" },
-      { "badge_id": "character_designer",    "date": "2025-11-05" },
-      { "badge_id": "hand_crafter",          "date": "2025-11-15" },
-      { "badge_id": "digital_creator",       "date": "2025-11-20" },
-      { "badge_id": "portrait_master",       "date": "2025-11-25" },
-      { "badge_id": "realism_expert",        "date": "2025-11-27" }
+      { "badge_id": "material_explore",    "date": "2025-10-05" },
+      { "badge_id": "idea_inventor",       "date": "2025-10-15" },
+      { "badge_id": "storyteller",         "date": "2025-10-25" },
+      { "badge_id": "character_designer",  "date": "2025-11-05" },
+      { "badge_id": "hand_crafter",        "date": "2025-11-15" },
+      { "badge_id": "digital_creator",     "date": "2025-11-20" },
+      { "badge_id": "portrait_master",     "date": "2025-11-25" },
+      { "badge_id": "realism_expert",      "date": "2025-11-27" }
     ],
     "badges": {
       "should_target": [
@@ -880,6 +891,11 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         { "id": "art_history" },
         { "id": "portfolio_builder" }
       ]
+    },
+    "christmas_gift": {
+      "message": "Dear Alissie, Merry Christmas! 🎄 Your joy and confidence make our studio brighter every week. I love how fearless you are when learning new skills—you pick things up so fast! In 2026, I can't wait to see you build even bigger worlds and scenes for your characters.",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: ALISSIE-XMAS-25"
     },
     "goals": [
       { "text": "Scene Designer: Build environments around your characters.", "due": "Next Month" },
@@ -894,32 +910,32 @@ Thank you for spending your time drawing with me this year. I really appreciate 
     ],
     "featured_art": [
       {
-        "title": "Manga Portriat",
+        "title": "Manga Portrait",
         "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69308ab602fb8f7e33564999_9AC00B77-10F0-4FF2-BE02-98652E900992.jpg",
-        "caption": "Marker + Colourpencil."
+        "caption": "Marker + Colored Pencil."
       }
     ]
   },
 
-  {
+ {
     "id": "NATALIE-17",
     "display_name": "Natalie",
     "teacher_note": "Natalie is a warm, sociable, and generous student who brings a special light to the classroom. She is emotionally intelligent, deeply independent, and determined. Now balancing high school life, she is showing great maturity by shifting her focus toward refining technical drawing skills and embracing challenges she doesn't yet love.",
     "tags": ["Sociable", "Independent", "Emotionally-Intelligent", "Determined"],
     "achievements": [
-      { "badge_id": "basic_sketch",          "date": "2024-09-10" },
-      { "badge_id": "still_life",            "date": "2024-10-15" },
-      { "badge_id": "landscape",             "date": "2024-11-20" },
-      { "badge_id": "material_explore",      "date": "2025-01-10" },
+      { "badge_id": "basic_sketch",        "date": "2024-09-10" },
+      { "badge_id": "still_life",          "date": "2024-10-15" },
+      { "badge_id": "landscape",           "date": "2024-11-20" },
+      { "badge_id": "material_explore",    "date": "2025-01-10" },
       { "badge_id": "observation_detective", "date": "2025-02-15" },
-      { "badge_id": "idea_inventor",         "date": "2025-03-20" },
-      { "badge_id": "art_painting",          "date": "2025-04-25" },
-      { "badge_id": "portrait_master",       "date": "2025-05-30" },
-      { "badge_id": "figure_sketch",         "date": "2025-06-10" },
-      { "badge_id": "character_designer",    "date": "2025-07-20" },
-      { "badge_id": "hand_crafter",          "date": "2025-08-15" },
-      { "badge_id": "digital_creator",       "date": "2025-09-25" },
-      { "badge_id": "animation_beginner",    "date": "2025-11-27" }
+      { "badge_id": "idea_inventor",       "date": "2025-03-20" },
+      { "badge_id": "art_painting",        "date": "2025-04-25" },
+      { "badge_id": "portrait_master",     "date": "2025-05-30" },
+      { "badge_id": "figure_sketch",       "date": "2025-06-10" },
+      { "badge_id": "character_designer",  "date": "2025-07-20" },
+      { "badge_id": "hand_crafter",        "date": "2025-08-15" },
+      { "badge_id": "digital_creator",     "date": "2025-09-25" },
+      { "badge_id": "animation_beginner",  "date": "2025-11-27" }
     ],
     "badges": {
       "should_target": [
@@ -928,6 +944,11 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         { "id": "community_builder" },
         { "id": "critical_thinker" }
       ]
+    },
+    "christmas_gift": {
+      "message": "Dear Natalie, Merry Christmas! 🎄 You bring such a special light to our classroom. I admire your emotional intelligence and how you are balancing high school life with such determination. Watching you embrace technical challenges shows true maturity. Keep shining bright in 2026!",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: NATALIE-XMAS-25"
     },
     "goals": [
       { "text": "Refine technical drawing skills (structure & form).", "due": "Ongoing" },
@@ -940,14 +961,15 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         "next": "Deepen understanding of art history to build context for your expressive style."
       }
     ],
-    "featured_art": [{
-        "title": "Digtal Illustration",
+    "featured_art": [
+      {
+        "title": "Digital Illustration",
         "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/682e2a53d38d56bbb93da054_WechatIMG455.jpeg",
         "caption": "Markers."
-      }]
+      }
+    ]
   },
-
-  {
+{
     "id": "RAINIE-08",
     "display_name": "Rainie",
     "teacher_note": "Rainie has leveled up significantly! Her fundamentals—lines, structure, composition—are much more solid, and she now works like an independent creator. She shines brightest in animation, showing strong initiative and patience with details. She has real potential to become a remarkable young creator.",
@@ -972,6 +994,11 @@ Thank you for spending your time drawing with me this year. I really appreciate 
         { "id": "realism_expert" }
       ]
     },
+    "christmas_gift": {
+      "message": "Dear Rainie, Merry Christmas! 🎄 It has been amazing to watch you 'level up' this year. Your dedication to animation—especially your patience with details—is inspiring. You are becoming a true independent creator. I can't wait to see what characters you bring to life in 2026!",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: RAINIE-XMAS-25"
+    },
     "goals": [
       { "text": "Portfolio: Organize animation clips and character designs.", "due": "Next Month" },
       { "text": "Realism: Complete one detailed study to understand depth.", "due": "2025-12-20" }
@@ -985,7 +1012,7 @@ Thank you for spending your time drawing with me this year. I really appreciate 
     ],
     "featured_art": [
       {
-        "title": "Digtal Illustration",
+        "title": "Digital Illustration",
         "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685dedc234be002fc7874a8f_dfcbf8de2febb64ef40faf1cb3516e6d.JPG",
         "caption": "Procreate."
       }
