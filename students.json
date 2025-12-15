@@ -555,7 +555,7 @@
     ]
   },
 
-  {
+{
     "id": "XINYUE-12",
     "display_name": "Xinyue",
     "teacher_note": "Xinyue is one of the most inventive and student-led learners in the studio. She constantly brings fresh ideas and playful imagination to class. The focus now is to guide her to slow down, observe deeply, and strengthen technical realism while protecting her creativity and freedom.",
@@ -576,6 +576,11 @@
         { "id": "portrait_master" },
         { "id": "art_history" }
       ]
+    },
+    "christmas_gift": {
+      "message": "Dear Xinyue, Merry Christmas! 🎄 You are such a spark of energy in our studio. I love how you always lead with fresh ideas and playful imagination. In 2026, I hope you keep that creative fire burning while finding the patience to observe the world deeply and master new details!",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: XINYUE-XMAS-25"
     },
     "goals": [
       { "text": "Develop patience and precision through one realism or portrait study.", "due": "2025-12-20" },
