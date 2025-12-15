@@ -708,6 +708,12 @@
         { "id": "portfolio_builder" },
         { "id": "critical_thinker" }
       ]
+     },
+    "christmas_gift": {
+      "message": "Dear Serena,🎄
+Thank you for spending your time drawing with me this year. I really appreciate your calm, independent way of learning and how you always find your own balance between study and life. I hope art can stay as a relaxing, happy space for you in 2026.",
+      "link": "https://www.amazon.ca/g/YOUR_GIFT_CODE_HERE",
+      "code_display": "CODE: serena-XMAS-25"
     },
     "goals": [
       { "text": "Complete full Figure Sketch Level 1 requirements.", "due": "Next Month" },
