@@ -5,7 +5,7 @@ const PAGES = [
   // --- FOUNDATIONS ---
   { id:'basic_sketch',          title:'Basic Sketch',          artist:'Des. by Alex',    imgUrl:'', emoji:'✏️', color:'#f59e0b' },
   { id:'still_life',            title:'Still Life',            artist:'Des. by Sara',    imgUrl:'', emoji:'🍎', color:'#ef4444' },
-  { id:'landscape',             title:'Landscape',             artist:'Des. by John',    imgUrl:'', emoji:'⛰️', color:'#10b981' },
+  { id:'landscape',             title:'Landscape',             artist:'Des. by Xinyue',    imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6941f66a5843fae12540ef4d_IMG_0284.jpeg', emoji:'⛰️', color:'#10b981' },
   { id:'material_explore',      title:'Material Explore',      artist:'Des. by Xinyue',  imgUrl:'', emoji:'🧱', color:'#78716c' },
   { id:'observation_detective', title:'Observation Detective', artist:'Des. by Leo',     imgUrl:'', emoji:'👀', color:'#06b6d4' },
   { id:'realism_expert',        title:'Realism Expert',        artist:'Des. by Cameron', imgUrl:'', emoji:'👁️', color:'#374151' }, 
