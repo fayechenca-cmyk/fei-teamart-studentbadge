@@ -1,48 +1,124 @@
 [
  {
-    "id": "REGINA-16",
-    "display_name": "Regina",
-    "teacher_note": "Regina is a calm, highly disciplined learner with a strong technical foundation. She follows complex steps with clarity and finishes efficiently, showing accurate proportion, clean construction, and confident value control. Recent studies of skull, facial muscles, and feature perspectives have noticeably improved her portrait structure. The next stage is to channel her quiet strength into personal voice—using narrative, color mood, and design choices.",
-    "tags": ["Mature", "Thoughtful", "Efficient", "Technically-Skilled", "Observant"],
-    "achievements": [
-      { "badge_id": "basic_sketch",        "date": "2025-08-15" },
-      { "badge_id": "landscape",           "date": "2025-09-01" },
-      { "badge_id": "observation_detective", "date": "2025-09-10" },
-      { "badge_id": "figure_sketch",       "date": "2025-09-20" },
-      { "badge_id": "portrait_master",     "date": "2025-10-05" },
-      { "badge_id": "costume_design",      "date": "2025-10-15" },
-      { "badge_id": "art_painting",        "date": "2025-11-01" },
-      { "badge_id": "digital_creator",     "date": "2025-11-10" },
-      { "badge_id": "art_history",         "date": "2025-11-15" },
-      { "badge_id": "scene_designer",      "date": "2025-11-20" }, 
-      { "badge_id": "still_life",          "date": "2025-08-30" },
-      { "badge_id": "interior_design",     "date": "2025-09-25" }
-    ],
-    "badges": {
-      "should_target": [ 
-        { "id": "portfolio_builder" }, 
-        { "id": "critical_thinker" },
-        { "id": "sustainable_creator" },
-        { "id": "storyteller" }
-      ]
-    },
-    "christmas_gift": {
-      "message": "Dear Regina, Merry Christmas! It has been a joy watching your technical skills grow so strong this year—your discipline with portraits is truly professional. In 2026, I hope you relax, have fun, and let your unique personal colors shine even brighter in your art.",
-      "code_display": "STATUS: GIFT SHIPPING TO YOUR HOME 🚚"
-    },
-    "featured_art": [
-      {
-        "title": "Jewel Design: Charoite Ring",
-        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685de1fbdabfd86614b1cf78_51fa0ecd4bb5cbc6da67369e35741a63.JPG",
-        "caption": "Elegant ring concept inspired by her favorite color purple."
-      },
-      {
-        "title": "Very First Portrait",
-        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6902539ea61b05b23399e28f_ac62c22dfccb6d5fce6f27412647f022.JPG",
-        "caption": "A successful first portrait study demonstrating strong structure. I look forward to her upcoming pieces!"
-      }
+  "id": "REGINA-16",
+  "display_name": "Regina",
+  "teacher": "Feiyi Chen",
+  "plan": "premium",
+
+  "teacher_note": "Regina is a calm, highly disciplined learner with a strong technical foundation. She follows complex steps with clarity and finishes efficiently, showing accurate proportion, clean construction, and confident value control. Recent studies of skull, facial muscles, and feature perspectives have noticeably improved her portrait structure. The next stage is to channel her quiet strength into personal voice—using narrative, color mood, and design choices.",
+
+  "tags": ["Mature", "Thoughtful", "Efficient", "Technically-Skilled", "Observant"],
+
+  "achievements": [
+    { "badge_id": "basic_sketch", "date": "2025-08-15" },
+    { "badge_id": "landscape", "date": "2025-09-01" },
+    { "badge_id": "observation_detective", "date": "2025-09-10" },
+    { "badge_id": "figure_sketch", "date": "2025-09-20" },
+    { "badge_id": "portrait_master", "date": "2025-10-05" },
+    { "badge_id": "costume_design", "date": "2025-10-15" },
+    { "badge_id": "art_painting", "date": "2025-11-01" },
+    { "badge_id": "digital_creator", "date": "2025-11-10" },
+    { "badge_id": "art_history", "date": "2025-11-15" },
+    { "badge_id": "scene_designer", "date": "2025-11-20" },
+    { "badge_id": "still_life", "date": "2025-08-30" },
+    { "badge_id": "interior_design", "date": "2025-09-25" }
+  ],
+
+  "badges": {
+    "should_target": [
+      { "id": "portfolio_builder" },
+      { "id": "critical_thinker" },
+      { "id": "sustainable_creator" },
+      { "id": "storyteller" }
     ]
   },
+
+  "christmas_gift": {
+    "message": "Dear Regina, Merry Christmas! It has been a joy watching your technical skills grow so strong this year—your discipline with portraits is truly professional. In 2026, I hope you relax, have fun, and let your unique personal colors shine even brighter in your art.",
+    "code_display": "STATUS: GIFT SHIPPING TO YOUR HOME 🚚"
+  },
+
+  "featured_art": [
+    {
+      "title": "Jewel Design: Charoite Ring",
+      "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685de1fbdabfd86614b1cf78_51fa0ecd4bb5cbc6da67369e35741a63.JPG",
+      "caption": "Elegant ring concept inspired by her favorite color purple."
+    },
+    {
+      "title": "Very First Portrait",
+      "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6902539ea61b05b23399e28f_ac62c22dfccb6d5fce6f27412647f022.JPG",
+      "caption": "A successful first portrait study demonstrating strong structure. I look forward to her upcoming pieces!"
+    }
+  ],
+
+  "live_class": {
+    "enabled": true,
+    "title": "Portrait Sketching and Personal Expression",
+    "subtitle": "Live Class with Feiyi",
+    "time": "Tuesday 4:30 PM",
+    "zoom_link": "https://zoom.us/your-regina-link",
+    "lesson_focus": "Building portrait structure while developing personal voice through mood, narrative, and design choices."
+  },
+
+  "recommended_courses": [
+    {
+      "badge_id": "portfolio_builder",
+      "title": "Portfolio Building Path",
+      "description": "Curate strong works, organize process, and prepare polished presentation pieces.",
+      "link": "https://www.feiteamart.com/portfolio-building"
+    },
+    {
+      "badge_id": "critical_thinker",
+      "title": "Critical Thinking for Young Artists",
+      "description": "Learn how to analyze artworks, connect ideas, and express thoughtful opinions.",
+      "link": "https://www.feiteamart.com/critical-thinking"
+    },
+    {
+      "badge_id": "storyteller",
+      "title": "Visual Storytelling Studio",
+      "description": "Transform technical skill into personal narrative through illustration and concept development.",
+      "link": "https://www.feiteamart.com/visual-storytelling"
+    },
+    {
+      "badge_id": "sustainable_creator",
+      "title": "Sustainable Creator Lab",
+      "description": "Explore meaningful making through material awareness and reflective design thinking.",
+      "link": "https://www.feiteamart.com/sustainable-creator"
+    }
+  ],
+
+  "portfolio": [
+    {
+      "title": "Jewel Design: Charoite Ring",
+      "image": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/685de1fbdabfd86614b1cf78_51fa0ecd4bb5cbc6da67369e35741a63.JPG",
+      "caption": "Elegant ring concept inspired by her favorite color purple.",
+      "category": "Design"
+    },
+    {
+      "title": "Very First Portrait",
+      "image": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6902539ea61b05b23399e28f_ac62c22dfccb6d5fce6f27412647f022.JPG",
+      "caption": "A successful first portrait study demonstrating strong structure.",
+      "category": "Portrait"
+    }
+  ],
+
+  "portal_access": {
+    "lfc": true,
+    "art_history": true,
+    "self_study": true,
+    "live_class": true,
+    "portfolio": true,
+    "ai_curator": true
+  },
+
+  "dashboard_sections": {
+    "show_live_class": true,
+    "show_report": true,
+    "show_recommended_courses": true,
+    "show_portfolio": true,
+    "show_self_study": true
+  }
+},
 
   {
     "id": "JOJO-25",
