@@ -421,7 +421,6 @@
 </div>
 
 <script>
-    // 1. DATA CONFIGURATION
     const PAGES = [
         { id:'basic_sketch', title:'Basic Sketch', artist:'Des. by Alex', imgUrl:'', emoji:'✏️', color:'#f59e0b' },
         { id:'still_life', title:'Still Life', artist:'Des. by Sara', imgUrl:'', emoji:'🍎', color:'#ef4444' },
@@ -454,9 +453,27 @@
         { id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4efc423b6f032f27496_7ce471ab56c32f732fa052a1ef003958.JPG', emoji:'📂', color:'#1e3a8a' }
     ];
 
-    let allStudents = [];
+    const SELF_STUDY_LINKS = {
+        lfc: {
+            title: 'LFC Learning System',
+            desc: 'Explore Learn From Collection with guided visual thinking.',
+            link: 'https://www.feiteamart.com/lfc'
+        },
+        art_history: {
+            title: 'Art History',
+            desc: 'Study art movements, artists, and visual context.',
+            link: 'https://www.feiteamart.com/art-history'
+        },
+        self_study: {
+            title: '100 Self-Study Classes',
+            desc: 'Continue learning independently with FEI TeamArt resources.',
+            link: 'https://www.feiteamart.com/courses'
+        }
+    };
 
-    // 2. INITIALIZATION
+    let allStudents = [];
+    let activeStudent = null;
+
     document.addEventListener("DOMContentLoaded", () => {
         fetch('students.json')
             .then(response => response.json())
@@ -473,39 +490,50 @@
                 const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
 
                 if (student) {
+                    activeStudent = student;
                     document.getElementById('gate').style.display = 'none';
                     document.getElementById('gameUI').style.display = 'block';
-                    loadReport(student); 
+                    loadReport(student);
                 } else {
                     alert("Incorrect Code. Please check your private access key.");
                 }
             });
         }
 
-        // NEW: Event Listeners for Christmas Modal
         const modal = document.getElementById('christmasModal');
         const openBtn = document.getElementById('openGiftBtn');
         const closeBtn = document.getElementById('closeGift');
 
         if (openBtn) {
             openBtn.addEventListener('click', () => {
-                modal.style.display = 'flex'; // Show modal
+                modal.style.display = 'flex';
             });
         }
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none'; // Hide modal
+                modal.style.display = 'none';
             });
         }
-        // Click outside to close
+
+        const badgeModal = document.getElementById('badgeModal');
+        const closeBadgeModal = document.getElementById('closeBadgeModal');
+        if (closeBadgeModal) {
+            closeBadgeModal.addEventListener('click', () => {
+                badgeModal.style.display = 'none';
+            });
+        }
+
         window.addEventListener('click', (e) => {
-            if (e.target == modal) {
-                modal.style.display = 'none';
-            }
+            if (e.target === modal) modal.style.display = 'none';
+            if (e.target === badgeModal) badgeModal.style.display = 'none';
         });
     });
 
-    // 3. RENDER REPORT
+    function normalizeToArray(value) {
+        if (!value) return [];
+        return Array.isArray(value) ? value : [value];
+    }
+
     function loadReport(student) {
         document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
 
@@ -523,25 +551,16 @@
             });
         }
 
-        // --- CHRISTMAS LOGIC START ---
         const giftContainer = document.getElementById('giftContainer');
         if (student.christmas_gift) {
-            // Student has a gift! Show the button and setup data.
             giftContainer.style.display = 'block';
-            
-            document.getElementById('giftMessage').innerText = student.christmas_gift.message;
-            document.getElementById('giftLinkBtn').href = student.christmas_gift.link;
-            
-            // Optional: Show the code text if provided, otherwise generic instructions
-            document.getElementById('giftCodeDisplay').innerText = 
-                student.christmas_gift.code_display || "Click the button below to claim!";
+            document.getElementById('giftMessage').innerText = student.christmas_gift.message || '';
+            document.getElementById('giftLinkBtn').href = student.christmas_gift.link || '#';
+            document.getElementById('giftCodeDisplay').innerText = student.christmas_gift.code_display || "Click the button below to claim!";
         } else {
-            // No gift for this student, hide the button
             giftContainer.style.display = 'none';
         }
-        // --- CHRISTMAS LOGIC END ---
 
-        // --- GOALS ---
         const goalsList = document.getElementById('goalsList');
         goalsList.innerHTML = '';
         if (student.goals && student.goals.length > 0) {
@@ -555,7 +574,6 @@
             goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
         }
 
-        // --- CRITIQUES ---
         const critList = document.getElementById('critiquesList');
         critList.innerHTML = '';
         if (student.critiques && student.critiques.length > 0) {
@@ -571,7 +589,6 @@
             critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
         }
 
-        // --- NOTES ---
         const notesList = document.getElementById('notesList');
         notesList.innerHTML = '';
         if (student.notes && student.notes.length > 0) {
@@ -585,11 +602,11 @@
             notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
         }
 
-        // Spotlight
         const spotGrid = document.getElementById('spotlightGrid');
         spotGrid.innerHTML = '';
-        if (student.featured_art && student.featured_art.length > 0) {
-            student.featured_art.forEach(art => {
+        const featuredArt = normalizeToArray(student.featured_art);
+        if (featuredArt.length > 0) {
+            featuredArt.forEach(art => {
                 const div = document.createElement('div');
                 div.className = 'spotlight-item';
                 div.innerHTML = `
@@ -605,19 +622,139 @@
             spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
         }
 
+        renderLearningCenter(student);
+        renderPortfolio(student);
         renderMap(student);
+    }
+
+    function renderLearningCenter(student) {
+        const card = document.getElementById('learningCenterCard');
+        card.style.display = 'block';
+
+        renderLiveClass(student);
+        renderRecommendedCourses(student);
+        renderSelfStudy(student);
+    }
+
+    function renderLiveClass(student) {
+        const wrap = document.getElementById('liveClassWrap');
+        const box = document.getElementById('liveClassBox');
+
+        if (!student.live_class || !student.live_class.enabled) {
+            wrap.style.display = 'none';
+            box.innerHTML = '';
+            return;
+        }
+
+        wrap.style.display = 'block';
+        box.innerHTML = `
+            <div class="live-class-box">
+                <h3>🎓 Live Class</h3>
+                <p><strong>${student.live_class.title || 'Upcoming Class'}</strong></p>
+                <p>${student.live_class.subtitle || ''}</p>
+                <p>🕒 ${student.live_class.time || 'Time TBA'}</p>
+                <p>${student.live_class.lesson_focus || ''}</p>
+                <a class="portal-btn" href="${student.live_class.zoom_link || '#'}" target="_blank">Join Class</a>
+            </div>
+        `;
+    }
+
+    function renderRecommendedCourses(student) {
+        const wrap = document.getElementById('recommendedCoursesWrap');
+        const grid = document.getElementById('recommendedCoursesGrid');
+        grid.innerHTML = '';
+
+        const courses = normalizeToArray(student.recommended_courses);
+
+        if (!courses.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'block';
+
+        courses.forEach(course => {
+            const item = document.createElement('div');
+            item.className = 'portal-card';
+            item.innerHTML = `
+                <div class="portal-card-title">${course.title || 'Recommended Course'}</div>
+                <div class="portal-card-desc">${course.description || ''}</div>
+                <div class="portal-card-meta">${course.badge_id ? 'Linked badge: ' + course.badge_id : ''}</div>
+                <a class="portal-btn" href="${course.link || '#'}" target="_blank">View Course</a>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    function renderSelfStudy(student) {
+        const wrap = document.getElementById('selfStudyWrap');
+        const grid = document.getElementById('selfStudyGrid');
+        grid.innerHTML = '';
+
+        const access = student.portal_access || {};
+        const items = [];
+
+        if (access.lfc) items.push(SELF_STUDY_LINKS.lfc);
+        if (access.art_history) items.push(SELF_STUDY_LINKS.art_history);
+        if (access.self_study) items.push(SELF_STUDY_LINKS.self_study);
+
+        if (!items.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'block';
+
+        items.forEach(itemData => {
+            const item = document.createElement('div');
+            item.className = 'portal-card';
+            item.innerHTML = `
+                <div class="portal-card-title">${itemData.title}</div>
+                <div class="portal-card-desc">${itemData.desc}</div>
+                <a class="portal-btn" href="${itemData.link}" target="_blank">Open</a>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    function renderPortfolio(student) {
+        const wrap = document.getElementById('portfolioHubCard');
+        const grid = document.getElementById('portfolioGrid');
+        grid.innerHTML = '';
+
+        const portfolio = normalizeToArray(student.portfolio);
+
+        if (!portfolio.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'block';
+
+        portfolio.forEach(work => {
+            const item = document.createElement('div');
+            item.className = 'portfolio-item';
+            item.innerHTML = `
+                <div class="portfolio-frame">
+                    <img src="${work.image}" class="portfolio-img" onerror="this.src='https://placehold.co/220x220?text=Portfolio'">
+                </div>
+                <div class="portfolio-title">${work.title || ''}</div>
+                <div class="portfolio-sub">${work.category || ''}${work.caption ? ' · ' + work.caption : ''}</div>
+            `;
+            grid.appendChild(item);
+        });
     }
 
     function renderMap(student) {
         const container = document.getElementById('badgeGrid');
-        container.innerHTML = ''; 
+        container.innerHTML = '';
 
         let earnedIds = [];
-        if (student.achievements) earnedIds = student.achievements.map(a => a.badge_id);
+        if (student.achievements) earnedIds = student.achievements.map(a => (a.badge_id || '').toLowerCase());
 
         let recommendedIds = [];
         if (student.badges && student.badges.should_target) {
-            recommendedIds = student.badges.should_target.map(t => t.id);
+            recommendedIds = student.badges.should_target.map(t => (t.id || '').toLowerCase());
         }
 
         const total = PAGES.length;
@@ -628,9 +765,10 @@
         document.getElementById('progressPct').textContent = `${pct}%`;
 
         PAGES.forEach((page, index) => {
-            const isUnlocked = earnedIds.includes(page.id);
-            const isRecommended = !isUnlocked && recommendedIds.includes(page.id);
-            
+            const pageId = page.id.toLowerCase();
+            const isUnlocked = earnedIds.includes(pageId);
+            const isRecommended = !isUnlocked && recommendedIds.includes(pageId);
+
             const node = document.createElement('div');
             let statusClass = 'locked';
             if (isUnlocked) statusClass = 'unlocked';
@@ -640,8 +778,8 @@
             node.style.animationDelay = `${index * 0.05}s`;
 
             const hasImage = page.imgUrl && page.imgUrl.length > 5;
-            const imageHTML = hasImage 
-                ? `<img src="${page.imgUrl}" class="node-img">` 
+            const imageHTML = hasImage
+                ? `<img src="${page.imgUrl}" class="node-img">`
                 : `<div class="node-icon-fallback">${page.emoji}</div>`;
 
             node.innerHTML = `
@@ -653,8 +791,62 @@
                 <div class="node-label">${page.title}</div>
                 <div class="badge-credit">${page.artist}</div>
             `;
+
+            node.addEventListener('click', () => openBadgeModal(student, page, isUnlocked, isRecommended));
             container.appendChild(node);
         });
+    }
+
+    function openBadgeModal(student, page, isUnlocked, isRecommended) {
+        const modal = document.getElementById('badgeModal');
+        const title = document.getElementById('badgeModalTitle');
+        const status = document.getElementById('badgeModalStatus');
+        const desc = document.getElementById('badgeModalDesc');
+        const coursesWrap = document.getElementById('badgeModalCourses');
+
+        title.textContent = page.title;
+        coursesWrap.innerHTML = '';
+
+        if (isUnlocked) {
+            status.textContent = 'Achieved';
+            status.style.background = '#ecfdf5';
+            status.style.color = '#047857';
+            desc.textContent = `You have already unlocked ${page.title}. Keep building this strength and consider using it in your next project or portfolio piece.`;
+        } else if (isRecommended) {
+            status.textContent = 'Recommended Next';
+            status.style.background = '#fff7ed';
+            status.style.color = '#c2410c';
+            desc.textContent = `This badge is currently recommended for you. You can use the linked course suggestions below to help unlock this next stage.`;
+        } else {
+            status.textContent = 'Not Yet';
+            status.style.background = '#f3f4f6';
+            status.style.color = '#6b7280';
+            desc.textContent = `This badge is not active yet, but it may become part of your future learning path.`;
+        }
+
+        const matchedCourses = normalizeToArray(student.recommended_courses).filter(c => (c.badge_id || '').toLowerCase() === page.id.toLowerCase());
+
+        if (matchedCourses.length) {
+            matchedCourses.forEach(course => {
+                const item = document.createElement('div');
+                item.className = 'mini-course-item';
+                item.innerHTML = `
+                    <div class="portal-card-title">${course.title}</div>
+                    <div class="portal-card-desc">${course.description || ''}</div>
+                    <a class="portal-btn" href="${course.link || '#'}" target="_blank">Open Course</a>
+                `;
+                coursesWrap.appendChild(item);
+            });
+        } else {
+            const fallback = document.createElement('div');
+            fallback.className = 'mini-course-item';
+            fallback.innerHTML = `
+                <div class="portal-card-desc">No linked course has been added for this badge yet.</div>
+            `;
+            coursesWrap.appendChild(fallback);
+        }
+
+        modal.style.display = 'flex';
     }
 </script>
 </div>
