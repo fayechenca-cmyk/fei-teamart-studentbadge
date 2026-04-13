@@ -1,27 +1,35 @@
 /* =========================================
-   1. GLOBAL & BACKGROUND (保持原始沉浸式地图背景)
+   1. GLOBAL & BACKGROUND (The Immersive Map)
    ========================================= */
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0; padding: 0;
   min-height: 100vh;
+  
+  /* FULL SCREEN MAP BACKGROUND */
   background-image: 
-    linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 
+    linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), /* Dark overlay to make text pop */
     url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+  
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Keeps image still while scrolling */
+  
+  /* Centering Logic */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .wrapper { 
-    width: 100%; max-width: 1000px; padding: 20px; box-sizing: border-box;
+    width: 100%; 
+    max-width: 1000px; 
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* =========================================
-   2. LOGIN GATE (保持原始入口设计)
+   2. LOGIN GATE (The Entry Card)
    ========================================= */
 #gate {
   background: rgba(255, 255, 255, 0.95);
@@ -30,22 +38,56 @@ body {
   margin: 40px auto; 
   text-align: center;
   overflow: hidden; 
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5); /* Deep shadow */
   border: 1px solid rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);
 }
 
+/* The Map Banner inside the Login Card */
 .gate-banner {
-    height: 140px; width: 100%;
+    height: 140px;
+    width: 100%;
     background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
-    background-size: cover; background-position: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Fade bottom to white */
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
+
+.gate-content { padding: 10px 40px 30px 40px; }
 
 .gate-title { 
     font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; 
-    margin-bottom: 10px; margin-top: -25px; color: #1a1d2b; position: relative; z-index: 10;
+    margin-bottom: 10px; margin-top: -25px; color: #1a1d2b;
+    position: relative; z-index: 10;
 }
+
+/* How It Works Grid */
+.how-it-works {
+    display: flex;
+    border-top: 1px solid #eee;
+    background: #f8fafc;
+}
+.how-step {
+    flex: 1;
+    padding: 15px 5px;
+    border-right: 1px solid #eee;
+}
+.how-step:last-child { border-right: none; }
+.how-icon { font-size: 22px; margin-bottom: 5px; }
+.how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; }
+.how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
+
+/* Input & Button */
+.input { 
+    width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
+    font-size: 16px; text-align: center; margin-bottom: 15px; 
+    background: #fff; color: #333; box-sizing: border-box;
+    transition: all 0.3s;
+}
+.input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
 
 .game-btn {
   width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
@@ -54,121 +96,335 @@ body {
   text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
   box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
 }
+.game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
 
 /* =========================================
-   3. MODERN LEARNING HUB (新增：大宽面磁贴系统)
+   3. DASHBOARD UI (The Report)
    ========================================= */
-
-/* 直播课 Hero Card */
-#fei-embed-root .live-hero {
-    background: linear-gradient(135deg, #1a1d2b 0%, #334155 100%);
-    border-radius: 20px; padding: 30px; color: white;
-    display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-}
-#fei-embed-root .live-hero h3 { font-size: 22px; margin: 0 0 5px; color: #fff; font-weight: 800; }
-#fei-embed-root .live-hero p { font-size: 14px; color: #94a3b8; margin: 0; }
-#fei-embed-root .live-badge {
-    background: #d42424; color: white; padding: 4px 10px; border-radius: 6px;
-    font-size: 10px; font-weight: 800; margin-bottom: 12px; display: inline-block;
-    letter-spacing: 1px;
+.header, .card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 磁贴网格控制 */
-#fei-embed-root .hub-label {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 11px; font-weight: 800; color: #8b5cf6; 
-    letter-spacing: 1.5px; margin-bottom: 15px; opacity: 0.9;
+.main-header { text-align: center; margin-top: 20px; }
+h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; }
+.section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; }
+
+/* Teacher Card */
+.teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
+.teacher-text {
+    font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
+    background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
 }
-#fei-embed-root .hub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
+.tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.tag {
+    background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
 
-/* 磁贴大按钮样式 */
-#fei-embed-root .hub-tile {
-    background: #ffffff; border: 1px solid #eef2f7; border-radius: 18px;
-    padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+/* Spotlight Gallery (Tilted Photos) */
+.spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.spotlight-item { width: 180px; text-align: center; }
+.spotlight-frame {
+    width: 100%; height: 180px; background: #fff; padding: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
+    margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
 }
-#fei-embed-root .hub-tile:hover {
-    transform: translateY(-5px); border-color: #67e8f9;
-    box-shadow: 0 12px 30px rgba(103, 232, 249, 0.18);
-}
-#fei-embed-root .hub-tile-title {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 16px; font-weight: 800; color: #1a1d2b; margin-bottom: 8px;
-}
-#fei-embed-root .hub-tile-desc {
-    font-size: 12px; color: #64748b; line-height: 1.5; margin-bottom: 15px;
-}
-#fei-embed-root .hub-action-btn {
-    background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
-    color: #1a1d2b; padding: 10px 14px; border-radius: 10px;
-    text-align: center; font-size: 12px; font-weight: 800;
-    font-family: 'Montserrat', sans-serif !important;
-}
+.spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
+.spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
+.spotlight-img { width: 100%; height: 100%; object-fit: cover; }
+.spotlight-caption { font-size: 13px; font-weight: 700; color: #555; }
+.spotlight-sub { font-size: 11px; color: #999; }
 
 /* =========================================
-   4. THE MAP & BADGES (保持原始 Shine & Glow)
+   4. THE BADGE GRID (With Shine & Glow!)
    ========================================= */
 .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 
-.map-node { width: 120px; text-align: center; position: relative; opacity: 0; animation: popIn 0.5s forwards ease-out; }
+.map-node { 
+    width: 120px; 
+    text-align: center; 
+    position: relative; 
+    opacity: 0; 
+    animation: popIn 0.5s forwards ease-out; 
+}
 .map-node:hover { transform: translateY(-5px); cursor: pointer; }
 
+/* The Circle Visual Base */
 .node-visual {
   width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
   background: #fff; border: 4px solid #e5e7eb; 
   box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
   transition: all 0.3s ease;
 }
+.node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.node-icon-fallback { font-size: 32px; }
 
-/* 🟢 重要：SHINE & GLOW 逻辑保持 */
-.map-node.unlocked .node-visual {
-    border: 3px solid #ffb700;
-    background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
-    box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
-    transform: scale(1.08); z-index: 2;
+/* Title and Credits */
+.node-label { font-size: 12px; font-weight: 700; line-height: 1.2; color: #444; margin-bottom: 2px; }
+
+/* THE ARTIST CREDIT */
+.badge-credit {
+    font-size: 10px;
+    color: #6366f1; /* Creative Purple/Blue */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.9;
 }
 
-.map-node.recommended .node-visual {
-    border: 3px dashed #f59e0b !important;
-    animation: pulse 2s infinite;
-    background: #fffbeb;
+/* --- BADGE STATES (THE GLOW UP) --- */
+
+/* 1. LOCKED */
+.map-node.locked .node-visual { 
+    opacity: 0.5; 
+    filter: grayscale(100%); 
+    background: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 2. ACHIEVED (SHINY!) */
+.map-node.unlocked .node-visual { 
+    /* Bright Gold/Orange Border */
+    border: 3px solid #ffb700; 
+    
+    /* Warm inner glow background instead of flat white */
+    background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+    
+    /* The External Glow (Shine effect) */
+    box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+    
+    /* Make it pop out slightly */
+    transform: scale(1.08); 
+    z-index: 2;
+}
+/* Make emoji bigger in unlocked state */
+.map-node.unlocked .node-icon-fallback { font-size: 40px; }
+
+/* 3. RECOMMENDED (PULSING!) */
+.map-node.recommended .node-visual { 
+    border: 3px dashed #f59e0b !important; 
+    animation: pulse 2s infinite; 
+    background: #fffbeb; 
     box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
 }
 
-/* =========================================
-   5. SPOTLIGHT (保持原始拍立得效果)
-   ========================================= */
-.spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-.spotlight-frame {
-    width: 180px; height: 180px; background: #fff; padding: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-    transform: rotate(-2deg); /* 🟢 保持原始倾斜 */
-    transition: transform 0.3s;
-    margin-bottom: 8px; border: 1px solid #eee;
+/* Icons (Checkmarks etc) */
+.check-mark { 
+    position: absolute; top: -5px; right: -5px; 
+    background:#10b981; border: 2px solid white; border-radius:50%; 
+    width:24px; height:24px; display:grid; place-items:center; 
+    box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
 }
-.spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
-.spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
+.quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
 
-/* =========================================
-   6. UTILITIES (动画与基础卡片)
-   ========================================= */
-.header, .card {
-  background: rgba(255, 255, 255, 0.95); border-radius: 20px;
-  padding: 25px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
+/* Progress Bars & Legend */
+.progress-container { margin-top: 15px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #555; }
+.progress-rail { height: 10px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
 
-.section-title { font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; }
+.map-legend { text-align: center; margin-bottom: 20px; font-size: 12px; color: #666; }
+.legend-item { margin: 0 10px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+.dot.earned { background: #10b981; } .dot.next { background: #f59e0b; } .dot.locked { background: #e5e7eb; }
 
+.footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+/* Animations */
 @keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+#fei-embed-root .portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
 
-/* Footer */
-.footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+#fei-embed-root .portal-card {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #eef2f7;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+#fei-embed-root .portal-card-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px;
+    font-weight: 800;
+    color: #1a1d2b;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+#fei-embed-root .portal-card-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5b6475;
+    margin-bottom: 12px;
+}
+
+#fei-embed-root .portal-card-meta {
+    font-size: 12px;
+    color: #7c8798;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#fei-embed-root .portal-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+    color: #1a1d2b;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif !important;
+    box-shadow: 0 4px 12px rgba(103, 232, 249, 0.25);
+}
+
+#fei-embed-root .portal-btn:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+}
+
+#fei-embed-root .live-class-box {
+    background: linear-gradient(135deg, rgba(199,210,254,0.28), rgba(103,232,249,0.24));
+    border: 1px solid rgba(103,232,249,0.45);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+#fei-embed-root .live-class-box h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a1d2b;
+}
+
+#fei-embed-root .live-class-box p {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #465065;
+}
+
+#fei-embed-root .portfolio-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#fei-embed-root .portfolio-item {
+    width: 210px;
+    text-align: center;
+}
+
+#fei-embed-root .portfolio-frame {
+    width: 100%;
+    height: 210px;
+    background: #fff;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+#fei-embed-root .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#fei-embed-root .portfolio-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+#fei-embed-root .portfolio-sub {
+    font-size: 11px;
+    color: #888;
+}
+
+#fei-embed-root .badge-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    z-index: 99998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+}
+
+#fei-embed-root .badge-modal-card {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 22px 50px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+#fei-embed-root .badge-modal-close {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+#fei-embed-root .badge-modal-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #1a1d2b;
+}
+
+#fei-embed-root .badge-modal-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5b6475;
+    margin-bottom: 14px;
+}
+
+#fei-embed-root .badge-modal-tag {
+    display: inline-block;
+    background: #fff7ed;
+    color: #c2410c;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+#fei-embed-root .mini-course-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#fei-embed-root .mini-course-item {
+    border: 1px solid #eef2f7;
+    border-radius: 14px;
+    padding: 12px;
+    background: #fafcff;
+}
