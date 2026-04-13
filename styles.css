@@ -150,7 +150,7 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
     text-align: center; 
     position: relative; 
     opacity: 1; 
-    animation: popIn 0.5s forwards ease-out; 
+    animation: popIn 0.5s ease-out; 
 }
 .map-node:hover { transform: translateY(-5px); cursor: pointer; }
 
