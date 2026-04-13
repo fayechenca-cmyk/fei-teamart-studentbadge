@@ -1,79 +1,79 @@
 /* =========================================
-   1. GLOBAL & BACKGROUND (The Immersive Map)
-   ========================================= */
+  1. GLOBAL & BACKGROUND (The Immersive Map)
+  ========================================= */
 body {
-  font-family: 'Open Sans', sans-serif;
-  margin: 0; padding: 0;
-  min-height: 100vh;
-  
-  /* FULL SCREEN MAP BACKGROUND */
-  background-image: 
-    linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), /* Dark overlay to make text pop */
-    url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
-  
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Keeps image still while scrolling */
-  
-  /* Centering Logic */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+font-family: 'Open Sans', sans-serif;
+margin: 0; padding: 0;
+min-height: 100vh;
+
+/* FULL SCREEN MAP BACKGROUND */
+background-image: 
+linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), /* Dark overlay to make text pop */
+url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed; /* Keeps image still while scrolling */
+
+/* Centering Logic */
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .wrapper { 
-    width: 100%; 
-    max-width: 1000px; 
-    padding: 20px;
-    box-sizing: border-box;
+width: 100%; 
+max-width: 1000px; 
+padding: 20px;
+box-sizing: border-box;
 }
 
 /* =========================================
-   2. LOGIN GATE (The Entry Card)
-   ========================================= */
+  2. LOGIN GATE (The Entry Card)
+  ========================================= */
 #gate {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 25px;
-  max-width: 480px; 
-  margin: 40px auto; 
-  text-align: center;
-  overflow: hidden; 
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5); /* Deep shadow */
-  border: 1px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(10px);
+background: rgba(255, 255, 255, 0.95);
+border-radius: 25px;
+max-width: 480px; 
+margin: 40px auto; 
+text-align: center;
+overflow: hidden; 
+box-shadow: 0 30px 60px rgba(0,0,0,0.5); /* Deep shadow */
+border: 1px solid rgba(255,255,255,0.5);
+backdrop-filter: blur(10px);
 }
 
 /* The Map Banner inside the Login Card */
 .gate-banner {
-    height: 140px;
-    width: 100%;
-    background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    /* Fade bottom to white */
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+height: 140px;
+width: 100%;
+background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69276a001c102f2c08dd682f_unnamed.jpg');
+background-size: cover;
+background-position: center;
+position: relative;
+/* Fade bottom to white */
+-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .gate-content { padding: 10px 40px 30px 40px; }
 
 .gate-title { 
-    font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; 
-    margin-bottom: 10px; margin-top: -25px; color: #1a1d2b;
-    position: relative; z-index: 10;
+font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; 
+margin-bottom: 10px; margin-top: -25px; color: #1a1d2b;
+position: relative; z-index: 10;
 }
 
 /* How It Works Grid */
 .how-it-works {
-    display: flex;
-    border-top: 1px solid #eee;
-    background: #f8fafc;
+display: flex;
+border-top: 1px solid #eee;
+background: #f8fafc;
 }
 .how-step {
-    flex: 1;
-    padding: 15px 5px;
-    border-right: 1px solid #eee;
+flex: 1;
+padding: 15px 5px;
+border-right: 1px solid #eee;
 }
 .how-step:last-child { border-right: none; }
 .how-icon { font-size: 22px; margin-bottom: 5px; }
@@ -82,32 +82,32 @@ body {
 
 /* Input & Button */
 .input { 
-    width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
-    font-size: 16px; text-align: center; margin-bottom: 15px; 
-    background: #fff; color: #333; box-sizing: border-box;
-    transition: all 0.3s;
+width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
+font-size: 16px; text-align: center; margin-bottom: 15px; 
+background: #fff; color: #333; box-sizing: border-box;
+transition: all 0.3s;
 }
 .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
 
 .game-btn {
-  width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
-  color: #1a1d2b; border: none; border-radius: 12px; 
-  font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; 
-  text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+color: #1a1d2b; border: none; border-radius: 12px; 
+font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; 
+text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
+box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
 }
 .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
 
 
 /* =========================================
-   3. DASHBOARD UI (The Report)
-   ========================================= */
+  3. DASHBOARD UI (The Report)
+  ========================================= */
 .header, .card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+background: rgba(255, 255, 255, 0.95);
+border-radius: 20px;
+padding: 25px;
+margin-bottom: 25px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .main-header { text-align: center; margin-top: 20px; }
@@ -117,22 +117,22 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 /* Teacher Card */
 .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
 .teacher-text {
-    font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
-    background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
+font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
+background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
 }
 .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .tag {
-    background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
-    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
+font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
 
 /* Spotlight Gallery (Tilted Photos) */
 .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .spotlight-item { width: 180px; text-align: center; }
 .spotlight-frame {
-    width: 100%; height: 180px; background: #fff; padding: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
-    margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
+width: 100%; height: 180px; background: #fff; padding: 8px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
+margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
 }
 .spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
 .spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
@@ -141,25 +141,25 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 .spotlight-sub { font-size: 11px; color: #999; }
 
 /* =========================================
-   4. THE BADGE GRID (With Shine & Glow!)
-   ========================================= */
+  4. THE BADGE GRID (With Shine & Glow!)
+  ========================================= */
 .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 
 .map-node { 
-    width: 120px; 
-    text-align: center; 
-    position: relative; 
-    opacity: 1; 
-    animation: popIn 0.5s ease-out; 
+width: 120px; 
+text-align: center; 
+position: relative; 
+opacity: 0; 
+animation: popIn 0.5s forwards ease-out; 
 }
 .map-node:hover { transform: translateY(-5px); cursor: pointer; }
 
 /* The Circle Visual Base */
 .node-visual {
-  width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
-  background: #fff; border: 4px solid #e5e7eb; 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
-  transition: all 0.3s ease;
+width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
+background: #fff; border: 4px solid #e5e7eb; 
+box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
+transition: all 0.3s ease;
 }
 .node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .node-icon-fallback { font-size: 32px; }
@@ -169,58 +169,58 @@ h1 { margin: 0 0 5px; font-family: 'Montserrat', sans-serif; font-weight:800; co
 
 /* THE ARTIST CREDIT */
 .badge-credit {
-    font-size: 10px;
-    color: #6366f1; /* Creative Purple/Blue */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    opacity: 0.9;
+font-size: 10px;
+color: #6366f1; /* Creative Purple/Blue */
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin-top: 4px;
+font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+opacity: 0.9;
 }
 
 /* --- BADGE STATES (THE GLOW UP) --- */
 
 /* 1. LOCKED */
 .map-node.locked .node-visual { 
-    opacity: 0.5; 
-    filter: grayscale(100%); 
-    background: #f0f0f0;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+opacity: 0.5; 
+filter: grayscale(100%); 
+background: #f0f0f0;
+box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* 2. ACHIEVED (SHINY!) */
 .map-node.unlocked .node-visual { 
-    /* Bright Gold/Orange Border */
-    border: 3px solid #ffb700; 
-    
-    /* Warm inner glow background instead of flat white */
-    background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
-    
-    /* The External Glow (Shine effect) */
-    box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
-    
-    /* Make it pop out slightly */
-    transform: scale(1.08); 
-    z-index: 2;
+/* Bright Gold/Orange Border */
+border: 3px solid #ffb700; 
+
+/* Warm inner glow background instead of flat white */
+background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+
+/* The External Glow (Shine effect) */
+box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+
+/* Make it pop out slightly */
+transform: scale(1.08); 
+z-index: 2;
 }
 /* Make emoji bigger in unlocked state */
 .map-node.unlocked .node-icon-fallback { font-size: 40px; }
 
 /* 3. RECOMMENDED (PULSING!) */
 .map-node.recommended .node-visual { 
-    border: 3px dashed #f59e0b !important; 
-    animation: pulse 2s infinite; 
-    background: #fffbeb; 
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+border: 3px dashed #f59e0b !important; 
+animation: pulse 2s infinite; 
+background: #fffbeb; 
+box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
 }
 
 /* Icons (Checkmarks etc) */
 .check-mark { 
-    position: absolute; top: -5px; right: -5px; 
-    background:#10b981; border: 2px solid white; border-radius:50%; 
-    width:24px; height:24px; display:grid; place-items:center; 
-    box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
+position: absolute; top: -5px; right: -5px; 
+background:#10b981; border: 2px solid white; border-radius:50%; 
+width:24px; height:24px; display:grid; place-items:center; 
+box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
 }
 .quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
 
