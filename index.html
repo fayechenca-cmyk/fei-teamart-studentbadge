@@ -1,902 +1,1508 @@
 <div id="fei-embed-root">
 <style>
-/* 1. IMPORT FONTS - Added 'Mountains of Christmas' for the card */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&family=Mountains+of+Christmas:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
 
-/* RESET & WRAPPER */
 #fei-embed-root {
-all: initial; 
-font-family: 'Open Sans', sans-serif;
-
-/* FLEXBOX CENTER LAYOUT */
-display: flex;             
-flex-direction: column;    
-justify-content: center;   
-align-items: center;       
-
-width: 100%;
-height: auto; 
-
-/* CRITICAL FIX: Fill the screen, but allow growing */
-min-height: 100vh; 
-
-position: relative;
-box-sizing: border-box;
-
-/* BACKGROUND FIX: Fixed attachment prevents it from running out */
-background-image: 
-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
-
-background-size: cover;
-background-position: center;
-background-attachment: fixed; /* Keeps bg full even when scrolling long reports */
-
-/* Padding ensures content is never cropped at edges */
-padding: 60px 20px;
-color: #1a1d2b;
+  all: initial;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  color: #1a1d2b;
 }
 
-#fei-embed-root .inner-wrapper { 
-width: 100%; max-width: 1000px; box-sizing: border-box;
+#fei-embed-root .inner-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
-/* TYPOGRAPHY */
-#fei-embed-root h1, #fei-embed-root h2, #fei-embed-root .gate-title,
-#fei-embed-root .section-title, #fei-embed-root .game-btn,
-#fei-embed-root .badge-credit, #fei-embed-root .node-label {
-font-family: 'Montserrat', sans-serif !important;
-}
-#fei-embed-root p, #fei-embed-root .input, #fei-embed-root .teacher-text,
-#fei-embed-root .gate-desc, #fei-embed-root .how-desc, #fei-embed-root li {
-font-family: 'Open Sans', sans-serif !important;
+#fei-embed-root h1,
+#fei-embed-root h2,
+#fei-embed-root h3,
+#fei-embed-root h4,
+#fei-embed-root .gate-title,
+#fei-embed-root .section-title,
+#fei-embed-root .game-btn,
+#fei-embed-root .badge-credit,
+#fei-embed-root .node-label,
+#fei-embed-root .portal-btn,
+#fei-embed-root .learning-kicker,
+#fei-embed-root .learning-main-title,
+#fei-embed-root .learning-feature-kicker,
+#fei-embed-root .learning-feature-title,
+#fei-embed-root .learning-feature-btn {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-/* --- NEW CHRISTMAS STYLES START --- */
-#fei-embed-root .xmas-btn {
-background: linear-gradient(135deg, #d42424 0%, #ff4d4d 100%);
-color: white; border: 2px solid #fff; border-radius: 50px;
-padding: 12px 25px; font-size: 16px; font-weight: 800;
-cursor: pointer; margin-top: 15px; margin-bottom: 5px;
-box-shadow: 0 4px 15px rgba(212, 36, 36, 0.5);
-display: inline-flex; align-items: center; gap: 10px;
-transition: transform 0.2s; animation: bounce 2s infinite;
-font-family: 'Montserrat', sans-serif !important;
+#fei-embed-root p,
+#fei-embed-root li,
+#fei-embed-root .input,
+#fei-embed-root .teacher-text,
+#fei-embed-root .gate-desc,
+#fei-embed-root .how-desc,
+#fei-embed-root .portal-card-desc,
+#fei-embed-root .learning-main-desc,
+#fei-embed-root .learning-feature-desc {
+  font-family: 'Open Sans', sans-serif !important;
 }
-#fei-embed-root .xmas-btn:hover { transform: scale(1.05); background: #b91c1c; }
-
-/* Modal Overlay */
-#fei-embed-root .modal-overlay {
-position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-background: rgba(0, 0, 0, 0.85); z-index: 99999;
-display: flex; justify-content: center; align-items: center;
-backdrop-filter: blur(5px);
-}
-/* The Card */
-#fei-embed-root .xmas-card {
-background: #fff; width: 90%; max-width: 450px;
-border-radius: 20px; overflow: hidden; position: relative;
-text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-border: 4px solid #d42424;
-animation: popIn 0.4s ease-out;
-}
-#fei-embed-root .xmas-header {
-background: #d42424; color: #fff; padding: 25px 20px;
-font-family: 'Mountains of Christmas', cursive !important;
-font-size: 32px; letter-spacing: 1px;
-/* Snow pattern effect */
-background-image: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2.5px);
-background-size: 20px 20px; 
-}
-#fei-embed-root .xmas-body { padding: 30px 25px; }
-#fei-embed-root .xmas-msg { 
-font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 25px; font-style: italic; 
-}
-#fei-embed-root .gift-code-box {
-background: #f3f4f6; border: 2px dashed #999; padding: 10px;
-font-family: monospace; font-size: 14px; margin-bottom: 20px; color: #333;
-border-radius: 8px;
-}
-#fei-embed-root .claim-btn {
-background: #10b981; color: white; text-decoration: none;
-padding: 12px 30px; border-radius: 50px; font-weight: 800; font-size: 14px;
-display: inline-block; transition: background 0.2s;
-font-family: 'Montserrat', sans-serif !important;
-box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
-}
-#fei-embed-root .claim-btn:hover { background: #059669; transform: translateY(-2px); }
-#fei-embed-root .close-modal {
-position: absolute; top: 10px; right: 15px; color: rgba(255,255,255,0.8);
-font-size: 28px; cursor: pointer; transition: opacity 0.2s;
-font-family: sans-serif;
-}
-#fei-embed-root .close-modal:hover { opacity: 1; color: #fff; }
-
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-6px);} 60% {transform: translateY(-3px);} }
-/* --- NEW CHRISTMAS STYLES END --- */
 
 /* LOGIN GATE */
 #fei-embed-root #gate {
-background: rgba(255, 255, 255, 0.95);
-border-radius: 25px;
-max-width: 480px; 
-margin: 0 auto; 
-text-align: center;
-overflow: hidden; 
-box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-border: 1px solid rgba(255,255,255,0.6);
-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
 }
 
 #fei-embed-root .gate-banner {
-height: 140px; width: 100%;
-background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
-background-size: cover; background-position: center; position: relative;
--webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  height: 140px;
+  width: 100%;
+  background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
-#fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
-#fei-embed-root .gate-title { 
-font-size: 26px; font-weight: 800; margin-bottom: 10px; margin-top: -25px; 
-color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
+#fei-embed-root .gate-content {
+  padding: 10px 40px 30px 40px;
 }
-#fei-embed-root .gate-desc { margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px; }
 
-#fei-embed-root .how-it-works { display: flex; border-top: 1px solid #eee; background: #f8fafc; }
-#fei-embed-root .how-step { flex: 1; padding: 15px 5px; border-right: 1px solid #eee; }
-#fei-embed-root .how-step:last-child { border-right: none; }
-#fei-embed-root .how-icon { font-size: 22px; margin-bottom: 5px; display: block;}
-#fei-embed-root .how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; display: block; }
-#fei-embed-root .how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
-
-#fei-embed-root .input { 
-width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
-font-size: 16px; text-align: center; margin-bottom: 15px; 
-background: #fff; color: #333; box-sizing: border-box; transition: all 0.3s;
+#fei-embed-root .gate-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: -25px;
+  color: #1a1d2b;
+  position: relative;
+  z-index: 10;
+  line-height: 1.2;
 }
-#fei-embed-root .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
+
+#fei-embed-root .gate-desc {
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#fei-embed-root .how-it-works {
+  display: flex;
+  border-top: 1px solid #eee;
+  background: #f8fafc;
+}
+
+#fei-embed-root .how-step {
+  flex: 1;
+  padding: 15px 5px;
+  border-right: 1px solid #eee;
+}
+
+#fei-embed-root .how-step:last-child {
+  border-right: none;
+}
+
+#fei-embed-root .how-icon {
+  font-size: 22px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#fei-embed-root .how-desc {
+  font-size: 11px;
+  line-height: 1.3;
+  color: #555;
+  padding: 0 5px;
+  display: block;
+}
+
+#fei-embed-root .how-desc strong {
+  display: block;
+  color: #333;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+#fei-embed-root .input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+#fei-embed-root .input:focus {
+  outline: none;
+  border-color: #67e8f9;
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2);
+}
 
 #fei-embed-root .game-btn {
-width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
-color: #1a1d2b; border: none; border-radius: 12px; 
-font-size: 16px; font-weight: 800; text-transform: uppercase; cursor: pointer; 
-transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+  color: #1a1d2b;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
 }
-#fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
 
-/* DASHBOARD UI */
-#fei-embed-root .header, #fei-embed-root .card {
-background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 25px;
-margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #1a1d2b;
+#fei-embed-root .game-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
 }
-#fei-embed-root .main-header { text-align: center; margin-top: 0px; }
-#fei-embed-root h1 { margin: 0 0 5px; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
-#fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; }
-#fei-embed-root .section-title { font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
 
-/* Teacher & Spotlight */
-#fei-embed-root .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
+/* CARDS */
+#fei-embed-root .header,
+#fei-embed-root .card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  color: #1a1d2b;
+}
+
+#fei-embed-root .main-header {
+  text-align: center;
+  margin-top: 0;
+}
+
+#fei-embed-root h1 {
+  margin: 0 0 5px;
+  font-weight: 800;
+  color: #1a1d2b;
+  font-size: 28px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+#fei-embed-root h2 {
+  font-size: 18px;
+  color: #666;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+#fei-embed-root .section-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 10px;
+  color: #1a1d2b;
+}
+
+/* TEACHER */
+#fei-embed-root .teacher-card {
+  border-left: 6px solid #8b5cf6;
+  background: #fff;
+}
+
 #fei-embed-root .teacher-text {
-font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
-background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-style: italic;
+  background: #fdfbff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #f3f4f6;
 }
-#fei-embed-root .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+
+#fei-embed-root .tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
 #fei-embed-root .tag {
-background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
-font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Detailed Info Lists */
-#fei-embed-root .info-list { list-style: none; padding: 0; margin: 0; }
+/* DETAILED PROGRESS */
+#fei-embed-root .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 #fei-embed-root .info-item {
-background: #f9fafb; border-left: 4px solid #ccc; padding: 12px 15px;
-margin-bottom: 10px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5;
+  background: #f9fafb;
+  border-left: 4px solid #ccc;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
 }
-#fei-embed-root .info-item.goal { border-color: #f59e0b; background: #fffbeb; }
-#fei-embed-root .info-item.critique { border-color: #10b981; background: #ecfdf5; }
-#fei-embed-root .info-item.note { border-color: #6366f1; background: #eef2ff; }
-#fei-embed-root .info-date { font-size: 11px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px; }
-#fei-embed-root .info-label { font-weight: 700; color: #333; margin-right: 5px; }
 
-/* Spotlight */
-#fei-embed-root .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-#fei-embed-root .spotlight-item { width: 180px; text-align: center; }
+#fei-embed-root .info-item.goal {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+#fei-embed-root .info-item.critique {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+#fei-embed-root .info-item.note {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+#fei-embed-root .info-date {
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#fei-embed-root .info-label {
+  font-weight: 700;
+  color: #333;
+  margin-right: 5px;
+}
+
+/* LEARNING CENTER */
+#fei-embed-root .live-class-box {
+  background: linear-gradient(135deg, rgba(26,29,43,0.96) 0%, rgba(51,65,85,0.96) 100%);
+  border: 1px solid rgba(103,232,249,0.22);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.16);
+  color: #fff;
+}
+
+#fei-embed-root .live-class-box h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+
+#fei-embed-root .live-class-box p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #d8e2f0;
+}
+
+#fei-embed-root .learning-showcase {
+  margin-bottom: 28px;
+}
+
+#fei-embed-root .learning-showcase-head {
+  margin-bottom: 22px;
+}
+
+#fei-embed-root .learning-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  margin-bottom: 8px;
+}
+
+#fei-embed-root .learning-main-title {
+  font-size: 30px;
+  line-height: 1.08;
+  font-weight: 800;
+  color: #1a1d2b;
+  margin: 0 0 10px;
+}
+
+#fei-embed-root .learning-main-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #64748b;
+  margin: 0;
+  max-width: 760px;
+}
+
+#fei-embed-root .learning-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#fei-embed-root .learning-feature-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e9eef5;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+#fei-embed-root .learning-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(103, 232, 249, 0.18);
+  border-color: #67e8f9;
+}
+
+#fei-embed-root .learning-feature-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, #eef2ff 0%, #ecfeff 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+#fei-embed-root .learning-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+#fei-embed-root .learning-feature-card:hover .learning-feature-image {
+  transform: scale(1.03);
+}
+
+#fei-embed-root .learning-feature-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #475569;
+}
+
+#fei-embed-root .learning-feature-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#fei-embed-root .learning-feature-kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #06b6d4;
+  margin-bottom: 8px;
+}
+
+#fei-embed-root .learning-feature-title {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #1a1d2b;
+  margin: 0 0 10px;
+}
+
+#fei-embed-root .learning-feature-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+#fei-embed-root .learning-feature-btn {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+  color: #1a1d2b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+#fei-embed-root .learning-subsection {
+  margin-top: 30px;
+}
+
+#fei-embed-root .learning-subtitle {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+#fei-embed-root .learning-note {
+  font-size: 12px;
+  color: #64748b;
+  margin: 6px 0 0;
+  font-style: italic;
+}
+
+/* PORTAL CARDS */
+#fei-embed-root .portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+#fei-embed-root .portal-card {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+#fei-embed-root .portal-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1a1d2b;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+#fei-embed-root .portal-card-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5b6475;
+  margin-bottom: 12px;
+}
+
+#fei-embed-root .portal-card-meta {
+  font-size: 12px;
+  color: #7c8798;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+#fei-embed-root .portal-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+  color: #1a1d2b;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(103, 232, 249, 0.25);
+}
+
+#fei-embed-root .portal-btn:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+/* PORTFOLIO */
+#fei-embed-root .portfolio-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#fei-embed-root .portfolio-item {
+  width: 210px;
+  text-align: center;
+}
+
+#fei-embed-root .portfolio-frame {
+  width: 100%;
+  height: 210px;
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+#fei-embed-root .portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#fei-embed-root .portfolio-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+#fei-embed-root .portfolio-sub {
+  font-size: 11px;
+  color: #888;
+}
+
+/* SPOTLIGHT */
+#fei-embed-root .spotlight-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#fei-embed-root .spotlight-item {
+  width: 180px;
+  text-align: center;
+}
+
 #fei-embed-root .spotlight-frame {
-width: 100%; height: 180px; background: #fff; padding: 8px; box-sizing: border-box;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
-margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
+  width: 100%;
+  height: 180px;
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #eee;
 }
-#fei-embed-root .spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
-#fei-embed-root .spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
-#fei-embed-root .spotlight-img { width: 100%; height: 100%; object-fit: cover; }
-#fei-embed-root .spotlight-caption { font-size: 13px; font-weight: 700; color: #555; }
-#fei-embed-root .spotlight-sub { font-size: 11px; color: #999; }
 
-/* Badges */
-#fei-embed-root .map-card-bg { background: #fff; }
-#fei-embed-root .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-#fei-embed-root .map-node { 
-width: 120px; text-align: center; position: relative; 
-opacity: 0; animation: popIn 0.5s forwards ease-out; 
+#fei-embed-root .spotlight-item:nth-child(even) .spotlight-frame {
+  transform: rotate(2deg);
 }
-#fei-embed-root .map-node:hover { transform: translateY(-5px); cursor: pointer; }
+
+#fei-embed-root .spotlight-frame:hover {
+  transform: rotate(0) scale(1.05);
+  z-index: 5;
+}
+
+#fei-embed-root .spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#fei-embed-root .spotlight-caption {
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+}
+
+#fei-embed-root .spotlight-sub {
+  font-size: 11px;
+  color: #999;
+}
+
+/* BADGES */
+#fei-embed-root .map-card-bg {
+  background: #fff;
+}
+
+#fei-embed-root .badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  min-height: 140px;
+}
+
+#fei-embed-root .map-node {
+  width: 120px;
+  text-align: center;
+  position: relative;
+  opacity: 1;
+  animation: popIn 0.45s ease-out;
+}
+
+#fei-embed-root .map-node:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
 
 #fei-embed-root .node-visual {
-width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
-background: #fff; border: 4px solid #e5e7eb; 
-box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
-transition: all 0.3s ease;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #e5e7eb;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
-#fei-embed-root .node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-#fei-embed-root .node-icon-fallback { font-size: 32px; }
-#fei-embed-root .node-label { font-size: 12px; font-weight: 700; line-height: 1.2; color: #444; margin-bottom: 2px; }
+
+#fei-embed-root .node-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#fei-embed-root .node-icon-fallback {
+  font-size: 32px;
+}
+
+#fei-embed-root .node-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #444;
+  margin-bottom: 2px;
+}
+
 #fei-embed-root .badge-credit {
-font-size: 10px; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px;
-margin-top: 4px; font-weight: 700; opacity: 0.9;
+  font-size: 10px;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
-/* BADGE STATES (Shiny!) */
-#fei-embed-root .map-node.locked .node-visual { 
-opacity: 0.5; filter: grayscale(100%); background: #f0f0f0; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-}
-#fei-embed-root .map-node.unlocked .node-visual { 
-border: 3px solid #ffb700; 
-background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
-box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
-transform: scale(1.08); z-index: 2;
-}
-#fei-embed-root .map-node.unlocked .node-icon-fallback { font-size: 40px; }
-#fei-embed-root .map-node.unlocked .node-label { color: #1a1d2b; font-weight: 800; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
-
-#fei-embed-root .map-node.recommended .node-visual { 
-border: 3px dashed #f59e0b !important; animation: pulse 2s infinite; background: #fffbeb; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+#fei-embed-root .map-node.locked .node-visual {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  background: #f0f0f0;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Icons */
-#fei-embed-root .check-mark { 
-position: absolute; top: -5px; right: -5px; 
-background: #10b981; color: white; border: 2px solid white; border-radius: 50%; 
-width: 24px; height: 24px; display: grid; place-items: center; 
-box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 14px; font-weight: bold;
+#fei-embed-root .map-node.unlocked .node-visual {
+  border: 3px solid #ffb700;
+  background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+  box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+  transform: scale(1.08);
+  z-index: 2;
 }
-#fei-embed-root .quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
 
-/* Progress */
-#fei-embed-root .progress-container { margin-top: 15px; }
-#fei-embed-root .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #555; }
-#fei-embed-root .progress-rail { height: 10px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
-#fei-embed-root .progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
+#fei-embed-root .map-node.unlocked .node-icon-fallback {
+  font-size: 40px;
+}
 
-#fei-embed-root .map-legend { text-align: center; margin-bottom: 20px; font-size: 12px; color: #666; }
-#fei-embed-root .legend-item { margin: 0 10px; }
-#fei-embed-root .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
-#fei-embed-root .dot.earned { background: #10b981; } #fei-embed-root .dot.next { background: #f59e0b; } #fei-embed-root .dot.locked { background: #e5e7eb; }
+#fei-embed-root .map-node.unlocked .node-label {
+  color: #1a1d2b;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+}
 
-#fei-embed-root .footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+#fei-embed-root .map-node.recommended .node-visual {
+  border: 3px dashed #f59e0b !important;
+  animation: pulse 2s infinite;
+  background: #fffbeb;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
 
-@keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+#fei-embed-root .check-mark {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #10b981;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#fei-embed-root .quest-mark {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 24px;
+}
+
+#fei-embed-root .progress-container {
+  margin-top: 15px;
+}
+
+#fei-embed-root .progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+#fei-embed-root .progress-rail {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#fei-embed-root .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #2dd4bf, #06b6d4);
+  transition: width 1s ease;
+}
+
+#fei-embed-root .map-legend {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+#fei-embed-root .legend-item {
+  margin: 0 10px;
+}
+
+#fei-embed-root .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+#fei-embed-root .dot.earned { background: #10b981; }
+#fei-embed-root .dot.next { background: #f59e0b; }
+#fei-embed-root .dot.locked { background: #e5e7eb; }
+
+/* MODAL */
+#fei-embed-root .badge-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  z-index: 99998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+}
+
+#fei-embed-root .badge-modal-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 22px 50px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+#fei-embed-root .badge-modal-close {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+}
+
+#fei-embed-root .badge-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #1a1d2b;
+}
+
+#fei-embed-root .badge-modal-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5b6475;
+  margin-bottom: 14px;
+}
+
+#fei-embed-root .badge-modal-tag {
+  display: inline-block;
+  background: #fff7ed;
+  color: #c2410c;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+#fei-embed-root .mini-course-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#fei-embed-root .mini-course-item {
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  padding: 12px;
+  background: #fafcff;
+}
+
+#fei-embed-root .footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 11px;
+  color: #eee;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 991px) {
+  #fei-embed-root .learning-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #fei-embed-root .learning-main-title {
+    font-size: 24px;
+  }
+}
 </style>
 
 <div class="inner-wrapper">
-
-<div id="gate">
-<div class="gate-banner"></div>
-<div class="gate-content">
-<div class="gate-title">FEI TeamArt Portal</div>
-<p class="gate-desc">Enter your Student Access Code:</p>
-<form id="codeForm">
-<input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
-<br>
-<button type="submit" class="game-btn">Find My Map</button>
-</form>
-</div>
-<div class="how-it-works">
-<div class="how-step">
-<div class="how-icon">🔑</div>
-<div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
-</div>
-<div class="how-step">
-<div class="how-icon">🗺️</div>
-<div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
-</div>
-<div class="how-step">
-<div class="how-icon">📝</div>
-<div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
-</div>
-</div>
-</div>
-
-<div id="gameUI" style="display:none;">
-
-<div class="header main-header">
-<h1>FEI TeamArt Milestone Map</h1>
-<h2 id="welcomeText">Student Report</h2>
-
-<div id="giftContainer" style="display:none;">
-<button id="openGiftBtn" class="xmas-btn">
-🎁 Christmas 2025 Special Gift
-</button>
-</div>
-
-<div class="progress-container">
-<div class="progress-label"><span id="progressCount">0 Badges</span><span id="progressPct">0%</span></div>
-<div class="progress-rail"><div class="progress-bar" id="progressBar" style="width: 0%"></div></div>
-</div>
-</div>
-
-<div class="card teacher-card">
-<div class="section-title">📝 Teacher's Summary</div>
-<div class="teacher-text" id="teacherNote">Loading...</div>
-<div class="tag-container" id="strengthTags"></div>
-</div>
-
-<div class="card">
-<div class="section-title">📊 Detailed Progress</div>
-
-<h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#d97706;">🎯 Current Missions</h3>
-<ul class="info-list" id="goalsList"></ul>
-
-<h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#10b981;">💡 Teacher Feedback</h3>
-<ul class="info-list" id="critiquesList"></ul>
-
-<h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#6366f1;">📅 Progress Log</h3>
-<ul class="info-list" id="notesList"></ul>
-</div>
-
-<div class="card" id="learningCenterCard" style="display:none;">
-  <div class="section-title">🚀 Learning Center</div>
-
-  <div id="liveClassWrap" style="display:none; margin-bottom: 28px;">
-    <div id="liveClassBox"></div>
-  </div>
-
-  <div class="learning-showcase">
-    <div class="learning-showcase-head">
-      <div class="learning-kicker">Self-Learning Center</div>
-      <h3 class="learning-main-title">Continue Learning Beyond Class</h3>
-      <p class="learning-main-desc">
-        Explore FEI TeamArt’s guided self-learning paths through creation, collection-based thinking, and art history.
-      </p>
+  <div id="gate">
+    <div class="gate-banner"></div>
+    <div class="gate-content">
+      <div class="gate-title">FEI TeamArt Portal</div>
+      <p class="gate-desc">Enter your Student Access Code:</p>
+      <form id="codeForm">
+        <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
+        <br>
+        <button type="submit" class="game-btn">Find My Map</button>
+      </form>
     </div>
-
-    <div class="learning-feature-grid">
-      <a class="learning-feature-card" href="YOUR_SELF_LEARNING_LINK" target="_blank">
-        <div class="learning-feature-image-wrap">
-          <img src="YOUR_SELF_LEARNING_IMAGE" alt="Self Learning Center" class="learning-feature-image">
-        </div>
-        <div class="learning-feature-body">
-          <div class="learning-feature-kicker">Creation Path</div>
-          <h4 class="learning-feature-title">100 Classes Self-Learning</h4>
-          <p class="learning-feature-desc">
-            Practice drawing, design, and creative making step by step through FEI TeamArt’s structured class collection.
-          </p>
-          <span class="learning-feature-btn">Enter Path</span>
-        </div>
-      </a>
-
-      <a class="learning-feature-card" href="YOUR_LFC_LINK" target="_blank">
-        <div class="learning-feature-image-wrap">
-          <img src="YOUR_LFC_IMAGE" alt="Learn From Collection" class="learning-feature-image">
-        </div>
-        <div class="learning-feature-body">
-          <div class="learning-feature-kicker">Critical Thinking for Art</div>
-          <h4 class="learning-feature-title">Learn From Collection</h4>
-          <p class="learning-feature-desc">
-            Build visual judgment and critical thinking through artworks, ideas, and guided contemporary art exploration.
-          </p>
-          <span class="learning-feature-btn">Explore LFC</span>
-        </div>
-      </a>
-
-      <a class="learning-feature-card" href="YOUR_ART_HISTORY_LINK" target="_blank">
-        <div class="learning-feature-image-wrap">
-          <img src="YOUR_ART_HISTORY_IMAGE" alt="Art History Path" class="learning-feature-image">
-        </div>
-        <div class="learning-feature-body">
-          <div class="learning-feature-kicker">History & Context</div>
-          <h4 class="learning-feature-title">Art History Path</h4>
-          <p class="learning-feature-desc">
-            Discover artists, movements, and visual culture to strengthen understanding, context, and inspiration.
-          </p>
-          <span class="learning-feature-btn">Start Learning</span>
-        </div>
-      </a>
+    <div class="how-it-works">
+      <div class="how-step">
+        <div class="how-icon">🔑</div>
+        <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">🗺️</div>
+        <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">📝</div>
+        <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
+      </div>
     </div>
   </div>
 
-  <div id="recommendedCoursesWrap" style="display:none; margin-top: 30px; margin-bottom: 20px;">
-    <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#8b5cf6;">✨ Recommended Next Courses</h3>
-    <div class="portal-grid" id="recommendedCoursesGrid"></div>
+  <div id="gameUI" style="display:none;">
+    <div class="header main-header">
+      <h1>FEI TeamArt Milestone Map</h1>
+      <h2 id="welcomeText">Student Report</h2>
+
+      <div class="progress-container">
+        <div class="progress-label">
+          <span id="progressCount">0 Badges</span>
+          <span id="progressPct">0%</span>
+        </div>
+        <div class="progress-rail">
+          <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card teacher-card">
+      <div class="section-title">📝 Teacher's Summary</div>
+      <div class="teacher-text" id="teacherNote">Loading...</div>
+      <div class="tag-container" id="strengthTags"></div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">📊 Detailed Progress</div>
+
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#d97706;">🎯 Current Missions</h3>
+      <ul class="info-list" id="goalsList"></ul>
+
+      <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#10b981;">💡 Teacher Feedback</h3>
+      <ul class="info-list" id="critiquesList"></ul>
+
+      <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#6366f1;">📅 Progress Log</h3>
+      <ul class="info-list" id="notesList"></ul>
+    </div>
+
+    <div class="card" id="learningCenterCard" style="display:none;">
+      <div class="section-title">🚀 Learning Center</div>
+
+      <div id="liveClassWrap" style="display:none; margin-bottom:28px;">
+        <div id="liveClassBox"></div>
+      </div>
+
+      <div class="learning-showcase">
+        <div class="learning-showcase-head">
+          <div class="learning-kicker">Self-Learning Center</div>
+          <h3 class="learning-main-title">Choose Your Learning Path</h3>
+          <p class="learning-main-desc">
+            Explore FEI TeamArt’s self-learning pathways through creation, collection-based thinking, and art history.
+          </p>
+        </div>
+
+        <div class="learning-feature-grid" id="learningFeatureGrid"></div>
+      </div>
+
+      <div id="recommendedCoursesWrap" class="learning-subsection" style="display:none;">
+        <h3 class="learning-subtitle" style="color:#8b5cf6;">✨ Recommended Next Courses</h3>
+        <div class="portal-grid" id="recommendedCoursesGrid"></div>
+        <p class="learning-note">These suggestions are connected to your current badge path and next studio goals.</p>
+      </div>
+
+      <div id="selfStudyWrap" class="learning-subsection" style="display:none;">
+        <h3 class="learning-subtitle" style="color:#06b6d4;">📚 Quick Access</h3>
+        <div class="portal-grid" id="selfStudyGrid"></div>
+      </div>
+    </div>
+
+    <div class="card" id="portfolioHubCard" style="display:none;">
+      <div class="section-title">🖼️ Portfolio Hub</div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">🎨 Masterpiece Spotlight</div>
+      <div class="spotlight-grid" id="spotlightGrid"></div>
+    </div>
+
+    <div class="card map-card-bg">
+      <div class="section-title">🗺️ Your Badge Collection</div>
+      <div class="map-legend">
+        <span class="legend-item"><span class="dot earned"></span> Achieved</span>
+        <span class="legend-item"><span class="dot next"></span> Recommended</span>
+        <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
+      </div>
+      <div class="badge-grid" id="badgeGrid"></div>
+    </div>
+
+    <div class="footer">
+      <p>All badges are originally designed by FEI TeamArt Students.</p>
+      <p>© 2025 FEI TeamArt</p>
+    </div>
   </div>
 </div>
 
-<div class="card" id="portfolioHubCard" style="display:none;">
-<div class="section-title">🖼️ Portfolio Hub</div>
-<div class="portfolio-grid" id="portfolioGrid"></div>
-</div>
-
-<div class="card">
-<div class="section-title">🎨 Masterpiece Spotlight</div>
-<div class="spotlight-grid" id="spotlightGrid"></div>
-</div>
-
-<div class="card map-card-bg">
-<div class="section-title">🗺️ Your Badge Collection</div>
-<div class="map-legend">
-<span class="legend-item"><span class="dot earned"></span> Achieved</span>
-<span class="legend-item"><span class="dot next"></span> Recommended</span>
-<span class="legend-item"><span class="dot locked"></span> Not Yet</span>
-</div>
-<div class="badge-grid" id="badgeGrid"></div>
-</div>
-
-<div class="footer">
-<p>All badges are originally designed by FEI TeamArt Students.</p>
-<p>© 2025 FEI TeamArt</p>
-</div>
-
-</div>
-</div>
-
-<div id="christmasModal" class="modal-overlay" style="display:none;">
-<div class="xmas-card">
-<div class="close-modal" id="closeGift">×</div>
-<div class="xmas-header">Merry Christmas!</div>
-<div class="xmas-body">
-<div style="font-size:50px; margin-bottom:10px;">🎅🎄🎁</div>
-<p class="xmas-msg" id="giftMessage">Searching for your gift...</p>
-
-<div class="gift-code-box" id="giftCodeDisplay"></div>
-
-<a id="giftLinkBtn" href="#" target="_blank" class="claim-btn">
-Open E-Gift on Amazon
-</a>
-</div>
-</div>
-</div>
-
-<div id="badgeModal" class="badge-modal-overlay">
-<div class="badge-modal-card">
-<div class="badge-modal-close" id="closeBadgeModal">×</div>
-<div class="badge-modal-title" id="badgeModalTitle">Badge</div>
-<div class="badge-modal-tag" id="badgeModalStatus">Recommended</div>
-<div class="badge-modal-desc" id="badgeModalDesc">Description</div>
-<div class="mini-course-list" id="badgeModalCourses"></div>
-</div>
-</div>
-
+<div id="badgeModal" class="badge-modal-overlay" style="display:none;">
+  <div class="badge-modal-card">
+    <div class="badge-modal-close" id="closeBadgeModal">×</div>
+    <div class="badge-modal-title" id="badgeModalTitle">Badge</div>
+    <div class="badge-modal-tag" id="badgeModalStatus">Recommended</div>
+    <div class="badge-modal-desc" id="badgeModalDesc">Description</div>
+    <div class="mini-course-list" id="badgeModalCourses"></div>
+  </div>
 </div>
 
 <script>
 const PAGES = [
-{ id:'basic_sketch', title:'Basic Sketch', artist:'Des. by Alex', imgUrl:'', emoji:'✏️', color:'#f59e0b' },
-{ id:'still_life', title:'Still Life', artist:'Des. by Sara', imgUrl:'', emoji:'🍎', color:'#ef4444' },
-{ id:'landscape', title:'Landscape', artist:'Des. by Xinyue', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/696544b4fa92c8867e1c6d5c_Screenshot%202026-01-12%20at%2010.59.57%E2%80%AFAM.png', emoji:'⛰️', color:'#10b981' },
-{ id:'material_explore', title:'Material Explore', artist:'Des. by Xinyue', imgUrl:'', emoji:'🧱', color:'#78716c' },
-{ id:'observation_detective', title:'Observation Detective', artist:'Des. by Faye', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817dc2b2e1062da9b98c_IMG_0186.jpg', emoji:'👀', color:'#06b6d4' },
-{ id:'realism_expert', title:'Realism Expert', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817d21bc1b688929665c_Untitled_-_December_2_2025_18.22.11.jpg', emoji:'👁️', color:'#374151' }, 
-{ id:'calm_illustration', title:'Calm Illustration', artist:'Des. by Cameron', imgUrl:'', emoji:'🌅', color:'#60a5fa' },
-{ id:'figure_sketch', title:'Figure Sketch', artist:'Des. by Mia', imgUrl:'', emoji:'🧍', color:'#f43f5e' },
-{ id:'portrait_master', title:'Portrait Master', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6980e96299ba4edfc375f693_506d6e9e0733a890480cbd0d1d8b84f1.JPG', emoji:'👤', color:'#be185d' },
-{ id:'interior_design', title:'Interior Design', artist:'Des. by Serena', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69406958b761df83827f9dd5_524d9a710bb12ade81c4881230ad64f8.jpg', emoji:'🛋️', color:'#d97706' },
-{ id:'costume_design', title:'Costume Design', artist:'Des. by Max', imgUrl:'', emoji:'👗', color:'#db2777' },
-{ id:'hand_crafter', title:'Hand Crafter', artist:'Des. by Alissie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081a5795fc4e17b5952f6_Screenshot%202025-12-03%20at%2010.29.44%E2%80%AFAM.png', emoji:'🧵', color:'#ec4899' },
-{ id:'little_architect', title:'Little Architect', artist:'Des. by Cameron', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', emoji:'🏛️', color:'#0ea5e9' },
-{ id:'idea_inventor', title:'Idea Inventor', artist:'Des. by Natalie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4ef7068f80595cfd07e_15CCA2B1-5146-4602-9B9B-02F5D74536A1.JPG', emoji:'💡', color:'#8b5cf6' },
-{ id:'student_led', title:'Student-Led', artist:'Des. by Judy', imgUrl:'', emoji:'🚀', color:'#8b5cf6' },
-{ id:'storyteller', title:'Storyteller', artist:'Des. by Adrian', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081850b75764ec5a2d2dc_Screenshot%202025-12-03%20at%2010.28.28%E2%80%AFAM.png', emoji:'📖', color:'#f97316' },
-{ id:'art_painting', title:'Art Painting', artist:'Des. by Regina', imgUrl:'', emoji:'🎨', color:'#3b82f6' },
-{ id:'scene_designer', title:'Scene Designer', artist:'Des. by Tom', imgUrl:'', emoji:'🎬', color:'#6366f1' },
-{ id:'character_designer', title:'Character Designer', artist:'Des. by Judy', imgUrl:'', emoji:'🦸', color:'#8b5cf6' },
-{ id:'digital_creator', title:'Digital Creator', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693082569d6d79a6f03770b1_Screenshot%202025-12-03%20at%2010.32.38%E2%80%AFAM.png', emoji:'💻', color:'#0ea5e9' },
-{ id:'animation_beginner', title:'Animator Creator', artist:'Des. by Rainie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692b479b135604dcbecfd915_Screenshot%202025-11-29%20at%2011.20.54%E2%80%AFAM.png', emoji:'🎞️', color:'#8b5cf6' },
-{ id:'gaming_creator', title:'Gaming Creator', artist:'Des. by Cody', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da8041d3d9ce2e5caa_feiteamart%20digtal%20gaming%20creator.PNG', emoji:'🎮', color:'#a855f7' },
-{ id:'sustainable_creator', title:'Sustainable Creator', artist:'Des. by Amy', imgUrl:'', emoji:'🌿', color:'#22c55e' },
-{ id:'critical_thinker', title:'Critical Thinker', artist:'Des. by Zoe', imgUrl:'', emoji:'🧠', color:'#ef4444' },
-{ id:'art_history', title:'Art History', artist:'Des. by Ray', imgUrl:'', emoji:'🏺', color:'#eab308' },
-{ id:'fei_volunteer', title:'FEI Volunteer', artist:'Des. by Rebecca', imgUrl:'', emoji:'🤝', color:'#14b8a6' },
-{ id:'community_builder', title:'Community Builder', artist:'Des. by Team', imgUrl:'', emoji:'🏙️', color:'#f59e0b' },
-{ id:'focus_sprinter', title:'Focus Sprinter', artist:'Des. by Cam', imgUrl:'', emoji:'⏱️', color:'#64748b' },
-{ id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4efc423b6f032f27496_7ce471ab56c32f732fa052a1ef003958.JPG', emoji:'📂', color:'#1e3a8a' }
+  { id:'basic_sketch', title:'Basic Sketch', artist:'Des. by Alex', imgUrl:'', emoji:'✏️', color:'#f59e0b' },
+  { id:'still_life', title:'Still Life', artist:'Des. by Sara', imgUrl:'', emoji:'🍎', color:'#ef4444' },
+  { id:'landscape', title:'Landscape', artist:'Des. by Xinyue', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/696544b4fa92c8867e1c6d5c_Screenshot%202026-01-12%20at%2010.59.57%E2%80%AFAM.png', emoji:'⛰️', color:'#10b981' },
+  { id:'material_explore', title:'Material Explore', artist:'Des. by Xinyue', imgUrl:'', emoji:'🧱', color:'#78716c' },
+  { id:'observation_detective', title:'Observation Detective', artist:'Des. by Faye', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817dc2b2e1062da9b98c_IMG_0186.jpg', emoji:'👀', color:'#06b6d4' },
+  { id:'realism_expert', title:'Realism Expert', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817d21bc1b688929665c_Untitled_-_December_2_2025_18.22.11.jpg', emoji:'👁️', color:'#374151' },
+  { id:'calm_illustration', title:'Calm Illustration', artist:'Des. by Cameron', imgUrl:'', emoji:'🌅', color:'#60a5fa' },
+  { id:'figure_sketch', title:'Figure Sketch', artist:'Des. by Mia', imgUrl:'', emoji:'🧍', color:'#f43f5e' },
+  { id:'portrait_master', title:'Portrait Master', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6980e96299ba4edfc375f693_506d6e9e0733a890480cbd0d1d8b84f1.JPG', emoji:'👤', color:'#be185d' },
+  { id:'interior_design', title:'Interior Design', artist:'Des. by Serena', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69406958b761df83827f9dd5_524d9a710bb12ade81c4881230ad64f8.jpg', emoji:'🛋️', color:'#d97706' },
+  { id:'costume_design', title:'Costume Design', artist:'Des. by Max', imgUrl:'', emoji:'👗', color:'#db2777' },
+  { id:'hand_crafter', title:'Hand Crafter', artist:'Des. by Alissie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081a5795fc4e17b5952f6_Screenshot%202025-12-03%20at%2010.29.44%E2%80%AFAM.png', emoji:'🧵', color:'#ec4899' },
+  { id:'little_architect', title:'Little Architect', artist:'Des. by Cameron', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', emoji:'🏛️', color:'#0ea5e9' },
+  { id:'idea_inventor', title:'Idea Inventor', artist:'Des. by Natalie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4ef7068f80595cfd07e_15CCA2B1-5146-4602-9B9B-02F5D74536A1.JPG', emoji:'💡', color:'#8b5cf6' },
+  { id:'student_led', title:'Student-Led', artist:'Des. by Judy', imgUrl:'', emoji:'🚀', color:'#8b5cf6' },
+  { id:'storyteller', title:'Storyteller', artist:'Des. by Adrian', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081850b75764ec5a2d2dc_Screenshot%202025-12-03%20at%2010.28.28%E2%80%AFAM.png', emoji:'📖', color:'#f97316' },
+  { id:'art_painting', title:'Art Painting', artist:'Des. by Regina', imgUrl:'', emoji:'🎨', color:'#3b82f6' },
+  { id:'scene_designer', title:'Scene Designer', artist:'Des. by Tom', imgUrl:'', emoji:'🎬', color:'#6366f1' },
+  { id:'character_designer', title:'Character Designer', artist:'Des. by Judy', imgUrl:'', emoji:'🦸', color:'#8b5cf6' },
+  { id:'digital_creator', title:'Digital Creator', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693082569d6d79a6f03770b1_Screenshot%202025-12-03%20at%2010.32.38%E2%80%AFAM.png', emoji:'💻', color:'#0ea5e9' },
+  { id:'animation_beginner', title:'Animator Creator', artist:'Des. by Rainie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692b479b135604dcbecfd915_Screenshot%202025-11-29%20at%2011.20.54%E2%80%AFAM.png', emoji:'🎞️', color:'#8b5cf6' },
+  { id:'gaming_creator', title:'Gaming Creator', artist:'Des. by Cody', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da8041d3d9ce2e5caa_feiteamart%20digtal%20gaming%20creator.PNG', emoji:'🎮', color:'#a855f7' },
+  { id:'sustainable_creator', title:'Sustainable Creator', artist:'Des. by Amy', imgUrl:'', emoji:'🌿', color:'#22c55e' },
+  { id:'critical_thinker', title:'Critical Thinker', artist:'Des. by Zoe', imgUrl:'', emoji:'🧠', color:'#ef4444' },
+  { id:'art_history', title:'Art History', artist:'Des. by Ray', imgUrl:'', emoji:'🏺', color:'#eab308' },
+  { id:'fei_volunteer', title:'FEI Volunteer', artist:'Des. by Rebecca', imgUrl:'', emoji:'🤝', color:'#14b8a6' },
+  { id:'community_builder', title:'Community Builder', artist:'Des. by Team', imgUrl:'', emoji:'🏙️', color:'#f59e0b' },
+  { id:'focus_sprinter', title:'Focus Sprinter', artist:'Des. by Cam', imgUrl:'', emoji:'⏱️', color:'#64748b' },
+  { id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4efc423b6f032f27496_7ce471ab56c32f732fa052a1ef003958.JPG', emoji:'📂', color:'#1e3a8a' }
+];
+
+const LEARNING_SHOWCASE_ITEMS = [
+  {
+    key: 'self_study',
+    kicker: 'Creation Path',
+    title: '100 Classes Self-Learning',
+    desc: 'Practice drawing, design, and creative making step by step through FEI TeamArt’s structured class collection.',
+    link: 'https://www.feiteamart.com/100-classes-catalog',
+    image: '',
+    fallback: '100 Classes Self-Learning'
+  },
+  {
+    key: 'lfc',
+    kicker: 'Critical Thinking for Art',
+    title: 'Learn From Collection',
+    desc: 'Build visual judgment and critical thinking through artworks, ideas, and guided contemporary art exploration.',
+    link: 'https://www.feiteamart.com/contemporary-lens',
+    image: '',
+    fallback: 'Learn From Collection'
+  },
+  {
+    key: 'art_history',
+    kicker: 'History & Context',
+    title: 'Art History Path',
+    desc: 'Discover artists, movements, and visual culture to strengthen understanding, context, and inspiration.',
+    link: 'https://www.feiteamart.com/art-history',
+    image: '',
+    fallback: 'Art History Path'
+  }
 ];
 
 const SELF_STUDY_LINKS = {
-lfc: {
-title: 'LFC Learning System',
-desc: 'Explore Learn From Collection with guided visual thinking.',
-link: 'https://www.feiteamart.com/lfc'
-},
-art_history: {
-title: 'Art History',
-desc: 'Study art movements, artists, and visual context.',
-link: 'https://www.feiteamart.com/art-history'
-},
-self_study: {
-title: '100 Self-Study Classes',
-desc: 'Continue learning independently with FEI TeamArt resources.',
-link: 'https://www.feiteamart.com/courses'
-}
+  lfc: {
+    title: 'LFC Learning System',
+    desc: 'Explore Learn From Collection with guided visual thinking.',
+    link: 'https://www.feiteamart.com/contemporary-lens'
+  },
+  art_history: {
+    title: 'Art History',
+    desc: 'Study art movements, artists, and visual context.',
+    link: 'https://www.feiteamart.com/art-history'
+  },
+  self_study: {
+    title: '100 Self-Study Classes',
+    desc: 'Continue learning independently with FEI TeamArt resources.',
+    link: 'https://www.feiteamart.com/100-classes-catalog'
+  }
 };
 
 let allStudents = [];
 let activeStudent = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-fetch('students.json')
-.then(response => response.json())
-.then(data => { allStudents = data; })
-.catch(error => { console.error('Error loading data:', error); });
+  fetch('students.json')
+    .then(response => response.json())
+    .then(data => { allStudents = data; })
+    .catch(error => { console.error('Error loading data:', error); });
 
-const form = document.getElementById('codeForm');
-if (form) {
-form.addEventListener('submit', (e) => {
-e.preventDefault();
-const code = document.getElementById('codeInput').value.trim();
-if (!code) return;
+  const form = document.getElementById('codeForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const code = document.getElementById('codeInput').value.trim();
+      if (!code) return;
 
-const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
+      const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
 
-if (student) {
-activeStudent = student;
-document.getElementById('gate').style.display = 'none';
-document.getElementById('gameUI').style.display = 'block';
-loadReport(student);
-} else {
-alert("Incorrect Code. Please check your private access key.");
-}
-});
-}
+      if (student) {
+        activeStudent = student;
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('gameUI').style.display = 'block';
+        loadReport(student);
+      } else {
+        alert("Incorrect Code. Please check your private access key.");
+      }
+    });
+  }
 
-const modal = document.getElementById('christmasModal');
-const openBtn = document.getElementById('openGiftBtn');
-const closeBtn = document.getElementById('closeGift');
+  const badgeModal = document.getElementById('badgeModal');
+  const closeBadgeModal = document.getElementById('closeBadgeModal');
 
-if (openBtn) {
-openBtn.addEventListener('click', () => {
-modal.style.display = 'flex';
-});
-}
-if (closeBtn) {
-closeBtn.addEventListener('click', () => {
-modal.style.display = 'none';
-});
-}
+  if (closeBadgeModal) {
+    closeBadgeModal.addEventListener('click', () => {
+      badgeModal.style.display = 'none';
+    });
+  }
 
-const badgeModal = document.getElementById('badgeModal');
-const closeBadgeModal = document.getElementById('closeBadgeModal');
-if (closeBadgeModal) {
-closeBadgeModal.addEventListener('click', () => {
-badgeModal.style.display = 'none';
-});
-}
-
-window.addEventListener('click', (e) => {
-if (e.target === modal) modal.style.display = 'none';
-if (e.target === badgeModal) badgeModal.style.display = 'none';
-});
+  window.addEventListener('click', (e) => {
+    if (e.target === badgeModal) badgeModal.style.display = 'none';
+  });
 });
 
 function normalizeToArray(value) {
-if (!value) return [];
-return Array.isArray(value) ? value : [value];
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
 }
 
 function loadReport(student) {
-document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
+  document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
 
-const noteEl = document.getElementById('teacherNote');
-noteEl.innerText = student.teacher_note ? `"${student.teacher_note}"` : "Welcome back!";
+  const noteEl = document.getElementById('teacherNote');
+  noteEl.innerText = student.teacher_note ? `"${student.teacher_note}"` : "Welcome back!";
 
-const tagsContainer = document.getElementById('strengthTags');
-tagsContainer.innerHTML = '';
-if (student.tags) {
-student.tags.forEach(tag => {
-const span = document.createElement('span');
-span.className = 'tag';
-span.innerText = tag;
-tagsContainer.appendChild(span);
-});
-}
+  const tagsContainer = document.getElementById('strengthTags');
+  tagsContainer.innerHTML = '';
+  if (student.tags) {
+    student.tags.forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.innerText = tag;
+      tagsContainer.appendChild(span);
+    });
+  }
 
-const giftContainer = document.getElementById('giftContainer');
-if (student.christmas_gift) {
-giftContainer.style.display = 'block';
-document.getElementById('giftMessage').innerText = student.christmas_gift.message || '';
-document.getElementById('giftLinkBtn').href = student.christmas_gift.link || '#';
-document.getElementById('giftCodeDisplay').innerText = student.christmas_gift.code_display || "Click the button below to claim!";
-} else {
-giftContainer.style.display = 'none';
-}
+  const goalsList = document.getElementById('goalsList');
+  goalsList.innerHTML = '';
+  if (student.goals && student.goals.length > 0) {
+    student.goals.forEach(g => {
+      const li = document.createElement('li');
+      li.className = 'info-item goal';
+      li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
+      goalsList.appendChild(li);
+    });
+  } else {
+    goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
+  }
 
-const goalsList = document.getElementById('goalsList');
-goalsList.innerHTML = '';
-if (student.goals && student.goals.length > 0) {
-student.goals.forEach(g => {
-const li = document.createElement('li');
-li.className = 'info-item goal';
-li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
-goalsList.appendChild(li);
-});
-} else {
-goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
-}
+  const critList = document.getElementById('critiquesList');
+  critList.innerHTML = '';
+  if (student.critiques && student.critiques.length > 0) {
+    student.critiques.forEach(c => {
+      const li = document.createElement('li');
+      li.className = 'info-item critique';
+      li.innerHTML = `<span class="info-date">${c.date || ''}</span>
+      <span class="info-label">Strength:</span>${c.strength}<br>
+      <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
+      critList.appendChild(li);
+    });
+  } else {
+    critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
+  }
 
-const critList = document.getElementById('critiquesList');
-critList.innerHTML = '';
-if (student.critiques && student.critiques.length > 0) {
-student.critiques.forEach(c => {
-const li = document.createElement('li');
-li.className = 'info-item critique';
-li.innerHTML = `<span class="info-date">${c.date || ''}</span>
-                               <span class="info-label">Strength:</span>${c.strength}<br>
-                               <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
-critList.appendChild(li);
-});
-} else {
-critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
-}
+  const notesList = document.getElementById('notesList');
+  notesList.innerHTML = '';
+  if (student.notes && student.notes.length > 0) {
+    student.notes.forEach(n => {
+      const li = document.createElement('li');
+      li.className = 'info-item note';
+      li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
+      notesList.appendChild(li);
+    });
+  } else {
+    notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
+  }
 
-const notesList = document.getElementById('notesList');
-notesList.innerHTML = '';
-if (student.notes && student.notes.length > 0) {
-student.notes.forEach(n => {
-const li = document.createElement('li');
-li.className = 'info-item note';
-li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
-notesList.appendChild(li);
-});
-} else {
-notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
-}
+  const spotGrid = document.getElementById('spotlightGrid');
+  spotGrid.innerHTML = '';
+  const featuredArt = normalizeToArray(student.featured_art);
+  if (featuredArt.length > 0) {
+    featuredArt.forEach(art => {
+      const div = document.createElement('div');
+      div.className = 'spotlight-item';
+      div.innerHTML = `
+        <div class="spotlight-frame">
+          <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
+        </div>
+        <div class="spotlight-caption">${art.title}</div>
+        <div class="spotlight-sub">${art.caption || ''}</div>
+      `;
+      spotGrid.appendChild(div);
+    });
+  } else {
+    spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
+  }
 
-const spotGrid = document.getElementById('spotlightGrid');
-spotGrid.innerHTML = '';
-const featuredArt = normalizeToArray(student.featured_art);
-if (featuredArt.length > 0) {
-featuredArt.forEach(art => {
-const div = document.createElement('div');
-div.className = 'spotlight-item';
-div.innerHTML = `
-                   <div class="spotlight-frame">
-                       <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
-                   </div>
-                   <div class="spotlight-caption">${art.title}</div>
-                   <div class="spotlight-sub">${art.caption || ''}</div>
-               `;
-spotGrid.appendChild(div);
-});
-} else {
-spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
-}
-
-renderLearningCenter(student);
-renderPortfolio(student);
-renderMap(student);
+  renderLearningCenter(student);
+  renderPortfolio(student);
+  renderMap(student);
 }
 
 function renderLearningCenter(student) {
-const card = document.getElementById('learningCenterCard');
-card.style.display = 'block';
+  const card = document.getElementById('learningCenterCard');
+  card.style.display = 'block';
 
-renderLiveClass(student);
-renderRecommendedCourses(student);
-renderSelfStudy(student);
+  renderLearningShowcase();
+  renderLiveClass(student);
+  renderRecommendedCourses(student);
+  renderSelfStudy(student);
+}
+
+function renderLearningShowcase() {
+  const grid = document.getElementById('learningFeatureGrid');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  LEARNING_SHOWCASE_ITEMS.forEach(itemData => {
+    const item = document.createElement('a');
+    item.className = 'learning-feature-card';
+    item.href = itemData.link || '#';
+    item.target = '_blank';
+
+    const hasImage = itemData.image && itemData.image.length > 5;
+
+    item.innerHTML = `
+      <div class="learning-feature-image-wrap">
+        ${
+          hasImage
+            ? `<img src="${itemData.image}" alt="${itemData.title}" class="learning-feature-image" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;learning-feature-fallback&quot;>${itemData.fallback}</div>';">`
+            : `<div class="learning-feature-fallback">${itemData.fallback}</div>`
+        }
+      </div>
+      <div class="learning-feature-body">
+        <div class="learning-feature-kicker">${itemData.kicker}</div>
+        <h4 class="learning-feature-title">${itemData.title}</h4>
+        <p class="learning-feature-desc">${itemData.desc}</p>
+        <span class="learning-feature-btn">Enter Path</span>
+      </div>
+    `;
+    grid.appendChild(item);
+  });
 }
 
 function renderLiveClass(student) {
-const wrap = document.getElementById('liveClassWrap');
-const box = document.getElementById('liveClassBox');
+  const wrap = document.getElementById('liveClassWrap');
+  const box = document.getElementById('liveClassBox');
 
-if (!student.live_class || !student.live_class.enabled) {
-wrap.style.display = 'none';
-box.innerHTML = '';
-return;
-}
+  if (!student.live_class || !student.live_class.enabled) {
+    wrap.style.display = 'none';
+    box.innerHTML = '';
+    return;
+  }
 
-wrap.style.display = 'block';
-box.innerHTML = `
-           <div class="live-class-box">
-               <h3>🎓 Live Class</h3>
-               <p><strong>${student.live_class.title || 'Upcoming Class'}</strong></p>
-               <p>${student.live_class.subtitle || ''}</p>
-               <p>🕒 ${student.live_class.time || 'Time TBA'}</p>
-               <p>${student.live_class.lesson_focus || ''}</p>
-               <a class="portal-btn" href="${student.live_class.zoom_link || '#'}" target="_blank">Join Class</a>
-           </div>
-       `;
+  wrap.style.display = 'block';
+  box.innerHTML = `
+    <div class="live-class-box">
+      <h3>🎓 Live Class</h3>
+      <p><strong>${student.live_class.title || 'Upcoming Class'}</strong></p>
+      <p>${student.live_class.subtitle || ''}</p>
+      <p>🕒 ${student.live_class.time || 'Time TBA'}</p>
+      <p>${student.live_class.lesson_focus || ''}</p>
+      <a class="portal-btn" href="${student.live_class.zoom_link || '#'}" target="_blank">Join Class</a>
+    </div>
+  `;
 }
 
 function renderRecommendedCourses(student) {
-const wrap = document.getElementById('recommendedCoursesWrap');
-const grid = document.getElementById('recommendedCoursesGrid');
-grid.innerHTML = '';
+  const wrap = document.getElementById('recommendedCoursesWrap');
+  const grid = document.getElementById('recommendedCoursesGrid');
+  grid.innerHTML = '';
 
-const courses = normalizeToArray(student.recommended_courses);
+  const courses = normalizeToArray(student.recommended_courses);
 
-if (!courses.length) {
-wrap.style.display = 'none';
-return;
-}
+  if (!courses.length) {
+    wrap.style.display = 'none';
+    return;
+  }
 
-wrap.style.display = 'block';
+  wrap.style.display = 'block';
 
-courses.forEach(course => {
-const item = document.createElement('div');
-item.className = 'portal-card';
-item.innerHTML = `
-               <div class="portal-card-title">${course.title || 'Recommended Course'}</div>
-               <div class="portal-card-desc">${course.description || ''}</div>
-               <div class="portal-card-meta">${course.badge_id ? 'Linked badge: ' + course.badge_id : ''}</div>
-               <a class="portal-btn" href="${course.link || '#'}" target="_blank">View Course</a>
-           `;
-grid.appendChild(item);
-});
+  courses.forEach(course => {
+    const item = document.createElement('div');
+    item.className = 'portal-card';
+    item.innerHTML = `
+      <div class="portal-card-title">${course.title || 'Recommended Course'}</div>
+      <div class="portal-card-desc">${course.description || ''}</div>
+      <div class="portal-card-meta">${course.badge_id ? 'Linked badge: ' + course.badge_id : ''}</div>
+      <a class="portal-btn" href="${course.link || '#'}" target="_blank">View Course</a>
+    `;
+    grid.appendChild(item);
+  });
 }
 
 function renderSelfStudy(student) {
-const wrap = document.getElementById('selfStudyWrap');
-const grid = document.getElementById('selfStudyGrid');
-grid.innerHTML = '';
+  const wrap = document.getElementById('selfStudyWrap');
+  const grid = document.getElementById('selfStudyGrid');
+  grid.innerHTML = '';
 
-const access = student.portal_access || {};
-const items = [];
+  const access = student.portal_access || {};
+  const items = [];
 
-if (access.lfc) items.push(SELF_STUDY_LINKS.lfc);
-if (access.art_history) items.push(SELF_STUDY_LINKS.art_history);
-if (access.self_study) items.push(SELF_STUDY_LINKS.self_study);
+  if (access.lfc) items.push(SELF_STUDY_LINKS.lfc);
+  if (access.art_history) items.push(SELF_STUDY_LINKS.art_history);
+  if (access.self_study) items.push(SELF_STUDY_LINKS.self_study);
 
-if (!items.length) {
-wrap.style.display = 'none';
-return;
-}
+  if (!items.length) {
+    wrap.style.display = 'none';
+    return;
+  }
 
-wrap.style.display = 'block';
+  wrap.style.display = 'block';
 
-items.forEach(itemData => {
-const item = document.createElement('div');
-item.className = 'portal-card';
-item.innerHTML = `
-               <div class="portal-card-title">${itemData.title}</div>
-               <div class="portal-card-desc">${itemData.desc}</div>
-               <a class="portal-btn" href="${itemData.link}" target="_blank">Open</a>
-           `;
-grid.appendChild(item);
-});
+  items.forEach(itemData => {
+    const item = document.createElement('div');
+    item.className = 'portal-card';
+    item.innerHTML = `
+      <div class="portal-card-title">${itemData.title}</div>
+      <div class="portal-card-desc">${itemData.desc}</div>
+      <a class="portal-btn" href="${itemData.link}" target="_blank">Open</a>
+    `;
+    grid.appendChild(item);
+  });
 }
 
 function renderPortfolio(student) {
-const wrap = document.getElementById('portfolioHubCard');
-const grid = document.getElementById('portfolioGrid');
-grid.innerHTML = '';
+  const wrap = document.getElementById('portfolioHubCard');
+  const grid = document.getElementById('portfolioGrid');
+  grid.innerHTML = '';
 
-const portfolio = normalizeToArray(student.portfolio);
+  const portfolio = normalizeToArray(student.portfolio);
 
-if (!portfolio.length) {
-wrap.style.display = 'none';
-return;
-}
+  if (!portfolio.length) {
+    wrap.style.display = 'none';
+    return;
+  }
 
-        wrap.style.display = 'block';
-        wrap.style.display = 'none';
+  wrap.style.display = 'block';
 
-portfolio.forEach(work => {
-const item = document.createElement('div');
-item.className = 'portfolio-item';
-item.innerHTML = `
-               <div class="portfolio-frame">
-                   <img src="${work.image}" class="portfolio-img" onerror="this.src='https://placehold.co/220x220?text=Portfolio'">
-               </div>
-               <div class="portfolio-title">${work.title || ''}</div>
-               <div class="portfolio-sub">${work.category || ''}${work.caption ? ' · ' + work.caption : ''}</div>
-           `;
-grid.appendChild(item);
-});
+  portfolio.forEach(work => {
+    const item = document.createElement('div');
+    item.className = 'portfolio-item';
+    item.innerHTML = `
+      <div class="portfolio-frame">
+        <img src="${work.image}" class="portfolio-img" onerror="this.src='https://placehold.co/220x220?text=Portfolio'">
+      </div>
+      <div class="portfolio-title">${work.title || ''}</div>
+      <div class="portfolio-sub">${work.category || ''}${work.caption ? ' · ' + work.caption : ''}</div>
+    `;
+    grid.appendChild(item);
+  });
 }
 
 function renderMap(student) {
-const container = document.getElementById('badgeGrid');
-container.innerHTML = '';
+  const container = document.getElementById('badgeGrid');
+  container.innerHTML = '';
 
-let earnedIds = [];
-if (student.achievements) earnedIds = student.achievements.map(a => (a.badge_id || '').toLowerCase());
+  let earnedIds = [];
+  if (student.achievements) earnedIds = student.achievements.map(a => (a.badge_id || '').toLowerCase());
 
-let recommendedIds = [];
-if (student.badges && student.badges.should_target) {
-recommendedIds = student.badges.should_target.map(t => (t.id || '').toLowerCase());
-}
+  let recommendedIds = [];
+  if (student.badges && student.badges.should_target) {
+    recommendedIds = student.badges.should_target.map(t => (t.id || '').toLowerCase());
+  }
 
-const total = PAGES.length;
-const count = earnedIds.length;
-const pct = Math.round((count / total) * 100);
-document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
-document.getElementById('progressBar').style.width = `${pct}%`;
-document.getElementById('progressPct').textContent = `${pct}%`;
+  const total = PAGES.length;
+  const count = earnedIds.length;
+  const pct = Math.round((count / total) * 100);
+  document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
+  document.getElementById('progressBar').style.width = `${pct}%`;
+  document.getElementById('progressPct').textContent = `${pct}%`;
 
-PAGES.forEach((page, index) => {
-const pageId = page.id.toLowerCase();
-const isUnlocked = earnedIds.includes(pageId);
-const isRecommended = !isUnlocked && recommendedIds.includes(pageId);
+  PAGES.forEach((page, index) => {
+    const pageId = page.id.toLowerCase();
+    const isUnlocked = earnedIds.includes(pageId);
+    const isRecommended = !isUnlocked && recommendedIds.includes(pageId);
 
-const node = document.createElement('div');
-let statusClass = 'locked';
-if (isUnlocked) statusClass = 'unlocked';
-else if (isRecommended) statusClass = 'recommended';
+    const node = document.createElement('div');
+    let statusClass = 'locked';
+    if (isUnlocked) statusClass = 'unlocked';
+    else if (isRecommended) statusClass = 'recommended';
 
-node.className = `map-node ${statusClass}`;
-node.style.animationDelay = `${index * 0.05}s`;
+    node.className = `map-node ${statusClass}`;
+    node.style.animationDelay = `${index * 0.05}s`;
 
-const hasImage = page.imgUrl && page.imgUrl.length > 5;
-const imageHTML = hasImage
-? `<img src="${page.imgUrl}" class="node-img">`
-: `<div class="node-icon-fallback">${page.emoji}</div>`;
+    const hasImage = page.imgUrl && page.imgUrl.length > 5;
+    const imageHTML = hasImage
+      ? `<img src="${page.imgUrl}" class="node-img">`
+      : `<div class="node-icon-fallback">${page.emoji}</div>`;
 
-node.innerHTML = `
-               <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
-                   ${imageHTML}
-                   ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
-                   ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
-               </div>
-               <div class="node-label">${page.title}</div>
-               <div class="badge-credit">${page.artist}</div>
-           `;
+    node.innerHTML = `
+      <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
+        ${imageHTML}
+        ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
+        ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
+      </div>
+      <div class="node-label">${page.title}</div>
+      <div class="badge-credit">${page.artist}</div>
+    `;
 
-node.addEventListener('click', () => openBadgeModal(student, page, isUnlocked, isRecommended));
-container.appendChild(node);
-});
+    node.addEventListener('click', () => openBadgeModal(student, page, isUnlocked, isRecommended));
+    container.appendChild(node);
+  });
 }
 
 function openBadgeModal(student, page, isUnlocked, isRecommended) {
-const modal = document.getElementById('badgeModal');
-const title = document.getElementById('badgeModalTitle');
-const status = document.getElementById('badgeModalStatus');
-const desc = document.getElementById('badgeModalDesc');
-const coursesWrap = document.getElementById('badgeModalCourses');
+  const modal = document.getElementById('badgeModal');
+  const title = document.getElementById('badgeModalTitle');
+  const status = document.getElementById('badgeModalStatus');
+  const desc = document.getElementById('badgeModalDesc');
+  const coursesWrap = document.getElementById('badgeModalCourses');
 
-title.textContent = page.title;
-coursesWrap.innerHTML = '';
+  title.textContent = page.title;
+  coursesWrap.innerHTML = '';
 
-if (isUnlocked) {
-status.textContent = 'Achieved';
-status.style.background = '#ecfdf5';
-status.style.color = '#047857';
-desc.textContent = `You have already unlocked ${page.title}. Keep building this strength and consider using it in your next project or portfolio piece.`;
-} else if (isRecommended) {
-status.textContent = 'Recommended Next';
-status.style.background = '#fff7ed';
-status.style.color = '#c2410c';
-desc.textContent = `This badge is currently recommended for you. You can use the linked course suggestions below to help unlock this next stage.`;
-} else {
-status.textContent = 'Not Yet';
-status.style.background = '#f3f4f6';
-status.style.color = '#6b7280';
-desc.textContent = `This badge is not active yet, but it may become part of your future learning path.`;
-}
+  if (isUnlocked) {
+    status.textContent = 'Achieved';
+    status.style.background = '#ecfdf5';
+    status.style.color = '#047857';
+    desc.textContent = `You have already unlocked ${page.title}. Keep building this strength and consider using it in your next project or portfolio piece.`;
+  } else if (isRecommended) {
+    status.textContent = 'Recommended Next';
+    status.style.background = '#fff7ed';
+    status.style.color = '#c2410c';
+    desc.textContent = `This badge is currently recommended for you. You can use the linked course suggestions below to help unlock this next stage.`;
+  } else {
+    status.textContent = 'Not Yet';
+    status.style.background = '#f3f4f6';
+    status.style.color = '#6b7280';
+    desc.textContent = `This badge is not active yet, but it may become part of your future learning path.`;
+  }
 
-const matchedCourses = normalizeToArray(student.recommended_courses).filter(c => (c.badge_id || '').toLowerCase() === page.id.toLowerCase());
+  const matchedCourses = normalizeToArray(student.recommended_courses).filter(
+    c => (c.badge_id || '').toLowerCase() === page.id.toLowerCase()
+  );
 
-if (matchedCourses.length) {
-matchedCourses.forEach(course => {
-const item = document.createElement('div');
-item.className = 'mini-course-item';
-item.innerHTML = `
-                   <div class="portal-card-title">${course.title}</div>
-                   <div class="portal-card-desc">${course.description || ''}</div>
-                   <a class="portal-btn" href="${course.link || '#'}" target="_blank">Open Course</a>
-               `;
-coursesWrap.appendChild(item);
-});
-} else {
-const fallback = document.createElement('div');
-fallback.className = 'mini-course-item';
-fallback.innerHTML = `
-               <div class="portal-card-desc">No linked course has been added for this badge yet.</div>
-           `;
-coursesWrap.appendChild(fallback);
-}
+  if (matchedCourses.length) {
+    matchedCourses.forEach(course => {
+      const item = document.createElement('div');
+      item.className = 'mini-course-item';
+      item.innerHTML = `
+        <div class="portal-card-title">${course.title}</div>
+        <div class="portal-card-desc">${course.description || ''}</div>
+        <a class="portal-btn" href="${course.link || '#'}" target="_blank">Open Course</a>
+      `;
+      coursesWrap.appendChild(item);
+    });
+  } else {
+    const fallback = document.createElement('div');
+    fallback.className = 'mini-course-item';
+    fallback.innerHTML = `<div class="portal-card-desc">No linked course has been added for this badge yet.</div>`;
+    coursesWrap.appendChild(fallback);
+  }
 
-modal.style.display = 'flex';
+  modal.style.display = 'flex';
 }
 </script>
 </div>
