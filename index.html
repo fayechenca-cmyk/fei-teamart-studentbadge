@@ -1,860 +1,849 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&family=Mountains+of+Christmas:wght@700&display=swap');
-
-  #fei-embed-root {
-    all: initial;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    box-sizing: border-box;
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 60px 20px;
-    color: #1a1d2b;
-  }
-
-  #fei-embed-root .inner-wrapper {
-    width: 100%;
-    max-width: 1000px;
-    box-sizing: border-box;
-  }
-
-  #fei-embed-root h1,
-  #fei-embed-root h2,
-  #fei-embed-root h3,
-  #fei-embed-root .gate-title,
-  #fei-embed-root .section-title,
-  #fei-embed-root .game-btn,
-  #fei-embed-root .badge-credit,
-  #fei-embed-root .node-label,
-  #fei-embed-root .hub-label,
-  #fei-embed-root .hub-tile-title,
-  #fei-embed-root .hub-action-btn {
-    font-family: 'Montserrat', sans-serif !important;
-  }
-
-  #fei-embed-root p,
-  #fei-embed-root li,
-  #fei-embed-root .input,
-  #fei-embed-root .teacher-text,
-  #fei-embed-root .gate-desc,
-  #fei-embed-root .how-desc {
-    font-family: 'Open Sans', sans-serif !important;
-  }
-
-  /* Login Gate */
-  #fei-embed-root #gate {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    max-width: 480px;
-    margin: 0 auto;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-  }
-
-  #fei-embed-root .gate-banner {
-    height: 140px;
-    width: 100%;
-    background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  }
-
-  #fei-embed-root .gate-content {
-    padding: 10px 40px 30px 40px;
-  }
-
-  #fei-embed-root .gate-title {
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    margin-top: -25px;
-    color: #1a1d2b;
-    position: relative;
-    z-index: 10;
-    line-height: 1.2;
-  }
-
-  #fei-embed-root .gate-desc {
-    margin-bottom: 15px;
-    color: #555;
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  #fei-embed-root .how-it-works {
-    display: flex;
-    border-top: 1px solid #eee;
-    background: #f8fafc;
-  }
-
-  #fei-embed-root .how-step {
-    flex: 1;
-    padding: 15px 5px;
-    border-right: 1px solid #eee;
-  }
-
-  #fei-embed-root .how-step:last-child {
-    border-right: none;
-  }
-
-  #fei-embed-root .how-icon {
-    font-size: 22px;
-    margin-bottom: 5px;
-    display: block;
-  }
-
-  #fei-embed-root .how-desc {
-    font-size: 11px;
-    line-height: 1.3;
-    color: #555;
-    padding: 0 5px;
-    display: block;
-  }
-
-  #fei-embed-root .how-desc strong {
-    display: block;
-    color: #333;
-    font-size: 12px;
-    margin-bottom: 2px;
-  }
-
-  #fei-embed-root .input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 15px;
-    background: #fff;
-    color: #333;
-    box-sizing: border-box;
-    transition: all 0.3s;
-  }
-
-  #fei-embed-root .input:focus {
-    outline: none;
-    border-color: #67e8f9;
-    box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2);
-  }
-
-  #fei-embed-root .game-btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
-    color: #1a1d2b;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
-  }
-
-  #fei-embed-root .game-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.05);
-  }
-
-  /* General Cards */
-  #fei-embed-root .header,
-  #fei-embed-root .card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    color: #1a1d2b;
-  }
-
-  #fei-embed-root .main-header {
-    text-align: center;
-    margin-top: 0;
-  }
-
-  #fei-embed-root h1 {
-    margin: 0 0 5px;
-    font-weight: 800;
-    color: #1a1d2b;
-    font-size: 28px;
-    letter-spacing: -1px;
-    line-height: 1.2;
-  }
-
-  #fei-embed-root h2 {
-    font-size: 18px;
-    color: #666;
-    font-weight: 400;
-    margin-top: 5px;
-  }
-
-  #fei-embed-root .section-title {
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f3f4f6;
-    padding-bottom: 10px;
-    color: #1a1d2b;
-  }
-
-  /* Teacher Summary */
-  #fei-embed-root .teacher-card {
-    border-left: 6px solid #8b5cf6;
-    background: #fff;
-  }
-
-  #fei-embed-root .teacher-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    font-style: italic;
-    background: #fdfbff;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #f3f4f6;
-  }
-
-  #fei-embed-root .tag-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  #fei-embed-root .tag {
-    background: #e0e7ff;
-    color: #4338ca;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* Detailed Lists */
-  #fei-embed-root .info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #fei-embed-root .info-item {
-    background: #f9fafb;
-    border-left: 4px solid #ccc;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 0 8px 8px 0;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  #fei-embed-root .info-item.goal {
-    border-color: #f59e0b;
-    background: #fffbeb;
-  }
-
-  #fei-embed-root .info-item.critique {
-    border-color: #10b981;
-    background: #ecfdf5;
-  }
-
-  #fei-embed-root .info-item.note {
-    border-color: #6366f1;
-    background: #eef2ff;
-  }
-
-  #fei-embed-root .info-date {
-    font-size: 11px;
-    color: #888;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  #fei-embed-root .info-label {
-    font-weight: 700;
-    color: #333;
-    margin-right: 5px;
-  }
-
-  /* Learning Center / Creative Hub */
-  #fei-embed-root .hub-label {
-    font-size: 11px;
-    font-weight: 800;
-    color: #8b5cf6;
-    letter-spacing: 1.4px;
-    margin-bottom: 14px;
-    opacity: 0.95;
-  }
-
-  #fei-embed-root .hub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-  }
-
-  #fei-embed-root .hub-tile {
-    background: #ffffff;
-    border: 1px solid #eef2f7;
-    border-radius: 18px;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.28s ease;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-  }
-
-  #fei-embed-root .hub-tile:hover {
-    transform: translateY(-4px);
-    border-color: #67e8f9;
-    box-shadow: 0 12px 30px rgba(103, 232, 249, 0.18);
-  }
-
-  #fei-embed-root .hub-tile-title {
-    font-size: 16px;
-    font-weight: 800;
-    color: #1a1d2b;
-    margin-bottom: 8px;
-    line-height: 1.35;
-  }
-
-  #fei-embed-root .hub-tile-desc {
-    font-size: 12px;
-    color: #64748b;
-    line-height: 1.55;
-    margin-bottom: 14px;
-  }
-
-  #fei-embed-root .hub-action-btn {
-    background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
-    color: #1a1d2b;
-    padding: 10px 14px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 800;
-  }
-
-  #fei-embed-root .live-hero {
-    background: linear-gradient(135deg, #1a1d2b 0%, #334155 100%);
-    border-radius: 20px;
-    padding: 30px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-  }
-
-  #fei-embed-root .live-hero h3 {
-    font-size: 22px;
-    margin: 0 0 6px;
-    color: #fff;
-    font-weight: 800;
-  }
-
-  #fei-embed-root .live-hero p {
-    font-size: 14px;
-    color: #cbd5e1;
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  #fei-embed-root .live-badge {
-    background: #d42424;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 10px;
-    font-weight: 800;
-    margin-bottom: 12px;
-    display: inline-block;
-    letter-spacing: 1px;
-  }
-
-  /* Spotlight */
-  #fei-embed-root .spotlight-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  #fei-embed-root .spotlight-item {
-    width: 180px;
-    text-align: center;
-  }
-
-  #fei-embed-root .spotlight-frame {
-    width: 100%;
-    height: 180px;
-    background: #fff;
-    padding: 8px;
-    box-sizing: border-box;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transform: rotate(-2deg);
-    transition: transform 0.3s;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    border: 1px solid #eee;
-  }
-
-  #fei-embed-root .spotlight-item:nth-child(even) .spotlight-frame {
-    transform: rotate(2deg);
-  }
-
-  #fei-embed-root .spotlight-frame:hover {
-    transform: rotate(0) scale(1.05);
-    z-index: 5;
-  }
-
-  #fei-embed-root .spotlight-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  #fei-embed-root .spotlight-caption {
-    font-size: 13px;
-    font-weight: 700;
-    color: #555;
-  }
-
-  #fei-embed-root .spotlight-sub {
-    font-size: 11px;
-    color: #999;
-  }
-
-  /* Badge Area */
-  #fei-embed-root .map-card-bg {
-    background: #fff;
-  }
-
-  #fei-embed-root .badge-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  #fei-embed-root .map-node {
-    width: 120px;
-    text-align: center;
-    position: relative;
-    opacity: 1; /* 修复：不要再让 badge 隐形 */
-    animation: popIn 0.5s ease-out;
-  }
-
-  #fei-embed-root .map-node:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
-  }
-
-  #fei-embed-root .node-visual {
-    width: 85px;
-    height: 85px;
-    margin: 0 auto 8px;
-    border-radius: 50%;
-    background: #fff;
-    border: 4px solid #e5e7eb;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    display: grid;
-    place-items: center;
-    position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-
-  #fei-embed-root .node-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-
-  #fei-embed-root .node-icon-fallback {
-    font-size: 32px;
-  }
-
-  #fei-embed-root .node-label {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #444;
-    margin-bottom: 2px;
-  }
-
-  #fei-embed-root .badge-credit {
-    font-size: 10px;
-    color: #6366f1;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-    font-weight: 700;
-    opacity: 0.9;
-  }
-
-  #fei-embed-root .map-node.locked .node-visual {
-    opacity: 0.5;
-    filter: grayscale(100%);
-    background: #f0f0f0;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  #fei-embed-root .map-node.unlocked .node-visual {
-    border: 3px solid #ffb700;
-    background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
-    box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
-    transform: scale(1.08);
-    z-index: 2;
-  }
-
-  #fei-embed-root .map-node.unlocked .node-icon-fallback {
-    font-size: 40px;
-  }
-
-  #fei-embed-root .map-node.unlocked .node-label {
-    color: #1a1d2b;
-    font-weight: 800;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
-  }
-
-  #fei-embed-root .map-node.recommended .node-visual {
-    border: 3px dashed #f59e0b !important;
-    animation: pulse 2s infinite;
-    background: #fffbeb;
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
-  }
-
-  #fei-embed-root .check-mark {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #10b981;
-    color: white;
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  #fei-embed-root .quest-mark {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 24px;
-  }
-
-  #fei-embed-root .progress-container {
-    margin-top: 15px;
-  }
-
-  #fei-embed-root .progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #555;
-  }
-
-  #fei-embed-root .progress-rail {
-    height: 10px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  #fei-embed-root .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #2dd4bf, #06b6d4);
-    transition: width 1s ease;
-  }
-
-  #fei-embed-root .map-legend {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 12px;
-    color: #666;
-  }
-
-  #fei-embed-root .legend-item {
-    margin: 0 10px;
-  }
-
-  #fei-embed-root .dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 4px;
-  }
-
-  #fei-embed-root .dot.earned { background: #10b981; }
-  #fei-embed-root .dot.next { background: #f59e0b; }
-  #fei-embed-root .dot.locked { background: #e5e7eb; }
-
-  /* Christmas modal */
-  #fei-embed-root .xmas-btn {
-    background: linear-gradient(135deg, #d42424 0%, #ff4d4d 100%);
-    color: white;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: 800;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    box-shadow: 0 4px 15px rgba(212, 36, 36, 0.5);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.2s;
-    animation: bounce 2s infinite;
-  }
-
-  #fei-embed-root .xmas-btn:hover {
-    transform: scale(1.05);
-    background: #b91c1c;
-  }
-
-  #fei-embed-root .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 99999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
-  }
-
-  #fei-embed-root .xmas-card {
-    background: #fff;
-    width: 90%;
-    max-width: 450px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    border: 4px solid #d42424;
-    animation: popIn 0.4s ease-out;
-  }
-
-  #fei-embed-root .xmas-header {
-    background: #d42424;
-    color: #fff;
-    padding: 25px 20px;
-    font-family: 'Mountains of Christmas', cursive !important;
-    font-size: 32px;
-    letter-spacing: 1px;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2.5px);
-    background-size: 20px 20px;
-  }
-
-  #fei-embed-root .xmas-body {
-    padding: 30px 25px;
-  }
-
-  #fei-embed-root .xmas-msg {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 25px;
-    font-style: italic;
-  }
-
-  #fei-embed-root .gift-code-box {
-    background: #f3f4f6;
-    border: 2px dashed #999;
-    padding: 10px;
-    font-family: monospace;
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #333;
-    border-radius: 8px;
-  }
-
-  #fei-embed-root .claim-btn {
-    background: #10b981;
-    color: white;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 14px;
-    display: inline-block;
-    transition: background 0.2s;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
-  }
-
-  #fei-embed-root .claim-btn:hover {
-    background: #059669;
-    transform: translateY(-2px);
-  }
-
-  #fei-embed-root .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: rgba(255,255,255,0.8);
-    font-size: 28px;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    font-family: sans-serif;
-  }
-
-  #fei-embed-root .close-modal:hover {
-    opacity: 1;
-    color: #fff;
-  }
-
-  /* Badge modal */
-  #fei-embed-root .badge-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.78);
-    z-index: 99998;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    backdrop-filter: blur(4px);
-  }
-
-  #fei-embed-root .badge-modal-card {
-    width: 100%;
-    max-width: 520px;
-    background: #fff;
-    border-radius: 22px;
-    padding: 24px;
-    box-shadow: 0 22px 50px rgba(0,0,0,0.25);
-    position: relative;
-  }
-
-  #fei-embed-root .badge-modal-close {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #666;
-  }
-
-  #fei-embed-root .badge-modal-title {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: #1a1d2b;
-  }
-
-  #fei-embed-root .badge-modal-desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #5b6475;
-    margin-bottom: 14px;
-  }
-
-  #fei-embed-root .badge-modal-tag {
-    display: inline-block;
-    background: #fff7ed;
-    color: #c2410c;
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 11px;
-    font-weight: 800;
-    margin-bottom: 14px;
-  }
-
-  #fei-embed-root .mini-course-list {
-    display: grid;
-    gap: 10px;
-    margin-top: 12px;
-  }
-
-  #fei-embed-root .mini-course-item {
-    border: 1px solid #eef2f7;
-    border-radius: 14px;
-    padding: 12px;
-    background: #fafcff;
-  }
-
-  #fei-embed-root .footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 11px;
-    color: #eee;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  }
-
-  @keyframes popIn {
-    from { opacity: 0; transform: scale(0.5) translateY(20px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-6px); }
-    60% { transform: translateY(-3px); }
-  }
-
-  @media (max-width: 767px) {
-    #fei-embed-root .live-hero {
-      flex-direction: column;
-      align-items: flex-start;
+<div id="fei-embed-root">
+    <style>
+        /* 1. IMPORT FONTS - Added 'Mountains of Christmas' for the card */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&family=Mountains+of+Christmas:wght@700&display=swap');
+
+        /* RESET & WRAPPER */
+        #fei-embed-root {
+            all: initial; 
+            font-family: 'Open Sans', sans-serif;
+            
+            /* FLEXBOX CENTER LAYOUT */
+            display: flex;             
+            flex-direction: column;    
+            justify-content: center;   
+            align-items: center;       
+            
+            width: 100%;
+            height: auto; 
+            
+            /* CRITICAL FIX: Fill the screen, but allow growing */
+            min-height: 100vh; 
+            
+            position: relative;
+            box-sizing: border-box;
+            
+            /* BACKGROUND FIX: Fixed attachment prevents it from running out */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps bg full even when scrolling long reports */
+            
+            /* Padding ensures content is never cropped at edges */
+            padding: 60px 20px;
+            color: #1a1d2b;
+        }
+
+        #fei-embed-root .inner-wrapper { 
+            width: 100%; max-width: 1000px; box-sizing: border-box;
+        }
+
+        /* TYPOGRAPHY */
+        #fei-embed-root h1, #fei-embed-root h2, #fei-embed-root .gate-title,
+        #fei-embed-root .section-title, #fei-embed-root .game-btn,
+        #fei-embed-root .badge-credit, #fei-embed-root .node-label {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        #fei-embed-root p, #fei-embed-root .input, #fei-embed-root .teacher-text,
+        #fei-embed-root .gate-desc, #fei-embed-root .how-desc, #fei-embed-root li {
+            font-family: 'Open Sans', sans-serif !important;
+        }
+
+        /* --- NEW CHRISTMAS STYLES START --- */
+        #fei-embed-root .xmas-btn {
+            background: linear-gradient(135deg, #d42424 0%, #ff4d4d 100%);
+            color: white; border: 2px solid #fff; border-radius: 50px;
+            padding: 12px 25px; font-size: 16px; font-weight: 800;
+            cursor: pointer; margin-top: 15px; margin-bottom: 5px;
+            box-shadow: 0 4px 15px rgba(212, 36, 36, 0.5);
+            display: inline-flex; align-items: center; gap: 10px;
+            transition: transform 0.2s; animation: bounce 2s infinite;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        #fei-embed-root .xmas-btn:hover { transform: scale(1.05); background: #b91c1c; }
+
+        /* Modal Overlay */
+        #fei-embed-root .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85); z-index: 99999;
+            display: flex; justify-content: center; align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        /* The Card */
+        #fei-embed-root .xmas-card {
+            background: #fff; width: 90%; max-width: 450px;
+            border-radius: 20px; overflow: hidden; position: relative;
+            text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 4px solid #d42424;
+            animation: popIn 0.4s ease-out;
+        }
+        #fei-embed-root .xmas-header {
+            background: #d42424; color: #fff; padding: 25px 20px;
+            font-family: 'Mountains of Christmas', cursive !important;
+            font-size: 32px; letter-spacing: 1px;
+            /* Snow pattern effect */
+            background-image: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2.5px);
+            background-size: 20px 20px; 
+        }
+        #fei-embed-root .xmas-body { padding: 30px 25px; }
+        #fei-embed-root .xmas-msg { 
+            font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 25px; font-style: italic; 
+        }
+        #fei-embed-root .gift-code-box {
+            background: #f3f4f6; border: 2px dashed #999; padding: 10px;
+            font-family: monospace; font-size: 14px; margin-bottom: 20px; color: #333;
+            border-radius: 8px;
+        }
+        #fei-embed-root .claim-btn {
+            background: #10b981; color: white; text-decoration: none;
+            padding: 12px 30px; border-radius: 50px; font-weight: 800; font-size: 14px;
+            display: inline-block; transition: background 0.2s;
+            font-family: 'Montserrat', sans-serif !important;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+        #fei-embed-root .claim-btn:hover { background: #059669; transform: translateY(-2px); }
+        #fei-embed-root .close-modal {
+            position: absolute; top: 10px; right: 15px; color: rgba(255,255,255,0.8);
+            font-size: 28px; cursor: pointer; transition: opacity 0.2s;
+            font-family: sans-serif;
+        }
+        #fei-embed-root .close-modal:hover { opacity: 1; color: #fff; }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-6px);} 60% {transform: translateY(-3px);} }
+        /* --- NEW CHRISTMAS STYLES END --- */
+
+        /* LOGIN GATE */
+        #fei-embed-root #gate {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            max-width: 480px; 
+            margin: 0 auto; 
+            text-align: center;
+            overflow: hidden; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        #fei-embed-root .gate-banner {
+            height: 140px; width: 100%;
+            background-image: url('https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692895bdf9f58bc822e334c9_unnamed-1.jpg');
+            background-size: cover; background-position: center; position: relative;
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        #fei-embed-root .gate-content { padding: 10px 40px 30px 40px; }
+        #fei-embed-root .gate-title { 
+            font-size: 26px; font-weight: 800; margin-bottom: 10px; margin-top: -25px; 
+            color: #1a1d2b; position: relative; z-index: 10; line-height: 1.2;
+        }
+        #fei-embed-root .gate-desc { margin-bottom: 15px; color: #555; font-weight: 600; font-size: 14px; }
+
+        #fei-embed-root .how-it-works { display: flex; border-top: 1px solid #eee; background: #f8fafc; }
+        #fei-embed-root .how-step { flex: 1; padding: 15px 5px; border-right: 1px solid #eee; }
+        #fei-embed-root .how-step:last-child { border-right: none; }
+        #fei-embed-root .how-icon { font-size: 22px; margin-bottom: 5px; display: block;}
+        #fei-embed-root .how-desc { font-size: 11px; line-height: 1.3; color: #555; padding: 0 5px; display: block; }
+        #fei-embed-root .how-desc strong { display: block; color: #333; font-size: 12px; margin-bottom: 2px; }
+
+        #fei-embed-root .input { 
+            width: 100%; padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px; 
+            font-size: 16px; text-align: center; margin-bottom: 15px; 
+            background: #fff; color: #333; box-sizing: border-box; transition: all 0.3s;
+        }
+        #fei-embed-root .input:focus { outline: none; border-color: #67e8f9; box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.2); }
+
+        #fei-embed-root .game-btn {
+            width: 100%; padding: 15px; background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+            color: #1a1d2b; border: none; border-radius: 12px; 
+            font-size: 16px; font-weight: 800; text-transform: uppercase; cursor: pointer; 
+            transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(103, 232, 249, 0.4);
+        }
+        #fei-embed-root .game-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+        /* DASHBOARD UI */
+        #fei-embed-root .header, #fei-embed-root .card {
+            background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 25px;
+            margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #1a1d2b;
+        }
+        #fei-embed-root .main-header { text-align: center; margin-top: 0px; }
+        #fei-embed-root h1 { margin: 0 0 5px; font-weight:800; color: #1a1d2b; font-size: 28px; letter-spacing: -1px; line-height: 1.2; }
+        #fei-embed-root h2 { font-size:18px; color:#666; font-weight:400; margin-top:5px; }
+        #fei-embed-root .section-title { font-weight: 700; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px; color: #1a1d2b; }
+
+        /* Teacher & Spotlight */
+        #fei-embed-root .teacher-card { border-left: 6px solid #8b5cf6; background: #fff; }
+        #fei-embed-root .teacher-text {
+            font-size: 16px; line-height: 1.6; color: #333; font-style: italic;
+            background: #fdfbff; padding: 15px; border-radius: 10px; border: 1px solid #f3f4f6;
+        }
+        #fei-embed-root .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        #fei-embed-root .tag {
+            background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* Detailed Info Lists */
+        #fei-embed-root .info-list { list-style: none; padding: 0; margin: 0; }
+        #fei-embed-root .info-item {
+            background: #f9fafb; border-left: 4px solid #ccc; padding: 12px 15px;
+            margin-bottom: 10px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5;
+        }
+        #fei-embed-root .info-item.goal { border-color: #f59e0b; background: #fffbeb; }
+        #fei-embed-root .info-item.critique { border-color: #10b981; background: #ecfdf5; }
+        #fei-embed-root .info-item.note { border-color: #6366f1; background: #eef2ff; }
+        #fei-embed-root .info-date { font-size: 11px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        #fei-embed-root .info-label { font-weight: 700; color: #333; margin-right: 5px; }
+
+        /* Spotlight */
+        #fei-embed-root .spotlight-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        #fei-embed-root .spotlight-item { width: 180px; text-align: center; }
+        #fei-embed-root .spotlight-frame {
+            width: 100%; height: 180px; background: #fff; padding: 8px; box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(-2deg); transition: transform 0.3s;
+            margin-bottom: 8px; border-radius: 4px; border: 1px solid #eee;
+        }
+        #fei-embed-root .spotlight-item:nth-child(even) .spotlight-frame { transform: rotate(2deg); }
+        #fei-embed-root .spotlight-frame:hover { transform: rotate(0) scale(1.05); z-index: 5; }
+        #fei-embed-root .spotlight-img { width: 100%; height: 100%; object-fit: cover; }
+        #fei-embed-root .spotlight-caption { font-size: 13px; font-weight: 700; color: #555; }
+        #fei-embed-root .spotlight-sub { font-size: 11px; color: #999; }
+
+        /* Badges */
+        #fei-embed-root .map-card-bg { background: #fff; }
+        #fei-embed-root .badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        #fei-embed-root .map-node { 
+            width: 120px; text-align: center; position: relative; 
+            opacity: 0; animation: popIn 0.5s forwards ease-out; 
+        }
+        #fei-embed-root .map-node:hover { transform: translateY(-5px); cursor: pointer; }
+
+        #fei-embed-root .node-visual {
+            width: 85px; height: 85px; margin: 0 auto 8px; border-radius: 50%;
+            background: #fff; border: 4px solid #e5e7eb; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: grid; place-items: center; position: relative;
+            transition: all 0.3s ease;
+        }
+        #fei-embed-root .node-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        #fei-embed-root .node-icon-fallback { font-size: 32px; }
+        #fei-embed-root .node-label { font-size: 12px; font-weight: 700; line-height: 1.2; color: #444; margin-bottom: 2px; }
+        #fei-embed-root .badge-credit {
+            font-size: 10px; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px;
+            margin-top: 4px; font-weight: 700; opacity: 0.9;
+        }
+
+        /* BADGE STATES (Shiny!) */
+        #fei-embed-root .map-node.locked .node-visual { 
+            opacity: 0.5; filter: grayscale(100%); background: #f0f0f0; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+        #fei-embed-root .map-node.unlocked .node-visual { 
+            border: 3px solid #ffb700; 
+            background: radial-gradient(circle, #ffffff 30%, #fff7e0 100%);
+            box-shadow: 0 0 15px rgba(255, 183, 0, 0.6), 0 5px 10px rgba(0,0,0,0.1);
+            transform: scale(1.08); z-index: 2;
+        }
+        #fei-embed-root .map-node.unlocked .node-icon-fallback { font-size: 40px; }
+        #fei-embed-root .map-node.unlocked .node-label { color: #1a1d2b; font-weight: 800; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
+        
+        #fei-embed-root .map-node.recommended .node-visual { 
+            border: 3px dashed #f59e0b !important; animation: pulse 2s infinite; background: #fffbeb; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Icons */
+        #fei-embed-root .check-mark { 
+            position: absolute; top: -5px; right: -5px; 
+            background: #10b981; color: white; border: 2px solid white; border-radius: 50%; 
+            width: 24px; height: 24px; display: grid; place-items: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 14px; font-weight: bold;
+        }
+        #fei-embed-root .quest-mark { position: absolute; top: -5px; right: -5px; font-size: 24px; }
+
+        /* Progress */
+        #fei-embed-root .progress-container { margin-top: 15px; }
+        #fei-embed-root .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #555; }
+        #fei-embed-root .progress-rail { height: 10px; background: #e5e7eb; border-radius: 10px; overflow: hidden; }
+        #fei-embed-root .progress-bar { height: 100%; background: linear-gradient(90deg, #2dd4bf, #06b6d4); transition: width 1s ease; }
+
+        #fei-embed-root .map-legend { text-align: center; margin-bottom: 20px; font-size: 12px; color: #666; }
+        #fei-embed-root .legend-item { margin: 0 10px; }
+        #fei-embed-root .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+        #fei-embed-root .dot.earned { background: #10b981; } #fei-embed-root .dot.next { background: #f59e0b; } #fei-embed-root .dot.locked { background: #e5e7eb; }
+
+        #fei-embed-root .footer { text-align: center; margin-top: 40px; font-size: 11px; color: #eee; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+        @keyframes popIn { from { opacity: 0; transform: scale(0.5) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    </style>
+
+    <div class="inner-wrapper">
+
+        <div id="gate">
+            <div class="gate-banner"></div>
+            <div class="gate-content">
+                <div class="gate-title">FEI TeamArt Portal</div>
+                <p class="gate-desc">Enter your Student Access Code:</p>
+                <form id="codeForm">
+                    <input type="text" id="codeInput" class="input" placeholder="e.g. Lily-11">
+                    <br>
+                    <button type="submit" class="game-btn">Find My Map</button>
+                </form>
+            </div>
+            <div class="how-it-works">
+                <div class="how-step">
+                    <div class="how-icon">🔑</div>
+                    <div class="how-desc"><strong>Enter Code</strong>Type your unique name or ID.</div>
+                </div>
+                <div class="how-step">
+                    <div class="how-icon">🗺️</div>
+                    <div class="how-desc"><strong>View Map</strong>See which badges you have collected.</div>
+                </div>
+                <div class="how-step">
+                    <div class="how-icon">📝</div>
+                    <div class="how-desc"><strong>Get Feedback</strong>Read notes from your teacher.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameUI" style="display:none;">
+            
+            <div class="header main-header">
+                <h1>FEI TeamArt Milestone Map</h1>
+                <h2 id="welcomeText">Student Report</h2>
+                
+                <div id="giftContainer" style="display:none;">
+                    <button id="openGiftBtn" class="xmas-btn">
+                        🎁 Christmas 2025 Special Gift
+                    </button>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-label"><span id="progressCount">0 Badges</span><span id="progressPct">0%</span></div>
+                    <div class="progress-rail"><div class="progress-bar" id="progressBar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="card teacher-card">
+                <div class="section-title">📝 Teacher's Summary</div>
+                <div class="teacher-text" id="teacherNote">Loading...</div>
+                <div class="tag-container" id="strengthTags"></div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">📊 Detailed Progress</div>
+                
+                <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#d97706;">🎯 Current Missions</h3>
+                <ul class="info-list" id="goalsList"></ul>
+
+                <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#10b981;">💡 Teacher Feedback</h3>
+                <ul class="info-list" id="critiquesList"></ul>
+
+                <h3 style="font-size:14px; font-weight:700; margin-top:20px; margin-bottom:10px; color:#6366f1;">📅 Progress Log</h3>
+                <ul class="info-list" id="notesList"></ul>
+            </div>
+            
+  <div class="card" id="learningCenterCard" style="display:none; background: #fff;">
+    <div class="section-title">🚀 My Creative Hub</div>
+
+    <div id="liveClassWrap" style="display:none; margin-bottom: 30px;">
+        <div id="liveClassBox"></div>
+    </div>
+
+    <div class="hub-container">
+        <div id="recommendedCoursesWrap" style="display:none; margin-bottom: 25px;">
+            <div class="hub-label">✨ NEXT MISSIONS</div>
+            <div class="hub-grid" id="recommendedCoursesGrid"></div>
+        </div>
+
+        <div id="selfStudyWrap" style="display:none;">
+            <div class="hub-label">📚 QUICK RESOURCES</div>
+            <div class="hub-grid" id="selfStudyGrid"></div>
+        </div>
+    </div>
+</div>
+            
+            <div class="card">
+                <div class="section-title">🎨 Masterpiece Spotlight</div>
+                <div class="spotlight-grid" id="spotlightGrid"></div>
+            </div>
+
+            <div class="card map-card-bg">
+                <div class="section-title">🗺️ Your Badge Collection</div>
+                <div class="map-legend">
+                    <span class="legend-item"><span class="dot earned"></span> Achieved</span>
+                    <span class="legend-item"><span class="dot next"></span> Recommended</span>
+                    <span class="legend-item"><span class="dot locked"></span> Not Yet</span>
+                </div>
+                <div class="badge-grid" id="badgeGrid"></div>
+            </div>
+
+            <div class="footer">
+                <p>All badges are originally designed by FEI TeamArt Students.</p>
+                <p>© 2025 FEI TeamArt</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="christmasModal" class="modal-overlay" style="display:none;">
+        <div class="xmas-card">
+            <div class="close-modal" id="closeGift">×</div>
+            <div class="xmas-header">Merry Christmas!</div>
+            <div class="xmas-body">
+                <div style="font-size:50px; margin-bottom:10px;">🎅🎄🎁</div>
+                <p class="xmas-msg" id="giftMessage">Searching for your gift...</p>
+                
+                <div class="gift-code-box" id="giftCodeDisplay"></div>
+                
+                <a id="giftLinkBtn" href="#" target="_blank" class="claim-btn">
+                    Open E-Gift on Amazon
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div id="badgeModal" class="badge-modal-overlay">
+    <div class="badge-modal-card">
+        <div class="badge-modal-close" id="closeBadgeModal">×</div>
+        <div class="badge-modal-title" id="badgeModalTitle">Badge</div>
+        <div class="badge-modal-tag" id="badgeModalStatus">Recommended</div>
+        <div class="badge-modal-desc" id="badgeModalDesc">Description</div>
+        <div class="mini-course-list" id="badgeModalCourses"></div>
+    </div>
+</div>
+    
+</div>
+
+<script>
+    const PAGES = [
+        { id:'basic_sketch', title:'Basic Sketch', artist:'Des. by Alex', imgUrl:'', emoji:'✏️', color:'#f59e0b' },
+        { id:'still_life', title:'Still Life', artist:'Des. by Sara', imgUrl:'', emoji:'🍎', color:'#ef4444' },
+        { id:'landscape', title:'Landscape', artist:'Des. by Xinyue', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/696544b4fa92c8867e1c6d5c_Screenshot%202026-01-12%20at%2010.59.57%E2%80%AFAM.png', emoji:'⛰️', color:'#10b981' },
+        { id:'material_explore', title:'Material Explore', artist:'Des. by Xinyue', imgUrl:'', emoji:'🧱', color:'#78716c' },
+        { id:'observation_detective', title:'Observation Detective', artist:'Des. by Faye', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817dc2b2e1062da9b98c_IMG_0186.jpg', emoji:'👀', color:'#06b6d4' },
+        { id:'realism_expert', title:'Realism Expert', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6930817d21bc1b688929665c_Untitled_-_December_2_2025_18.22.11.jpg', emoji:'👁️', color:'#374151' }, 
+        { id:'calm_illustration', title:'Calm Illustration', artist:'Des. by Cameron', imgUrl:'', emoji:'🌅', color:'#60a5fa' },
+        { id:'figure_sketch', title:'Figure Sketch', artist:'Des. by Mia', imgUrl:'', emoji:'🧍', color:'#f43f5e' },
+        { id:'portrait_master', title:'Portrait Master', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/6980e96299ba4edfc375f693_506d6e9e0733a890480cbd0d1d8b84f1.JPG', emoji:'👤', color:'#be185d' },
+        { id:'interior_design', title:'Interior Design', artist:'Des. by Serena', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69406958b761df83827f9dd5_524d9a710bb12ade81c4881230ad64f8.jpg', emoji:'🛋️', color:'#d97706' },
+        { id:'costume_design', title:'Costume Design', artist:'Des. by Max', imgUrl:'', emoji:'👗', color:'#db2777' },
+        { id:'hand_crafter', title:'Hand Crafter', artist:'Des. by Alissie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081a5795fc4e17b5952f6_Screenshot%202025-12-03%20at%2010.29.44%E2%80%AFAM.png', emoji:'🧵', color:'#ec4899' },
+        { id:'little_architect', title:'Little Architect', artist:'Des. by Cameron', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617dac227fa894b1b16cd_feiteamart%20achitect.PNG', emoji:'🏛️', color:'#0ea5e9' },
+        { id:'idea_inventor', title:'Idea Inventor', artist:'Des. by Natalie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4ef7068f80595cfd07e_15CCA2B1-5146-4602-9B9B-02F5D74536A1.JPG', emoji:'💡', color:'#8b5cf6' },
+        { id:'student_led', title:'Student-Led', artist:'Des. by Judy', imgUrl:'', emoji:'🚀', color:'#8b5cf6' },
+        { id:'storyteller', title:'Storyteller', artist:'Des. by Adrian', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693081850b75764ec5a2d2dc_Screenshot%202025-12-03%20at%2010.28.28%E2%80%AFAM.png', emoji:'📖', color:'#f97316' },
+        { id:'art_painting', title:'Art Painting', artist:'Des. by Regina', imgUrl:'', emoji:'🎨', color:'#3b82f6' },
+        { id:'scene_designer', title:'Scene Designer', artist:'Des. by Tom', imgUrl:'', emoji:'🎬', color:'#6366f1' },
+        { id:'character_designer', title:'Character Designer', artist:'Des. by Judy', imgUrl:'', emoji:'🦸', color:'#8b5cf6' },
+        { id:'digital_creator', title:'Digital Creator', artist:'Des. by Temp', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/693082569d6d79a6f03770b1_Screenshot%202025-12-03%20at%2010.32.38%E2%80%AFAM.png', emoji:'💻', color:'#0ea5e9' },
+        { id:'animation_beginner', title:'Animator Creator', artist:'Des. by Rainie', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692b479b135604dcbecfd915_Screenshot%202025-11-29%20at%2011.20.54%E2%80%AFAM.png', emoji:'🎞️', color:'#8b5cf6' },
+        { id:'gaming_creator', title:'Gaming Creator', artist:'Des. by Cody', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/692617da8041d3d9ce2e5caa_feiteamart%20digtal%20gaming%20creator.PNG', emoji:'🎮', color:'#a855f7' },
+        { id:'sustainable_creator', title:'Sustainable Creator', artist:'Des. by Amy', imgUrl:'', emoji:'🌿', color:'#22c55e' },
+        { id:'critical_thinker', title:'Critical Thinker', artist:'Des. by Zoe', imgUrl:'', emoji:'🧠', color:'#ef4444' },
+        { id:'art_history', title:'Art History', artist:'Des. by Ray', imgUrl:'', emoji:'🏺', color:'#eab308' },
+        { id:'fei_volunteer', title:'FEI Volunteer', artist:'Des. by Rebecca', imgUrl:'', emoji:'🤝', color:'#14b8a6' },
+        { id:'community_builder', title:'Community Builder', artist:'Des. by Team', imgUrl:'', emoji:'🏙️', color:'#f59e0b' },
+        { id:'focus_sprinter', title:'Focus Sprinter', artist:'Des. by Cam', imgUrl:'', emoji:'⏱️', color:'#64748b' },
+        { id:'portfolio_builder', title:'Portfolio Builder', artist:'Des. by Regina', imgUrl:'https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69ced4efc423b6f032f27496_7ce471ab56c32f732fa052a1ef003958.JPG', emoji:'📂', color:'#1e3a8a' }
+    ];
+
+    const SELF_STUDY_LINKS = {
+        lfc: {
+            title: 'LFC Learning System',
+            desc: 'Explore Learn From Collection with guided visual thinking.',
+            link: 'https://www.feiteamart.com/lfc'
+        },
+        art_history: {
+            title: 'Art History',
+            desc: 'Study art movements, artists, and visual context.',
+            link: 'https://www.feiteamart.com/art-history'
+        },
+        self_study: {
+            title: '100 Self-Study Classes',
+            desc: 'Continue learning independently with FEI TeamArt resources.',
+            link: 'https://www.feiteamart.com/courses'
+        }
+    };
+
+    let allStudents = [];
+    let activeStudent = null;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch('students.json')
+            .then(response => response.json())
+            .then(data => { allStudents = data; })
+            .catch(error => { console.error('Error loading data:', error); });
+
+        const form = document.getElementById('codeForm');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const code = document.getElementById('codeInput').value.trim();
+                if (!code) return;
+
+                const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
+
+                if (student) {
+                    activeStudent = student;
+                    document.getElementById('gate').style.display = 'none';
+                    document.getElementById('gameUI').style.display = 'block';
+                    loadReport(student);
+                } else {
+                    alert("Incorrect Code. Please check your private access key.");
+                }
+            });
+        }
+
+        const modal = document.getElementById('christmasModal');
+        const openBtn = document.getElementById('openGiftBtn');
+        const closeBtn = document.getElementById('closeGift');
+
+        if (openBtn) {
+            openBtn.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        const badgeModal = document.getElementById('badgeModal');
+        const closeBadgeModal = document.getElementById('closeBadgeModal');
+        if (closeBadgeModal) {
+            closeBadgeModal.addEventListener('click', () => {
+                badgeModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+            if (e.target === badgeModal) badgeModal.style.display = 'none';
+        });
+    });
+
+    function normalizeToArray(value) {
+        if (!value) return [];
+        return Array.isArray(value) ? value : [value];
     }
 
-    #fei-embed-root .hub-grid {
-      grid-template-columns: 1fr;
+    function loadReport(student) {
+        document.getElementById('welcomeText').innerText = `Report for: ${student.display_name}`;
+
+        const noteEl = document.getElementById('teacherNote');
+        noteEl.innerText = student.teacher_note ? `"${student.teacher_note}"` : "Welcome back!";
+
+        const tagsContainer = document.getElementById('strengthTags');
+        tagsContainer.innerHTML = '';
+        if (student.tags) {
+            student.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+        }
+
+        const giftContainer = document.getElementById('giftContainer');
+        if (student.christmas_gift) {
+            giftContainer.style.display = 'block';
+            document.getElementById('giftMessage').innerText = student.christmas_gift.message || '';
+            document.getElementById('giftLinkBtn').href = student.christmas_gift.link || '#';
+            document.getElementById('giftCodeDisplay').innerText = student.christmas_gift.code_display || "Click the button below to claim!";
+        } else {
+            giftContainer.style.display = 'none';
+        }
+
+        const goalsList = document.getElementById('goalsList');
+        goalsList.innerHTML = '';
+        if (student.goals && student.goals.length > 0) {
+            student.goals.forEach(g => {
+                const li = document.createElement('li');
+                li.className = 'info-item goal';
+                li.innerHTML = `<span class="info-date">Due: ${g.due || 'Soon'}</span>${g.text}`;
+                goalsList.appendChild(li);
+            });
+        } else {
+            goalsList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No current goals active.</li>';
+        }
+
+        const critList = document.getElementById('critiquesList');
+        critList.innerHTML = '';
+        if (student.critiques && student.critiques.length > 0) {
+            student.critiques.forEach(c => {
+                const li = document.createElement('li');
+                li.className = 'info-item critique';
+                li.innerHTML = `<span class="info-date">${c.date || ''}</span>
+                                <span class="info-label">Strength:</span>${c.strength}<br>
+                                <span class="info-label" style="color:#d97706">Focus:</span>${c.next}`;
+                critList.appendChild(li);
+            });
+        } else {
+            critList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No feedback recorded yet.</li>';
+        }
+
+        const notesList = document.getElementById('notesList');
+        notesList.innerHTML = '';
+        if (student.notes && student.notes.length > 0) {
+            student.notes.forEach(n => {
+                const li = document.createElement('li');
+                li.className = 'info-item note';
+                li.innerHTML = `<span class="info-date">${n.date}</span>${n.text}`;
+                notesList.appendChild(li);
+            });
+        } else {
+            notesList.innerHTML = '<li style="font-size:12px; color:#999; padding:10px;">No class notes yet.</li>';
+        }
+
+        const spotGrid = document.getElementById('spotlightGrid');
+        spotGrid.innerHTML = '';
+        const featuredArt = normalizeToArray(student.featured_art);
+        if (featuredArt.length > 0) {
+            featuredArt.forEach(art => {
+                const div = document.createElement('div');
+                div.className = 'spotlight-item';
+                div.innerHTML = `
+                    <div class="spotlight-frame">
+                        <img src="${art.thumb}" class="spotlight-img" onerror="this.src='https://placehold.co/150x150?text=Art'">
+                    </div>
+                    <div class="spotlight-caption">${art.title}</div>
+                    <div class="spotlight-sub">${art.caption || ''}</div>
+                `;
+                spotGrid.appendChild(div);
+            });
+        } else {
+            spotGrid.innerHTML = '<p style="color:#999;font-style:italic;">No featured artwork yet.</p>';
+        }
+
+        renderLearningCenter(student);
+        renderPortfolio(student);
+        renderMap(student);
     }
 
-    #fei-embed-root .badge-grid {
-      gap: 20px;
+    function renderLearningCenter(student) {
+        const card = document.getElementById('learningCenterCard');
+        card.style.display = 'block';
+
+        renderLiveClass(student);
+        renderRecommendedCourses(student);
+        renderSelfStudy(student);
     }
 
-    #fei-embed-root .map-node {
-      width: 105px;
+    function renderLiveClass(student) {
+        const wrap = document.getElementById('liveClassWrap');
+        const box = document.getElementById('liveClassBox');
+
+        if (!student.live_class || !student.live_class.enabled) {
+            wrap.style.display = 'none';
+            box.innerHTML = '';
+            return;
+        }
+
+        wrap.style.display = 'block';
+        box.innerHTML = `
+            <div class="live-class-box">
+                <h3>🎓 Live Class</h3>
+                <p><strong>${student.live_class.title || 'Upcoming Class'}</strong></p>
+                <p>${student.live_class.subtitle || ''}</p>
+                <p>🕒 ${student.live_class.time || 'Time TBA'}</p>
+                <p>${student.live_class.lesson_focus || ''}</p>
+                <a class="portal-btn" href="${student.live_class.zoom_link || '#'}" target="_blank">Join Class</a>
+            </div>
+        `;
     }
-  }
-</style>
+
+    function renderRecommendedCourses(student) {
+        const wrap = document.getElementById('recommendedCoursesWrap');
+        const grid = document.getElementById('recommendedCoursesGrid');
+        grid.innerHTML = '';
+
+        const courses = normalizeToArray(student.recommended_courses);
+
+        if (!courses.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'block';
+
+        courses.forEach(course => {
+            const item = document.createElement('div');
+            item.className = 'portal-card';
+            item.innerHTML = `
+                <div class="portal-card-title">${course.title || 'Recommended Course'}</div>
+                <div class="portal-card-desc">${course.description || ''}</div>
+                <div class="portal-card-meta">${course.badge_id ? 'Linked badge: ' + course.badge_id : ''}</div>
+                <a class="portal-btn" href="${course.link || '#'}" target="_blank">View Course</a>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    function renderSelfStudy(student) {
+        const wrap = document.getElementById('selfStudyWrap');
+        const grid = document.getElementById('selfStudyGrid');
+        grid.innerHTML = '';
+
+        const access = student.portal_access || {};
+        const items = [];
+
+        if (access.lfc) items.push(SELF_STUDY_LINKS.lfc);
+        if (access.art_history) items.push(SELF_STUDY_LINKS.art_history);
+        if (access.self_study) items.push(SELF_STUDY_LINKS.self_study);
+
+        if (!items.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'block';
+
+        items.forEach(itemData => {
+            const item = document.createElement('div');
+            item.className = 'portal-card';
+            item.innerHTML = `
+                <div class="portal-card-title">${itemData.title}</div>
+                <div class="portal-card-desc">${itemData.desc}</div>
+                <a class="portal-btn" href="${itemData.link}" target="_blank">Open</a>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    function renderPortfolio(student) {
+        const wrap = document.getElementById('portfolioHubCard');
+        const grid = document.getElementById('portfolioGrid');
+        grid.innerHTML = '';
+
+        const portfolio = normalizeToArray(student.portfolio);
+
+        if (!portfolio.length) {
+            wrap.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'none';
+
+        portfolio.forEach(work => {
+            const item = document.createElement('div');
+            item.className = 'portfolio-item';
+            item.innerHTML = `
+                <div class="portfolio-frame">
+                    <img src="${work.image}" class="portfolio-img" onerror="this.src='https://placehold.co/220x220?text=Portfolio'">
+                </div>
+                <div class="portfolio-title">${work.title || ''}</div>
+                <div class="portfolio-sub">${work.category || ''}${work.caption ? ' · ' + work.caption : ''}</div>
+            `;
+            grid.appendChild(item);
+        });
+    }
+
+    function renderMap(student) {
+        const container = document.getElementById('badgeGrid');
+        container.innerHTML = '';
+
+        let earnedIds = [];
+        if (student.achievements) earnedIds = student.achievements.map(a => (a.badge_id || '').toLowerCase());
+
+        let recommendedIds = [];
+        if (student.badges && student.badges.should_target) {
+            recommendedIds = student.badges.should_target.map(t => (t.id || '').toLowerCase());
+        }
+
+        const total = PAGES.length;
+        const count = earnedIds.length;
+        const pct = Math.round((count / total) * 100);
+        document.getElementById('progressCount').textContent = `${count} / ${total} Badges`;
+        document.getElementById('progressBar').style.width = `${pct}%`;
+        document.getElementById('progressPct').textContent = `${pct}%`;
+
+        PAGES.forEach((page, index) => {
+            const pageId = page.id.toLowerCase();
+            const isUnlocked = earnedIds.includes(pageId);
+            const isRecommended = !isUnlocked && recommendedIds.includes(pageId);
+
+            const node = document.createElement('div');
+            let statusClass = 'locked';
+            if (isUnlocked) statusClass = 'unlocked';
+            else if (isRecommended) statusClass = 'recommended';
+
+            node.className = `map-node ${statusClass}`;
+            node.style.animationDelay = `${index * 0.05}s`;
+
+            const hasImage = page.imgUrl && page.imgUrl.length > 5;
+            const imageHTML = hasImage
+                ? `<img src="${page.imgUrl}" class="node-img">`
+                : `<div class="node-icon-fallback">${page.emoji}</div>`;
+
+            node.innerHTML = `
+                <div class="node-visual" style="border-color:${isRecommended ? '#f59e0b' : '#e5e7eb'}">
+                    ${imageHTML}
+                    ${isUnlocked ? '<div class="check-mark">✓</div>' : ''}
+                    ${isRecommended ? '<div class="quest-mark">⭐</div>' : ''}
+                </div>
+                <div class="node-label">${page.title}</div>
+                <div class="badge-credit">${page.artist}</div>
+            `;
+
+            node.addEventListener('click', () => openBadgeModal(student, page, isUnlocked, isRecommended));
+            container.appendChild(node);
+        });
+    }
+
+    function openBadgeModal(student, page, isUnlocked, isRecommended) {
+        const modal = document.getElementById('badgeModal');
+        const title = document.getElementById('badgeModalTitle');
+        const status = document.getElementById('badgeModalStatus');
+        const desc = document.getElementById('badgeModalDesc');
+        const coursesWrap = document.getElementById('badgeModalCourses');
+
+        title.textContent = page.title;
+        coursesWrap.innerHTML = '';
+
+        if (isUnlocked) {
+            status.textContent = 'Achieved';
+            status.style.background = '#ecfdf5';
+            status.style.color = '#047857';
+            desc.textContent = `You have already unlocked ${page.title}. Keep building this strength and consider using it in your next project or portfolio piece.`;
+        } else if (isRecommended) {
+            status.textContent = 'Recommended Next';
+            status.style.background = '#fff7ed';
+            status.style.color = '#c2410c';
+            desc.textContent = `This badge is currently recommended for you. You can use the linked course suggestions below to help unlock this next stage.`;
+        } else {
+            status.textContent = 'Not Yet';
+            status.style.background = '#f3f4f6';
+            status.style.color = '#6b7280';
+            desc.textContent = `This badge is not active yet, but it may become part of your future learning path.`;
+        }
+
+        const matchedCourses = normalizeToArray(student.recommended_courses).filter(c => (c.badge_id || '').toLowerCase() === page.id.toLowerCase());
+
+        if (matchedCourses.length) {
+            matchedCourses.forEach(course => {
+                const item = document.createElement('div');
+                item.className = 'mini-course-item';
+                item.innerHTML = `
+                    <div class="portal-card-title">${course.title}</div>
+                    <div class="portal-card-desc">${course.description || ''}</div>
+                    <a class="portal-btn" href="${course.link || '#'}" target="_blank">Open Course</a>
+                `;
+                coursesWrap.appendChild(item);
+            });
+        } else {
+            const fallback = document.createElement('div');
+            fallback.className = 'mini-course-item';
+            fallback.innerHTML = `
+                <div class="portal-card-desc">No linked course has been added for this badge yet.</div>
+            `;
+            coursesWrap.appendChild(fallback);
+        }
+
+        modal.style.display = 'flex';
+    }
+</script>
+</div>
