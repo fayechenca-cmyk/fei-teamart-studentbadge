@@ -428,3 +428,114 @@ box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
     padding: 12px;
     background: #fafcff;
 }
+/* =========================================
+   LEARNING CENTER VISUAL UPGRADE
+   ========================================= */
+
+#fei-embed-root .hub-label {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px;
+    font-weight: 800;
+    color: #8b5cf6;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    opacity: 0.85;
+    text-transform: uppercase;
+}
+
+#fei-embed-root .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+#fei-embed-root .hub-tile {
+    background: #f8fafc;
+    border: 1px solid #eef2f7;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+#fei-embed-root .hub-tile:hover {
+    transform: translateY(-4px);
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(103, 232, 249, 0.2);
+    border-color: #67e8f9;
+}
+
+#fei-embed-root .hub-tile-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a1d2b;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+#fei-embed-root .hub-tile-desc {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+#fei-embed-root .hub-action-btn {
+    background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+    color: #1a1d2b;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif !important;
+    display: inline-block;
+}
+
+#fei-embed-root .live-hero {
+    background: linear-gradient(135deg, #1a1d2b 0%, #334155 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    margin-bottom: 24px;
+}
+
+#fei-embed-root .live-hero h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 22px;
+    margin: 0 0 6px;
+    color: #fff;
+    font-weight: 800;
+}
+
+#fei-embed-root .live-hero p {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px;
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.5;
+}
+
+#fei-embed-root .live-badge {
+    background: #d42424;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
