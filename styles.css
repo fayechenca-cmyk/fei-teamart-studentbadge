@@ -539,3 +539,140 @@ box-shadow:0 2px 5px rgba(0,0,0,0.2); font-size: 14px; color: white;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+/* =========================================
+   LEARNING CENTER SHOWCASE UPGRADE
+   ========================================= */
+
+.learning-showcase-head {
+  margin-bottom: 22px;
+}
+
+.learning-kicker {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  margin-bottom: 8px;
+}
+
+.learning-main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #1a1d2b;
+  margin: 0 0 10px;
+}
+
+.learning-main-desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+  margin: 0;
+  max-width: 760px;
+}
+
+.learning-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.learning-feature-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e9eef5;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.learning-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(103, 232, 249, 0.18);
+  border-color: #67e8f9;
+}
+
+.learning-feature-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.learning-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.learning-feature-card:hover .learning-feature-image {
+  transform: scale(1.03);
+}
+
+.learning-feature-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.learning-feature-kicker {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #06b6d4;
+  margin-bottom: 8px;
+}
+
+.learning-feature-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #1a1d2b;
+  margin: 0 0 10px;
+}
+
+.learning-feature-desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.learning-feature-btn {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #c7d2fe 0%, #67e8f9 100%);
+  color: #1a1d2b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 991px) {
+  .learning-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-main-title {
+    font-size: 24px;
+  }
+}
