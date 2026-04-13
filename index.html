@@ -345,38 +345,71 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 14px; font-weight: bold;
 <ul class="info-list" id="notesList"></ul>
 </div>
 
-<div class="card" id="learningCenterCard">
+<div class="card" id="learningCenterCard" style="display:none;">
+  <div class="section-title">🚀 Learning Center</div>
 
-<div class="hub-label">LEARNING CENTER</div>
-
-<div class="live-hero">
-  <div>
-    <div class="live-badge">LIVE CLASS</div>
-    <h3>Portrait Sketching</h3>
-    <p>Tuesday 4:30 PM · Live with Feiyi</p>
+  <div id="liveClassWrap" style="display:none; margin-bottom: 28px;">
+    <div id="liveClassBox"></div>
   </div>
-  <a href="#" class="hub-button">Join</a>
-</div>
 
-<div class="hub-grid">
+  <div class="learning-showcase">
+    <div class="learning-showcase-head">
+      <div class="learning-kicker">Self-Learning Center</div>
+      <h3 class="learning-main-title">Continue Learning Beyond Class</h3>
+      <p class="learning-main-desc">
+        Explore FEI TeamArt’s guided self-learning paths through creation, collection-based thinking, and art history.
+      </p>
+    </div>
 
-<a class="hub-tile" href="#">
-  <h4>✨ Recommended Path</h4>
-  <p>Continue your learning journey</p>
-</a>
+    <div class="learning-feature-grid">
+      <a class="learning-feature-card" href="YOUR_SELF_LEARNING_LINK" target="_blank">
+        <div class="learning-feature-image-wrap">
+          <img src="YOUR_SELF_LEARNING_IMAGE" alt="Self Learning Center" class="learning-feature-image">
+        </div>
+        <div class="learning-feature-body">
+          <div class="learning-feature-kicker">Creation Path</div>
+          <h4 class="learning-feature-title">100 Classes Self-Learning</h4>
+          <p class="learning-feature-desc">
+            Practice drawing, design, and creative making step by step through FEI TeamArt’s structured class collection.
+          </p>
+          <span class="learning-feature-btn">Enter Path</span>
+        </div>
+      </a>
 
-<a class="hub-tile" href="#">
-  <h4>📚 Self Study</h4>
-  <p>Explore LFC learning system</p>
-</a>
+      <a class="learning-feature-card" href="YOUR_LFC_LINK" target="_blank">
+        <div class="learning-feature-image-wrap">
+          <img src="YOUR_LFC_IMAGE" alt="Learn From Collection" class="learning-feature-image">
+        </div>
+        <div class="learning-feature-body">
+          <div class="learning-feature-kicker">Critical Thinking for Art</div>
+          <h4 class="learning-feature-title">Learn From Collection</h4>
+          <p class="learning-feature-desc">
+            Build visual judgment and critical thinking through artworks, ideas, and guided contemporary art exploration.
+          </p>
+          <span class="learning-feature-btn">Explore LFC</span>
+        </div>
+      </a>
 
-<a class="hub-tile" href="#">
-  <h4>🎯 Portfolio Builder</h4>
-  <p>Prepare your showcase work</p>
-</a>
+      <a class="learning-feature-card" href="YOUR_ART_HISTORY_LINK" target="_blank">
+        <div class="learning-feature-image-wrap">
+          <img src="YOUR_ART_HISTORY_IMAGE" alt="Art History Path" class="learning-feature-image">
+        </div>
+        <div class="learning-feature-body">
+          <div class="learning-feature-kicker">History & Context</div>
+          <h4 class="learning-feature-title">Art History Path</h4>
+          <p class="learning-feature-desc">
+            Discover artists, movements, and visual culture to strengthen understanding, context, and inspiration.
+          </p>
+          <span class="learning-feature-btn">Start Learning</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-</div>
-  
+  <div id="recommendedCoursesWrap" style="display:none; margin-top: 30px; margin-bottom: 20px;">
+    <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:#8b5cf6;">✨ Recommended Next Courses</h3>
+    <div class="portal-grid" id="recommendedCoursesGrid"></div>
+  </div>
 </div>
 
 <div class="card" id="portfolioHubCard" style="display:none;">
