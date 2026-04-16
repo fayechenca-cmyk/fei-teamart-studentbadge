@@ -549,13 +549,13 @@
     },
     "featured_art": [
       {
-        "title": "Guided Drawing Practice",
-        "thumb": "https://cdn.prod.website-files.com/placeholder-bella-1.jpg",
-        "caption": "A completed drawing created step-by-step, showing Bella’s growing ability to stay focused."
+        "title": "Animated Girl",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69e11c4485e3d3ab9b2f2563_Screenshot%202026-04-16%20at%2010.28.23%E2%80%AFAM.png",
+        "caption": "A completed drawing figure created step-by-step, showing Bella’s growing ability to stay focused."
       },
       {
-        "title": "Small Study Work",
-        "thumb": "https://cdn.prod.website-files.com/placeholder-bella-2.jpg",
+        "title": "New Year Nian Shou",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69e11f67b8152737a64b15c0_Screenshot%202026-04-16%20at%2010.41.54%E2%80%AFAM.png",
         "caption": "Simple practice work that helps build confidence through completion."
       }
     ],
@@ -596,7 +596,7 @@
     "portfolio": [
       {
         "title": "Simple Character Study",
-        "image": "https://cdn.prod.website-files.com/placeholder-bella-1.jpg",
+        "image": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69e11c4485e3d3ab9b2f2563_Screenshot%202026-04-16%20at%2010.28.23%E2%80%AFAM.png",
         "caption": "A small completed drawing showing focus and progress.",
         "category": "Practice"
       }
@@ -1307,8 +1307,8 @@
     ],
     "featured_art": [
       {
-        "title": "Observation Practice Study",
-        "thumb": "https://cdn.prod.website-files.com/placeholder-wallace-1.jpg",
+        "title": "New Year Nian Shou",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69e120e6f0b983e63312d4c5_Screenshot%202026-04-16%20at%2010.48.18%E2%80%AFAM.png",
         "caption": "A practice piece showing Wallace’s ability to observe and build skill when guided with focus."
       },
       {
@@ -1675,8 +1675,8 @@
     ],
     "featured_art": [
       {
-        "title": "Digital Character Story",
-        "thumb": "artworks/xinyue_digital_story.jpg",
+        "title": "Digital Illustration",
+        "thumb": "https://cdn.prod.website-files.com/67b17a6580f358f0c7dd29f4/69e121bea05313602049373e_IMG_5879.PNG",
         "caption": "A vivid digital illustration combining fantasy elements and strong narrative charm."
       }
     ]
