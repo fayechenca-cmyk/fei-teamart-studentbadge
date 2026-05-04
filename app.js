@@ -78,14 +78,71 @@ const SELF_STUDY_LINKS = {
   }
 };
 
+const PORTAL_CODE_KEY = 'fei_portal_student_code_v1';
+
 let allStudents = [];
 let activeStudent = null;
+
+function normalizeCode(value) {
+  return String(value || '')
+    .trim()
+    .toUpperCase()
+    .replace(/[\u2010-\u2015\u2212]/g, '-')
+    .replace(/\s+/g, '');
+}
+
+function findStudentByCode(code) {
+  const normalized = normalizeCode(code);
+  if (!normalized) return null;
+  return allStudents.find(student => normalizeCode(student.id) === normalized) || null;
+}
+
+function openStudentPortalView(student) {
+  activeStudent = student;
+
+  const input = document.getElementById('codeInput');
+  if (input) input.value = student.id || '';
+
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('gameUI').style.display = 'block';
+
+  try {
+    localStorage.setItem(PORTAL_CODE_KEY, student.id || '');
+  } catch (e) {}
+
+  loadReport(student);
+}
+
+function tryAutoOpenFromQueryOrStorage() {
+  const params = new URLSearchParams(window.location.search);
+  const codeFromQuery = params.get('studentId') || params.get('code');
+  let code = codeFromQuery;
+
+  if (!code) {
+    try {
+      code = localStorage.getItem(PORTAL_CODE_KEY) || '';
+    } catch (e) {}
+  }
+
+  const student = findStudentByCode(code);
+  if (student) {
+    openStudentPortalView(student);
+    return true;
+  }
+
+  return false;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch('students.json')
     .then(response => response.json())
-    .then(data => { allStudents = data; })
-    .catch(error => { console.error('Error loading data:', error); });
+    .then(data => {
+      allStudents = data;
+      tryAutoOpenFromQueryOrStorage();
+    })
+    .catch(error => {
+      console.error('Error loading data:', error);
+    });
 
   const form = document.getElementById('codeForm');
   if (form) {
@@ -94,13 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const code = document.getElementById('codeInput').value.trim();
       if (!code) return;
 
-      const student = allStudents.find(s => s.id && s.id.toUpperCase() === code.toUpperCase());
+      const student = findStudentByCode(code);
 
       if (student) {
-        activeStudent = student;
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('gameUI').style.display = 'block';
-        loadReport(student);
+        openStudentPortalView(student);
       } else {
         alert("Incorrect Code. Please check your private access key.");
       }
@@ -459,8 +513,8 @@ function openBadgeModal(student, page, isUnlocked, isRecommended) {
     const fallback = document.createElement('div');
     fallback.className = 'mini-course-item';
     fallback.innerHTML = `
-        <div class="portal-card-desc">No linked course has been added for this badge yet.</div>
-      `;
+      <div class="portal-card-desc">No linked course has been added for this badge yet.</div>
+    `;
     coursesWrap.appendChild(fallback);
   }
 
